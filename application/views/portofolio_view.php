@@ -1,7 +1,18 @@
 <?php $this->load->view('partials/header') ?>
 
-  </head>
-  <body>
+</head>
+<body>
+
+<?php if($this->session->flashdata('flash')): ?>
+  <div class="alert alert-success" role="alert">
+    <div class="row md-3">
+      <div class="col-mt-6">
+         Data berhasil <?= $this->session->flashdata('flash'); ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+
   <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -15,18 +26,18 @@
   <?php foreach ($portofolio as $key => $value): ?>
   <tbody>
     <tr>
-      <td><?= $value['path_gambar'] ?></td>
-      <td><?= $value['judul'] ?></td>
-      <td><?= $value['text'] ?></td>
-      <td><?= $value['tanggal_publish'] ?></td>
+      <td><?= $value['path_gambar']; ?></td>
+      <td><?= $value['judul']; ?></td>
+      <td><?= $value['text']; ?></td>
+      <td><?= $value['tanggal_publish']; ?></td>
       <td>
       <button type="button" class="btn btn-primary">Update</button>
-      <button type="button" class="btn btn-danger">Delete</button>
+        <a href="<?= base_url('Portofolio/DeletePortofolio/'); ?><?= $value['id']; ?>" class="badge badge-danger">Delete</a> 
       </td>
     </tr>
   </tbody>
 <?php endforeach; ?>
 </table>
-<button type="button" class="btn btn-success"> <a href="<?= base_url('Portofolio/create')?>"> create</a></button>
+<button type="button" class="btn btn-success"> <a href="<?= base_url('Portofolio/createPortofolio'); ?>"> create</a></button>
 
 <?php $this->load->view('partials/footer') ?>
