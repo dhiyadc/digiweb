@@ -20,4 +20,20 @@ class Portofolio_model extends CI_Model{
         $this->db->where('id', $id);
         $this->db->delete('Portofolio');
     }
+    public function getPortobyID($id)
+    {
+        return $this->db->get_where('portofolio', ['id'=>$id])->row_array();
+    }
+    public function updatePortofolio($id)
+    {
+        $data=[
+            "path_gambar" => $this->input->post('image'),
+            "judul" => $this->input->post('judul'),
+            "text" => $this->input->post('text'),
+            "tanggal_publish" => date('Y-m-d')
+        ];
+
+        $this->db->where('id', $id);
+        $this->db->update('portofolio', $data);
+    }
 }

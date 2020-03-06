@@ -31,7 +31,8 @@
       <td><?= $value['text']; ?></td>
       <td><?= $value['tanggal_publish']; ?></td>
       <td>
-      <button type="button" class="btn btn-primary">Update</button>
+        <a href="<?= base_url('Portofolio/ReadPortofolio/'); ?><?= $value['id']; ?>" class="badge badge-success">Read</a> 
+        <a href="<?= base_url('Portofolio/UpdatePortofolio/'); ?><?= $value['id']; ?>" class="badge badge-primary">Update</a> 
         <a href="<?= base_url('Portofolio/DeletePortofolio/'); ?><?= $value['id']; ?>" class="badge badge-danger">Delete</a> 
       </td>
     </tr>

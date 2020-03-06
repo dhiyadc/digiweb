@@ -38,6 +38,31 @@ class Portofolio extends CI_Controller{
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('Portofolio');
     }
+    public function ReadPortofolio($id)
+    {
+        $data['judul']='Portofolio';
+        $data['portofolio']=$this->Portofolio_model->getPortobyID($id);
+        $this->load->view('read_portofolio', $data);
+    }
+    public function UpdatePortofolio($id)
+    {
+        $data['judul']='Update Portofolio';
+        $data['portofolio']= $this->Portofolio_model->getPortobyID($id);
+        
+        $this->form_validation->set_rules('image', 'Image', 'required');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
+        $this->form_validation->set_rules('text', 'Text', 'required');
+        
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->load->view('update_portofolio', $data);
+            
+        }else{
+            $this->Portofolio_model->updatePortofolio();
+            $this->session->set_flashdata('flash','di update');
+            redirect('Portofolio');
+        }
+    }
 
 
 }
