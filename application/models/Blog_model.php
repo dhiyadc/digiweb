@@ -11,7 +11,8 @@ class Blog_model extends CI_Model{
             'judul' => $this->input->post('judul'),
             'author' => $this->session->userdata('user'),
             'text' => $this->input->post('text'),
-            'tanggal_publish' => date('Y-m-d')
+            'tanggal_publish' => date('Y-m-d'),
+            'kategori' => $this->input->post('kategori')
         ];
         $this->db->insert('blog', $data);
     }
@@ -45,7 +46,8 @@ class Blog_model extends CI_Model{
             'judul' => $this->input->post('judul'),
             'author' => $this->session->userdata('user'),
             'text' => $this->input->post('text'),
-            'tanggal_publish' => date('Y-m-d')
+            'tanggal_publish' => date('Y-m-d'),
+            'kategori' => $this->input->post('kategori')
         ];
         $this->db->where('id', $id);
         $this->db->update('blog', $data);

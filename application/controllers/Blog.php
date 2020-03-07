@@ -66,6 +66,7 @@ class Blog extends CI_Controller {
         if (!($this->session->userdata('user'))) {
             redirect('admin');
         }
+     
         $this->Blog_model->updateeBlog($id);
         redirect(base_url('blog/readblog'));
     }

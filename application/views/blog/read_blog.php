@@ -20,6 +20,7 @@
 			<tr>
 				<th scope="col">Judul</th>
 				<th scope="col">Author</th>
+				<th scope="col">Kategori</th>
 				<th scope="col">Action</th>
 			</tr>
 		</thead>
@@ -28,6 +29,7 @@
 			<tr>
 				<td><?= $value['judul'] ?></td>
 				<td><?= $value['author'] ?></td>
+				<td><?= $value['kategori'] ?></td>
 				<td>
 				<a class="badge badge-info mr-3" href="<?=base_url()?>blog/detailblog/<?= $value['id'] ?>" >Detail</a>
 				<a class="badge badge-success mr-3" href="<?=base_url()?>blog/update/<?= $value['id'] ?>" >Update</a>
