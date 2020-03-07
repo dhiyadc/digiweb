@@ -48,7 +48,7 @@ class admin extends CI_Controller {
 		'username' => $this->input->post('username'),
 		'password' => $this->input->post('password')
 		);
-		$result = $this->admin_login_database->loginNew($data);
+		$result = $this->admin_login_database->login($data);
 		if ($result == TRUE) {
 		
 			$username = $this->input->post('username');
