@@ -27,7 +27,6 @@ class Kelas_model extends CI_Model {
         if ($this->upload->do_upload('path_gambar')) {
             return $this->upload->data('file_name');
         }
-        return "default.jpg";
     } 
     
     private function updateImage($id) 
@@ -44,7 +43,6 @@ class Kelas_model extends CI_Model {
         if ($this->upload->do_upload('path_gambar')) {
             return $this->upload->data('file_name');
         }
-        return "default.jpg";
     }  
 
     public function createClass()
