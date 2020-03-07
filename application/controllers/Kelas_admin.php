@@ -5,10 +5,6 @@ class Kelas_admin extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Kelas_model');
-		$this->load->library('form_validation');
-        if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
-		}
     }
 
     public function index()

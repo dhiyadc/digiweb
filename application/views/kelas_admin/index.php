@@ -25,6 +25,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="<?= base_url() ?>login/logout">Logout</a>
 </body>
 </html>

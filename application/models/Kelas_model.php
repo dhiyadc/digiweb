@@ -22,8 +22,6 @@ class Kelas_model extends CI_Model {
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['remove_space'] = true;
-        $config['overwrite'] = true;
-        $config['file_name'] = $this->input->post('judul');
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('path_gambar')) {
@@ -31,16 +29,41 @@ class Kelas_model extends CI_Model {
         }
         return "default.jpg";
     } 
+    
+    private function updateImage($id) 
+    {
+        $config['upload_path'] = './images/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '3000';
+        $config['overwrite'] = true;
+
+        $data = $this->db->get_where('kelas',['id' => $id])->row();
+        unlink("images/".$data->path_gambar);
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('path_gambar')) {
+            return $this->upload->data('file_name');
+        }
+        return "default.jpg";
+    }  
 
     public function createClass()
     {
         $data = [
+            // 'id' => uniqid(),
             'judul' => $this->input->post('judul'),
             'text' => $this->input->post('text'),
             'path_gambar' => $this->insertImage()
         ];
 
         $this->db->insert('kelas',$data);
+
+        // $this->id = abs( crc32( uniqid() ) );
+        // $this->judul = $this->input->post('judul');
+        // $this->text = $this->input->post('text');
+        // $this->path_gambar = $this->insertImage();
+
+        // $this->db->insert('kelas',$this);
     }
 
     public function deleteClass($id)
@@ -58,7 +81,7 @@ class Kelas_model extends CI_Model {
             $data = [
                 'judul' => $this->input->post('judul'),
                 'text' => $this->input->post('text'),
-                'path_gambar' => $this->insertImage()
+                'path_gambar' => $this->updateImage($id)
             ];
         }
         else {
