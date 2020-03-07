@@ -23,22 +23,14 @@ class Kelas_model extends CI_Model {
         $config['max_size'] = '3000';
         $config['remove_space'] = true;
         $config['overwrite'] = true;
+        $config['file_name'] = $this->input->post('judul');
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('path_gambar')) {
             return $this->upload->data('file_name');
         }
         return "default.jpg";
-    }
-
-    private function deleteImage($id)
-    {
-        $data = $this->getClassById($id);
-        if ($data->path_gambar != "default.jpg") {
-            $filename = explode(".", $data->path_gambar)[0];
-            return array_map('unlink', glob(FCPATH."images/$filename.*"));
-        }
-    }    
+    } 
 
     public function createClass()
     {
@@ -53,9 +45,11 @@ class Kelas_model extends CI_Model {
 
     public function deleteClass($id)
     {
-        $this->deleteImage($id);
-        $this->db->where('id',$id);
-        $this->db->delete('kelas');
+        $data = $this->db->get_where('kelas',['id' => $id])->row();
+        $deldata = $this->db->delete('kelas',['id'=>$id]);
+        if($deldata){
+            unlink("images/".$data->path_gambar);
+        }
     }
 
     public function updateClass($id)

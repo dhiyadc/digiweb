@@ -28,18 +28,7 @@ class Kelas extends CI_Controller {
 
     public function daftar($idclass)
     {
-        $this->form_validation->set_rules('nama','Nama','required');
-        $this->form_validation->set_rules('nohp','No.HP','required');
-        $this->form_validation->set_rules('email','Email','required');
-        $this->form_validation->set_rules('instansi','Instansi','required');
-		
-        if($this->form_validation->run() == FALSE) {
-            $id['id_class'] = $idclass;
-            $this->load->view('kelas/daftar',$id);
-        }
-        else {
-        	$this->Kelas_model->daftar($idclass);
-			redirect('kelas/detail_class/'. $idclass);  
-        }
+        $this->Kelas_model->daftar($idclass);
+		redirect('kelas/detail_class/'. $idclass);
     }
 }

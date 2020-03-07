@@ -13,8 +13,8 @@
     <?php endif; ?>
     <?php foreach ($kelas as $val) : ?>
         <?php echo form_open_multipart('kelas_admin/update/' . $val['id']);?>
-                Title: <input type="text" name="judul" value="<?= $val['judul']; ?>">
-                Desc: <input type="text" name="text" value="<?= $val['text']; ?>">
+                Title: <input type="text" name="judul" value="<?= $val['judul']; ?>" required>
+                Desc: <input type="text" name="text" value="<?= $val['text']; ?>" required>
                 Image: <input type="file" name="path_gambar">
                 <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="200px">
                 <input type="hidden" name="old_image" value="<?= $val['path_gambar'] ?>">

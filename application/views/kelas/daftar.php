@@ -14,16 +14,16 @@
     <form action="<?= base_url() ?>kelas/daftar/<?= $id_class ?>" method="post">
         <table>
             <tr>
-                Nama: <input type="text" name="nama">
+                Nama: <input type="text" name="nama" required>
             </tr>
             <tr>
-                No. HP: <input type="number" name="no_hp">
+                No. HP: <input type="number" name="no_hp" required>
             </tr>
             <tr>
-                Email: <input type="email" name="email">
+                Email: <input type="email" name="email" required>
             </tr>
             <tr>
-                Instansi: <input type="text" name="instansi">
+                Instansi: <input type="text" name="instansi" required>
             </tr>
             <button type="submit">Submit</button>
         </table>

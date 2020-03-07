@@ -12,9 +12,9 @@
         </div>
     <?php endif; ?>
     <?php echo form_open_multipart('kelas_admin/create');?>
-        Title: <input type="text" name="judul">
-        Desc: <input type="text" name="text">
-        Image: <input type="file" name="path_gambar">
+        Title: <input type="text" name="judul" required>
+        Desc: <input type="text" name="text" required>
+        Image: <input type="file" name="path_gambar" required>
         <input type="submit" name="submit" value="Submit">
     </form>
 </body>
