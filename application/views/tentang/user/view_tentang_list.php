@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?= $this->session->flashdata('message') ?>
+
 </head>
 
 <body>
@@ -53,28 +55,9 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><a href="<?= base_url("tentang/viewTentangByID/") . $value['id'] ?>" style="text-decoration: none"><button type="button">VIEW</td>
-                <script type="text/javascript" language="JavaScript">
-                    function konfirmasi() {
-                        tanya = confirm("Anda Yakin Akan Menghapus Data ?");
-                        if (tanya == true) return true;
-                        else return false;
-                    }
-                </script>
-                <td><a onclick="return konfirmasi()" href="<?= base_url("tentang/deletetentang/") . $value['id'] ?>" style="text-decoration: none"><button type="button"> DELETE </button></a>
-                <td><a href="<?= base_url("tentang/updateTentang/") . $value['id'] ?>" style="text-decoration: none"><button type="button">UPDATE</td>
-            </tr>
-        </table>
-        <br>
-    <?php endforeach ?>
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><a href="<?= base_url('tentang/createtentang') ?>" style="text-decoration: none"><button type="button">CREATE</td>
-        </tr>
-    </table>
-
+                <td><a href="<?= base_url("tentang_user/viewTentangByID/") . $value['id'] ?>" style="text-decoration: none"><button type="button">VIEW</td>
+                <br>
+            <?php endforeach ?>
 </body>
 
 </html>
