@@ -66,7 +66,7 @@ class Tentang_Model extends CI_Model
         $config['remove_space'] = true;
 
         $data = $this->db->get_where('tentang', ['id' => $id])->row();
-        unlink("images/" . $data->path_gambar);
+        unlink("assets/tentang/" . $data->path_gambar);
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('path_gambar')) {
@@ -74,7 +74,8 @@ class Tentang_Model extends CI_Model
         }
     }
 
-    public function removeImage($id){
+    public function removeImage($id)
+    {
         $data = [
             'path_gambar' => null
         ];
