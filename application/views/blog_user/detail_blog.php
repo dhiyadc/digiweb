@@ -7,7 +7,8 @@
 			<b>Detail Blog</b>
 		</div>
 		<div class="card-body text-center">
-			<h5 class="card-title"><?= $blog['path_gambar'] ?></h5>
+			<img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="300px">
+			<hr>
 			<h2 class="card-title"><?= $blog['judul'] ?></h2>
 			<p class="card-text"><?= $blog['author']?></p>
 			<p class="card-text"><?= $blog['kategori']?></p>

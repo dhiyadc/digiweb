@@ -4,7 +4,8 @@
 
 <h3 align="center">Create Blog</h3>
 
-<form action="<?=base_url('/blog/createblog')?>" method="post">
+<!-- <form action="<?=base_url('/blog/createblog')?>" method="post"> -->
+<?php echo form_open_multipart('blog/createblog'); ?>
 
 	<?php
 	$author = $this->session->userdata('user');
@@ -13,7 +14,7 @@
 	<div class="container">
 		<div class="form-group">
 			<label for="image">Image</label>
-			<input type="file" name="image" class="form-control" id="image" aria-describedby="emailHelp" required>
+			<input type="file" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp" required>
 		</div>
 		<div class="form-group">
 			<label for="judul">Judul</label>
@@ -30,9 +31,9 @@
 		</div>
 		<div class="form-group">
 			<label for="text">Text</label>
-			<textarea class="form-control" id="text" name="text" rows="3" required></textarea>
+			<textarea class="ckeditor" id="ckeditor" name="text" required></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Create</button>
+		<button type="submit" name="submit" value="submit" class="btn btn-primary">Create</button>
 		<a href="<?= base_url('blog') ?>" class="btn btn-warning">Back</a>
 	</div>
 </form>

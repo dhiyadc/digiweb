@@ -9,7 +9,9 @@
 	}
 ?>
 
-<form action="<?=base_url("blog/updateblog/$blog[id]")?>" method="post">
+<!-- <form action="<?=base_url("blog/updateblog/$blog[id]")?>" method="post"> -->
+<?php echo form_open_multipart('blog/updateblog/' . $blog['id']); ?>
+
 
 	<?php
 		$author = $this->session->userdata('user');
@@ -18,7 +20,8 @@
 	<div class="container">
 		<div class="form-group">
 			<label for="image">Image</label>
-			<input type="file" name="image" class="form-control" id="image" aria-describedby="emailHelp" required>
+			<input type="file" name="path_gambar" class="form-control" id="image" aria-describedby="emailHelp">
+			<input type="hidden" name="old_image" value="<?= $blog['path_gambar'] ?>">
 		</div>
 		<div class="form-group">
 			<label for="judul">Judul</label>
@@ -36,9 +39,9 @@
 		</div>
 		<div class="form-group">
 			<label for="text">Text</label>
-			<textarea class="form-control" id="text" name="text" rows="3" required><?=$blog['text']?></textarea>
+			<textarea class="ckeditor" id="ckeditor" name="text" rows="3" required><?=$blog['text']?></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Update</button>
+		<button type="submit" class="btn btn-primary" value="Update">Update</button>
 		<a href="<?=base_url('blog/readblog')?>" class="btn btn-warning">Back</a>
 	</div>
 </form>

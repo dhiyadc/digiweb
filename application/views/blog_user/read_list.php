@@ -4,7 +4,6 @@
     <center>
 <div class="container">
     <div class="card mb-3" style="width: 30rem;">
-    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title"><?= $value['judul'] ?></h5>
         <p class="card-text"><?= $value['author'] ?></p>

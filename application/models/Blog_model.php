@@ -7,7 +7,7 @@ class Blog_model extends CI_Model{
         $data = [ 
             'id' => NULL,
             'id_admin' => $this->session->userdata('id_adm'),
-            'path_gambar' => 1,
+            'path_gambar' => $this->insertImage(),
             'judul' => $this->input->post('judul'),
             'author' => $this->session->userdata('user'),
             'text' => $this->input->post('text'),
@@ -40,17 +40,60 @@ class Blog_model extends CI_Model{
 
     public function updateeBlog($id)
     {
-        $data = [ 
-            'id_admin' => $this->session->userdata('id_adm'),
-            'path_gambar' => 1,
-            'judul' => $this->input->post('judul'),
-            'author' => $this->session->userdata('user'),
-            'text' => $this->input->post('text'),
-            'tanggal_publish' => date('Y-m-d'),
-            'kategori' => $this->input->post('kategori')
-        ];
+        if(!empty($_FILES['path_gambar']['name'])) {
+            $data = [ 
+                'id_admin' => $this->session->userdata('id_adm'),
+                'path_gambar' => $this->updateImage($id),
+                'judul' => $this->input->post('judul'),
+                'author' => $this->session->userdata('user'),
+                'text' => $this->input->post('text'),
+                'tanggal_publish' => date('Y-m-d'),
+                'kategori' => $this->input->post('kategori')
+            ];
+        }
+        else {
+            $data = [
+                'id_admin' => $this->session->userdata('id_adm'),
+                'path_gambar' => $this->input->post('old_image'),
+                'judul' => $this->input->post('judul'),
+                'author' => $this->session->userdata('user'),
+                'text' => $this->input->post('text'),
+                'tanggal_publish' => date('Y-m-d'),
+                'kategori' => $this->input->post('kategori')
+            ];
+        }
+
         $this->db->where('id', $id);
         $this->db->update('blog', $data);
     }
+
+    private function insertImage() 
+    {
+        $config['upload_path'] = './images/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '3000';
+        $config['remove_space'] = true;
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('path_gambar')) {
+            return $this->upload->data('file_name');
+        }
+    } 
+    
+    private function updateImage($id) 
+    {
+        $config['upload_path'] = './images/';
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '3000';
+        $config['remove_space'] = true;
+
+        $data = $this->db->get_where('blog',['id' => $id])->row();
+        unlink("images/".$data->path_gambar);
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('path_gambar')) {
+            return $this->upload->data('file_name');
+        }
+    }  
 
 }
