@@ -11,7 +11,8 @@ class Portofolio_model extends CI_Model{
             "path_gambar" => $this->input->post('image'),
             "judul" => $this->input->post('judul'),
             "text" => $this->input->post('text'),
-            "tanggal_publish" => date('Y-m-d')
+            "tanggal_publish" => date('Y-m-d'),
+            "link" => $this->input->post('link')
         ];
         $this->db->insert('portofolio', $data);
     }
@@ -36,4 +37,5 @@ class Portofolio_model extends CI_Model{
         $this->db->where('id', $id);
         $this->db->update('portofolio', $data);
     }
+
 }

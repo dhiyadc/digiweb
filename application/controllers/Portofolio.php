@@ -20,7 +20,6 @@ class Portofolio extends CI_Controller{
         
         $this->form_validation->set_rules('image', 'Image', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
-        $this->form_validation->set_rules('text', 'Text', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
@@ -51,14 +50,13 @@ class Portofolio extends CI_Controller{
         
         $this->form_validation->set_rules('image', 'Image', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
-        $this->form_validation->set_rules('text', 'Text', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
             $this->load->view('update_portofolio', $data);
             
         }else{
-            $this->Portofolio_model->updatePortofolio();
+            $this->Portofolio_model->updatePortofolio($id);
             $this->session->set_flashdata('flash','di update');
             redirect('Portofolio');
         }

@@ -19,7 +19,10 @@
                     <div class="form-group">
                         <label for="text">Text</label>
                         <textarea class="form-control" name="text" id="text" rows="4"></textarea>
-                        <small class="form-text text-danger" ><?= form_error('text'); ?></small> 
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Link</label>
+                        <textarea class="form-control" name="link" id="link" rows="4"></textarea>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Submit</button>
                 </form>

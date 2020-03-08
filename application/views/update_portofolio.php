@@ -20,7 +20,6 @@
                     <div class="form-group">
                         <label for="text">Text</label>
                         <textarea class="form-control" name="text" id="text" rows="4" value="<?= $portofolio['text']; ?>"></textarea>
-                        <small class="form-text text-danger" ><?= form_error('text'); ?></small>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Update</button>
                 </form>
