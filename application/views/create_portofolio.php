@@ -8,21 +8,21 @@
             <div class="card-body">
                 <form sction="" method="post">
                     <div class="form-group">
-                        <input type="file" name="image" id="image">
+                        <input type="file" name="image" id="image" value="<?= set_value('path_gambar');?>">
                         <small class="form-text text-danger" ><?= form_error('image'); ?></small> 
                     </div>
                     <div class="form-group">
                         <label for="judul">Judul</label>
-                        <input type="text" class="form-control" name="judul" id="judul" placeholder="Judul...">
+                        <input type="text" class="form-control" name="judul" id="judul" value="<?= set_value('judul');?>" placeholder="Judul...">
                         <small class="form-text text-danger" ><?= form_error('judul'); ?></small> 
                     </div>
                     <div class="form-group">
                         <label for="text">Text</label>
-                        <textarea class="form-control" name="text" id="text" rows="4"></textarea>
+                        <textarea class="form-control" name="text" id="text" rows="4" placeholder="Text..."><?= set_value('text');?></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="text">Link</label>
-                        <textarea class="form-control" name="link" id="link" rows="4"></textarea>
+                        <label for="link">Link</label>
+                        <input type="text" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Submit</button>
                 </form>

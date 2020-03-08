@@ -19,7 +19,11 @@
                     </div>
                     <div class="form-group">
                         <label for="text">Text</label>
-                        <textarea class="form-control" name="text" id="text" rows="4" value="<?= $portofolio['text']; ?>"></textarea>
+                        <textarea class="form-control" name="text" id="text" rows="4"><?= $portofolio['text']; ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="text" class="form-control" name="link" id="link" value="<?= $portofolio['link'] ?>" placeholder="link...">
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Update</button>
                 </form>
