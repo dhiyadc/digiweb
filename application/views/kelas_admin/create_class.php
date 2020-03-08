@@ -6,11 +6,6 @@
     <title>Tambah Kelas</title>
 </head>
 <body>
-    <?php if(validation_errors()) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= validation_errors(); ?>
-        </div>
-    <?php endif; ?>
     <?php echo form_open_multipart('kelas_admin/create');?>
         Title: <input type="text" name="judul" required>
         Desc: <input type="text" name="text" required>

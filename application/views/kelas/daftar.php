@@ -6,11 +6,6 @@
     <title>Daftar</title>
 </head>
 <body>
-    <?php if(validation_errors()) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= validation_errors(); ?>
-        </div>
-    <?php endif; ?>
     <form action="<?= base_url() ?>kelas/daftar/<?= $id_class ?>" method="post">
         <table>
             <tr>

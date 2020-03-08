@@ -34,7 +34,7 @@ class Kelas_model extends CI_Model {
         $config['upload_path'] = './images/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
-        $config['overwrite'] = true;
+        $config['remove_space'] = true;
 
         $data = $this->db->get_where('kelas',['id' => $id])->row();
         unlink("images/".$data->path_gambar);
@@ -48,20 +48,12 @@ class Kelas_model extends CI_Model {
     public function createClass()
     {
         $data = [
-            // 'id' => uniqid(),
             'judul' => $this->input->post('judul'),
             'text' => $this->input->post('text'),
             'path_gambar' => $this->insertImage()
         ];
 
         $this->db->insert('kelas',$data);
-
-        // $this->id = abs( crc32( uniqid() ) );
-        // $this->judul = $this->input->post('judul');
-        // $this->text = $this->input->post('text');
-        // $this->path_gambar = $this->insertImage();
-
-        // $this->db->insert('kelas',$this);
     }
 
     public function deleteClass($id)

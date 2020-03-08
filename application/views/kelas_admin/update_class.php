@@ -6,11 +6,6 @@
     <title>Edit Kelas</title>
 </head>
 <body>
-    <?php if(validation_errors()) : ?>
-        <div class="alert alert-danger" role="alert">
-            <?= validation_errors(); ?>
-        </div>
-    <?php endif; ?>
     <?php foreach ($kelas as $val) : ?>
         <?php echo form_open_multipart('kelas_admin/update/' . $val['id']);?>
                 Title: <input type="text" name="judul" value="<?= $val['judul']; ?>" required>
