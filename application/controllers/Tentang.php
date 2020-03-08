@@ -91,4 +91,11 @@ class Tentang extends CI_Controller
             redirect('tentang_user');
         }
     }
+
+    public function removeImage($id)
+    {
+        $this->tentang->removeImage($id);
+        $data['staff'] = $this->tentang->getStaffbyID($id);
+        $this->load->view('tentang/update_tentang', $data);
+    }
 }

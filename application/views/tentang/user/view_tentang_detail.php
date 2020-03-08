@@ -10,6 +10,11 @@
 <body>
     <table>
         <tr>
+            <td>
+                <img src="<?= base_url() . 'assets/tentang/' . $staff['path_gambar'] ?>" alt="" height="200px">
+            </td>
+        </tr>
+        <tr>
             <td>Nama</td>
             <td>:</td>
             <td> <?= $staff['nama'] ?></td>

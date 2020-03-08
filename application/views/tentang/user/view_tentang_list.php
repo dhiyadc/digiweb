@@ -15,6 +15,11 @@
     foreach ($tentang as $value) : ?>
         <table>
             <tr>
+                <td>
+                    <img src="<?= base_url() . 'assets/tentang/' . $value['path_gambar'] ?>" alt="" height="200px">
+                </td>
+            </tr>
+            <tr>
                 <td>Nama</td>
                 <td>:</td>
                 <td> <?= $value['nama'] ?></td>
