@@ -14,6 +14,13 @@ class Portofolio extends CI_Controller{
 
         $this->load->view('portofolio_view' , $data);
     }
+    public function user_porto()
+    {
+        $data['judul']='Portofolio';
+        $data['portofolio']=$this->Portofolio_model->getAllPortofolio();
+
+        $this->load->view('portofolio_user' , $data);
+    }
     public function createPortofolio()
     {
         $data['judul']='Create Portofolio';
