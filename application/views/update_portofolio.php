@@ -27,6 +27,18 @@
                         <label for="link">Link</label>
                         <input type="text" class="form-control" name="link" id="link" value="<?= $portofolio['link'] ?>" placeholder="link...">
                     </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori</label>
+                        <select class="form-control" id="kategori" name="kategori">
+                        <?php foreach($kategori as $kat): ?>
+                            <?php if($kat == $portofolio['kategori']):?>
+                                <option value="<?= $kat; ?>" selected><?= $kat; ?></option>
+                            <?php else: ?>
+                                <option value="<?= $kat; ?>"><?= $kat; ?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Update</button>
                 </form>
             </div>

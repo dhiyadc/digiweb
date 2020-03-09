@@ -20,6 +20,7 @@
       <th scope="col">Judul</th>
       <th scope="col">Text</th>
       <th scope="col">tanggal publish</th>
+      <th scope="col">kategori</th>
       <th scope="col">Link</th>
       <th scope="col">edit</th>
     </tr>
@@ -35,6 +36,7 @@
       <td><?= $value['judul']; ?></td>
       <td><?= $value['text']; ?></td>
       <td><?= $value['tanggal_publish']; ?></td>
+      <td><?= $value['kategori']; ?></td>
       <td><a href="<?= 'http://www.'.$value['link']; ?> "> <?= $value['link'];?> </a></td>
       <td>
         <a href="<?= base_url('Portofolio/ReadPortofolio/'); ?><?= $value['id']; ?>" class="badge badge-success">Read</a> 

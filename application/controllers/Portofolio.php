@@ -24,7 +24,7 @@ class Portofolio extends CI_Controller{
     public function createPortofolio()
     {
         $data['judul']='Create Portofolio';
-        
+        $data['kategori']=['Website', 'Multimedia','Mobile'];
         
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
@@ -54,6 +54,7 @@ class Portofolio extends CI_Controller{
     {
         $data['judul']='Update Portofolio';
         $data['portofolio']= $this->Portofolio_model->getPortobyID($id);
+        $data['kategori']=['Website', 'Mobile', 'Multimedia'];
         
         
         $this->form_validation->set_rules('judul', 'Judul', 'required');

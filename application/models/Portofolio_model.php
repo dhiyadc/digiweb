@@ -16,7 +16,8 @@ class Portofolio_model extends CI_Model{
             "judul" => $this->input->post('judul'),
             "text" => $this->input->post('text'),
             "tanggal_publish" => date('Y-m-d'),
-            "link" => $this->input->post('link')
+            "link" => $this->input->post('link'),
+            "kategori" => $this->input->post('kategori')
         ];
         $this->db->insert('portofolio', $data);
     }
@@ -36,7 +37,8 @@ class Portofolio_model extends CI_Model{
                 "judul" => $this->input->post('judul'),
                 "text" => $this->input->post('text'),
                 "tanggal_publish" => date('Y-m-d'),
-                "link" => $this->input->post('link')
+                "link" => $this->input->post('link'),
+                "kategori" => $this->input->post('kategori')
             ];
         }
         else{
@@ -45,7 +47,8 @@ class Portofolio_model extends CI_Model{
                 "judul" => $this->input->post('judul'),
                 "text" => $this->input->post('text'),
                 "tanggal_publish" => date('Y-m-d'),
-                "link" => $this->input->post('link')
+                "link" => $this->input->post('link'),
+                "kategori" => $this->input->post('kategori')
             ];
         }
 
@@ -63,7 +66,7 @@ class Portofolio_model extends CI_Model{
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('path_gambar')) {
             return $this->upload->data('file_name');
-        }
+        }	
     }
 
     private function updateImage($id) 
