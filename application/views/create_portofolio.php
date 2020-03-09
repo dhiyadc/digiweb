@@ -6,9 +6,9 @@
     <div class="col-md-6">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <form sction="" method="post">
+                <?php echo form_open_multipart('Portofolio/createPortofolio');?>
                     <div class="form-group">
-                        <input type="file" name="image" id="image" value="<?= set_value('path_gambar');?>">
+                        <input type="file" name="path_gambar" id="path_gambar" value="<?= set_value('path_gambar');?>" required>
                         <small class="form-text text-danger" ><?= form_error('image'); ?></small> 
                     </div>
                     <div class="form-group">

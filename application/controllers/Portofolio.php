@@ -25,7 +25,7 @@ class Portofolio extends CI_Controller{
     {
         $data['judul']='Create Portofolio';
         
-        $this->form_validation->set_rules('image', 'Image', 'required');
+        
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)
@@ -55,7 +55,7 @@ class Portofolio extends CI_Controller{
         $data['judul']='Update Portofolio';
         $data['portofolio']= $this->Portofolio_model->getPortobyID($id);
         
-        $this->form_validation->set_rules('image', 'Image', 'required');
+        
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)

@@ -27,7 +27,11 @@
   <?php foreach ($portofolio as $key => $value): ?>
   <tbody>
     <tr>
-      <td><?= $value['path_gambar']; ?></td>
+      <td>
+      <?php if($value['path_gambar'] != 'default.jpg'): ?>
+        <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="200px">
+      <?php endif; ?>
+      </td>
       <td><?= $value['judul']; ?></td>
       <td><?= $value['text']; ?></td>
       <td><?= $value['tanggal_publish']; ?></td>
