@@ -28,6 +28,34 @@
 			</center>
 			<br>
 
+			<hr>
+
+			<form action="<?=base_url('')?>Blog_user/createComment/<?= $blog['id']?>" method="POST">
+				<div class="form-group">
+					<label for="nama_komen" class="float-left">Name : </label>
+					<input type="text" name="nama_komen" class="form-control" id="nama_komen" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+					<label for="isi_komen" class="float-left">Comment : </label>
+					<textarea class="form-control" name="isi_komen" id="isi_komen" rows="3"></textarea>
+				</div>
+				<button type="submit" name="submit" value="submit" class="btn btn-primary float-left">Submit</button>
+			</form>
+			<br>
+			<hr>
+			
+				<div class="alert alert-warning" role="alert">
+					Comments! 
+				</div>
+
+			<?php foreach($comment as $key => $value) : ?>
+				<b><?= $value['name'] ?></b>
+				<div class="alert alert-light" role="alert">
+					<?= $value['comment'] ?>
+				</div>
+			<?php endforeach;?>
+
+			<br>
 			<a href="<?= base_url('Blog_user/read_blog') ?>" class="btn btn-dark">Back</a>
 		</div>
 	</div>

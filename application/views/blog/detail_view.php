@@ -13,7 +13,9 @@
 			<h2 class="card-title"><?= $blog['judul'] ?></h2>
 			<p class="card-text"><?= $blog['author']?></p>
 			<p class="card-text"><?= $blog['kategori']?></p>
-			<p class="card-text"><?= $blog['text']?></p>
+			<div class="container">
+				<p class="card-text"><?= $blog['text']?></p>
+			</div>
 			<p class="card-text"><?= $blog['tanggal_publish']?></p>
 			<a href="<?= base_url('blog/readblog') ?>" class="btn btn-dark">Back</a>
 		</div>

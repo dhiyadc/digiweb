@@ -8,8 +8,8 @@
 <?php echo form_open_multipart('blog/createblog'); ?>
 
 	<?php
-	$author = $this->session->userdata('user');
-?>
+		$author = $this->session->userdata('user');
+	?>
 
 	<div class="container">
 		<div class="form-group">
@@ -33,8 +33,9 @@
 			<label for="text">Text</label>
 			<textarea class="ckeditor" id="ckeditor" name="text" required></textarea>
 		</div>
-		<button type="submit" name="submit" value="submit" class="btn btn-primary">Create</button>
+		<button type="submit" name="submit" value="submit" class="btn btn-primary">Create Blog</button>
 		<a href="<?= base_url('blog') ?>" class="btn btn-warning">Back</a>
+		<hr>
 	</div>
 </form>
 

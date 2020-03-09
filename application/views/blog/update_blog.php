@@ -20,7 +20,8 @@
 	<div class="container">
 		<div class="form-group">
 			<label for="image">Image</label>
-			<input type="file" name="path_gambar" class="form-control" id="image" aria-describedby="emailHelp">
+			<!-- <img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="300px"> -->
+			<input type="file" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp">
 			<input type="hidden" name="old_image" value="<?= $blog['path_gambar'] ?>">
 		</div>
 		<div class="form-group">
@@ -43,6 +44,7 @@
 		</div>
 		<button type="submit" class="btn btn-primary" value="Update">Update</button>
 		<a href="<?=base_url('blog/readblog')?>" class="btn btn-warning">Back</a>
+		<hr>
 	</div>
 </form>
 
