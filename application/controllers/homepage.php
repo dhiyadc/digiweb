@@ -1,7 +1,7 @@
-<?php
+	<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class Homepage extends CI_Controller {
 
 	public function __construct()
     {
@@ -16,15 +16,18 @@ class admin extends CI_Controller {
 		$this->load->library('session');
 
 		// Load database
-		$this->load->model('admin_login_database');
-
-		$this->load->helper('security');
+		$this->load->model('homepage_database');
 	}
 	
 	// Show login page
 	public function index() {
-		$this->load->view('konten');
-    }
+		$data['blog'] = $this->homepage_database->getBlogs();
+		$data['portofolio'] = $this->homepage_database->getPortofolios();
+		$data['tentang'] = $this->homepage_database->getTentang();
+		$this->load->view('home', $data);
+	}
+	
+
     
     
     
