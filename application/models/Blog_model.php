@@ -24,13 +24,22 @@ class Blog_model extends CI_Model{
 
     public function deleteblogg($id)
     {
-        $this->db->where('id', $id);
-        $this->db->delete('blog');
+        $this->db->where('id', $id)->delete('blog');
     }
 
     public function getDetailByID($id)
     {
         return $this->db->get_where('blog', ['id' => $id]) ->row_array();
+    }
+
+    public function getCommentById($id)
+    {
+        return $this->db->where('id_blog', $id)->get('comment')->result_array();
+    }
+
+    public function delete_comment($id)
+    {
+        $this->db->where('id_comment', $id)->delete('comment');
     }
 
     public function GetBlogById($id)
@@ -95,5 +104,6 @@ class Blog_model extends CI_Model{
             return $this->upload->data('file_name');
         }
     }  
+
 
 }

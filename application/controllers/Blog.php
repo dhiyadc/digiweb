@@ -46,12 +46,22 @@ class Blog extends CI_Controller {
         redirect(base_url('blog/readblog'));
     }
 
-    public function detailblog($id) {
+    public function fullDetail($id) {
         if (!($this->session->userdata('user'))) {
             redirect('admin');
         }
         $data['blog'] = $this->Blog_model->getDetailByID($id);
+        $data['comment'] = $this->Blog_model->getCommentById($id);
         $this->load->view('blog/detail_view', $data);
+    }
+
+    public function deleteComment($id, $id_blog) {
+        if (!($this->session->userdata('user'))) {
+            redirect('admin');
+        }
+        $this->Blog_model->delete_comment($id);
+        $this->session->set_flashdata('message', 'Komentar terhapus!');
+        redirect('Blog/fullDetail/' . $id_blog);
     }
 
     public function update($id) {

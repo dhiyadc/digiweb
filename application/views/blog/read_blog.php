@@ -31,9 +31,9 @@
 				<td><?= $value['author'] ?></td>
 				<td><?= $value['kategori'] ?></td>
 				<td>
-				<a class="badge badge-info mr-3" href="<?=base_url()?>blog/detailblog/<?= $value['id'] ?>" >Detail</a>
+				<a class="badge badge-info mr-3" href="<?=base_url()?>blog/fullDetail/<?= $value['id'] ?>" >Detail</a>
 				<a class="badge badge-success mr-3" href="<?=base_url()?>blog/update/<?= $value['id'] ?>" >Update</a>
-				<a class="badge badge-danger" href="<?=base_url()?>blog/deleteblog/<?= $value['id'] ?>" onclick="return confirm('yakin ??');">Delete</a>
+				<a class="badge badge-danger" href="<?=base_url()?>blog/deleteblog/<?= $value['id'] ?>" onclick="return confirm('yakin hapus Blog??');">Delete</a>
 				</td>
 			</tr>
 			<?php endforeach ?>
