@@ -9,7 +9,7 @@
     <?php echo form_open_multipart('kelas_admin/create');?>
         Title: <input type="text" name="judul" required>
         Desc: <input type="text" name="text" required>
-        Image: <input type="file" name="path_gambar" required>
+        Image: <input type="file" name="path_gambar" accept=".png, .jpg, .jpeg" required>
         <input type="submit" name="submit" value="Submit">
     </form>
 </body>

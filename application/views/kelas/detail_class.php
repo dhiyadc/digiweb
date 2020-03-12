@@ -6,6 +6,10 @@
     <title>Detail Kelas</title>
 </head>
 <body>
+<?php if ($this->session->flashdata('flash') ) : ?>
+    <?= $this->session->flashdata('flash'); ?>
+<?php endif; ?>
+<br>
     <?php foreach ($kelas as $val) : ?>
         <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
         <h3><?= $val['judul']; ?></h3>
