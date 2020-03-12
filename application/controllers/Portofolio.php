@@ -12,15 +12,9 @@ class Portofolio extends CI_Controller{
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getAllPortofolio();
 
-        $this->load->view('portofolio_view' , $data);
+        $this->load->view('portofolio/portofolio_view' , $data);
     }
-    public function user_porto()
-    {
-        $data['judul']='Portofolio';
-        $data['portofolio']=$this->Portofolio_model->getAllPortofolio();
 
-        $this->load->view('portofolio_user' , $data);
-    }
     public function createPortofolio()
     {
         $data['judul']='Create Portofolio';
@@ -30,7 +24,7 @@ class Portofolio extends CI_Controller{
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('create_portofolio', $data);
+            $this->load->view('portofolio/create_portofolio', $data);
             
         }else{
             $this->Portofolio_model->createPortofolio();
@@ -48,7 +42,7 @@ class Portofolio extends CI_Controller{
     {
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getPortobyID($id);
-        $this->load->view('read_portofolio', $data);
+        $this->load->view('portofolio/read_portofolio', $data);
     }
     public function UpdatePortofolio($id)
     {
@@ -61,7 +55,7 @@ class Portofolio extends CI_Controller{
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('update_portofolio', $data);
+            $this->load->view('portofolio/update_portofolio', $data);
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);

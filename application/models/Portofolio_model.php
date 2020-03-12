@@ -64,6 +64,7 @@ class Portofolio_model extends CI_Model{
         $config['remove_space'] = true;
 
         $this->load->library('upload', $config);
+        
         if ($this->upload->do_upload('path_gambar')) {
             return $this->upload->data('file_name');
         }	

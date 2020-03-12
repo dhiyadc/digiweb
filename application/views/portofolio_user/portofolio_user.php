@@ -24,7 +24,7 @@
       <td><?= $value['kategori']; ?></td>
       <td><a href="<?= 'http://www.'.$value['link']; ?> "> <?= $value['link'];?> </a></td>
       <td>
-        <a href="<?= base_url('Portofolio/ReadPortofolio/'); ?><?= $value['id']; ?>" class="badge badge-success">Read</a> 
+        <a href="<?= base_url('Portofolio_user/URead_porto/'); ?><?= $value['id']; ?>" class="badge badge-success">Read</a> 
       </td>
     </tr>
   </tbody>

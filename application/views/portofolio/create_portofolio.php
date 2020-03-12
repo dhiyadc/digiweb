@@ -8,7 +8,7 @@
             <div class="card-body">
                 <?php echo form_open_multipart('Portofolio/createPortofolio');?>
                     <div class="form-group">
-                        <input type="file" name="path_gambar" id="path_gambar" value="<?= set_value('path_gambar');?>" required>
+                        <input type="file" name="path_gambar" id="path_gambar" value="<?= set_value('path_gambar');?>"  required accept=".png, .jpg, .jpeg">
                         <small class="form-text text-danger" ><?= form_error('image'); ?></small> 
                     </div>
                     <div class="form-group">
@@ -24,6 +24,7 @@
                         <label for="link">Link</label>
                         <input type="text" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
                     </div>
+
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
                         <select class="form-control" id="kategori" name="kategori">

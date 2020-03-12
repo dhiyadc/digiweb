@@ -9,7 +9,7 @@
              <?php echo form_open_multipart('Portofolio/UpdatePortofolio/' . $portofolio['id']);?>
                     <input type="hidden" name="id" value="<?= $portofolio['id']; ?>">
                     <div class="form-group">
-                        <input type="file" name="path_gambar" id="path_gambar" value="<?= $portofolio['path_gambar']; ?>">
+                        <input type="file" name="path_gambar" accept=".png, .jpg, .jpeg" id="path_gambar" value="<?= $portofolio['path_gambar']; ?>">
                         <img src="<?= base_url().'images/'.$portofolio['path_gambar']?>" alt="" height="200px">
                         <small class="form-text text-danger" ><?= form_error('image'); ?></small>
                         <input type="hidden" name="old_image" value="<?= $portofolio['path_gambar'] ?>">
