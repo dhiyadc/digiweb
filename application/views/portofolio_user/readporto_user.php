@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
-                <img src="<?= base_url().'images/'.$portofolio['path_gambar']?>" alt="" height="200px">
+                <img src="<?= base_url().'assets/images/'.$portofolio['path_gambar']?>" alt="" height="200px">
                 <center>
                     <small id="tanggal" class="form-text text-muted" ><?= $portofolio['tanggal_publish']; ?></small>
                     <small id="kategori" class="form-text text-muted" ><?= $portofolio['kategori']; ?></small>

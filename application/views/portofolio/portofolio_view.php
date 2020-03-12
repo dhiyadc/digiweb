@@ -30,7 +30,7 @@
     <tr>
       <td>
       <?php if($value['path_gambar'] != 'default.jpg'): ?>
-        <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="200px">
+        <img src="<?= base_url().'assets/images/'.$value['path_gambar']?>" alt="" height="200px">
       <?php endif; ?>
       </td>
       <td><?= $value['judul']; ?></td>

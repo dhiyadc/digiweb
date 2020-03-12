@@ -17,7 +17,7 @@
   <tbody>
     <tr>
       <td>
-        <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="200px">
+        <img src="<?= base_url().'assets/images/'.$value['path_gambar']?>" alt="" height="200px">
       </td>
       <td><?= $value['judul']; ?></td>
       <td><?= $value['text']; ?></td>

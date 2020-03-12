@@ -10,7 +10,7 @@
                     <input type="hidden" name="id" value="<?= $portofolio['id']; ?>">
                     <div class="form-group">
                         <input type="file" name="path_gambar" accept=".png, .jpg, .jpeg" id="path_gambar" value="<?= $portofolio['path_gambar']; ?>">
-                        <img src="<?= base_url().'images/'.$portofolio['path_gambar']?>" alt="" height="200px">
+                        <img src="<?= base_url().'assets/images/'.$portofolio['path_gambar']?>" alt="" height="200px">
                         <small class="form-text text-danger" ><?= form_error('image'); ?></small>
                         <input type="hidden" name="old_image" value="<?= $portofolio['path_gambar'] ?>">
                     </div>
