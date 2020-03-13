@@ -7,7 +7,7 @@ class Blog extends CI_Controller{
     public function index(){
         //Controller Home
         $this->load->view('layout/header');
-        $this->load->view('blog');
+        $this->load->view('singleblog');
         $this->load->view('layout/footer');
     }
 
