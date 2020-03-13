@@ -60,6 +60,23 @@
     <?php endforeach; ?>
     </table>
 
+    <h1>Kelas</h1>
+    <table>
+    <?php foreach($kelas as $val) : ?>
+    
+        <tr>
+            <td><img src="<?= base_url().'images/'.$val['path_gambar'] ?>" alt="<?= $val['path_gambar'] ?>" height="400px"></td>
+        </tr>
+        <tr>
+            <td>Judul: <?= $val['judul'] ?></td>
+        </tr>
+        <tr>
+            <td>Text: <?= $val['text'] ?></td>
+        </tr>
+
+    <?php endforeach; ?>
+    </table>
+
     
 
 </body>

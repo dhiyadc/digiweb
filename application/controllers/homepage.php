@@ -24,6 +24,7 @@ class Homepage extends CI_Controller {
 		$data['blog'] = $this->homepage_database->getBlogs();
 		$data['portofolio'] = $this->homepage_database->getPortofolios();
 		$data['tentang'] = $this->homepage_database->getTentang();
+		$data['kelas'] = $this->homepage_database->getKelas();
 		$this->load->view('home', $data);
 	}
 	
