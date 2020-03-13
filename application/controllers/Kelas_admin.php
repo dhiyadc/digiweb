@@ -10,12 +10,16 @@ class Kelas_admin extends CI_Controller {
     public function index()
     {
         $data['kelas'] = $this->Kelas_model->getAllClass();
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/index',$data);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function create_form()
     {
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/create_class');
+        $this->load->view('_partials/footer_admin');
     }
 
     public function create() {   
