@@ -232,7 +232,7 @@
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="img/gallery_img1.png" alt="">
+								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img1.png" alt="">
 								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img1.png">
 										<i class="lnr lnr-eye"></i>
@@ -243,7 +243,7 @@
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="img/gallery_img2.png" alt="">
+								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img2.png" alt="">
 								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
 										<i class="lnr lnr-eye"></i>
@@ -254,7 +254,7 @@
 						<div class="col-lg-12">
 							<div class="single-gallery">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="img/gallery_img3.png" alt="">
+								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img3.png" alt="">
 								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img3.png">
 										<i class="lnr lnr-eye"></i>
@@ -267,7 +267,7 @@
 				<div class="col-lg-4 hidden-md hidden-sm">
 					<div class="single-gallery">
 						<div class="overlay"></div>
-						<img class="img-fluid w-100" src="img/gallery_img4.png" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img4.png" alt="">
 						<div class="content">
 							<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img4.png">
 								<i class="lnr lnr-eye"></i>
