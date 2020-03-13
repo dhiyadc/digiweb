@@ -11,7 +11,14 @@
         <h3><?= $val['judul']; ?></h3>
         <p><?= $val['text']; ?></p>
         <br><br>
-        <a href="<?= base_url(); ?>kelas_admin/delete/<?= $val['id']; ?>">Delete</a>
+        <script type="text/javascript" language="JavaScript">
+                    function konfirmasi() {
+                        tanya = confirm("Anda Yakin Akan Menghapus Data ?");
+                        if (tanya == true) return true;
+                        else return false;
+                    }
+                </script>
+                <td><a onclick="return konfirmasi()" href="<?= base_url(); ?>kelas_admin/delete/<?= $val['id']; ?>"><button type="button"> Delete </button></a>
         <a href="<?= base_url(); ?>kelas_admin/update_form/<?= $val['id']; ?>">Update</a>
     <?php endforeach; ?>
     <a href="<?= base_url(); ?>kelas_admin">Back</a>

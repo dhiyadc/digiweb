@@ -12,10 +12,10 @@ class Tentang extends CI_Controller
     public function index()
     {
 
-        // $data = [
-        //     'logged_in' => 'zora'
-        // ];
-        // $this->session->set_userdata($data);
+         $data = [
+             'logged_in' => 'zora'
+         ];
+         $this->session->set_userdata($data);
         $this->viewTentang();
     }
 
