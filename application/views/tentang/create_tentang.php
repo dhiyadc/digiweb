@@ -37,7 +37,7 @@
             <td>
                 <h5>:</h5>
             </td>
-            <td><input type="text" maxlength="150" size="40" name="quote" id="quote" value="<?= set_value('quotes') ?>"></td>
+            <td><input type="text" maxlength="150" size="40" name="quote" id="quote" value="<?= set_value('quote') ?>"></td>
             <td><?= form_error('quote') ?></td>
         </tr>
         <tr>
@@ -71,10 +71,10 @@
             <td><?= form_error('twitter') ?></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td><button type="submit">SUBMIT</button></td>
-            <td><a href="<?= base_url('tentang') ?>"><button>BACK</button></a></td>
+            <td>Apakah anda ingin menampilkan data di homepage?</td>
+            <td>:</td>
+            <td><input type="radio" name="prioritas" value="1">Iya</td>
+            <td><input type="radio" name="prioritas" value="0">Tidak</td>
         </tr>
         <tr>
             <td>
@@ -83,8 +83,13 @@
             <td>
                 <h5>:</h5>
             </td>
-            <td><input type="file" name="path_gambar" id="path_gambar"></td>
-            </td>
+            <td><input type="file" name="path_gambar" id="path_gambar" accept=".jpg, .png, .jpeg" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><button type="submit">SUBMIT</button></td>
+            <td><a href="<?= base_url('tentang') ?>"><button>BACK</button></a></td>
         </tr>
     </table>
     </form>

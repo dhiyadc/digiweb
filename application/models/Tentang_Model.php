@@ -20,6 +20,7 @@ class Tentang_Model extends CI_Model
             'path_ig' => $this->input->post('ig'),
             'path_fb' => $this->input->post('fb'),
             'path_twit' => $this->input->post('twitter'),
+            'prioritas' => $this->input->post('prioritas'),
             'path_gambar' => $this->insertImage()
         ];
         $this->db->insert('tentang', $data);
@@ -42,6 +43,7 @@ class Tentang_Model extends CI_Model
                 'path_ig' => $this->input->post('ig'),
                 'path_fb' => $this->input->post('fb'),
                 'path_twit' => $this->input->post('twitter'),
+                'prioritas' => $this->input->post('prioritas'),
                 'path_gambar' => $this->updateImage($id)
             ];
         } else {
@@ -52,6 +54,7 @@ class Tentang_Model extends CI_Model
                 'path_ig' => $this->input->post('ig'),
                 'path_fb' => $this->input->post('fb'),
                 'path_twit' => $this->input->post('twitter'),
+                'prioritas' => $this->input->post('prioritas'),
                 'path_gambar' => $this->input->post('old_image')
             ];
         }
@@ -100,5 +103,10 @@ class Tentang_Model extends CI_Model
 
         $this->db->where('id', $id);
         $this->db->update('tentang', $data);
+    }
+
+    public function getStaffByJabatanInti()
+    {
+        return $this->db->get_where('tentang', ['prioritas' => "1"])->result_array();
     }
 }

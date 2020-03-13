@@ -12,10 +12,10 @@ class Tentang extends CI_Controller
     public function index()
     {
 
-        $data = [
-            'logged_in' => 'zora'
-        ];
-        $this->session->set_userdata($data);
+        // $data = [
+        //     'logged_in' => 'zora'
+        // ];
+        // $this->session->set_userdata($data);
         $this->viewTentang();
     }
 
@@ -28,7 +28,6 @@ class Tentang extends CI_Controller
             $this->form_validation->set_rules('ig', 'Instagram', 'trim');
             $this->form_validation->set_rules('fb', 'Facebook', 'trim');
             $this->form_validation->set_rules('twitter', 'Twitter', 'trim');
-
             if ($this->form_validation->run() == false) {
                 $this->load->view('tentang/create_tentang');
             } else {
@@ -102,5 +101,16 @@ class Tentang extends CI_Controller
         $this->tentang->removeImage($id);
         $data['staff'] = $this->tentang->getStaffbyID($id);
         $this->load->view('tentang/update_tentang', $data);
+    }
+
+    public function viewTentangByJabatanInti()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['staff'] = $this->tentang->getStaffByJabatanInti();
+            $this->load->view('tentang/view_tentang_inti', $data);
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('tentang_user');
+        }
     }
 }

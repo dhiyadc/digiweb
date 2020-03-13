@@ -24,4 +24,10 @@ class Tentang_user extends CI_Controller
         $data['staff'] = $this->tentang->getStaffbyID($id);
         $this->load->view('tentang/user/view_tentang_detail', $data);
     }
+
+    public function viewTentangByJabatanInti()
+    {
+        $data['staff'] = $this->tentang->getStaffByJabatanInti();
+        $this->load->view('tentang/view_tentang_inti', $data);
+    }
 }

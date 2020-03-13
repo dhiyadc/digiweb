@@ -71,15 +71,21 @@
             <td><?= form_error('twitter') ?></td>
         </tr>
         <tr>
+            <td>Apakah anda ingin menampilkan data di homepage?</td>
+            <td>:</td>
+            <td><input type="radio" name="prioritas" value="1" <?= ($staff['prioritas'] == "1") ? "checked" : '' ?>>Iya</td>
+            <td><input type="radio" name="prioritas" value="0" <?= ($staff['prioritas'] == "0") ? "checked" : '' ?>>Tidak</td>
+        </tr>
+        <tr>
             <td>
                 <h5>Image</h5>
             </td>
             <td>
                 <h5>:</h5>
             </td>
-            <td><input type="file" name="path_gambar" id="path_gambar"></td>
+            <td><input type="file" name="path_gambar" id="path_gambar" accept=".jpg, .png, .jpeg"></td>
             <td><img src="<?= base_url() . 'assets/tentang/' . $staff['path_gambar'] ?>" alt="" height="200px"></td>
-            <input type="hidden" name="old_image" value="<?= $staff['path_gambar'] ?>">
+            <input type="hidden" name="old_image" required value="<?= $staff['path_gambar'] ?>">
             <td><a href="<?= base_url("tentang/removeImage/") . $staff['id'] ?>" style="text-decoration: none"><button type="button">REMOVE IMAGE</td>
             </td>
         </tr>
