@@ -30,6 +30,17 @@
         <tr>
             <td><?= $val['text'] ?></td>
         </tr>
+        <tr>
+            <td><?= $val['kategori'] ?></td>
+        </tr>
+        <tr>
+            <td><a href="<?= 'http://www.'.$val['link']; ?> "> <?= $val['link'];?> </a></td>
+        </tr>
+        <tr>
+        <td>
+        <a href="<?= base_url('Portofolio_user/URead_porto/'); ?><?= $val['id']; ?>" class="badge badge-success">Read</a> 
+      </td>
+        </tr>
 
     <?php endforeach; ?>
     </table>
