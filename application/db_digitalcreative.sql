@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2020 at 07:26 AM
+-- Generation Time: Mar 13, 2020 at 04:41 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -58,7 +58,7 @@ CREATE TABLE `blog` (
   `author` varchar(150) NOT NULL,
   `text` text NOT NULL,
   `tanggal_publish` date NOT NULL,
-  `kategori` text NOT NULL
+  `kategori` enum('Kecerdasan Buatan','Desain','Network','Business') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,11 +66,14 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `kategori`) VALUES
-(72, 2, 'g2.png', 'gmaill', 'cindy', '<p>ijwendejiw<span style=\"font-size:26px\"><span style=\"font-family:Comic Sans MS,cursive\">ncfoewfcmoewkmcfoeklcw<img alt=\"smiley\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/regular_smile.png\" style=\"height:23px; width:23px\" title=\"smiley\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></span></span></p>\r\n', '2020-03-12', 'Kecerdasan Buatan'),
+(72, 1, 'g2.png', 'gmaill', 'admin', '<p>ijwendejiw<span style=\"font-size:26px\"><span style=\"font-family:Comic Sans MS,cursive\">ncfoewfcmoewkmcfoeklcw<img alt=\"smiley\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/regular_smile.png\" style=\"height:23px; width:23px\" title=\"smiley\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></span></span></p>\r\n', '2020-03-13', 'Kecerdasan Buatan'),
 (73, 2, 'f2.png', 'facebook', 'cindy', '<p>ojn<span style=\"color:#1abc9c\">wdcld</span>wkc<img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></p>\r\n', '2020-03-12', 'Network'),
-(75, 2, 'g.jpg', 'cerita1', 'cindy', '<p>jidincjnjcnjdcv</p>\r\n', '2020-03-12', 'Kecerdasan Buatan'),
+(75, 1, 'g.jpg', 'cerita1', 'admin', '<p>jidincjnjcnjdcv</p>\r\n', '2020-03-13', 'Business'),
 (76, 1, 'logo3.png', 'cobaaa', 'admin', '<p>onekvjkren vjern vjn erklwmfk</p>\r\n', '2020-03-13', 'Network'),
-(77, 2, 'f3.png', 'test1', 'cindy', '<p>jkrfnjkncfjkierv</p>\r\n', '2020-03-13', 'Network');
+(83, 1, 'LOGO_UNIVERSITAS_SRIWIJAYA5.png', 'ojnklD', 'admin', '<p>OJNLDCPKW;C</p>\r\n', '2020-03-13', 'Desain'),
+(84, 1, 'LOGO_UNIVERSITAS_SRIWIJAYA6.png', 'cobaaaaa', 'admin', '<p>jnlojcwcede</p>\r\n', '2020-03-13', 'Network'),
+(86, 1, 'bubble10.jpg', 'yyyyyyyy', 'admin', '<p><span style=\"color:#e74c3c\"><u><em><strong>yyyyy<img alt=\"blush\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/embarrassed_smile.png\" style=\"height:23px; width:23px\" title=\"blush\" /></strong></em></u></span></p>\r\n', '2020-03-13', 'Business'),
+(87, 1, 'algoritma_bubble21.jpg', 'bubble', 'admin', '<p>ljndjWNKDJNJCFEIF<img alt=\"cool\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/shades_smile.png\" style=\"height:23px; width:23px\" title=\"cool\" /></p>\r\n', '2020-03-13', 'Desain');
 
 -- --------------------------------------------------------
 
@@ -92,7 +95,8 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` (`id_comment`, `id_blog`, `name`, `comment`) VALUES
 (2, 72, 'cindy', 'hihihi '),
 (3, 73, 'cdyy', 'cdyy2400@gmail.com'),
-(5, 72, 'kamu', 'em waw ');
+(5, 72, 'kamu', 'em waw '),
+(7, 86, 'cdyy', 'yey hihi');
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,9 @@ CREATE TABLE `portofolio` (
   `path_gambar` varchar(150) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `text` text NOT NULL,
-  `tanggal_publish` date NOT NULL
+  `tanggal_publish` date NOT NULL,
+  `link` text NOT NULL,
+  `kategori` enum('Website','Multimedia','Mobile') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -157,11 +163,14 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`id_blog`, `sangat_puas`, `puas`, `cukup`, `kurang_puas`, `tidak_puas`) VALUES
-(72, 5, 3, 3, 3, 8),
-(73, 5, 3, 2, 3, 5),
-(75, 2, 5, 4, 3, 0),
+(72, 7, 4, 4, 4, 9),
+(73, 6, 3, 2, 3, 5),
+(75, 3, 5, 4, 3, 0),
 (76, 0, 2, 0, 1, 0),
-(77, 0, 0, 2, 0, 0);
+(83, 1, 0, 0, 0, 0),
+(84, 0, 0, 1, 0, 0),
+(86, 0, 0, 0, 1, 0),
+(87, 0, 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -177,7 +186,8 @@ CREATE TABLE `tentang` (
   `quote` text NOT NULL,
   `path_ig` varchar(150) NOT NULL,
   `path_fb` text NOT NULL,
-  `path_twit` varchar(150) NOT NULL
+  `path_twit` varchar(150) NOT NULL,
+  `prioritas` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -249,13 +259,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `daftar`
