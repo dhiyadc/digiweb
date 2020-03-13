@@ -26,6 +26,13 @@ public function getTentang(){
     return $this->db->get()->result_array();
 }
 
+public function getKelas(){
+    $this->db->select('*');
+    $this->db->from('kelas');
+    $this->db->order_by('id', 'DESC');
+    $this->db->limit(3);
+    return $this->db->get()->result_array();
+}
 
 }
 
