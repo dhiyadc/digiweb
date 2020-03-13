@@ -39,6 +39,9 @@
     <?php foreach($tentang as $val) : ?>
     
         <tr>
+            <td><img src="<?= base_url() . 'images/' . $val['path_gambar'] ?>" alt="<?= $val['path_gambar'] ?>" height="200px"></td>
+        </tr>
+        <tr>
             <td>Nama: <?= $val['nama'] ?></td>
         </tr>
         <tr>
@@ -47,15 +50,27 @@
         <tr>
             <td>Quote: <?= $val['quote'] ?></td>
         </tr>
-        <tr>
-            <td> <a href="http://www.instagram.com/<?= $val['path_ig'] ?>">Instagram</a></td>
-        </tr>
-        <tr>
-            <td> <a href="http://www.facebook.com/<?= $val['path_fb'] ?>">Facebook</a></td>
-        </tr>
-        <tr>
-            <td> <a href="http://www.twitter.com/<?= $val['path_twit'] ?>">Twitter</a></td>
-        </tr>
+        <?php if ($val['path_ig'] != null) : ?>
+                <tr>
+                    <td>Instagram</td>
+                    <td>:</td>
+                    <td><a href="<?= 'http://www.instagram.com/' . $val['path_ig'] ?>" target="_blank" style="text-decoration: none"><?= $val['path_ig'] ?></a></td>
+                </tr>
+            <?php endif; ?>
+            <?php if ($val['path_fb'] != null) : ?>
+                <tr>
+                    <td>Facebook</td>
+                    <td>:</td>
+                    <td><a href="<?= 'http://www.facebook.com/' . $val['path_fb'] ?>" target="_blank"><?= $val['path_fb'] ?></a></td>
+                </tr>
+            <?php endif ?>
+            <?php if ($val['path_twit'] != null) : ?>
+                <tr>
+                    <td>Twitter</td>
+                    <td>:</td>
+                    <td><a href="<?= 'http://www.twitter.com/' . $val['path_twit'] ?>" target="_blank"><?= $val['path_twit'] ?></a></td>
+                </tr>
+            <?php endif ?>
 
     <?php endforeach; ?>
     </table>
