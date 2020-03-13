@@ -45,9 +45,7 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Pages</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="price.html">Pricing</a>
-									<li class="nav-item"><a class="nav-link" href="games.html">Games</a>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a>
+									<li class="nav-item"><a class="nav-link" href="price.html">Layanan Kami</a>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -61,7 +59,7 @@
 							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="#" class="primary_btn">join us</a></li>
+							<li class="nav-item"><a href="#" class="primary_btn">Join Us</a></li>
 						</ul>
 					</div>
 				</div>
