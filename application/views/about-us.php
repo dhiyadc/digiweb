@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
 </head>
-<body>
+<body class="about_page">
     <!--================Home Banner Area =================-->
 		<section class="banner_area">
 			<div class="banner_inner d-flex align-items-center">
@@ -58,10 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
+			
 		</section>
 		<!--================End About Us Area =================-->
 	
@@ -164,21 +161,21 @@
 								especially in the workplace. That’s why it’s crucial that as women.</p>
 						</div>
 					</div>
-					<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5 mb-4">
+					<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5 ">
 						<div class="frequent_item">
 							<h3>We Believe that Interior beauty Lasts Long</h3>
 							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
 								especially in the workplace. That’s why it’s crucial that as women.</p>
 						</div>
 					</div>
-					<div class="col-lg-5 col-md-5 mb-4">
+					<div class="col-lg-5 col-md-5 ">
 						<div class="frequent_item last-child">
 							<h3>We Believe that Interior beauty Lasts Long</h3>
 							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
 								especially in the workplace. That’s why it’s crucial that as women.</p>
 						</div>
 					</div>
-					<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5 mb-4">
+					<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5 ">
 						<div class="frequent_item last-child">
 							<h3>We Believe that Interior beauty Lasts Long</h3>
 							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
