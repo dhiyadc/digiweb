@@ -1,5 +1,6 @@
 <?php $this->load->view('partials/header') ;?>
 
+<hr>
 <?php if($this->session->flashdata('message')) :?>
 <div class="alert alert-danger" role="alert">
 	<?= $this->session->flashdata('message') ?>
@@ -25,29 +26,19 @@
 				<table>
 					<tr>
 						<td>
-							<div id="emoticon1">
-								<p id="e1" align="center"><?= $ratesp['sangat_puas']; ?></p>
-							</div>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingsp/<?= $blog['id']; ?>"><p class="emoticon1">sp</p></a>
 						</td>
 						<td>
-							<div id="emoticon2">
-								<p id="e2" align="center"><?= $ratep['puas']; ?></p>
-							</div>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingp/<?= $blog['id']; ?>"><p class="emoticon2">p</p></a>
 						</td>
 						<td>
-							<div id="emoticon3">
-								<p id="e3" align="center"><?= $ratec['cukup']; ?></p>
-							</div>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingc/<?= $blog['id']; ?>"><p class="emoticon3">c</p></a>
 						</td>
 						<td>
-							<div id="emoticon4">
-								<p id="e4" align="center"><?= $ratekp['kurang_puas']; ?></p>
-							</div>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingkp/<?= $blog['id']; ?>"><p class="emoticon4">kp</p></a>
 						</td>
 						<td>
-							<div id="emoticon5">
-								<p id="e5" align="center"><?= $ratetp['tidak_puas']; ?></p>
-							</div>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingtp/<?= $blog['id']; ?>"><p class="emoticon5">tp</p></a>
 						</td>
 					</tr>
 				</table>
@@ -88,103 +79,6 @@
 	</div>
 </div>
 
-<script>
 
-	$(function( $ ) {
-
-		$('#emoticon1').click(function () {
-			let value = parseInt($('#e1').html())
-			value += 1
-			$('#e1').html(value);
-		}).bind("click", function(){
-			alert("Terima Kasih telah memberikan penilaian");
-			$.ajax({
-				method: "POST",
-				url: "<?= base_url(''); ?>Blog_user/save_ratingsp/<?= $blog['id'] ?>",
-				data: {
-					point: parseInt($('#e1').html())
-				},
-				success: function (result) {
-					console.log(result);
-				}
-			});
-
-		});
-
-		$('#emoticon2').click(function () {
-			let value = parseInt($('#e2').html())
-			value += 1
-			$('#e2').html(value);
-		}).bind("click", function(){
-			alert("Terima Kasih telah memberikan penilaian");
-			$.ajax({
-				method: "POST",
-				url: "<?= base_url(''); ?>Blog_user/save_ratingp/<?= $blog['id'] ?>",
-				data: {
-					point: parseInt($('#e2').html())
-				},
-				success: function (result) {
-					console.log(result);
-				}
-			});
-		});
-
-		$('#emoticon3').click(function () {
-			let value = parseInt($('#e3').html())
-			value += 1
-			$('#e3').html(value);
-		}).bind("click", function(){
-			alert("Terima Kasih telah memberikan penilaian");
-			$.ajax({
-				method: "POST",
-				url: "<?= base_url(''); ?>Blog_user/save_ratingc/<?= $blog['id'] ?>",
-				data: {
-					point: parseInt($('#e3').html())
-				},
-				success: function (result) {
-					console.log(result);
-				}
-			});
-		});
-
-		$('#emoticon4').click(function () {
-			let value = parseInt($('#e4').html())
-			value += 1
-			$('#e4').html(value);
-		}).bind("click", function(){
-			alert("Terima Kasih telah memberikan penilaian");
-			$.ajax({
-				method: "POST",
-				url: "<?= base_url(''); ?>Blog_user/save_ratingkp/<?= $blog['id'] ?>",
-				data: {
-					point: parseInt($('#e4').html())
-				},
-				success: function (result) {
-					console.log(result);
-				}
-			});
-		});
-
-		$('#emoticon5').click(function () {
-			let value = parseInt($('#e5').html())
-			value += 1
-			$('#e5').html(value);
-		}).bind("click", function(){
-			alert("Terima Kasih telah memberikan penilaian");
-			$.ajax({
-				method: "POST",
-				url: "<?= base_url(''); ?>Blog_user/save_ratingtp/<?= $blog['id'] ?>",
-				data: {
-					point: parseInt($('#e5').html())
-				},
-				success: function (result) {
-					console.log(result);
-				}
-			});
-		});
-
-	});
-
-</script>
 
 <?php $this->load->view('partials/footer') ;?>

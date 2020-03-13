@@ -30,12 +30,11 @@
 		</div>
 		<div class="form-group">
 			<label for="Kategori">Kategori</label>
-			<select class="form-control" id="kategori" name="kategori" >
-				<option value="Kecerdasan Buatan">Kecerdasan Buatan</option>
-				<option value="Desain">Desain</option>
-				<option value="Network">Network</option>
-				<option value="Business">Business</option>
-			</select>
+			<br>
+			<input type="radio" name="kategori" value="Kecerdasan buatan" <?= ($blog['kategori'] == "Kecerdasan buatan") ? "checked" : '' ?>> Kecerdasan buatan <br>
+			<input type="radio" name="kategori" value="Desain" <?= ($blog['kategori'] == "Desain") ? "checked" : '' ?>> Desain <br>
+			<input type="radio" name="kategori" value="Network" <?= ($blog['kategori'] == "Network") ? "checked" : '' ?>> Network <br>
+			<input type="radio" name="kategori" value="Business" <?= ($blog['kategori'] == "Business") ? "checked" : '' ?>> Business
 		</div>
 		<div class="form-group">
 			<label for="text">Text</label>

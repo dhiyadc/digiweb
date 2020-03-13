@@ -26,79 +26,82 @@ class Blog_user extends CI_Controller {
     }
 
     public function detailAndComment($id){
+
         $data['blog'] = $this->Blog_user_model->getDetailBlog($id);
         $data['comment'] =  $this->Blog_user_model->getCommentbyBlogId($id);
-        $data['ratesp'] = $this->Blog_user_model->getRatingBlogSP($id);
-        $data['ratep'] = $this->Blog_user_model->getRatingBlogP($id);
-        $data['ratec'] = $this->Blog_user_model->getRatingBlogC($id);
-        $data['ratekp'] = $this->Blog_user_model->getRatingBlogKP($id);
-        $data['ratetp'] = $this->Blog_user_model->getRatingBlogTP($id);
 
         $this->load->view('blog_user/detail_blog' , $data);
     }
 
     public function save_ratingsp($id){
 
-        $data =  $this->input->post('point');
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'Sudah di like');
+            redirect(('Blog_user/detailAndComment/') . $id);
+        }
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBlogSP($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatingsp($id, $plus);
+            redirect(('Blog_user/detailAndComment/') . $id);
+        }
 
-        if($this->Blog_user_model->getRatingBlogSP($id) == null){
-            $this->Blog_user_model->insertRatingsp($id, $data);
-            redirect(('Blog_user/detailAndComment/') . $id);
-        }
-        else {
-            $this->Blog_user_model->updateRatingsp($id, $data);
-            redirect(('Blog_user/detailAndComment/') . $id);
-        }
     }
     public function save_ratingp($id){
 
-        $data =  $this->input->post('point');
-
-        if($this->Blog_user_model->getRatingBlogP($id) == null){
-            $this->Blog_user_model->insertRatingp($id, $data);
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'sudah di like');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
-        else {
-            $this->Blog_user_model->updateRatingp($id, $data);
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBlogP($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatingp($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
     public function save_ratingc($id){
 
-        $data =  $this->input->post('point');
-
-        if($this->Blog_user_model->getRatingBlogC($id) == null){
-            $this->Blog_user_model->insertRatingc($id, $data);
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'sudah di like');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
-        else {
-            $this->Blog_user_model->updateRatingc($id, $data);
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBlogC($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatingc($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
     public function save_ratingkp($id){
 
-        $data =  $this->input->post('point');
-
-        if($this->Blog_user_model->getRatingBlogKP($id) == null){
-            $this->Blog_user_model->insertRatingkp($id, $data);
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'sudah di like');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
-        else {
-            $this->Blog_user_model->updateRatingkp($id, $data);
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBlogKP($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatingkp($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
+
     public function save_ratingtp($id){
 
-        $data =  $this->input->post('point');
-
-        if($this->Blog_user_model->getRatingBlogTP($id) == null){
-            $this->Blog_user_model->insertRatingtp($id, $data);
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'sudah di like');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
-        else {
-            $this->Blog_user_model->updateRatingtp($id, $data);
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBlogTP($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatingtp($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }

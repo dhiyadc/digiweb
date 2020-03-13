@@ -1,34 +1,39 @@
-#emoticon1{
+.emoticon1{
     background-color: red;
     border-radius: 100%;
     height: 50px;
     width: 50px;
+    text-align: center;
 }
 
-#emoticon2{
+.emoticon2{
     background-color:#FF0066;
     border-radius: 100%;
     height: 50px;
     width: 50px;
+    text-align: center;
 }
 
-#emoticon3{
+.emoticon3{
     background-color:#FF3366;
     border-radius: 100%;
     height: 50px;
     width: 50px;
+    text-align: center;
 }
 
-#emoticon4{
+.emoticon4{
     background-color:#FF6699;
     border-radius: 100%;
     height: 50px;
     width: 50px;
+    text-align: center;
 }
 
-#emoticon5{
+.emoticon5{
     background-color: pink;
     border-radius: 100%;
     height: 50px;
     width: 50px;
+    text-align: center;
 }

@@ -57,46 +57,6 @@ class Blog_user_model extends CI_model{
             return $this->db->select('tidak_puas')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function insertRatingsp($id, $data){
-        $dataa = [
-            'id_blog' => $id,
-            'sangat_puas' => $data,
-        ];
-        $this->db->insert('rating', $dataa);
-    }
-
-    public function insertRatingp($id, $data){
-        $dataa = [
-            'id_blog' => $id,
-            'puas' => $data,
-        ];
-        $this->db->insert('rating', $dataa);
-    }
-
-    public function insertRatingc($id, $data){
-        $dataa = [
-            'id_blog' => $id,
-            'cukup' => $data,
-        ];
-        $this->db->insert('rating', $dataa);
-    }
-
-    public function insertRatingkp($id, $data){
-        $dataa = [
-            'id_blog' => $id,
-            'kurang_puas' => $data,
-        ];
-        $this->db->insert('rating', $dataa);
-    }
-
-    public function insertRatingtp($id, $data){
-        $dataa = [
-            'id_blog' => $id,
-            'tidak_puas' => $data
-        ];
-        $this->db->insert('rating', $dataa);
-    }
-
     public function updateRatingsp($id, $total){
         $dataa = [
             'sangat_puas' => $total,
@@ -106,34 +66,33 @@ class Blog_user_model extends CI_model{
 
     public function updateRatingp($id, $total){
         $dataa = [
-            'puas' => $total,
+            'puas' => $total+1 ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
     public function updateRatingc($id, $total){
         $dataa = [
-            'cukup' => $total,
+            'cukup' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
     public function updateRatingkp($id, $total){
         $dataa = [
-            'kurang_puas' => $total,
+            'kurang_puas' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
     public function updateRatingtp($id, $total){
         $dataa = [
-            'tidak_puas' => $total
+            'tidak_puas' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-    
-    
+   
     
 }
 

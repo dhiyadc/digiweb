@@ -21,13 +21,12 @@
 			<input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" required>
 		</div>
 		<div class="form-group">
-			<label for="Kategori">Kategori</label>
-			<select class="form-control" id="kategori" name="kategori">
-				<option value="Kecerdasan Buatan">Kecerdasan Buatan</option>
-				<option value="Desain">Desain</option>
-				<option value="Network">Network</option>
-				<option value="Business">Business</option>
-			</select>
+			<label for="Kategori">Kategori : </label>
+			<br>
+			<input type="radio" name="kategori" value="Kecerdasan buatan"> Kecerdasan buatan <br>
+			<input type="radio" name="kategori" value="Desain"> Desain <br>
+			<input type="radio" name="kategori" value="Network"> Network <br>
+			<input type="radio" name="kategori" value="Business"> Business
 		</div>
 		<div class="form-group">
 			<label for="text">Text</label>
