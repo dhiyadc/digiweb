@@ -490,8 +490,7 @@
 						</div>
 						<div class="blog_content">
 							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+							<p><?= substr($val['text'], 0, 162); ?>...</p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
