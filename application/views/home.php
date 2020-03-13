@@ -14,7 +14,13 @@
             <td><?= $val['judul'] ?></td>
         </tr>
         <tr>
-            <td><?= $val['text'] ?></td>
+            <td><?= $val['author'] ?></td>
+        </tr>
+        <tr>
+            <td><?= $val['tanggal_publish'] ?></td>
+        </tr>
+        <tr>
+            <td><a href="<?=base_url()?>Blog_user/detailAndComment/<?= $val['id'] ?>" class="btn btn-info">Detail Blog</a></td>
         </tr>
 
     <?php endforeach; ?>
