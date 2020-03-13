@@ -84,7 +84,7 @@
                 <h5>:</h5>
             </td>
             <td><input type="file" name="path_gambar" id="path_gambar" accept=".jpg, .png, .jpeg"></td>
-            <td><img src="<?= base_url() . 'assets/tentang/' . $staff['path_gambar'] ?>" alt="" height="200px"></td>
+            <td><img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" alt="" height="200px"></td>
             <input type="hidden" name="old_image" required value="<?= $staff['path_gambar'] ?>">
             <td><a href="<?= base_url("tentang/removeImage/") . $staff['id'] ?>" style="text-decoration: none"><button type="button">REMOVE IMAGE</td>
             </td>

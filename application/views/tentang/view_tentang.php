@@ -14,7 +14,7 @@
         <table>
             <tr>
                 <td>
-                    <img src="<?= base_url() . 'assets/tentang/' . $value['path_gambar'] ?>" alt="" height="200px">
+                    <img src="<?= base_url() . 'images/' . $value['path_gambar'] ?>" alt="" height="200px">
                 </td>
             </tr>
             <tr>

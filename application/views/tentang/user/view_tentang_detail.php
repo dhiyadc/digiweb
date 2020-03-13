@@ -11,7 +11,7 @@
     <table>
         <tr>
             <td>
-                <img src="<?= base_url() . 'assets/tentang/' . $staff['path_gambar'] ?>" alt="" height="200px">
+                <img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" alt="" height="200px">
             </td>
         </tr>
         <tr>

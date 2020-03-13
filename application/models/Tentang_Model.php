@@ -29,7 +29,7 @@ class Tentang_Model extends CI_Model
     public function deleteTentang($id)
     {
         $temp = $this->db->get_where('tentang', ['id' => $id])->row();
-        unlink("assets/tentang/" . $temp->path_gambar);
+        unlink("images/" . $temp->path_gambar);
         $this->db->delete('tentang', ['id' => $id]);
     }
 
@@ -64,7 +64,7 @@ class Tentang_Model extends CI_Model
 
     private function insertImage()
     {
-        $config['upload_path'] = './assets/tentang/';
+        $config['upload_path'] = './images/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['remove_space'] = true;
@@ -78,13 +78,13 @@ class Tentang_Model extends CI_Model
     private function updateImage($id)
     {
 
-        $config['upload_path'] = './assets/tentang/';
+        $config['upload_path'] = './images/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['remove_space'] = true;
 
         $data = $this->db->get_where('tentang', ['id' => $id])->row();
-        unlink("assets/tentang/" . $data->path_gambar);
+        unlink("images/" . $data->path_gambar);
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload('path_gambar')) {
@@ -96,7 +96,7 @@ class Tentang_Model extends CI_Model
     {
 
         $temp = $this->db->get_where('tentang', ['id' => $id])->row();
-        unlink("assets/tentang/" . $temp->path_gambar);
+        unlink("images/" . $temp->path_gambar);
         $data = [
             'path_gambar' => null
         ];
