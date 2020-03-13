@@ -66,7 +66,7 @@ class Blog_user_model extends CI_model{
 
     public function updateRatingp($id, $total){
         $dataa = [
-            'puas' => $total+1 ,
+            'puas' => $total,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
