@@ -18,7 +18,15 @@
 			</div>
 			<p class="card-text"><?= $blog['tanggal_publish']?></p>
 			<hr>
-
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item list-group-item-dark">Rating</li>
+				<li class="list-group-item">Sangat Puas : <?= $ratesp['sangat_puas']; ?></li>
+				<li class="list-group-item">Puas : <?= $ratep['puas']; ?></li>
+				<li class="list-group-item">Cukup : <?= $ratec['cukup']; ?></li>
+				<li class="list-group-item">Kurang Puas : <?= $ratekp['kurang_puas']; ?></li>
+				<li class="list-group-item">Tidak Puas : <?= $ratetp['tidak_puas']; ?></li>
+			</ul>
+			<hr>
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
 					<h2 class="display-6 ">Komentar Pada Blog ini</h2>

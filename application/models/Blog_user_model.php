@@ -20,10 +20,121 @@ class Blog_user_model extends CI_model{
         $this->db->insert('comment', $data);
     }
 
-    public function getCommentbyBlogId($id){
-       return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
+    public function createrating($id)
+    {
+        $data = [
+            'id_blog' => $id,
+            'sangat_puas' => 0,
+            'puas' => 0,
+            'cukup' => 0,
+            'kurang_puas' => 0,
+            'tidak_puas' => 0
+        ];
+        $this->db->insert('rating', $data);
     }
 
+    public function getCommentbyBlogId($id){
+            return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
+    }
+
+    public function getRatingBlogSP($id){
+            return $this->db->select('sangat_puas')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function getRatingBlogP($id){
+            return $this->db->select('puas')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function getRatingBlogC($id){
+            return $this->db->select('cukup')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function getRatingBlogKP($id){
+            return $this->db->select('kurang_puas')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function getRatingBlogTP($id){
+            return $this->db->select('tidak_puas')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function insertRatingsp($id, $data){
+        $dataa = [
+            'id_blog' => $id,
+            'sangat_puas' => $data,
+        ];
+        $this->db->insert('rating', $dataa);
+    }
+
+    public function insertRatingp($id, $data){
+        $dataa = [
+            'id_blog' => $id,
+            'puas' => $data,
+        ];
+        $this->db->insert('rating', $dataa);
+    }
+
+    public function insertRatingc($id, $data){
+        $dataa = [
+            'id_blog' => $id,
+            'cukup' => $data,
+        ];
+        $this->db->insert('rating', $dataa);
+    }
+
+    public function insertRatingkp($id, $data){
+        $dataa = [
+            'id_blog' => $id,
+            'kurang_puas' => $data,
+        ];
+        $this->db->insert('rating', $dataa);
+    }
+
+    public function insertRatingtp($id, $data){
+        $dataa = [
+            'id_blog' => $id,
+            'tidak_puas' => $data
+        ];
+        $this->db->insert('rating', $dataa);
+    }
+
+    public function updateRatingsp($id, $total){
+        $dataa = [
+            'sangat_puas' => $total,
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    public function updateRatingp($id, $total){
+        $dataa = [
+            'puas' => $total,
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    public function updateRatingc($id, $total){
+        $dataa = [
+            'cukup' => $total,
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    public function updateRatingkp($id, $total){
+        $dataa = [
+            'kurang_puas' => $total,
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    public function updateRatingtp($id, $total){
+        $dataa = [
+            'tidak_puas' => $total
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    
+    
+    
 }
 
 ?>

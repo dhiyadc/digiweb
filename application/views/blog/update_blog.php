@@ -9,7 +9,6 @@
 	}
 ?>
 
-<!-- <form action="<?=base_url("blog/updateblog/$blog[id]")?>" method="post"> -->
 <?php echo form_open_multipart('blog/updateblog/' . $blog['id']); ?>
 
 	<?php
@@ -19,7 +18,7 @@
 	<div class="container">
 		<div class="form-group">
 			<label for="image">Image</label>
-			<input type="file" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp">
+			<input type="file" accept=".jpg, .png, .jpeg" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp">
 			<hr>
 			<p>Gambar Sebelumnya :</p><img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="125px" >
 			<input type="hidden" name="old_image" value="<?= $blog['path_gambar'] ?>">

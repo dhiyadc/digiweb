@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="form-group">
 			<label for="image">Image</label>
-			<input type="file" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp" required>
+			<input type="file" accept=".jpg, .png, .jpeg" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp" required>
 		</div>
 		<div class="form-group">
 			<label for="judul">Judul</label>

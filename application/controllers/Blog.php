@@ -5,6 +5,7 @@ class Blog extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Blog_model');
+        $this->load->model('Blog_user_model');
     }
 
     public function index() {
@@ -26,6 +27,9 @@ class Blog extends CI_Controller {
             redirect('admin');
         }
         $this->Blog_model->createblog();
+
+        $id = $this->Blog_model->getLastId();
+        $this->Blog_user_model->createRating(implode($id));
         redirect('blog/readblog');
     }
 
@@ -52,6 +56,12 @@ class Blog extends CI_Controller {
         }
         $data['blog'] = $this->Blog_model->getDetailByID($id);
         $data['comment'] = $this->Blog_model->getCommentById($id);
+        $data['ratesp'] = $this->Blog_model->getRatingBlogSP($id);
+        $data['ratep'] = $this->Blog_model->getRatingBlogP($id);
+        $data['ratec'] = $this->Blog_model->getRatingBlogC($id);
+        $data['ratekp'] = $this->Blog_model->getRatingBlogKP($id);
+        $data['ratetp'] = $this->Blog_model->getRatingBlogTP($id);
+        
         $this->load->view('blog/detail_view', $data);
     }
 
