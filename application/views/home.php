@@ -8,7 +8,7 @@
 	<link rel="icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
 	<title>Digital Creative</title>
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/linericon/style.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.css">
@@ -28,7 +28,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="home_left_img">
-							<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/banner/home-left.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/banner/home-left.png" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -73,7 +73,7 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="about_us_image_box justify-content-center">
-						<img class="img-fluid w-100" src=""<?php echo base_url(); ?>assets/img/about_img.jpg" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/about_img.jpg" alt="">
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,7 @@
 			<div class="row text-center">
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src=""<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="">
 						<div class="upcoming_title">
 							<h3><a href="games.html">Kursus Pemograman</a></h3>
 						</div>
@@ -103,7 +103,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src=""<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="">
 						<div class="upcoming_title">
 							<h3><a href="games.html">Aplikasi Mobile</a></h3>
 						</div>
@@ -111,7 +111,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src=""<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="">
 						<div class="upcoming_title">
 							<h3><a href="games.html">Website</a></h3>
 						</div>
@@ -119,7 +119,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src=""<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="">
 						<div class="upcoming_title">
 							<h3><a href="games.html">Konsultasi IT</a></h3>
 						</div>
@@ -158,7 +158,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -176,7 +176,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -194,7 +194,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -234,7 +234,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="img/gallery_img1.png" alt="">
 								<div class="content">
-									<a class="pop-up-image" href=""<?php echo base_url(); ?>assets/img/gallery_img1.png">
+									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img1.png">
 										<i class="lnr lnr-eye"></i>
 									</a>
 								</div>
@@ -245,7 +245,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="img/gallery_img2.png" alt="">
 								<div class="content">
-									<a class="pop-up-image" href=""<?php echo base_url(); ?>assets/img/gallery_img2.png">
+									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
 										<i class="lnr lnr-eye"></i>
 									</a>
 								</div>
@@ -256,7 +256,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="img/gallery_img3.png" alt="">
 								<div class="content">
-									<a class="pop-up-image" href=""<?php echo base_url(); ?>assets/img/gallery_img3.png">
+									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img3.png">
 										<i class="lnr lnr-eye"></i>
 									</a>
 								</div>
@@ -269,7 +269,7 @@
 						<div class="overlay"></div>
 						<img class="img-fluid w-100" src="img/gallery_img4.png" alt="">
 						<div class="content">
-							<a class="pop-up-image" href=""<?php echo base_url(); ?>assets/img/gallery_img4.png">
+							<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img4.png">
 								<i class="lnr lnr-eye"></i>
 							</a>
 						</div>
@@ -286,7 +286,7 @@
 		<div class="container">
 			<div class="testi_slider owl-carousel">
 				<div class="testi_item">
-					<img src=""<?php echo base_url(); ?>assets/img/quote.png" alt="">
+					<img src="<?php echo base_url(); ?>assets/img/quote.png" alt="">
 					<h4>Fanny Spencer</h4>
 					<ul class="list">
 						<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -304,7 +304,7 @@
 					</div>
 				</div>
 				<div class="testi_item">
-					<img src=""<?php echo base_url(); ?>assets/img/quote.png" alt="">
+					<img src="<?php echo base_url(); ?>assets/img/quote.png" alt="">
 					<h4>Fanny Spencer</h4>
 					<ul class="list">
 						<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -322,7 +322,7 @@
 					</div>
 				</div>
 				<div class="testi_item">
-					<img src=""<?php echo base_url(); ?>assets/img/quote.png" alt="">
+					<img src="<?php echo base_url(); ?>assets/img/quote.png" alt="">
 					<h4>Fanny Spencer</h4>
 					<ul class="list">
 						<li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -485,7 +485,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/blog_img1.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img1.png" alt="">
 						</div>
 						<div class="blog_content">
 							<a class="title" href="blog.html">Portable Fashion for women</a>
@@ -502,7 +502,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/blog_img2.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img2.png" alt="">
 						</div>
 						<div class="blog_content">
 							<a class="title" href="blog.html">Portable Fashion for women</a>
@@ -519,7 +519,7 @@
 				<div class="col-lg-4 hidden-md">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src=""<?php echo base_url(); ?>assets/img/blog_img3.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img3.png" alt="">
 						</div>
 						<div class="blog_content">
 							<a class="title" href="blog.html">Portable Fashion for women</a>
