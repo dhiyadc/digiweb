@@ -111,6 +111,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
+
 						<div class="upcoming_title">
 							<h3><a href="games.html">Kursus Pemograman</a></h3>
 						</div>
@@ -134,6 +135,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
+
 						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Konsultasi IT</a></h3>
@@ -174,6 +176,7 @@
 							<div class="col-lg-6">
 								<div class="chart_img">
 									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
+
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -236,50 +239,34 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title">
-						<h2>Screens Gallery</h2>
-						<h1>Screens Gallery</h1>
+						<h2>Portofolio</h2>
+						<h1>Portofolio</h1>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-12">
 					<div class="row">
+					<?php foreach($portofolio as $val) : ?>
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img1.png" alt="">
 								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img1.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="single-gallery">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img2.png" alt="">
-								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
+										<i><?= substr($val['judul'], 0, 10); ?></i>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12">
-							<div class="single-gallery">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img3.png" alt="">
-								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img3.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
-								</div>
-							</div>
-						</div>
+					<?php endforeach; ?>
+						
+						
+						
+						
+
 					</div>
 				</div>
-				<div class="col-lg-4 hidden-md hidden-sm">
+				<!-- <div class="col-lg-4 hidden-md hidden-sm">
 					<div class="single-gallery">
 						<div class="overlay"></div>
 						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img4.png" alt="">
@@ -289,7 +276,7 @@
 							</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -495,57 +482,39 @@
 				</div>
 			</div>
 			<div class="row">
+				<?php foreach($blogcomment as $val) : ?>
+				<a class="title" href="#">
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img1.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/<?= $val['path_gambar']; ?>" alt="">
 						</div>
+						
 						<div class="blog_content">
-							<a class="title" href="blog.html">Portable Fashion for women</a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
+							<?= substr($val['text'], 0, 150); ?>...
 							<div class="date">
-								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>13th Dec </a>
-								<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
+								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
+								<?php
+									foreach($rating as $value) :
+										if($value['id_blog'] == $val['id']){
+										echo $count = (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/10;
+										}
+									endforeach;
+								?>
+								</a>
+								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+								<?= $val['comment'] ?></a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="blog_items">
-						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img2.png" alt="">
-						</div>
-						<div class="blog_content">
-							<a class="title" href="blog.html">Portable Fashion for women</a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-							<div class="date">
-								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>13th Dec </a>
-								<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 hidden-md">
-					<div class="blog_items">
-						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img3.png" alt="">
-						</div>
-						<div class="blog_content">
-							<a class="title" href="blog.html">Portable Fashion for women</a>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-							<div class="date">
-								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>13th Dec </a>
-								<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				</a>
+				<?php endforeach; ?>
+
+
+
 			</div>
 		</div>
 	</section>
