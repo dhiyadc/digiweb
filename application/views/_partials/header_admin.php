@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/zabuto_calendar.css">
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/lib/gritter/css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
-  <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">
+  <link href="<?=base_url()?>assets/css/style_admin.css" rel="stylesheet">
   <link href="<?=base_url()?>assets/css/style-responsive.css" rel="stylesheet">
   <script src="<?=base_url()?>assets/lib/chart-master/Chart.js"></script>
 
