@@ -34,6 +34,10 @@ public function getKelas(){
     return $this->db->get()->result_array();
 }
 
+public function getRatingbyID($id){
+    return $this->db->where(['id_blog' => $id])->get('rating')->result_array(); 
+}
+
 }
 
 ?>
