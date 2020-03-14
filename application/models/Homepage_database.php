@@ -34,7 +34,7 @@ public function getPortofolios(){
     $this->db->select('*');
     $this->db->from('portofolio');
     $this->db->order_by('id', 'DESC');
-    $this->db->limit(3);
+    $this->db->limit(2);
     return $this->db->get()->result_array();
 }
 

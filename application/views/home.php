@@ -221,50 +221,35 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title">
-						<h2>Screens Gallery</h2>
-						<h1>Screens Gallery</h1>
+						<h2>Portofolio</h2>
+						<h1>Portofolio</h1>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-12">
 					<div class="row">
+					<?php foreach($portofolio as $val) : ?>
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img1.png" alt="">
 								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img1.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<div class="single-gallery">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img2.png" alt="">
-								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
+										<i><?= substr($val['judul'], 0, 10); ?></i>
+									
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12">
-							<div class="single-gallery">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img3.png" alt="">
-								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img3.png">
-										<i class="lnr lnr-eye"></i>
-									</a>
-								</div>
-							</div>
-						</div>
+					<?php endforeach; ?>
+						
+						
+						
+						
+
 					</div>
 				</div>
-				<div class="col-lg-4 hidden-md hidden-sm">
+				<!-- <div class="col-lg-4 hidden-md hidden-sm">
 					<div class="single-gallery">
 						<div class="overlay"></div>
 						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img4.png" alt="">
@@ -274,7 +259,7 @@
 							</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
