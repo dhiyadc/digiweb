@@ -38,7 +38,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item active"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>/AboutUs">About</a></li>
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>/Galerry">Gallery</a>
 							<li class="nav-item submenu dropdown">
@@ -56,7 +56,7 @@
 									<!--<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>/Blog/blogdetail">Blog Details</a></li> -->
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>/Contact">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="#" class="primary_btn">Join Us</a></li>
