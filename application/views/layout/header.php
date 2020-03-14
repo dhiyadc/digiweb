@@ -40,10 +40,10 @@
 						<ul class="nav navbar-nav menu_nav justify-content-center">
 							<li class="nav-item active"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>AboutUs">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Galerry">Portofolio</a>
+							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Galerry">Portofolio </a>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
+								 aria-expanded="false">Layanan Kami</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Page">Layanan Kami</a>
 								</ul>
