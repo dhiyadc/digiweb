@@ -3,6 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+
 -- Generation Time: Mar 14, 2020 at 06:03 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
@@ -59,11 +60,13 @@ CREATE TABLE `blog` (
   `text` text NOT NULL,
   `tanggal_publish` date NOT NULL,
   `kategori` enum('Kecerdasan Buatan','Desain','Network','Business') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
 --
+
 
 INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `kategori`) VALUES
 (90, 1, 'bubble12.jpg', 'cobaygdebkjb', 'admin', '<p>jeknfck</p>\r\n', '2020-03-14', 'Desain'),
@@ -72,6 +75,7 @@ INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, 
 (93, 2, 'bubble14.jpg', 'okmk', 'cindy', '<p>ljnljk</p>\r\n', '2020-03-14', 'Network'),
 (94, 2, 'LOGO_UNIVERSITAS_SRIWIJAYA8.png', 'jALODWIE', 'cindy', '<p>LKEWDNKLFEW</p>\r\n', '2020-03-14', 'Business'),
 (95, 2, 'bubble15.jpg', 'S', 'cindy', '<p>S</p>\r\n', '2020-03-14', 'Network');
+
 
 -- --------------------------------------------------------
 
@@ -91,10 +95,12 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id_comment`, `id_blog`, `name`, `comment`) VALUES
+
 (10, 90, 'cdyy', 'ya'),
 (11, 95, 'Anonim', 'jnkk'),
 (12, 95, 'cindy', 'jfert'),
 (13, 90, 'Anonim', 'kjnk');
+
 
 -- --------------------------------------------------------
 
@@ -136,14 +142,17 @@ CREATE TABLE `portofolio` (
   `path_gambar` varchar(150) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `text` text NOT NULL,
+
   `tanggal_publish` date NOT NULL,
   `link` text NOT NULL,
   `kategori` enum('Website','Multimedia','Mobile') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
+
 -- Table structure for table `rating`
 --
 
@@ -183,8 +192,10 @@ CREATE TABLE `tentang` (
   `quote` text NOT NULL,
   `path_ig` varchar(150) NOT NULL,
   `path_fb` text NOT NULL,
+
   `path_twit` varchar(150) NOT NULL,
   `prioritas` enum('0','1') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -231,6 +242,7 @@ ALTER TABLE `portofolio`
   ADD PRIMARY KEY (`id`);
 
 --
+
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
@@ -256,12 +268,14 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
+
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
+
   MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
@@ -302,6 +316,7 @@ ALTER TABLE `blog`
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
+
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -310,11 +325,13 @@ ALTER TABLE `comment`
 ALTER TABLE `daftar`
   ADD CONSTRAINT `FK_idKelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+
 --
 -- Constraints for table `rating`
 --
 ALTER TABLE `rating`
   ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
