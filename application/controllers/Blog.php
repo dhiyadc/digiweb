@@ -13,7 +13,7 @@ class Blog extends CI_Controller{
 
     public function blogdetail(){
         $this->load->view('layout/header');
-        $this->load->view('blogdetail');
+        $this->load->view('blog');
         $this->load->view('layout/footer');
     }
     
