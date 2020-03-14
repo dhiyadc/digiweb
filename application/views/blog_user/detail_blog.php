@@ -26,19 +26,22 @@
 				<table>
 					<tr>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingsp/<?= $blog['id']; ?>"><p class="emoticon1">sp</p></a>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingli/<?= $blog['id']; ?>"><p class="emoticon1">like</p></a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingp/<?= $blog['id']; ?>"><p class="emoticon2">p</p></a>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratinglo/<?= $blog['id']; ?>"><p class="emoticon2">love</p></a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingc/<?= $blog['id']; ?>"><p class="emoticon3">c</p></a>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingh/<?= $blog['id']; ?>"><p class="emoticon3">haha</p></a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingkp/<?= $blog['id']; ?>"><p class="emoticon4">kp</p></a>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratingw/<?= $blog['id']; ?>"><p class="emoticon4">wow</p></a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingtp/<?= $blog['id']; ?>"><p class="emoticon5">tp</p></a>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratings/<?= $blog['id']; ?>"><p class="emoticon5">sad</p></a>
+						</td>
+						<td>
+								<a href="<?= base_url(''); ?>Blog_user/save_ratinga/<?= $blog['id']; ?>"><p class="emoticon6">angry</p></a>
 						</td>
 					</tr>
 				</table>
@@ -55,7 +58,7 @@
 				</div>
 				<div class="form-group">
 					<label for="isi_komen" class="float-left">Comment : </label>
-					<textarea class="form-control" name="isi_komen" id="isi_komen" rows="3"></textarea>
+					<textarea class="form-control" name="isi_komen" id="isi_komen" rows="3" required></textarea>
 				</div>
 				<button type="submit" name="submit" value="submit" class="btn btn-primary float-left">Submit</button>
 			</form>

@@ -21,7 +21,15 @@ class Blog_user extends CI_Controller {
     }
 
     public function createComment($id){
-        $this->Blog_user_model->create_comment($id);
+        $name = $this->input->post('nama_komen');
+        if(($this->input->post('nama_komen')) == null){
+            $name = "Anonim";
+        }
+        else {
+            $name = $this->input->post('nama_komen');
+        }
+
+        $this->Blog_user_model->create_comment($id, $name);
         redirect(('Blog_user/detailAndComment/') . $id);
     }
 
@@ -33,7 +41,7 @@ class Blog_user extends CI_Controller {
         $this->load->view('blog_user/detail_blog' , $data);
     }
 
-    public function save_ratingsp($id){
+    public function save_ratingli($id){
 
         if(isset($_COOKIE[$id])){
             $this->session->set_flashdata('message', 'Sudah di like');
@@ -41,14 +49,14 @@ class Blog_user extends CI_Controller {
         }
         else{
             set_cookie($id, 'liked', time() + 3153600000);
-            $data =  $this->Blog_user_model->getRatingBlogSP($id);
+            $data =  $this->Blog_user_model->getRatingBlogli($id);
             $plus = implode($data)+1;
-            $this->Blog_user_model->updateRatingsp($id, $plus);
+            $this->Blog_user_model->updateRatingli($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
 
     }
-    public function save_ratingp($id){
+    public function save_ratinglo($id){
 
         if(isset($_COOKIE[$id])){
             $this->session->set_flashdata('message', 'sudah di like');
@@ -56,13 +64,13 @@ class Blog_user extends CI_Controller {
         }
         else{
             set_cookie($id, 'liked', time() + 3153600000);
-            $data =  $this->Blog_user_model->getRatingBlogP($id);
+            $data =  $this->Blog_user_model->getRatingBloglo($id);
             $plus = implode($data)+1;
-            $this->Blog_user_model->updateRatingp($id, $plus);
+            $this->Blog_user_model->updateRatinglo($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
-    public function save_ratingc($id){
+    public function save_ratingh($id){
 
         if(isset($_COOKIE[$id])){
             $this->session->set_flashdata('message', 'sudah di like');
@@ -70,13 +78,13 @@ class Blog_user extends CI_Controller {
         }
         else{
             set_cookie($id, 'liked', time() + 3153600000);
-            $data =  $this->Blog_user_model->getRatingBlogC($id);
+            $data =  $this->Blog_user_model->getRatingBlogh($id);
             $plus = implode($data)+1;
-            $this->Blog_user_model->updateRatingc($id, $plus);
+            $this->Blog_user_model->updateRatingh($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
-    public function save_ratingkp($id){
+    public function save_ratingw($id){
 
         if(isset($_COOKIE[$id])){
             $this->session->set_flashdata('message', 'sudah di like');
@@ -84,14 +92,14 @@ class Blog_user extends CI_Controller {
         }
         else{
             set_cookie($id, 'liked', time() + 3153600000);
-            $data =  $this->Blog_user_model->getRatingBlogKP($id);
+            $data =  $this->Blog_user_model->getRatingBlogw($id);
             $plus = implode($data)+1;
-            $this->Blog_user_model->updateRatingkp($id, $plus);
+            $this->Blog_user_model->updateRatingw($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
 
-    public function save_ratingtp($id){
+    public function save_ratings($id){
 
         if(isset($_COOKIE[$id])){
             $this->session->set_flashdata('message', 'sudah di like');
@@ -99,9 +107,24 @@ class Blog_user extends CI_Controller {
         }
         else{
             set_cookie($id, 'liked', time() + 3153600000);
-            $data =  $this->Blog_user_model->getRatingBlogTP($id);
+            $data =  $this->Blog_user_model->getRatingBlogs($id);
             $plus = implode($data)+1;
-            $this->Blog_user_model->updateRatingtp($id, $plus);
+            $this->Blog_user_model->updateRatings($id, $plus);
+            redirect(('Blog_user/detailAndComment/') . $id);
+        }
+    }
+
+    public function save_ratinga($id){
+
+        if(isset($_COOKIE[$id])){
+            $this->session->set_flashdata('message', 'sudah di like');
+            redirect(('Blog_user/detailAndComment/') . $id);
+        }
+        else{
+            set_cookie($id, 'liked', time() + 3153600000);
+            $data =  $this->Blog_user_model->getRatingBloga($id);
+            $plus = implode($data)+1;
+            $this->Blog_user_model->updateRatinga($id, $plus);
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }

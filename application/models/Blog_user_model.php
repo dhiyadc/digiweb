@@ -10,11 +10,11 @@ class Blog_user_model extends CI_model{
         return $this->db->get_where('blog', ['id' => $id])->row_array();
     }
 
-    public function create_comment($id){
+    public function create_comment($id , $name){
         $data = [ 
             'id_comment' => NULL,
             'id_blog' => $id,
-            'name' => $this->input->post('nama_komen'),
+            'name' => $name,
             'comment' => $this->input->post('isi_komen')
         ];
         $this->db->insert('comment', $data);
@@ -24,11 +24,12 @@ class Blog_user_model extends CI_model{
     {
         $data = [
             'id_blog' => $id,
-            'sangat_puas' => 0,
-            'puas' => 0,
-            'cukup' => 0,
-            'kurang_puas' => 0,
-            'tidak_puas' => 0
+            'like' => 0,
+            'love' => 0,
+            'haha' => 0,
+            'wow' => 0,
+            'sad' => 0,
+            'angry' => 0
         ];
         $this->db->insert('rating', $data);
     }
@@ -37,57 +38,68 @@ class Blog_user_model extends CI_model{
             return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
     }
 
-    public function getRatingBlogSP($id){
-            return $this->db->select('sangat_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogli($id){
+            return $this->db->select('like')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogP($id){
-            return $this->db->select('puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBloglo($id){
+            return $this->db->select('love')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogC($id){
-            return $this->db->select('cukup')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogh($id){
+            return $this->db->select('haha')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogKP($id){
-            return $this->db->select('kurang_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogw($id){
+            return $this->db->select('wow')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogTP($id){
-            return $this->db->select('tidak_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogs($id){
+            return $this->db->select('sad')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function updateRatingsp($id, $total){
+    public function getRatingBloga($id){
+            return $this->db->select('angry')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function updateRatingli($id, $total){
         $dataa = [
-            'sangat_puas' => $total,
+            'like' => $total,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-    public function updateRatingp($id, $total){
+    public function updateRatinglo($id, $total){
         $dataa = [
-            'puas' => $total,
+            'love' => $total,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-    public function updateRatingc($id, $total){
+    public function updateRatingh($id, $total){
         $dataa = [
-            'cukup' => $total ,
+            'haha' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-    public function updateRatingkp($id, $total){
+    public function updateRatingw($id, $total){
         $dataa = [
-            'kurang_puas' => $total ,
+            'wow' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-    public function updateRatingtp($id, $total){
+    public function updateRatings($id, $total){
         $dataa = [
-            'tidak_puas' => $total ,
+            'sad' => $total ,
+        ];
+        $this->db->where('id_blog' , $id)->update('rating', $dataa);
+    }
+
+    public function updateRatinga($id, $total){
+        $dataa = [
+            'angry' => $total ,
         ];
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }

@@ -31,6 +31,14 @@
 }
 
 .emoticon5{
+    background-color:#FF99FF;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon6{
     background-color: pink;
     border-radius: 100%;
     height: 50px;

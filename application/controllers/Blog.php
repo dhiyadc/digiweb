@@ -9,23 +9,14 @@ class Blog extends CI_Controller {
     }
 
     public function index() {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $this->load->view('blog/option');
     }
 
     public function createview() {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $this->load->view('blog/create_blog');
     }
 
     public function createblog() {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $this->Blog_model->createblog();
 
         $id = $this->Blog_model->getLastId();
@@ -34,66 +25,43 @@ class Blog extends CI_Controller {
     }
 
     public function readblog() {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $blogg = $this->Blog_model->getAllBlog();
         $this->load->view('blog/read_blog', ['blog' => $blogg]);
     }
 
     public function deleteblog($id) {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $this->Blog_model->deleteblogg($id);
         $this->session->set_flashdata('message', 'Blog Terhapus !');
         redirect(base_url('blog/readblog'));
     }
 
     public function fullDetail($id) {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $data['blog'] = $this->Blog_model->getDetailByID($id);
         $data['comment'] = $this->Blog_model->getCommentById($id);
-        $data['ratesp'] = $this->Blog_model->getRatingBlogSP($id);
-        $data['ratep'] = $this->Blog_model->getRatingBlogP($id);
-        $data['ratec'] = $this->Blog_model->getRatingBlogC($id);
-        $data['ratekp'] = $this->Blog_model->getRatingBlogKP($id);
-        $data['ratetp'] = $this->Blog_model->getRatingBlogTP($id);
+        $data['rateli'] = $this->Blog_model->getRatingBlogli($id);
+        $data['ratelo'] = $this->Blog_model->getRatingBloglo($id);
+        $data['rateh'] = $this->Blog_model->getRatingBlogh($id);
+        $data['ratew'] = $this->Blog_model->getRatingBlogw($id);
+        $data['rates'] = $this->Blog_model->getRatingBlogs($id);
+        $data['ratea'] = $this->Blog_model->getRatingBloga($id);
         
         $this->load->view('blog/detail_view', $data);
     }
 
     public function deleteComment($id, $id_blog) {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $this->Blog_model->delete_comment($id);
         $this->session->set_flashdata('message', 'Komentar terhapus!');
         redirect('Blog/fullDetail/' . $id_blog);
     }
 
     public function update($id) {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
         $ublog = $this->Blog_model->GetBlogById($id);
         $this->load->view('blog/update_blog', ['blog' => $ublog]);
     }
 
     public function updateblog($id) {
-        if (!($this->session->userdata('user'))) {
-            redirect('admin');
-        }
-     
         $this->Blog_model->updateeBlog($id);
         redirect(base_url('blog/readblog'));
-    }
-
-    public function logout() {
-        $this->session->sess_destroy();
-        redirect('admin');
     }
 
 }

@@ -44,24 +44,28 @@ class Blog_model extends CI_Model {
         return $this->db->where(['id' => $id])->get('blog')->result_array()[0];
     }
 
-    public function getRatingBlogSP($id) {
-        return $this->db->select('sangat_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogli($id) {
+        return $this->db->select('like')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogP($id) {
-        return $this->db->select('puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBloglo($id) {
+        return $this->db->select('love')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogC($id) {
-        return $this->db->select('cukup')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogh($id) {
+        return $this->db->select('haha')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogKP($id) {
-        return $this->db->select('kurang_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogw($id) {
+        return $this->db->select('wow')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBlogTP($id) {
-        return $this->db->select('tidak_puas')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlogs($id) {
+        return $this->db->select('sad')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
+    public function getRatingBloga($id) {
+        return $this->db->select('angry')->where('id_blog', $id)->get('rating')->row_array();
     }
 
     public function updateeBlog($id) {

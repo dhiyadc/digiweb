@@ -20,11 +20,12 @@
 			<hr>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item list-group-item-dark">Rating</li>
-				<li class="list-group-item">Sangat Puas : <?= $ratesp['sangat_puas']; ?></li>
-				<li class="list-group-item">Puas : <?= $ratep['puas']; ?></li>
-				<li class="list-group-item">Cukup : <?= $ratec['cukup']; ?></li>
-				<li class="list-group-item">Kurang Puas : <?= $ratekp['kurang_puas']; ?></li>
-				<li class="list-group-item">Tidak Puas : <?= $ratetp['tidak_puas']; ?></li>
+				<li class="list-group-item">Like : <?= $rateli['like']; ?></li>
+				<li class="list-group-item">Love : <?= $ratelo['love']; ?></li>
+				<li class="list-group-item">Haha : <?= $rateh['haha']; ?></li>
+				<li class="list-group-item">Wow : <?= $ratew['wow']; ?></li>
+				<li class="list-group-item">Sad : <?= $rates['sad']; ?></li>
+				<li class="list-group-item">Angry : <?= $ratea['angry']; ?></li>
 			</ul>
 			<hr>
 			<div class="jumbotron jumbotron-fluid">
