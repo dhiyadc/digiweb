@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
 	<!-- css -->
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
   
-	<title></title>
+	<title><?= $judul ?></title>
 
 	
 

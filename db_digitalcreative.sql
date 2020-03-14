@@ -3,7 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2020 at 08:18 AM
+
+-- Generation Time: Mar 14, 2020 at 06:03 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -58,23 +59,23 @@ CREATE TABLE `blog` (
   `author` varchar(150) NOT NULL,
   `text` text NOT NULL,
   `tanggal_publish` date NOT NULL,
-  `kategori` text NOT NULL,
-  `like` int(11) NOT NULL
+  `kategori` enum('Kecerdasan Buatan','Desain','Network','Business') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `kategori`, `like`) VALUES
-(22, 1, '351949.jpg', 'bubble', 'admin', '<p style=\"text-align:center\">bubble sort ini adalah</p>\r\n\r\n<p style=\"text-align:center\"><strong>pelajaran&nbsp;</strong></p>\r\n', '2020-03-08', 'Kecerdasan Buatan', 0),
-(24, 1, 'LOGO_UNIVERSITAS_SRIWIJAYA1.png', 'cdyy2400', 'admin', '<p><span style=\"color:#e74c3c\"><strong>wkemcwekofe hehehehe</strong><em> iyaaaaa !!!!!!!!!!!!!!!!!!!!!!!</em></span></p>\r\n', '2020-03-10', 'Kecerdasan Buatan', 0),
-(29, 4, '1', 'coba kategori', 'cdyy2400', 'networking', '2020-03-07', 'Network', 0),
-(30, 4, '1', 'coba kategori 2', 'cdyy2400', 'jncowecn', '2020-03-07', 'Desain', 0),
-(31, 1, 'LOGO_UNIVERSITAS_SRIWIJAYA.png', 'gdskfghjk', 'admin', 'fghjkghjkl', '2020-03-08', 'Kecerdasan Buatan', 0),
-(33, 1, '431462.jpg', 'cobaaaa', 'admin', '<p><span style=\"font-family:Courier New,Courier,monospace\">hai semuanya hehe <span style=\"font-size:18px\"><strong>coba bikin&nbsp;</strong></span></span></p>\r\n', '2020-03-09', 'Kecerdasan Buatan', 0),
-(34, 1, 'ac33fda087da31a81d2f4edf21c334a8.jpg', 'coba12345', 'admin', '<p>softlink <strong>mereferensi ke nama file</strong>, jadi info yang disimpen nama &amp; lokasi file secara struktur direktori. karena yang direferensi adalah&nbsp;<strong>nama</strong>, softlink bisa me-link ke file yang hanya nama saja atau nggak benar-benar ada.&nbsp;&nbsp;<img alt=\"heart\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /><br />\r\n<br />\r\nhardlink mereferensi ke file, bukan sekedar namanya. mungkin info yang disimpen adalah alamat file secara fisik dalam disk, jadi file yang di-link harus beneran ada.</p>\r\n', '2020-03-09', 'Business', 0),
-(35, 1, '3519491.jpg', 'cerita78', 'admin', '<p>Using color to add meaning only<span style=\"color:#f1c40f\"> provides a visual indication, which</span> will not be co<span style=\"background-color:#1abc9c\">nveyed to users of assistive technologies &ndash; such as screen </span>readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), <span style=\"font-family:Comic Sans MS,cursive\">or is included through alternative m</span>eans, such as additional text hidden with the&nbsp;<code>.sr-only</code>&nbsp;class.</p>\r\n', '2020-03-10', 'Network', 0);
+
+INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `kategori`) VALUES
+(90, 1, 'bubble12.jpg', 'cobaygdebkjb', 'admin', '<p>jeknfck</p>\r\n', '2020-03-14', 'Desain'),
+(91, 2, 'algoritma_bubble22.jpg', 'bubble', 'cindy', '<p>jkdnlowejwdn<img alt=\"blush\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/embarrassed_smile.png\" style=\"height:23px; width:23px\" title=\"blush\" /></p>\r\n', '2020-03-14', 'Business'),
+(92, 2, 'bubble13.jpg', 'ofmvokr', 'cindy', '<p>oejlfclrmkrm4v</p>\r\n', '2020-03-14', 'Desain'),
+(93, 2, 'bubble14.jpg', 'okmk', 'cindy', '<p>ljnljk</p>\r\n', '2020-03-14', 'Network'),
+(94, 2, 'LOGO_UNIVERSITAS_SRIWIJAYA8.png', 'jALODWIE', 'cindy', '<p>LKEWDNKLFEW</p>\r\n', '2020-03-14', 'Business'),
+(95, 2, 'bubble15.jpg', 'S', 'cindy', '<p>S</p>\r\n', '2020-03-14', 'Network');
+
 
 -- --------------------------------------------------------
 
@@ -94,11 +95,12 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id_comment`, `id_blog`, `name`, `comment`) VALUES
-(1, 22, 'cindy', 'bagus sekali'),
-(15, 34, 'cdyy24', 'bagus sangat'),
-(17, 33, 'cindy', 'yayaya!!!1'),
-(18, 35, 'kamu', 'aku ya iya'),
-(20, 22, 'cindy', 'yola');
+
+(10, 90, 'cdyy', 'ya'),
+(11, 95, 'Anonim', 'jnkk'),
+(12, 95, 'cindy', 'jfert'),
+(13, 90, 'Anonim', 'kjnk');
+
 
 -- --------------------------------------------------------
 
@@ -140,8 +142,41 @@ CREATE TABLE `portofolio` (
   `path_gambar` varchar(150) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `text` text NOT NULL,
-  `tanggal_publish` date NOT NULL
+
+  `tanggal_publish` date NOT NULL,
+  `link` text NOT NULL,
+  `kategori` enum('Website','Multimedia','Mobile') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `id_blog` int(11) NOT NULL,
+  `like` int(11) NOT NULL,
+  `love` int(11) NOT NULL,
+  `haha` int(11) NOT NULL,
+  `wow` int(11) NOT NULL,
+  `sad` int(11) NOT NULL,
+  `angry` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`id_blog`, `like`, `love`, `haha`, `wow`, `sad`, `angry`) VALUES
+(90, 0, 0, 0, 0, 0, 0),
+(91, 0, 1, 0, 0, 0, 0),
+(92, 0, 0, 0, 0, 1, 0),
+(93, 0, 0, 0, 0, 0, 1),
+(94, 0, 0, 0, 0, 1, 0),
+(95, 0, 2, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -157,7 +192,10 @@ CREATE TABLE `tentang` (
   `quote` text NOT NULL,
   `path_ig` varchar(150) NOT NULL,
   `path_fb` text NOT NULL,
-  `path_twit` varchar(150) NOT NULL
+
+  `path_twit` varchar(150) NOT NULL,
+  `prioritas` enum('0','1') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -204,6 +242,13 @@ ALTER TABLE `portofolio`
   ADD PRIMARY KEY (`id`);
 
 --
+
+-- Indexes for table `rating`
+--
+ALTER TABLE `rating`
+  ADD KEY `id_blog` (`id_blog`);
+
+--
 -- Indexes for table `tentang`
 --
 ALTER TABLE `tentang`
@@ -223,13 +268,15 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `daftar`
@@ -269,13 +316,22 @@ ALTER TABLE `blog`
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`);
+
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `daftar`
 --
 ALTER TABLE `daftar`
   ADD CONSTRAINT `FK_idKelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+--
+-- Constraints for table `rating`
+--
+ALTER TABLE `rating`
+  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
