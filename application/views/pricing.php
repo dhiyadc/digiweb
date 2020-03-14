@@ -53,39 +53,39 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item">
 							<h3 class="p_title">Android Package</h3>
-							<h1 class="p_price">$69.00</h1>
+							<h1 class="p_price">Rp.900.000</h1>
 							<div class="p_list">
 								<ul>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang kompleks</li>
+									<li>Final Project Membuat Mobile App</li>
 								</ul>
 							</div>
 							<div class="p_btn">
-								<a class="gradient_btn" href="#"><span>Order Now</span></a>
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item active">
 							<h3 class="p_title">Website Package</h3>
-							<h1 class="p_price">$69.00</h1>
+							<h1 class="p_price">Rp.690.000</h1>
 							<div class="p_list">
 								<ul>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project Membuat Website</li>
 								</ul>
 							</div>
 							<div class="p_btn">
-								<a class="gradient_btn" href="#"><span>Order Now</span></a>
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 hidden-md">
 						<div class="pricing_item">
 							<h3 class="p_title">Basic Package</h3>
-							<h1 class="p_price">$69.00</h1>
+							<h1 class="p_price">Rp.350.000</h1>
 							<div class="p_list">
 								<ul>
 									<li>Basic hair Cut</li>
@@ -94,7 +94,7 @@
 								</ul>
 							</div>
 							<div class="p_btn">
-								<a class="gradient_btn" href="#"><span>Order Now</span></a>
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
 							</div>
 						</div>
 					</div>

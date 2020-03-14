@@ -187,7 +187,7 @@
                                         <div class="blog_details">
                                             <a href="single-blog.html"><h2>The Glossary Of Telescopes</h2></a>
                                             <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="single-blog.html" class="blog_btn">View More</a>
+                                            <a href="<?php echo base_url(); ?>Blog/blogdetail" class="blog_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
                                         <div class="blog_details">
                                             <a href="single-blog.html"><h2>The Night Sky</h2></a>
                                             <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="single-blog.html" class="blog_btn">View More</a>
+                                            <a href="<?php echo base_url(); ?>Blog/blogdetail" class="blog_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@
                                         <div class="blog_details">
                                             <a href="single-blog.html"><h2>Telescopes 101</h2></a>
                                             <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                            <a href="single-blog.html" class="blog_btn">View More</a>
+                                            <a href="<?php echo base_url(); ?>Blog/blogdetail" class="blog_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -257,8 +257,8 @@
 		                                    </span>
 		                                </a>
 		                            </li>
-		                            <li class="page-item"><a href="#" class="page-link">01</a></li>
-		                            <li class="page-item active"><a href="#" class="page-link">02</a></li>
+		                            <li class="page-item active"><a href="#" class="page-link">01</a></li>
+		                            <li class="page-item"><a href="#" class="page-link">02</a></li>
 		                            <li class="page-item"><a href="#" class="page-link">03</a></li>
 		                            <li class="page-item"><a href="#" class="page-link">04</a></li>
 		                            <li class="page-item"><a href="#" class="page-link">09</a></li>
