@@ -482,23 +482,35 @@
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach($blog as $val) : ?>
+				<?php foreach($blogcomment as $val) : ?>
+				<a class="title" href="#">
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/blog_img1.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/<?= $val['path_gambar']; ?>" alt="">
 						</div>
+						
 						<div class="blog_content">
 							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<?= substr($val['text'], 0, 162); ?>
+							<?= substr($val['text'], 0, 162); ?>...
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
-								<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
+								<?php
+									foreach($rating as $value) :
+										if($value['id_blog'] == $val['id']){
+										echo $count = (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/10;
+										}
+									endforeach;
+								?>
+								</a>
+								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
+								<?= $val['comment'] ?></a>
 							</div>
 						</div>
 					</div>
 				</div>
+				</a>
 				<?php endforeach; ?>
 
 
