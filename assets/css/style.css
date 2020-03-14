@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*----------------------------------------------------
 @File: Default Styles
 @Author: SPONDON IT
@@ -4549,3 +4550,52 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+=======
+.emoticon1{
+    background-color: red;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon2{
+    background-color:#FF0066;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon3{
+    background-color:#FF3366;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon4{
+    background-color:#FF6699;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon5{
+    background-color:#FF99FF;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.emoticon6{
+    background-color: pink;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+>>>>>>> master
