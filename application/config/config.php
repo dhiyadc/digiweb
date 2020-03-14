@@ -22,7 +22,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
 |
+<<<<<<< HEAD
+*/
+=======
  */
+>>>>>>> master
 $config['base_url'] = 'http://localhost/digiweb/';
 
 /*
@@ -34,8 +38,13 @@ $config['base_url'] = 'http://localhost/digiweb/';
 | something else. If you are using mod_rewrite to remove the page set this
 | variable so that it is blank.
 |
+<<<<<<< HEAD
+*/
+$config['index_page'] = '';
+=======
  */
 $config['index_page'] = 'index.php';
+>>>>>>> master
 
 /*
 |--------------------------------------------------------------------------
