@@ -5,10 +5,12 @@ class Blog_model extends CI_Model {
     public function createblog() {
         $data = [
             'id' => null,
-            'id_admin' => $this->session->userdata('id_adm'),
+            'id_admin' => 1,
+            // 'id_admin' => $this->session->userdata('id_adm'),
             'path_gambar' => $this->insertImage(),
             'judul' => $this->input->post('judul'),
-            'author' => $this->session->userdata('user'),
+            'author' => "Dhiya",
+            // 'author' => $this->session->userdata('user'),
             'text' => $this->input->post('text'),
             'tanggal_publish' => date('Y-m-d'),
             'kategori' => $this->input->post('kategori'),

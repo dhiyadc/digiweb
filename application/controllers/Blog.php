@@ -8,12 +8,10 @@ class Blog extends CI_Controller {
         $this->load->model('Blog_user_model');
     }
 
-    public function index() {
-        $this->load->view('blog/option');
-    }
-
     public function createview() {
+        $this->load->view('_partials/header_admin');
         $this->load->view('blog/create_blog');
+        $this->load->view('_partials/footer_admin');
     }
 
     public function createblog() {
@@ -26,7 +24,9 @@ class Blog extends CI_Controller {
 
     public function readblog() {
         $blogg = $this->Blog_model->getAllBlog();
+        $this->load->view('_partials/header_admin');
         $this->load->view('blog/read_blog', ['blog' => $blogg]);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function deleteblog($id) {
@@ -45,7 +45,9 @@ class Blog extends CI_Controller {
         $data['rates'] = $this->Blog_model->getRatingBlogs($id);
         $data['ratea'] = $this->Blog_model->getRatingBloga($id);
         
+        $this->load->view('_partials/header_admin');
         $this->load->view('blog/detail_view', $data);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function deleteComment($id, $id_blog) {
@@ -56,7 +58,9 @@ class Blog extends CI_Controller {
 
     public function update($id) {
         $ublog = $this->Blog_model->GetBlogById($id);
+        $this->load->view('_partials/header_admin');
         $this->load->view('blog/update_blog', ['blog' => $ublog]);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function updateblog($id) {
