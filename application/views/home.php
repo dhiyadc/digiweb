@@ -18,9 +18,24 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/flaticon/flaticon.css">
     <!-- main css -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+
+	<script>
+		document.onreadystatechange = function () {
+			if (document.readyState === "complete") {
+				console.log(document.readyState);
+				document.getElementById("PreLoaderBar").style.display = "none";
+			}
+		}
+	</script>
 </head>
 
 <body>
+	
+	<!-- loading  -->
+	<div class="progress" id="PreLoaderBar">
+		<div class="indeterminate"></div>
+	</div>
+	<!-- end loading  -->
     <!--================Home Banner Area =================-->
 	<section class="home_banner_area">
 		<div class="banner_inner">
