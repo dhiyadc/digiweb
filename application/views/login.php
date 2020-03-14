@@ -32,10 +32,12 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<div class="login100-form-title">
+				<div class="gmbr1">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>
+				</div>
 				</div>
 
 				<form class="login100-form validate-form">
