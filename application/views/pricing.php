@@ -44,8 +44,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main_title">
-							<h2>Pricing Plans</h2>
-							<h1>Pricing Plans</h1>
+							<h2>Layanan Kami</h2>
+							<h1>Layanan Kami</h1>
 						</div>
 					</div>
 				</div>
