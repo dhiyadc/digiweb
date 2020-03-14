@@ -10,12 +10,16 @@ class Kelas_admin extends CI_Controller {
     public function index()
     {
         $data['kelas'] = $this->Kelas_model->getAllClass();
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/index',$data);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function create_form()
     {
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/create_class');
+        $this->load->view('_partials/footer_admin');
     }
 
     public function create() {   
@@ -32,7 +36,9 @@ class Kelas_admin extends CI_Controller {
     public function update_form($id)
     {
         $data['kelas'] = $this->Kelas_model->getClassById($id);
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/update_class',$data);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function update($id)
@@ -44,6 +50,8 @@ class Kelas_admin extends CI_Controller {
     public function detail_class($id)
     {
         $data['kelas'] = $this->Kelas_model->getClassById($id);
+        $this->load->view('_partials/header_admin');
         $this->load->view('kelas_admin/detail_class',$data);
+        $this->load->view('_partials/footer_admin');
     }
 }
