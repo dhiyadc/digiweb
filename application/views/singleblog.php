@@ -133,6 +133,76 @@
                         </div>
                         <div class="comments-area">
                             <h4>05 Comments</h4>
+                            <section>
+                                <!--- React Comment--->
+                                <div class="row">
+                                    <div class="col-lg mb-5">
+                                <div class="facebookReactIcons">
+                                        <!-- LIKE -->
+                                        <div class="iconBox">
+                                            <div class="icon like">
+                                                <div class="ico lovo">&#9996;</div>
+                                            </div>
+                                            <label>Like</label>
+                                        </div>
+                                        
+                                        <!-- LOVE -->
+                                        <div class="iconBox">
+                                            <div class="icon lovo">
+                                                <div class="ico lovo">&#10084;</div>
+                                            </div>
+                                            <label>Love</label>
+                                        </div>
+                                        
+                                        <!-- HAHA -->
+                                        <div class="iconBox">
+                                            <div class="icon haha">
+                                                <div class="eyes">
+                                                    <span class="eye lEye"></span>
+                                                    <span class="eye rEye"></span>
+                                                </div>
+                                                <div class="mouth"></div>
+                                            </div>
+                                            <label>HAHA</label>
+                                        </div>
+                                        <!-- WOW -->
+                                        <div class="iconBox">
+                                            <div class="icon wow">
+                                                <div class="eyes">
+                                                    <span class="eye lEye"></span>
+                                                    <span class="eye rEye"></span>
+                                                </div>
+                                                <div class="mouth"></div>
+                                            </div>
+                                            <label>Wow</label>
+                                        </div>
+                                        <!-- SAD -->
+                                        <div class="iconBox">
+                                            <div class="icon sad">
+                                                <div class="eyes">
+                                                    <span class="eye lEye"></span>
+                                                    <span class="eye rEye"></span>
+                                            <span class="tears"></span>
+                                                </div>
+                                                <div class="mouth"></div>
+                                            </div>
+                                            <label>Sad</label>
+                                        </div>
+                                        <!-- ANGRY -->
+                                        <div class="iconBox">
+                                            <div class="icon angry">
+                                                <div class="eyes">
+                                                    <span class="eye lEye"></span>
+                                                    <span class="eye rEye"></span>
+                                                </div>
+                                                <div class="mouth"></div>
+                                            </div>
+                                            <label>Angry</label>
+                                        </div>
+                                    </div>
+                                    </div>
+                                <!--- --->
+                            </section>
                             <div class="comment-list">
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
