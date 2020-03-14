@@ -88,9 +88,9 @@
 							<h1 class="p_price">Rp.350.000</h1>
 							<div class="p_list">
 								<ul>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
-									<li>Basic hair Cut</li>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project</li>
 								</ul>
 							</div>
 							<div class="p_btn">

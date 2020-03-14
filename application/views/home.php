@@ -95,7 +95,7 @@
 			<div class="row text-center">
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Kursus Pemograman</a></h3>
 						</div>
@@ -103,7 +103,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Aplikasi Mobile</a></h3>
 						</div>
@@ -111,7 +111,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Website</a></h3>
 						</div>
@@ -119,7 +119,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Konsultasi IT</a></h3>
 						</div>
@@ -158,7 +158,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -344,72 +344,70 @@
 	</section>
 	<!--================ End Testimonials Area ================-->
 
-
-	<!--================ Start Pricing Plans Area ================-->
-	<section class="pricing_area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title">
-						<h2>Pricing Plans</h2>
-						<h1>Pricing Plans</h1>
+<!--================ Start Pricing Plans Area ================-->
+<section class="pricing_area section_gap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="main_title">
+							<h2>Pricing Plans</h2>
+							<h1>Pricing Plans</h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="pricing_item">
+							<h3 class="p_title">Android Package</h3>
+							<h1 class="p_price">Rp.900.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang kompleks</li>
+									<li>Final Project Membuat Mobile App</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="pricing_item active">
+							<h3 class="p_title">Website Package</h3>
+							<h1 class="p_price">Rp.690.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project Membuat Website</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 hidden-md">
+						<div class="pricing_item">
+							<h3 class="p_title">Basic Package</h3>
+							<h1 class="p_price">Rp.350.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing_item">
-						<h3 class="p_title">Silver Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing_item active">
-						<h3 class="p_title">Golden Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 hidden-md">
-					<div class="pricing_item">
-						<h3 class="p_title">Platinum Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
-	<!--================ End Pricing Plans Area ================-->
-
+    <!--================ End Pricing Plans Area ================-->
 
 	<!--================ Start Frequently Asked Questions Area ================-->
 	<section class="frequently_area">
