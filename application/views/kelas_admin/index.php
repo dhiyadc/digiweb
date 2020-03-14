@@ -16,6 +16,7 @@
                         <tr class="gradeX">
                             <td>
                                 <center><img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px"></center>
+                                <br>
                                 <center><a href="<?= base_url(); ?>kelas_admin/detail_class/<?= $val['id']; ?>"><?= $val['judul']; ?></a></center>
                             </td>
                         <tr>

@@ -9,10 +9,11 @@ class Portofolio extends CI_Controller{
     }
     public function index()
     {
-        $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getAllPortofolio();
 
-        $this->load->view('portofolio/portofolio_view' , $data);
+        $this->load->view('_partials/header_admin');
+        $this->load->view('portofolio/portofolio_view',$data);
+        $this->load->view('_partials/footer_admin');
     }
 
     public function createPortofolio()
@@ -24,7 +25,9 @@ class Portofolio extends CI_Controller{
         
         if($this->form_validation->run() == FALSE)
         {
+            $this->load->view('_partials/header_admin');
             $this->load->view('portofolio/create_portofolio', $data);
+            $this->load->view('_partials/footer_admin');
             
         }else{
             $this->Portofolio_model->createPortofolio();
@@ -42,7 +45,9 @@ class Portofolio extends CI_Controller{
     {
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getPortobyID($id);
+        $this->load->view('_partials/header_admin');
         $this->load->view('portofolio/read_portofolio', $data);
+        $this->load->view('_partials/footer_admin');
     }
     public function UpdatePortofolio($id)
     {
@@ -55,7 +60,9 @@ class Portofolio extends CI_Controller{
         
         if($this->form_validation->run() == FALSE)
         {
+            $this->load->view('_partials/header_admin');
             $this->load->view('portofolio/update_portofolio', $data);
+            $this->load->view('_partials/footer_admin');
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);

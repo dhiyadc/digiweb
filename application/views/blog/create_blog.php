@@ -1,41 +1,54 @@
-<?php $this->load->view('partials/header'); ?>
-
-<br>
-
-<h3 align="center">Create Blog</h3>
-
-<!-- <form action="<?=base_url('/blog/createblog')?>" method="post"> -->
-<?php echo form_open_multipart('blog/createblog'); ?>
-
-	<?php
-		$author = $this->session->userdata('user');
-	?>
-
-	<div class="container">
-		<div class="form-group">
-			<label for="image">Image</label>
-			<input type="file" accept=".jpg, .png, .jpeg" name="path_gambar" class="form-control" id="path_gambar" aria-describedby="emailHelp" required>
-		</div>
-		<div class="form-group">
-			<label for="judul">Judul</label>
-			<input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" required>
-		</div>
-		<div class="form-group">
-			<label for="Kategori">Kategori : </label>
-			<br>
-			<input type="radio" name="kategori" value="Kecerdasan buatan"> Kecerdasan buatan <br>
-			<input type="radio" name="kategori" value="Desain"> Desain <br>
-			<input type="radio" name="kategori" value="Network"> Network <br>
-			<input type="radio" name="kategori" value="Business"> Business
-		</div>
-		<div class="form-group">
-			<label for="text">Text</label>
-			<textarea class="ckeditor" id="ckeditor" name="text" required></textarea>
-		</div>
-		<button type="submit" name="submit" value="submit" class="btn btn-primary">Create Blog</button>
-		<a href="<?= base_url('blog') ?>" class="btn btn-warning">Back</a>
-		<hr>
-	</div>
-</form>
-
-<?php $this->load->view('partials/footer'); ?>
+<section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>Buat Blog</h3>
+        <!-- FORM VALIDATION -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <div class=" form">
+                <form enctype="multipart/form-data" action="<?= base_url(); ?>blog/createblog" class="cmxform form-horizontal style-form" id="commentForm" method="post">
+                  <div class="form-group">
+                    <label class="control-label col-md-2">Media</label>
+                    <div class="col-md-4">
+                      <input type="file" class="default" name="path_gambar" accept=".png, .jpg, .jpeg" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Judul Blog</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="judul" minlength="2" type="text" required />
+                    </div>
+				  </div>
+				  <div class="form-group">
+					<label for="Kategori" class="control-label col-lg-2">Kategori : </label>
+					<br>
+					<div class="col-lg-10">
+						<input type="radio" name="kategori" value="Kecerdasan buatan"> Kecerdasan buatan <br>
+						<input type="radio" name="kategori" value="Desain"> Desain <br>
+						<input type="radio" name="kategori" value="Network"> Network <br>
+						<input type="radio" name="kategori" value="Business"> Business
+					</div>
+				</div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2">Text</label>
+                    <div class="col-lg-10">
+                      <textarea class="ckeditor" id="ckeditor" name="text" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <input type="submit" name="submit" value="Save" class="btn btn-theme">
+                      <button class="btn btn-theme04" type="button">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>

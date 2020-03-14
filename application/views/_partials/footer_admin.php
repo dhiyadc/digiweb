@@ -33,6 +33,7 @@
   <!--script for this page-->
   <script src="<?=base_url()?>assets/lib/sparkline-chart.js"></script>
   <script src="<?=base_url()?>assets/lib/zabuto_calendar.js"></script>
+  <script type="text/javascript" src="<?= base_url('assets/js/ckeditor/ckeditor.js'); ?>"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       var unique_id = $.gritter.add({

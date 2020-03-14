@@ -1,49 +1,67 @@
-<?php $this->load->view('partials/header'); ?>
-</head>
-<body>
-
-<div class="row mt-3">
-    <div class="col-md-6">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <?php echo form_open_multipart('Portofolio/createPortofolio');?>
-                    <div class="form-group">
-                        <input type="file" name="path_gambar" id="path_gambar" value="<?= set_value('path_gambar');?>"  required accept=".png, .jpg, .jpeg">
-                        <small class="form-text text-danger" ><?= form_error('image'); ?></small> 
+<section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>Buat Portofolio</h3>
+        <!-- FORM VALIDATION -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <div class=" form">
+                <form enctype="multipart/form-data" action="<?= base_url(); ?>portofolio/createPortofolio" class="cmxform form-horizontal style-form" id="commentForm" method="post">
+                <!-- <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action=""> -->
+                  <div class="form-group">
+                    <label class="control-label col-md-2">Media</label>
+                    <div class="col-md-4">
+                      <input type="file" class="default" name="path_gambar" accept=".png, .jpg, .jpeg" required />
+                      <small class="form-text text-danger" ><?= form_error('image'); ?></small> 
                     </div>
-                    <div class="form-group">
-                        <label for="judul">Judul</label>
-                        <input type="text" class="form-control" name="judul" id="judul" value="<?= set_value('judul');?>" placeholder="Judul...">
-                        <small class="form-text text-danger" ><?= form_error('judul'); ?></small> 
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Judul</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="judul" minlength="2" type="text" required />
+                      <small class="form-text text-danger" ><?= form_error('judul'); ?></small> 
                     </div>
-                    <div class="form-group">
-                        <label for="text">Text</label>
-                        <textarea class="form-control" name="text" id="text" rows="4" placeholder="Text..."><?= set_value('text');?></textarea>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Link</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="link" minlength="2" type="link" required />
                     </div>
-                    <div class="form-group">
-                        <label for="link">Link</label>
-                        <input type="text" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2">Deskripsi</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control " id="ccomment" name="text" required></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="kategori">Kategori</label>
-                        <select class="form-control" id="kategori" name="kategori">
-                        <?php foreach($kategori as $kat): ?>
-                            <?php if($kat == $portofolio['kategori']):?>
-                                <option value="<?= $kat; ?>" selected><?= $kat; ?></option>
-                            <?php else: ?>
-                                <option value="<?= $kat; ?>"><?= $kat; ?></option>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                        </select>
+                  </div>
+                  <div class="form-group">
+                        <label for="kategori" class="control-label col-lg-2">Kategori</label>
+                        <div class="col-lg-10">
+                            <select class="form-control" id="kategori" name="kategori">
+                                <?php foreach($kategori as $kat): ?>
+                                    <?php if($kat == $portofolio['kategori']):?>
+                                        <option value="<?= $kat; ?>" selected><?= $kat; ?></option>
+                                    <?php else: ?>
+                                        <option value="<?= $kat; ?>"><?= $kat; ?></option>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-success" style="float: right">Submit</button>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <input type="submit" name="submit" value="Save" class="btn btn-theme">
+                      <button class="btn btn-theme04" type="button">Cancel</button>
+                    </div>
+                  </div>
                 </form>
+              </div>
             </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
         </div>
-    </div>
-</div>
-
-</body>
-
-<?php $this->load->view('partials/footer'); ?>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
