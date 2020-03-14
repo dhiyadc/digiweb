@@ -3,9 +3,7 @@
 class Home_admin extends CI_Controller {
     public function index()
     {
-        $this->load->view('_partials/header_admin');
-        $this->load->view('admin/index');
-        $this->load->view('_partials/footer_admin');
+        $this->load->view('admin/login_admin');
     }
     public function login()
     {
