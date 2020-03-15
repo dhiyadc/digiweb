@@ -107,7 +107,8 @@ class Blog_user_model extends CI_model{
         $this->db->where('id_blog' , $id)->update('rating', $dataa);
     }
 
-
    
     
 }
+
+?>

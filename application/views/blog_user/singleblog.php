@@ -50,7 +50,7 @@
 					<div class="single-post row">
 						<div class="col-lg-12">
 							<div class="feature-img">
-								<img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="300px">
+							<center><img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="350px"></center>
 							</div>
 						</div>
 						<div class="col-lg-3  col-md-3">
