@@ -105,7 +105,7 @@
 						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
 
 						<div class="upcoming_title">
-							<h3><a href="games.html">Kursus Pemograman</a></h3>
+							<h3><a href="<?php echo base_url(); ?>Page">Kursus Pemograman</a></h3>
 						</div>
 					</div>
 				</div>

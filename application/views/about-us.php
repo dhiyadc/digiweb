@@ -1,4 +1,5 @@
 <?php $this->load->view('layout/header')?>
+<body class="about_page">
     <!--================Home Banner Area =================-->
 		<section class="banner_area">
 			<div class="banner_inner d-flex align-items-center">
@@ -23,9 +24,8 @@
 					<div class="col-lg-6">
 						<div class="section_content">
 							<h6>About Us</h6>
-							<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-								especially in the workplace. That’s why it’s crucial that as women.</p>
+							<h1>Kami Hadir Disini <br>Untuk Menghadirkan</h1>
+							<p>Solusi dan Pelayanan Terbaik Untuk Kenyamanan dan Inovasi masa Depan</p>
 							<a class="primary_btn" href="#">Learn More</a>
 						</div>
 					</div>
