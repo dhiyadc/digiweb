@@ -1,4 +1,4 @@
-<?php $this->load->view('layout/header')?>
+
 
 <body>
 	
@@ -523,4 +523,3 @@
 	<!--================ End Newsletter Area ================-->
 	
 </body>
-<?php $this->load->view('layout/footer')?>

@@ -80,5 +80,10 @@
 				</div>
 			</div>
 	</section>
+	<section>
+		<!-- Modal Daftar Les -->
+		
+		<!--  -->
+	</section>
 </body>
 <?php $this->load->view('layout/footer')?>
