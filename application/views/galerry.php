@@ -29,7 +29,7 @@
 							<a href="<?php echo base_url(); ?>assets/index.html">Home</a>
 							<a href="<?php echo base_url(); ?>assets/gallery.html">Gallery</a>
 						</div>
-						<h2>Screen Shot Gallery</h2>
+						<h2>Portofolio</h2>
 					</div>
 				</div>
 			</div>
@@ -42,8 +42,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main_title">
-							<h2>Screens Gallery</h2>
-							<h1>Screens Gallery</h1>
+							<h2>Portofolio</h2>
+							<h1>Portofolio</h1>
 						</div>
 					</div>
 				</div>
