@@ -30,12 +30,10 @@
 				<div class="col-lg-3 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h4>About Farfly</h4>
+							<h4>About Us</h4>
 						</div>
 						<ul>
 							<li><a href="#"></a>For Business</a></li><a href="#">
-								<li><a href="#"></a>Premium Plans
-							</a></li>
 							<li><a href="#"></a>Reviews</a></li>
 							<li><a href="#"></a>How it Works</a></li>
 							<li><a href="#"></a>Farfly Blog</a></li>
@@ -66,9 +64,7 @@
 							<li><a href="#"></a>Documentation</a></li><a href="#">
 								<li><a href="#"></a>Data Securiry
 							</a></li>
-							<li><a href="#"></a>Site Performance</a></li>
-							<li><a href="#"></a>Action Plan</a></li>
-							<li><a href="#"></a>Resources</a></li>
+							
 						</ul>
 					</aside>
 				</div>
@@ -82,7 +78,6 @@
 								<li><a href="#"></a>Privacy Policy
 							</a></li>
 							<li><a href="#"></a>Cookie Information</a></li>
-							<li><a href="#"></a>Opt - Out</a></li>
 						</ul>
 					</aside>
 				</div>
