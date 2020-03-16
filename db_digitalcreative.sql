@@ -3,7 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2020 at 07:26 AM
+
+-- Generation Time: Mar 14, 2020 at 06:03 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -58,19 +59,23 @@ CREATE TABLE `blog` (
   `author` varchar(150) NOT NULL,
   `text` text NOT NULL,
   `tanggal_publish` date NOT NULL,
-  `kategori` text NOT NULL
+  `kategori` enum('Kecerdasan Buatan','Desain','Network','Business') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
 --
 
+
 INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `kategori`) VALUES
-(72, 2, 'g2.png', 'gmaill', 'cindy', '<p>ijwendejiw<span style=\"font-size:26px\"><span style=\"font-family:Comic Sans MS,cursive\">ncfoewfcmoewkmcfoeklcw<img alt=\"smiley\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/regular_smile.png\" style=\"height:23px; width:23px\" title=\"smiley\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /><img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></span></span></p>\r\n', '2020-03-12', 'Kecerdasan Buatan'),
-(73, 2, 'f2.png', 'facebook', 'cindy', '<p>ojn<span style=\"color:#1abc9c\">wdcld</span>wkc<img alt=\"cheeky\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></p>\r\n', '2020-03-12', 'Network'),
-(75, 2, 'g.jpg', 'cerita1', 'cindy', '<p>jidincjnjcnjdcv</p>\r\n', '2020-03-12', 'Kecerdasan Buatan'),
-(76, 1, 'logo3.png', 'cobaaa', 'admin', '<p>onekvjkren vjern vjn erklwmfk</p>\r\n', '2020-03-13', 'Network'),
-(77, 2, 'f3.png', 'test1', 'cindy', '<p>jkrfnjkncfjkierv</p>\r\n', '2020-03-13', 'Network');
+(90, 1, 'bubble12.jpg', 'cobaygdebkjb', 'admin', '<p>jeknfck</p>\r\n', '2020-03-14', 'Desain'),
+(91, 2, 'algoritma_bubble22.jpg', 'bubble', 'cindy', '<p>jkdnlowejwdn<img alt=\"blush\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/embarrassed_smile.png\" style=\"height:23px; width:23px\" title=\"blush\" /></p>\r\n', '2020-03-14', 'Business'),
+(92, 2, 'bubble13.jpg', 'ofmvokr', 'cindy', '<p>oejlfclrmkrm4v</p>\r\n', '2020-03-14', 'Desain'),
+(93, 2, 'bubble14.jpg', 'okmk', 'cindy', '<p>ljnljk</p>\r\n', '2020-03-14', 'Network'),
+(94, 2, 'LOGO_UNIVERSITAS_SRIWIJAYA8.png', 'jALODWIE', 'cindy', '<p>LKEWDNKLFEW</p>\r\n', '2020-03-14', 'Business'),
+(95, 2, 'bubble15.jpg', 'S', 'cindy', '<p>S</p>\r\n', '2020-03-14', 'Network');
+
 
 -- --------------------------------------------------------
 
@@ -90,9 +95,12 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id_comment`, `id_blog`, `name`, `comment`) VALUES
-(2, 72, 'cindy', 'hihihi '),
-(3, 73, 'cdyy', 'cdyy2400@gmail.com'),
-(5, 72, 'kamu', 'em waw ');
+
+(10, 90, 'cdyy', 'ya'),
+(11, 95, 'Anonim', 'jnkk'),
+(12, 95, 'cindy', 'jfert'),
+(13, 90, 'Anonim', 'kjnk');
+
 
 -- --------------------------------------------------------
 
@@ -134,34 +142,41 @@ CREATE TABLE `portofolio` (
   `path_gambar` varchar(150) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `text` text NOT NULL,
-  `tanggal_publish` date NOT NULL
+
+  `tanggal_publish` date NOT NULL,
+  `link` text NOT NULL,
+  `kategori` enum('Website','Multimedia','Mobile') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
+
 -- Table structure for table `rating`
 --
 
 CREATE TABLE `rating` (
   `id_blog` int(11) NOT NULL,
-  `sangat_puas` int(11) NOT NULL,
-  `puas` int(11) NOT NULL,
-  `cukup` int(11) NOT NULL,
-  `kurang_puas` int(11) NOT NULL,
-  `tidak_puas` int(11) NOT NULL
+  `like` int(11) NOT NULL,
+  `love` int(11) NOT NULL,
+  `haha` int(11) NOT NULL,
+  `wow` int(11) NOT NULL,
+  `sad` int(11) NOT NULL,
+  `angry` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rating`
 --
 
-INSERT INTO `rating` (`id_blog`, `sangat_puas`, `puas`, `cukup`, `kurang_puas`, `tidak_puas`) VALUES
-(72, 5, 3, 3, 3, 8),
-(73, 5, 3, 2, 3, 5),
-(75, 2, 5, 4, 3, 0),
-(76, 0, 2, 0, 1, 0),
-(77, 0, 0, 2, 0, 0);
+INSERT INTO `rating` (`id_blog`, `like`, `love`, `haha`, `wow`, `sad`, `angry`) VALUES
+(90, 0, 0, 0, 0, 0, 0),
+(91, 0, 1, 0, 0, 0, 0),
+(92, 0, 0, 0, 0, 1, 0),
+(93, 0, 0, 0, 0, 0, 1),
+(94, 0, 0, 0, 0, 1, 0),
+(95, 0, 2, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -177,7 +192,10 @@ CREATE TABLE `tentang` (
   `quote` text NOT NULL,
   `path_ig` varchar(150) NOT NULL,
   `path_fb` text NOT NULL,
-  `path_twit` varchar(150) NOT NULL
+
+  `path_twit` varchar(150) NOT NULL,
+  `prioritas` enum('0','1') NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -224,6 +242,7 @@ ALTER TABLE `portofolio`
   ADD PRIMARY KEY (`id`);
 
 --
+
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
@@ -249,13 +268,15 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `daftar`
@@ -295,6 +316,7 @@ ALTER TABLE `blog`
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
+
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -303,11 +325,13 @@ ALTER TABLE `comment`
 ALTER TABLE `daftar`
   ADD CONSTRAINT `FK_idKelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+
 --
 -- Constraints for table `rating`
 --
 ALTER TABLE `rating`
   ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`id_blog`) REFERENCES `blog` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

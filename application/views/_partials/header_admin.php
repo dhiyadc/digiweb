@@ -47,7 +47,7 @@
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
+          <li><a class="logout" href="<?= base_url() ?>admin/logout">Logout</a></li>
         </ul>
       </div>
     </header>
@@ -63,7 +63,7 @@
           <!-- <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Malian Rizieq</h5> -->
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="<?= base_url(); ?>home_admin">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
@@ -85,8 +85,8 @@
               <span>Portofolio</span>
               </a>
             <ul class="sub">
-              <li><a href="form_validation_portofolio.html">Buat Portofolio</a></li>
-              <li><a href="chartjs.html">Data Portofolio</a></li>
+              <li><a href="<?= base_url(); ?>portofolio/createPortofolio">Buat Portofolio</a></li>
+              <li><a href="<?= base_url(); ?>portofolio">Data Portofolio</a></li>
             </ul>
           </li>
 
@@ -96,8 +96,8 @@
               <span>Blog</span>
               </a>
             <ul class="sub">
-              <li><a href="contactform.html">Buat Blog</a></li>
-              <li><a href="gallery.html">Data Blog</a></li>
+              <li><a href="<?= base_url(); ?>blog/createview">Buat Blog</a></li>
+              <li><a href="<?= base_url(); ?>blog/readblog">Data Blog</a></li>
             </ul>
           </li>
 
