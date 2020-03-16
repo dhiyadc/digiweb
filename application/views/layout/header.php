@@ -46,7 +46,10 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Layanan Kami</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Page">Layanan Kami</a>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Page">Les</a>
+									<li class="nav-item"><a class="nav-link" href="#">Android</a>
+									<li class="nav-item"><a class="nav-link" href="#">Website</a>
+									<li class="nav-item"><a class="nav-link" href="#">Konsultasi IT</a>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

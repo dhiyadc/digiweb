@@ -24,40 +24,21 @@
     </head>
     <body class="blog_page">
          <!--================Home Banner Area =================-->
-         <section class="home_banner_area">
-            <div class="banner_inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="home_left_img">
-                                <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/banner/home-left.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="banner_content">
-                                <h2>
-                                    For All Occasion <br>
-                                    HairStyle is a Must <br>
-                                    Try Fashion
-                                </h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=vParh5wE-tM">
-                                        <span></span>
-                                    </a>
-                                    <div class="watch_video text-uppercase">
-                                        watch the video
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+		<section class="banner_area">
+			<div class="banner_inner d-flex align-items-center">
+				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="about-us.html">Blog</a>
+						</div>
+						<h2>About Us</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--================End Home Banner Area =================-->
         <!--================End Home Banner Area =================-->
             
         <!--================Blog Categorie Area =================-->
