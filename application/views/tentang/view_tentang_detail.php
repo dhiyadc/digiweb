@@ -10,7 +10,7 @@
                 <h6>Instagram</h6>
               <?php endif; ?>
               <?php if ($staff['path_fb'] != null) : ?>
-                <h4><a href="<?= 'http://www.instagram.com/' . $staff['path_fb'] ?>" target="_blank" style="text-decoration: none"><?= $staff['path_fb'] ?></a></h4>
+                <h4><a href="<?= 'http://www.facebook.com/' . $staff['path_fb'] ?>" target="_blank" style="text-decoration: none"><?= $staff['path_fb'] ?></a></h4>
                 <h6>Facebook</h6>
               <?php endif; ?>
               <?php if ($staff['path_twit'] != null) : ?>
