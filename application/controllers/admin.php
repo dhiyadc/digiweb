@@ -25,9 +25,9 @@ class Admin extends CI_Controller {
 	public function index() {
 
 		if(isset($this->session->userdata['logged_in'])){
-			$this->load->view('admin/dist/index');
+			redirect('home_admin');
 		}else{
-			$this->load->view('admin_login_form');
+			$this->load->view('admin/login_admin');
 		}
 	}
 	
@@ -39,9 +39,9 @@ class Admin extends CI_Controller {
 	
 	if ($this->form_validation->run() == FALSE) {
 		if(isset($this->session->userdata['logged_in'])){
-			$this->load->view('admin/dist/index');
+			redirect('home_admin');
 		}else{
-			$this->load->view('admin_login_form');
+			$this->load->view('admin/login_admin');
 		}
 	} else {
 		$data = array(
@@ -66,7 +66,7 @@ class Admin extends CI_Controller {
 			$data = array(
 			'error_message' => 'Invalid Username or Password'
 			);
-			$this->load->view('admin_login_form', $data);
+			$this->load->view('admin/login_admin', $data);
 			}
 	}
 }

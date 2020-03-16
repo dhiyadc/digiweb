@@ -1,5 +1,8 @@
 <?php
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+
 class Blog extends CI_Controller {
 
     public function __construct() {
@@ -8,6 +11,19 @@ class Blog extends CI_Controller {
         $this->load->model('Blog_user_model');
     }
 
+    public function index(){
+        //Controller Home
+        $this->load->view('layout/header');
+        $this->load->view('blog/blog');
+        $this->load->view('layout/footer');
+    }
+
+    public function blogdetail(){
+        $this->load->view('layout/header');
+        $this->load->view('blog/singleblog');
+        $this->load->view('layout/footer');
+    }
+  
     public function createview() {
         $this->load->view('_partials/header_admin');
         $this->load->view('blog/create_blog');
@@ -69,3 +85,4 @@ class Blog extends CI_Controller {
     }
 
 }
+
