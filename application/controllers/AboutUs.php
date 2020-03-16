@@ -1,14 +1,21 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class AboutUs extends CI_Controller{
+class AboutUs extends CI_Controller
+{
 
-    public function index(){
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('tentang_model');
+    }
+    public function index()
+    {
         //Controller Home
+        $data['tentang'] = $this->tentang_model->getallstaff();
         $this->load->view('layout/header');
-        $this->load->view('about-us');
+        $this->load->view('about-us', $data);
         $this->load->view('layout/footer');
     }
-    
 }
