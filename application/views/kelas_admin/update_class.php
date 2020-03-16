@@ -23,6 +23,12 @@
                     </div>
                   </div>
                   <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Harga</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="harga" minlength="2" type="text" value="<?= $val['harga']; ?>" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Deskripsi Kelas</label>
                     <div class="col-lg-10">
                       <textarea class="form-control " id="ccomment" name="text" required><?= $val['text']; ?></textarea>

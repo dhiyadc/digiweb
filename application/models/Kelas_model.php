@@ -50,6 +50,7 @@ class Kelas_model extends CI_Model {
         $data = [
             'judul' => $this->input->post('judul'),
             'text' => $this->input->post('text'),
+            'harga' => $this->input->post('harga'),
             'path_gambar' => $this->insertImage()
         ];
 
@@ -70,6 +71,7 @@ class Kelas_model extends CI_Model {
         if(!empty($_FILES['path_gambar']['name'])) {
             $data = [
                 'judul' => $this->input->post('judul'),
+                'harga' => $this->input->post('harga'),
                 'text' => $this->input->post('text'),
                 'path_gambar' => $this->updateImage($id)
             ];
@@ -77,6 +79,7 @@ class Kelas_model extends CI_Model {
         else {
             $data = [
                 'judul' => $this->input->post('judul'),
+                'harga' => $this->input->post('harga'),
                 'text' => $this->input->post('text'),
                 'path_gambar' => $this->input->post('old_image')
             ];

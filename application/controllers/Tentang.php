@@ -11,12 +11,11 @@ class Tentang extends CI_Controller
 
     public function index()
     {
-
-         $data = [
-             'logged_in' => 'zora'
-         ];
-         $this->session->set_userdata($data);
-        $this->viewTentang();
+        if ($this->session->userdata('logged_in')) {
+            $this->viewTentang();
+        } else {
+            redirect("admin");
+        }
     }
 
     public function createTentang()
@@ -78,7 +77,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->updateTentang($id);
-                redirect('tentang/viewTentang');
+                redirect('tentang/viewTentangByID/' . $id);
             }
         
     }
