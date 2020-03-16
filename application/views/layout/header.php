@@ -40,13 +40,13 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
 							<li class="nav-item active"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>AboutUs">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Galerry">Portofolio </a>
+							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>tentang_user/viewTentang">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>portofolio_user">Portofolio </a>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Layanan Kami</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Page">Layanan Kami</a>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>kelas">Layanan Kami</a>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

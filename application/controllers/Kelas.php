@@ -5,7 +5,6 @@ class Kelas extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Kelas_model');
-		$this->load->library('form_validation');
     }
 
     public function index()
@@ -30,6 +29,6 @@ class Kelas extends CI_Controller {
     {
         $this->Kelas_model->daftar($idclass);
         $this->session->set_flashdata('flash','Data telah dikirimkan. Mohon menunggu kabar selanjutnya dari kami. Terima kasih');
-		redirect('kelas/detail_class/'. $idclass);
+		redirect('kelas');
     }
 }
