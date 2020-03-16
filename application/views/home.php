@@ -492,7 +492,7 @@
 						
 						<div class="blog_content">
 							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<?= substr($val['text'], 0, 150); ?>...
+							<?= substr($val['text'], 0, 125); ?>...
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
