@@ -50,12 +50,8 @@
 								magna aliqua. Ut enim ad minim.
 							</p>
 							<div class="d-flex align-items-center">
-								<a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=vParh5wE-tM">
-									<span></span>
-								</a>
-								<div class="watch_video text-uppercase">
-									watch the video
-								</div>
+								
+								<a class="primary_btn" href="#">Learn More</a>
 							</div>
 						</div>
 					</div>
@@ -72,10 +68,9 @@
 				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
-						<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-						<a class="primary_btn" href="#">Learn More</a>
+						<h1>We Believe <br>On Your Dreams</h1>
+						<p>Headquartered in Palembang, Digital Creative provided IT services for your business needs. We craft software that align with your overall digital strategy. Our goal is to help you achieve your goals in both short and long term. </p>
+						<a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -146,13 +141,13 @@
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-							Live Streaming
+							Layanan Kami
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
 						 aria-selected="false">
-							Upcoming Challanges
+							Our Goals
 						</a>
 					</li>
 					<li class="nav-item">
@@ -174,9 +169,8 @@
 							<div class="col-lg-6">
 								<div class="section_content">
 									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
+									<h1>Layanan Kami <br>Adalah Bukti Dedikasi Penuh Kami</h1>
+									<p>Dalam memberikan pelayanan terbaik untuk anda hari ini dan besok</p>
 									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
@@ -186,15 +180,14 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="section_content">
 									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
+									<h1>We Mix Your Idea </br>With Our Digital Creativityty Lasts Long</h1>
+									<p>Our mission is mixing your idea with digital creativity to reach your business goal. Our vision is to be recognized as the best software house in Palembang and help the city road to be Palembang Emas.</p>
 									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
@@ -204,7 +197,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
