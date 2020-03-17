@@ -77,20 +77,21 @@
 	<section class="about_us_area section_gap_top">
 		<div class="container">
 			<div class="row about_content align-items-center">
+			<?php foreach($tentang as $val) : ?>
 				<div class="col-lg-6">
 					<div class="section_content">
-						<h6>Tentang Kami</h6>
-						<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
+						<h1><?= $val['nama'] ?></h6>
+						<h1><?= $val['jabatan'] ?></h1>
+						<p><?= $val['quote'] ?></p>
 						<a class="primary_btn" href="#">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="about_us_image_box justify-content-center">
-						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/about_img.jpg" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="">
 					</div>
 				</div>
+			<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
@@ -151,79 +152,25 @@
 	<section class="recent_update_area section_gap">
 		<div class="container">
 			<div class="recent_update_inner">
-				<ul class="nav nav-tabs" id="myTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-							Live Streaming
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-						 aria-selected="false">
-							Upcoming Challanges
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-						 aria-selected="false">
-							Recent Famous Games
-						</a>
-					</li>
-				</ul>
+			
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<div class="row recent_update_text">
-							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
-
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
-									<a class="primary_btn" href="#">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<div class="row recent_update_text">
-							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
-									<a class="primary_btn" href="#">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-						<div class="row recent_update_text">
+						<div class="row recent_update_text">		
+						<?php foreach($tentang as $val) : ?>
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
+									<h6><?= $val['nama'] ?></h6>
+									<h1><?= $val['jabatan'] ?></h1>
+									<p><?= $val['quote'] ?></p>
 									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
+						<?php endforeach; ?>
 						</div>
 					</div>
 				</div>
@@ -487,7 +434,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/<?= $val['path_gambar']; ?>" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>images/<?= $val['path_gambar']; ?>" alt="" style="object-fit: cover; height: 220px">
 						</div>
 						
 						<div class="blog_content">

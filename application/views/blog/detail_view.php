@@ -13,7 +13,7 @@
                   <hr>
                 </div>
                 <div class="icn-main-container">
-                    <img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="350px">
+                    <img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" >
                 </div>
 				<br><br>
 				<p><?= $blog['author'];?></p>
