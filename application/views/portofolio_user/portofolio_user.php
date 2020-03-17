@@ -31,7 +31,7 @@
 							<div class="col-lg-6 col-md-6">
 								<div class="single-gallery">
 									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="">
+									<img style="width:100%;max-width:400px;height:100%;max-height:200px" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="">
 									<div class="content">
 										<a data-toggle="modal" data-target="#contact-modal">
 											<i class="lnr lnr-eye"></i>

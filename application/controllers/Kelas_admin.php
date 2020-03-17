@@ -17,8 +17,9 @@ class Kelas_admin extends CI_Controller {
 
     public function create_form()
     {
+        $data['kategori'] = $this->Kelas_model->getKategori();
         $this->load->view('_partials/header_admin');
-        $this->load->view('kelas_admin/create_class');
+        $this->load->view('kelas_admin/create_class',$data);
         $this->load->view('_partials/footer_admin');
     }
 

@@ -29,9 +29,30 @@
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="ccomment" class="control-label col-lg-2">Deskripsi Kelas</label>
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 1</label>
                     <div class="col-lg-10">
-                      <textarea class="form-control " id="ccomment" name="text" required><?= $val['text']; ?></textarea>
+                      <input class=" form-control" id="cname" name="deskripsi_1" minlength="2" type="text" value="<?= $val['deskripsi_1']; ?>" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 2</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="deskripsi_2" minlength="2" type="text" value="<?= $val['deskripsi_2']; ?>" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 3</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="deskripsi_3" minlength="2" type="text" value="<?= $val['deskripsi_3']; ?>" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2">Kategori</label>
+                    <div class="col-lg-10">
+                      <?php foreach ($kategori as $val) : ?>
+                        <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" />
+                        <label><?= $val['kategori']; ?></label><br>
+                      <?php endforeach; ?>
                     </div>
                   </div>
                   <div class="form-group">
