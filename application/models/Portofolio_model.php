@@ -9,6 +9,41 @@ class Portofolio_model extends CI_Model{
     {
         return $this->db->get_where('portofolio', ['id'=>$id])->row_array();
     }
+
+    public function getLastID()
+    {
+        return $this->db->select('id')->order_by('id', 'DESC')->get('portofolio')->row_array();
+    }
+
+    public function getAllKategori()
+    {
+        return $this->db->select('kategori')->get('kategori')->result_array();
+    }
+
+    public function getKategori($kategori)
+    {
+        return $this->db->select('kategori')->get_where('kategori',['kategori'=>$kategori])->row_array();
+    }
+
+    // public function createKategori($id)
+    // {
+    //     $data=[
+    //         "id" => $id,
+    //         "kategori" => $this->input->post('kategori')
+    //     ];
+    //     $this->db->insert('kategori', $data);
+    // }
+
+    // public function updateKategori($id)
+    // {
+    //     $data=[
+    //         "id" => $id,
+    //         "kategori" => $this->input->post('kategori')
+    //     ];
+    //     $this->db->where('id', $id);
+    //     $this->db->update('kategori', $data);
+    // }
+
     public function createPortofolio()
     {
         $data=[

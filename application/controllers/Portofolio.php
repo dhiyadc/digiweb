@@ -18,16 +18,18 @@ class Portofolio extends CI_Controller{
     public function createPortofolio()
     {
         $data['judul']='Create Portofolio';
-        $data['kategori']=['Website', 'Multimedia','Mobile'];
-        
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->load->view('portofolio/create_portofolio', $data);
+            $kategori= $this->Portofolio_model->getAllKategori();
+            $this->load->view('portofolio/create_portofolio',  ['kategori' => $kategori]);
             
         }else{
             $this->Portofolio_model->createPortofolio();
+            $this->Portofolio_model->getLastID();
+            // $this->Portofolio_model->createKategori(implode($id));
+            
             $this->session->set_flashdata('flash','ditambahkan');
             redirect('Portofolio');
         }
@@ -38,27 +40,30 @@ class Portofolio extends CI_Controller{
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('Portofolio');
     }
-    public function ReadPortofolio($id)
+    public function ReadPortofolio($id, $kategori)
     {
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getPortobyID($id);
+        $data['kategori']=$this->Portofolio_model->getKategori($kategori);
         $this->load->view('portofolio/read_portofolio', $data);
     }
     public function UpdatePortofolio($id)
     {
         $data['judul']='Update Portofolio';
-        $data['portofolio']= $this->Portofolio_model->getPortobyID($id);
-        $data['kategori']=['Website', 'Mobile', 'Multimedia'];
-        
+        $data['portofolio']= $this->Portofolio_model->getPortobyID($id);    
         
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
+            $data['kategori']= $this->Portofolio_model->getAllKategori();
             $this->load->view('portofolio/update_portofolio', $data);
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);
+            //$this->Portofolio_model->getLastID();
+            // $this->Portofolio_model->createKategori(implode($id));
+
             $this->session->set_flashdata('flash','di update');
             redirect('Portofolio');
         }

@@ -22,14 +22,14 @@
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>
-                        <input type="text" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
+                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
                     </div>
 
                     <div class="form-group">
                         <label for="kategori">Kategori</label><br>
-                        <input type="radio" name="kategori" id="kategori" value="Website">Website <br>
-                        <input type="radio" name="kategori" id="kategori" value="Mobile">Mobile <br>
-                        <input type="radio" name="kategori" id="kategori" value="Multimedia">Multimedia <br>
+                            <?php foreach($kategori as $kat): ?>
+                                <input type="radio" name="kategori" id="kategori" value="<?= implode($kat) ?>"><?= implode($kat) ?><br>
+                            <?php endforeach; ?>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Submit</button>
                 </form>

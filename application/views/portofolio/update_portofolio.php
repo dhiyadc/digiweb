@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>
-                        <input type="text" class="form-control" name="link" id="link" value="<?= $portofolio['link'] ?>" placeholder="link...">
+                        <input type="url" class="form-control" name="link" id="link" value="<?= $portofolio['link'] ?>" placeholder="link...">
                     </div>
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
