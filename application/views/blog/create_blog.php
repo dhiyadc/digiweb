@@ -23,11 +23,10 @@
 					<label for="Kategori" class="control-label col-lg-2">Kategori : </label>
 					<br>
 					<div class="col-lg-10">
-						<input type="radio" name="kategori" value="Kecerdasan buatan"> Kecerdasan buatan <br>
-						<input type="radio" name="kategori" value="Desain"> Desain <br>
-						<input type="radio" name="kategori" value="Network"> Network <br>
-						<input type="radio" name="kategori" value="Business"> Business
-					</div>
+          <?php foreach ($kategori as $key => $value): ?>
+						<input type="checkbox" name="kategori[]" value="<?= $value['id'] ?>"> <?= $value['kategori'] ?> <br>
+          <?php endforeach; ?>
+          </div>
 				</div>
                   <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Text</label>
