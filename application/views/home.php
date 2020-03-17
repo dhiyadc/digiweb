@@ -8,7 +8,8 @@
 	<link rel="icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
 	<title>Digital Creative</title>
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css"> 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/linericon/style.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.css">
@@ -21,6 +22,12 @@
 </head>
 
 <body>
+	
+	<!-- loading  -->
+	<div class="progress" id="PreLoaderBar">
+		<div class="indeterminate"></div>
+	</div>
+	<!-- end loading  -->
     <!--================Home Banner Area =================-->
 	<section class="home_banner_area">
 		<div class="banner_inner">
@@ -43,12 +50,8 @@
 								magna aliqua. Ut enim ad minim.
 							</p>
 							<div class="d-flex align-items-center">
-								<a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=vParh5wE-tM">
-									<span></span>
-								</a>
-								<div class="watch_video text-uppercase">
-									watch the video
-								</div>
+								
+								<a class="primary_btn" href="#">Learn More</a>
 							</div>
 						</div>
 					</div>
@@ -65,10 +68,9 @@
 				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
-						<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-						<a class="primary_btn" href="#">Learn More</a>
+						<h1>We Believe <br>On Your Dreams</h1>
+						<p>Headquartered in Palembang, Digital Creative provided IT services for your business needs. We craft software that align with your overall digital strategy. Our goal is to help you achieve your goals in both short and long term. </p>
+						<a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -95,15 +97,16 @@
 			<div class="row text-center">
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
+
 						<div class="upcoming_title">
-							<h3><a href="games.html">Kursus Pemograman</a></h3>
+							<h3><a href="<?php echo base_url(); ?>Page">Kursus Pemograman</a></h3>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Aplikasi Mobile</a></h3>
 						</div>
@@ -111,7 +114,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Website</a></h3>
 						</div>
@@ -119,7 +122,8 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="new_games_item">
-						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="">
+
+						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
 							<h3><a href="games.html">Konsultasi IT</a></h3>
 						</div>
@@ -137,13 +141,13 @@
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-							Live Streaming
+							Layanan Kami
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
 						 aria-selected="false">
-							Upcoming Challanges
+							Our Goals
 						</a>
 					</li>
 					<li class="nav-item">
@@ -158,15 +162,15 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
+
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="section_content">
 									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
+									<h1>Layanan Kami <br>Adalah Bukti Dedikasi Penuh Kami</h1>
+									<p>Dalam memberikan pelayanan terbaik untuk anda hari ini dan besok</p>
 									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
@@ -176,15 +180,14 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="section_content">
 									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
+									<h1>We Mix Your Idea </br>With Our Digital Creativityty Lasts Long</h1>
+									<p>Our mission is mixing your idea with digital creativity to reach your business goal. Our vision is to be recognized as the best software house in Palembang and help the city road to be Palembang Emas.</p>
 									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
@@ -194,7 +197,7 @@
 						<div class="row recent_update_text">
 							<div class="col-lg-6">
 								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -237,7 +240,6 @@
 								<div class="content">
 									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
 										<i><?= substr($val['judul'], 0, 10); ?></i>
-									
 								</div>
 							</div>
 						</div>
@@ -329,72 +331,70 @@
 	</section>
 	<!--================ End Testimonials Area ================-->
 
-
-	<!--================ Start Pricing Plans Area ================-->
-	<section class="pricing_area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title">
-						<h2>Pricing Plans</h2>
-						<h1>Pricing Plans</h1>
+<!--================ Start Pricing Plans Area ================-->
+<section class="pricing_area section_gap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="main_title">
+							<h2>Pricing Plans</h2>
+							<h1>Pricing Plans</h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="pricing_item">
+							<h3 class="p_title">Android Package</h3>
+							<h1 class="p_price">Rp.900.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang kompleks</li>
+									<li>Final Project Membuat Mobile App</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="pricing_item active">
+							<h3 class="p_title">Website Package</h3>
+							<h1 class="p_price">Rp.690.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project Membuat Website</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 hidden-md">
+						<div class="pricing_item">
+							<h3 class="p_title">Basic Package</h3>
+							<h1 class="p_price">Rp.350.000</h1>
+							<div class="p_list">
+								<ul>
+									<li>Layanan Kursus Selama 8x</li>
+									<li>Modul yang Kompleks</li>
+									<li>Final Project</li>
+								</ul>
+							</div>
+							<div class="p_btn">
+								<a class="gradient_btn" href="#"><span>Join Now</span></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing_item">
-						<h3 class="p_title">Silver Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="pricing_item active">
-						<h3 class="p_title">Golden Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 hidden-md">
-					<div class="pricing_item">
-						<h3 class="p_title">Platinum Package</h3>
-						<h1 class="p_price">$69.00</h1>
-						<div class="p_list">
-							<ul>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-								<li>Basic hair Cut</li>
-							</ul>
-						</div>
-						<div class="p_btn">
-							<a class="gradient_btn" href="#"><span>Order Now</span></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
-	<!--================ End Pricing Plans Area ================-->
-
+    <!--================ End Pricing Plans Area ================-->
 
 	<!--================ Start Frequently Asked Questions Area ================-->
 	<section class="frequently_area">
@@ -477,7 +477,7 @@
 						
 						<div class="blog_content">
 							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<?= substr($val['text'], 0, 162); ?>...
+							<?= substr($val['text'], 0, 150); ?>...
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
@@ -536,9 +536,8 @@
 	-->
 	<!--================ End Newsletter Area ================-->
 	
-
- <!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+		<!-- JS -->
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
@@ -556,4 +555,3 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 		<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
-</body>

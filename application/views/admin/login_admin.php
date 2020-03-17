@@ -10,16 +10,16 @@
   <title>Dashio - Bootstrap Admin Template</title>
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?= base_url(); ?>assets/img/favicon.png" rel="icon">
+  <link href="<?= base_url(); ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="assets/css/style.assets/css" rel="stylesheet">
-  <link href="assets/css/style-responsive.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets/css/style_admin.css" rel="stylesheet">
+  <link href="<?= base_url(); ?>assets/css/style-responsive.css" rel="stylesheet">
   
   <!-- =======================================================
     Template Name: Dashio
@@ -35,63 +35,52 @@
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="index.html">
+      <form class="form-login" action="<?= base_url() ?>admin/user_login_process" method="post">
         <h2 class="form-login-heading">sign in now</h2>
         <div class="login-wrap">
-          <input type="text" class="form-control" placeholder="User ID" autofocus>
+              <?php
+              if (isset($logout_message)) {
+              echo "<div class='message'>";
+              echo $logout_message;
+              echo "</div>";
+              }
+            ?>
+            <?php
+              if (isset($message_display)) {
+              echo "<div class='message'>";
+              echo $message_display;
+              echo "</div>";
+              }
+            ?>
+            <?php
+            echo "<div class='error_msg'>";
+            if (isset($error_message)) {
+            echo $error_message;
+            }
+            //echo validation_errors();
+            echo "</div>";
+          ?>
+          <input type="text" class="form-control" name="username" placeholder="User ID" autofocus required>
           <br>
-          <input type="password" class="form-control" placeholder="Password">
-          <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-            <span class="pull-right">
-            <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-            </span>
-            </label>
-          <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-          <hr>
-          <div class="login-social-link centered">
-            <p>or you can sign in via your social network</p>
-            <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
-            <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-          </div>
-          <div class="registration">
-            Don't have an account yet?<br/>
-            <a class="" href="#">
-              Create an account
-              </a>
-          </div>
+          <input type="password" class="form-control" name="password" placeholder="Password" required>
+          <br>
+          <button class="btn btn-theme btn-block" href="index.html" value="login" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+          
+          
+          
         </div>
-        <!-- Modal -->
-        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Forgot Password ?</h4>
-              </div>
-              <div class="modal-body">
-                <p>Enter your e-mail address below to reset your password.</p>
-                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-              </div>
-              <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                <button class="btn btn-theme" type="button">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal -->
+        
       </form>
     </div>
   </div>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="assets/lib/jquery/jquery.min.js"></script>
-  <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="<?= base_url(); ?>assets/lib/jquery/jquery.min.js"></script>
+  <script src="<?= base_url(); ?>assets/lib/bootstrap/js/bootstrap.min.js"></script>
   <!--BACKSTRETCH-->
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-  <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>assets/lib/jquery.backstretch.min.js"></script>
   <script>
-    $.backstretch("img/login-bg.jpg", {
+    $.backstretch("<?= base_url(); ?>assets/img/login-bg.jpg", {
       speed: 500
     });
   </script>

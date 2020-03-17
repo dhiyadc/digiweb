@@ -47,7 +47,7 @@
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
+          <li><a class="logout" href="<?= base_url() ?>admin/logout">Logout</a></li>
         </ul>
       </div>
     </header>
@@ -71,11 +71,11 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Kelas Les</span>
+              <span>Layanan Kami</span>
               </a>
             <ul class="sub">
-              <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Kelas Les</a></li>
-              <li><a href="<?= base_url(); ?>kelas_admin">Data Les</a></li>
+              <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
+              <li><a href="<?= base_url(); ?>kelas_admin">Data Layanan</a></li>
             </ul>
           </li>
 

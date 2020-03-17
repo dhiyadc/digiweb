@@ -16,7 +16,9 @@
                 <div class="icn-main-container">
                     <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
                 </div>
-                <br><br>
+                <br>
+                <h5>Harga: <?= $val['harga']; ?></h5>
+                <br>
                 <p><?= $val['text']; ?></p>
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {

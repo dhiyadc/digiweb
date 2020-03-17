@@ -2,7 +2,10 @@
 
 class Blog_user_model extends CI_model {
 
-    public function getAllBlog() {
+    public function getAllBlog($keyword = null){
+        if($keyword){
+            $this->db->like('judul', $keyword);
+        }
         return $this->db->get('blog')->result_array();
     }
 
