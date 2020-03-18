@@ -2758,14 +2758,13 @@ h6 {
         width: 100%;
         left: 0;
       } }
-
-      @media (max-width: 767px) {
+      @media only screen and (min-width: 576px) and (max-width: 767px) {
         .about_content2:before{
           width: 94.5%;
           left: 15px;
         } }
 
-        @media (max-width: 991px) {
+        @media only screen and (min-width: 767px) and (max-width: 991px) {
           .about_content2:before{
             width: 95.8%;
             left: 15px;
