@@ -20,30 +20,6 @@ class Portofolio_model extends CI_Model{
         return $this->db->get('kategori_portofolio')->result_array();
     }
 
-    public function getKategori($kategori)
-    {
-        return $this->db->select('kategori')->get_where('kategori_portofolio',['kategori'=>$kategori])->row_array();
-    }
-
-    // public function createKategori($id)
-    // {
-    //     $data=[
-    //         "id" => $id,
-    //         "kategori" => $this->input->post('kategori')
-    //     ];
-    //     $this->db->insert('kategori', $data);
-    // }
-
-    // public function updateKategori($id)
-    // {
-    //     $data=[
-    //         "id" => $id,
-    //         "kategori" => $this->input->post('kategori')
-    //     ];
-    //     $this->db->where('id', $id);
-    //     $this->db->update('kategori', $data);
-    // }
-
     public function createPortofolio()
     {
         $data=[

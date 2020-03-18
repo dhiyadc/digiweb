@@ -27,9 +27,7 @@ class Portofolio extends CI_Controller{
             
         }else{
             $this->Portofolio_model->createPortofolio();
-            // $this->Portofolio_model->getLastID();
-            // $this->Portofolio_model->createKategori(implode($id));
-            
+           
             $this->session->set_flashdata('flash','ditambahkan');
             redirect('Portofolio');
         }
@@ -60,9 +58,6 @@ class Portofolio extends CI_Controller{
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);
-            
-            //$this->Portofolio_model->getLastID();
-            // $this->Portofolio_model->createKategori(implode($id));
 
             $this->session->set_flashdata('flash','di update');
             redirect('Portofolio');
