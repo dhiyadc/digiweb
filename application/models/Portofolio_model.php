@@ -17,12 +17,12 @@ class Portofolio_model extends CI_Model{
 
     public function getAllKategori()
     {
-        return $this->db->select('kategori')->get('kategori')->result_array();
+        return $this->db->get('kategori_portofolio')->result_array();
     }
 
     public function getKategori($kategori)
     {
-        return $this->db->select('kategori')->get_where('kategori',['kategori'=>$kategori])->row_array();
+        return $this->db->select('kategori')->get_where('kategori_portofolio',['kategori'=>$kategori])->row_array();
     }
 
     // public function createKategori($id)
@@ -64,8 +64,14 @@ class Portofolio_model extends CI_Model{
             unlink('images/'.$data->path_gambar);
         }
     }
+    
     public function updatePortofolio($id)
     {
+        $this->db->select('path_gambar, judul, text, tanggal_publih,link,kategori');
+        $this->db->from('portofolio');
+        $this->db->join('kategori_portofolio', 'portofolio.kategori = portofolio.ketegori');
+        $this->db->where('id', $id);
+        return $this->db->result_array();
         if(!empty($_FILES['path_gambar']['name'])){
             $data=[
                 "path_gambar" => $this->updateImage($id),

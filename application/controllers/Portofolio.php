@@ -27,7 +27,7 @@ class Portofolio extends CI_Controller{
             
         }else{
             $this->Portofolio_model->createPortofolio();
-            $this->Portofolio_model->getLastID();
+            // $this->Portofolio_model->getLastID();
             // $this->Portofolio_model->createKategori(implode($id));
             
             $this->session->set_flashdata('flash','ditambahkan');
@@ -40,11 +40,10 @@ class Portofolio extends CI_Controller{
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('Portofolio');
     }
-    public function ReadPortofolio($id, $kategori)
+    public function ReadPortofolio($id)
     {
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_model->getPortobyID($id);
-        $data['kategori']=$this->Portofolio_model->getKategori($kategori);
         $this->load->view('portofolio/read_portofolio', $data);
     }
     public function UpdatePortofolio($id)
@@ -61,6 +60,7 @@ class Portofolio extends CI_Controller{
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);
+            
             //$this->Portofolio_model->getLastID();
             // $this->Portofolio_model->createKategori(implode($id));
 
