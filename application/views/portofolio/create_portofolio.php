@@ -27,8 +27,8 @@
 
                     <div class="form-group">
                         <label for="kategori">Kategori</label><br>
-                            <?php foreach($kategori as $kat): ?>
-                                <input type="radio" name="kategori" id="kategori" value="<?= implode($kat) ?>"><?= implode($kat) ?><br>
+                            <?php foreach($kategori as $key => $value): ?>
+                                <input type="radio" name="kategori" id="kategori" value="<?= $value['kategori'] ?>"><?= $value['kategori'] ?><br>
                             <?php endforeach; ?>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success" style="float: right">Submit</button>

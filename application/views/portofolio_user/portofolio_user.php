@@ -22,7 +22,7 @@
       <td><?= $value['judul']; ?></td>
       <td><?= $value['text']; ?></td>
       <td><?= $value['kategori']; ?></td>
-      <td><a href="<?= 'http://www.'.$value['link']; ?> "> <?= $value['link'];?> </a></td>
+      <td><a href="<?= $value['link']; ?> "> <?= $value['link'];?> </a></td>
       <td>
         <a href="<?= base_url('Portofolio_user/URead_porto/'); ?><?= $value['id']; ?>" class="badge badge-success">Read</a> 
       </td>

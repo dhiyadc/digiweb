@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $portofolio['judul']; ?> </h5>
                         <p class="card-text"><?= $portofolio['text']; ?> </p>
-                        <p class="card-text"><a href="<?= 'http://www.'.$portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
+                        <p class="card-text"><a href="<?= $portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
                     </div>
                 </div>
             </div>

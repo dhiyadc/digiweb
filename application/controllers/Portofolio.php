@@ -22,8 +22,8 @@ class Portofolio extends CI_Controller{
         
         if($this->form_validation->run() == FALSE)
         {
-            $kategori= $this->Portofolio_model->getAllKategori();
-            $this->load->view('portofolio/create_portofolio',  ['kategori' => $kategori]);
+            $data['kategori']= $this->Portofolio_model->getAllKategori();
+            $this->load->view('portofolio/create_portofolio',  $data);
             
         }else{
             $this->Portofolio_model->createPortofolio();

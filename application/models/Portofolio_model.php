@@ -64,14 +64,8 @@ class Portofolio_model extends CI_Model{
             unlink('images/'.$data->path_gambar);
         }
     }
-    
     public function updatePortofolio($id)
     {
-        $this->db->select('path_gambar, judul, text, tanggal_publih,link,kategori');
-        $this->db->from('portofolio');
-        $this->db->join('kategori_portofolio', 'portofolio.kategori = portofolio.ketegori');
-        $this->db->where('id', $id);
-        return $this->db->result_array();
         if(!empty($_FILES['path_gambar']['name'])){
             $data=[
                 "path_gambar" => $this->updateImage($id),
