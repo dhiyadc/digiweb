@@ -2732,6 +2732,51 @@ h6 {
     background: -o-linear-gradient(to right, #9794ac 0%, #b8b2b2 51%, #0d0d0f 100%);
     background: linear-gradient(to right, #9794ac 0%, #b8b2b2 51%, #0d0d0f 100%); }
 
+
+/* Start Tentang with About Us Area css
+============================================================================================ */
+.about_us_area2 {
+  position: relative; }
+
+.about_content2 {
+  position: relative; }
+  .about_content2:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 89%;
+    top: 0;
+    left: 5%;
+    background: -webkit-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+    background: -moz-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+    background: -ms-linear-gradient(to right, #3e3590 0%, #231a60 51%, #0d0d0f 100%);
+    background: -o-linear-gradient(to right, #3e3590 0%, #231a60 100%);
+    background: linear-gradient(to right, #3e3590 0%, #231a60 100%);  }
+
+    @media (max-width: 575px) {
+      .about_content2:before{
+        width: 100%;
+        left: 0;
+      } }
+
+      @media (max-width: 767px) {
+        .about_content2:before{
+          width: 94.5%;
+          left: 15px;
+        } }
+
+        @media (max-width: 991px) {
+          .about_content2:before{
+            width: 95.8%;
+            left: 15px;
+          } }
+
+
+/*  Responsive Tentang
+============================================================================
+*/
+
+
 /* End About Us Area css
 ============================================================================================ */
 /* Start Upcoming Games Area css

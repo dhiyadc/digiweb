@@ -151,14 +151,11 @@
 	<section class="recent_update_area section_gap">
 		<div class="container">
 			<div class="recent_update_inner">
-			
-				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-						<div class="row recent_update_text">		
+						<div class="row about_content2 align-items-center">		
 						<?php foreach($tentang as $val) : ?>
 							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
+								<div class="about_us_image_box">
+									<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -166,13 +163,12 @@
 									<h6><?= $val['nama'] ?></h6>
 									<h1><?= $val['jabatan'] ?></h1>
 									<p><?= $val['quote'] ?></p>
-									<a class="primary_btn" href="#">Learn More</a>
 								</div>
 							</div>
 						<?php endforeach; ?>
 						</div>
-					</div>
-				</div>
+					
+				
 			</div>
 		</div>
 	</section>
