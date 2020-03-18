@@ -37,7 +37,7 @@ class Tentang extends CI_Controller
             }
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -50,7 +50,7 @@ class Tentang extends CI_Controller
             $this->load->view('_partials/footer_admin');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -61,7 +61,7 @@ class Tentang extends CI_Controller
             redirect('tentang/viewTentang');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -74,7 +74,7 @@ class Tentang extends CI_Controller
             $this->load->view('_partials/footer_admin');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -99,7 +99,7 @@ class Tentang extends CI_Controller
             }
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -117,7 +117,39 @@ class Tentang extends CI_Controller
             $this->load->view('tentang/view_tentang_inti', $data);
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
+        }
+    }
+
+    public function viewDeskripsi()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['deskripsi'] = $this->tentang->getdeskripsi();
+            $this->load->view('_partials/header_admin');
+            $this->load->view('tentang/view_deskripsi_tentang', $data);
+            $this->load->view('_partials/footer_admin');
+        }
+        else{
+            redirect('admin');
+        }
+    }
+
+    public function updateDeskripsi()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $data['deskripsi'] = $this->tentang->getdeskripsi();
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/update_deskripsi_tentang', $data);
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->updateDeskripsi();
+                redirect('tentang/viewDeskripsi');
+            }
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('home');
         }
     }
 }

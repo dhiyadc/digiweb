@@ -38,7 +38,7 @@
           <!-- /col-md-4 -->
           <div class="col-md-4 centered">
             <div class="profile-pic">
-              <p><img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" alt="" height="100px"></p>
+              <p><img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" style="object-fit: cover" alt="" height="100px"></p>
               <p><a href="<?= base_url(); ?>tentang" class="btn btn-success">Back</a></p>
             </div>
           </div>

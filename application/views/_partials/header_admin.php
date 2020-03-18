@@ -10,19 +10,19 @@
   <title>Digital Creative Admin</title>
 
   <!-- Favicons -->
-  <link href="<?=base_url()?>assets/img/favicon.png" rel="icon">
-  <link href="<?=base_url()?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?= base_url() ?>assets/img/favicon.png" rel="icon">
+  <link href="<?= base_url() ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="<?=base_url()?>assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= base_url() ?>assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="<?=base_url()?>assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/zabuto_calendar.css">
-  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/lib/gritter/css/jquery.gritter.css" />
+  <link href="<?= base_url() ?>assets/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/zabuto_calendar.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/lib/gritter/css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
-  <link href="<?=base_url()?>assets/css/style_admin.css" rel="stylesheet">
-  <link href="<?=base_url()?>assets/css/style-responsive.css" rel="stylesheet">
-  <script src="<?=base_url()?>assets/lib/chart-master/Chart.js"></script>
+  <link href="<?= base_url() ?>assets/css/style_admin.css" rel="stylesheet">
+  <link href="<?= base_url() ?>assets/css/style-responsive.css" rel="stylesheet">
+  <script src="<?= base_url() ?>assets/lib/chart-master/Chart.js"></script>
 
   <!-- =======================================================
     Template Name: Dashio
@@ -66,13 +66,13 @@
             <a class="active" href="<?= base_url(); ?>home_admin">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Kelas Les</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Kelas Les</a></li>
               <li><a href="<?= base_url(); ?>kelas_admin">Data Les</a></li>
@@ -83,7 +83,7 @@
             <a href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Portofolio</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="<?= base_url(); ?>portofolio/createPortofolio">Buat Portofolio</a></li>
               <li><a href="<?= base_url(); ?>portofolio">Data Portofolio</a></li>
@@ -94,7 +94,7 @@
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Blog</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="<?= base_url(); ?>blog/createview">Buat Blog</a></li>
               <li><a href="<?= base_url(); ?>blog/readblog">Data Blog</a></li>
@@ -105,14 +105,15 @@
             <a href="javascript:;">
               <i class="fa fa-users"></i>
               <span>Tentang</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="<?= base_url(); ?>tentang/createTentang">Buat Tentang</a></li>
               <li><a href="<?= base_url(); ?>tentang/viewTentang">Data Tentang</a></li>
+              <li><a href="<?= base_url(); ?>tentang/viewDeskripsi">Deskripsi Perusahaan</a></li>
             </ul>
           </li>
         </ul>
         <!-- sidebar menu end-->
       </div>
     </aside>
-    <!--sidebar end--> 
+    <!--sidebar end-->

@@ -151,4 +151,18 @@ class Tentang_Model extends CI_Model
         $this->db->order_by("id", "asc");
         return $this->db->get('tentang')->result_array();
     }
+
+    public function getDeskripsi()
+    {
+        return $this->db->get_where('tentang_deskripsi', ['id' => '0'])->row_array();
+    }
+
+    public function updateDeskripsi($id = 0)
+    {
+        $data = [
+            'deskripsi' => $this->input->post('deskripsi')
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_deskripsi', $data);
+    }
 }
