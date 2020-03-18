@@ -42,7 +42,11 @@
 								</ul>
 							</div>
 							<div class="p_btn" id="daftarBtn<?=$i?>">
-								<button type="button" data-toggle="modal" data-target="#contact-modal"><a class="gradient_btn kelasBtns"><span>Join Us<p1 hidden><?= $val['id'] ?></p1></span></a></button>
+								<button type="button" data-toggle="modal" data-target="#contact-modal">
+									<a class="gradient_btn kelasBtns">
+										<span>Join Us<p1 hidden><?= $val['id'] ?></p1></span>
+									</a>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -82,7 +86,7 @@
 							</div>
 							<div class="modal-footer">					
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-success" id="submit">Confirm</button>
+								<button type="submit" class="btn btn-primary" id="submit">Confirm</button>
 							</div>
 						</form>
 					</div>
@@ -101,6 +105,7 @@
 			}
 			document.getElementById("pesan").innerHTML = pesan;
 		}
+
 		$(function(){
 			$('.kelasBtns').click(function(){
 				var value = $(this).children("span").children("p1").html()
@@ -109,7 +114,7 @@
 			})
 		})
     	</script>
-		<!--  -->
+		
 	</section>
 </body>
 <?php $this->load->view('layout/footer')?>
