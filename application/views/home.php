@@ -83,7 +83,6 @@
 						<h1><?= $val['nama'] ?></h6>
 						<h1><?= $val['jabatan'] ?></h1>
 						<p><?= $val['quote'] ?></p>
-						<a class="primary_btn" href="#">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -195,22 +194,16 @@
 				<div class="col-lg-12">
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
-						<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="col-lg-4 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img1.png" alt="">
+								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
 										<i><?= substr($val['judul'], 0, 10); ?></i>
 								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
-						
-						
-						
-						
-
 					</div>
 				</div>
 				<!-- <div class="col-lg-4 hidden-md hidden-sm">
@@ -294,7 +287,7 @@
 	<!--================ End Testimonials Area ================-->
 
 <!--================ Start Pricing Plans Area ================-->
-<section class="pricing_area section_gap">
+<!-- <section class="pricing_area section_gap">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -355,7 +348,7 @@
 					</div>
 				</div>
 			</div>
-	</section>
+	</section> -->
     <!--================ End Pricing Plans Area ================-->
 
 	<!--================ Start Frequently Asked Questions Area ================-->
@@ -438,15 +431,24 @@
 						</div>
 						
 						<div class="blog_content">
-							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<?= substr($val['text'], 0, 125); ?>...
+							<a class="title" href="blog.html"><?= $val['judul'] ?><br></a>
+							<p>
+							<?php
+							$text = str_replace("&nbsp;",' ',$val['text']);
+							$text = strip_tags($text);
+							echo substr($text,0,150);?> <a class="title" href="">Read More</a></p> <br>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
 								<?php
 									foreach($rating as $value) :
 										if($value['id_blog'] == $val['id']){
-										echo $count = (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/10;
+											if(($value['like'] + $value['love'] + $value['haha'] + $value['wow'] + $value['sad']) == 0){
+												echo "0";
+											} else {
+												echo (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/($value['like'] + $value['love'] + $value['haha'] + $value['wow'] + $value['sad']);
+											}
+										
 										}
 									endforeach;
 								?>
@@ -518,4 +520,12 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 		<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$(".noenter").each(function(){
+				$(this).html($(this).html().replace(/&nbsp;/gi," "));
+				});
+			});
+		</script>
 </body>
