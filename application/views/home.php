@@ -70,8 +70,8 @@
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
 						<h1>Digital <br>Creative</h1>
-						<p><?php foreach($DCDesc as $val) : echo $val['deskripsi']; endforeach;?></p>
-						<a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a>
+						<?php foreach($DCDesc as $val) : echo $val['deskripsi']; endforeach;?>
+						<!-- <a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a> -->
 					</div>
 				</div>
 				<div class="col-lg-6">
