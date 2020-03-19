@@ -177,15 +177,20 @@
 				<div class="col-lg-12">
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
-						<div class="col-lg-4 col-md-6 col-sm-6">
+						
+							<div class="col-lg-4 col-md-6 col-sm-6">
 							<div class="single-gallery">
+							<a href="portofolio_user">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-										<i><?= substr($val['judul'], 0, 10); ?></i>
+										<!-- <?= substr($val['judul'], 0, 10); ?> -->
+										<i class="lnr lnr-eye"></i>
 								</div>
+								</a>	
 							</div>
 						</div>
+						
 					<?php endforeach; ?>
 					</div>
 				</div>
