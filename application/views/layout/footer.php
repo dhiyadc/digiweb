@@ -35,7 +35,7 @@
 						<ul>
 							<li><a href="#"></a>Siapa Kami</a></li><a href="#">
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a></a></li>
+							<li><a href="#"></a>Galerry</a></li>
 							<li><a href="#"></a>Recent Blog</a></li>
 						</ul>
 					</aside>
