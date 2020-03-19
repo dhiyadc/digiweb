@@ -111,7 +111,7 @@
 	
 	
 		<!--================ Start Frequently Asked Questions Area ================-->
-		<br><br><br><br>
+		
 		
 		<section class="frequently_area">
 			<div class="container">

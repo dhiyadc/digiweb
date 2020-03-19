@@ -8,7 +8,7 @@
 			<div class="container">
 				<div class="banner_content text-center">
 					<h2>Join Us</h2>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</section>

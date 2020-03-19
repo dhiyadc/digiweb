@@ -18,13 +18,16 @@
         <!--================End Home Banner Area =================-->
         
         <!--================Contact Area =================-->
+        <!--
         <section class="contact_area section_gap">
             <div class="container">
                 <div>
+
                 </div>
             </div>
         </div>
     </section>
+     -->
     <!--================End Home Banner Area =================-->
 
     <!--================Contact Area =================-->
