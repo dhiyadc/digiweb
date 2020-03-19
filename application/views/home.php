@@ -511,11 +511,4 @@
 		<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
 
-		<script>
-			$(document).ready(function() {
-				$(".noenter").each(function(){
-				$(this).html($(this).html().replace(/&nbsp;/gi," "));
-				});
-			});
-		</script>
 </body>
