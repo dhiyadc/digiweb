@@ -9,7 +9,7 @@
 							<a href="index.html">Home</a>
 							<a href="contact.html">CONTACT</a>
 						</div>
-						<h2>CONTACT US</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000;">CONTACT US</h2>
 						
 					</div>
 				</div>

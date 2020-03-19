@@ -6,7 +6,7 @@
 				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h2>Portofolio</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000;">Portofolio</h2>
 					</div>
 				</div>
 			</div>

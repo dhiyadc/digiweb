@@ -11,7 +11,7 @@
 							<a href="index.html">Home</a>
 							<a href="about-us.html">Layanan Kami</a>
 						</div>
-						<h2>Layanan Kami</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000;">Layanan Kami</h2>
 					</div>
 				</div>
 			</div>
