@@ -7,11 +7,7 @@
 				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<div class="page_link">
-							<a href="index.html">Home</a>
-							<a href="about-us.html">Layanan Kami</a>
-						</div>
-						<h2 style="color: white; text-shadow: 2px 2px 4px #000000;">Layanan Kami</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Layanan Kami</h2>
 					</div>
 				</div>
 			</div>
