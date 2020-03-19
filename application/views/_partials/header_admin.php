@@ -73,8 +73,6 @@
               <i class="fa fa-book"></i>
               <span>Layanan Kami</span>
               </a>
-              <span>Kelas Les</span>
-            </a>
 
             <ul class="sub">
               <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
