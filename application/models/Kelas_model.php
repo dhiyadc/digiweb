@@ -14,7 +14,7 @@ class Kelas_model extends CI_Model {
 
     public function getKategori()
     {
-        return $this->db->get('kategori')->result_array();
+        return $this->db->get('kategori_kelas')->result_array();
     }
 
     private function insertImage() 
