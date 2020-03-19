@@ -113,6 +113,7 @@
               <li><a href="<?= base_url(); ?>tentang/createTentang">Buat Tentang</a></li>
               <li><a href="<?= base_url(); ?>tentang/viewTentang">Data Tentang</a></li>
               <li><a href="<?= base_url(); ?>tentang/viewDeskripsi">Deskripsi Perusahaan</a></li>
+              <li><a href="<?= base_url(); ?>tentang/viewFAQ">F.A.Q</a></li>
             </ul>
           </li>
         </ul>
