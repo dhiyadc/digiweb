@@ -169,4 +169,4 @@
 				</div>
 			</div>
 		</section>
-<?php $this->load->view('partials/footer')?>
+<?php $this->load->view('layout/footer')?>

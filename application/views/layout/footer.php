@@ -50,7 +50,7 @@
 								<li><a href="#"></a>Layanan Kami
 							</a></li>
 							<li><a href="#"></a>Join Members</a></li>
-							<li><a href="#">Contact</a></a></li>
+							<li><a href="#"></a>Contact</a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
@@ -61,9 +61,8 @@
 							<h4>Support</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Hubungi Kami</a></li><a href="#">
-								<li><a href="#">Bantuan</a>
-							</a></li>
+							<li><a href="#"></a>Hubungi Kami</a></li>
+								<li><a href="#"></a>Bantuan</a></li>
 							
 						</ul>
 					</aside>
@@ -94,8 +93,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<div class="social_widget">
 						<a href="#"><i class="fa fa-facebook"></i></a>
 						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
 					</div>
 				</div>
 			</div>
