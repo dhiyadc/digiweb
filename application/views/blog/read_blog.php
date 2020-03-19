@@ -10,7 +10,7 @@
               <div class="content-panel">
                 <h4><i class="fa fa-angle-right"></i><a href="<?= base_url(); ?>blog/fullDetail/<?= $value['id'] ?>"><?= $value['judul']; ?></a></h4>
                 <div class="panel-body text-center">
-                  <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="250px">
+                  <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" width="400px" style="object-fit: cover; height: 250px">
                 </div>
               </div>
               <br>

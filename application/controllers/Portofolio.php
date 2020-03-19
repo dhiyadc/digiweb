@@ -19,18 +19,18 @@ class Portofolio extends CI_Controller{
     public function createPortofolio()
     {
         $data['judul']='Create Portofolio';
-        $data['kategori']=['Website', 'Multimedia','Mobile'];
-        
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
+            $data['kategori']= $this->Portofolio_model->getAllKategori();
             $this->load->view('_partials/header_admin');
-            $this->load->view('portofolio/create_portofolio', $data);
+            $this->load->view('portofolio/create_portofolio',  $data);
             $this->load->view('_partials/footer_admin');
             
         }else{
             $this->Portofolio_model->createPortofolio();
+           
             $this->session->set_flashdata('flash','ditambahkan');
             redirect('Portofolio');
         }
@@ -52,20 +52,20 @@ class Portofolio extends CI_Controller{
     public function UpdatePortofolio($id)
     {
         $data['judul']='Update Portofolio';
-        $data['portofolio']= $this->Portofolio_model->getPortobyID($id);
-        $data['kategori']=['Website', 'Mobile', 'Multimedia'];
-        
+        $data['portofolio']= $this->Portofolio_model->getPortobyID($id);    
         
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         
         if($this->form_validation->run() == FALSE)
         {
+            $data['kategori']= $this->Portofolio_model->getAllKategori();
             $this->load->view('_partials/header_admin');
             $this->load->view('portofolio/update_portofolio', $data);
             $this->load->view('_partials/footer_admin');
             
         }else{
             $this->Portofolio_model->updatePortofolio($id);
+
             $this->session->set_flashdata('flash','di update');
             redirect('Portofolio');
         }

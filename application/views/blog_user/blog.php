@@ -122,13 +122,39 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!--  -->
+                                <div class="col-md-9 blogBox moreBox " style="display: none;">
+                                    <div class="blog_post">
+                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
+                                        <div class="blogTxt">
+                                        <div class="blogCategory">
+                                            <a href="/">Growth Hacking</a>
+                                        </div>
+                                        <h2>Pro brute causae aliquip ad</h2>
+                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 blogBox moreBox " style="display: none;">
+                                    <div class="blog_post">
+                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
+                                        <div class="blogTxt">
+                                        <div class="blogCategory">
+                                            <a href="/">Growth Hacking</a>
+                                        </div>
+                                        <h2>Pro brute causae aliquip ad</h2>
+                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </article>
                             <?php endforeach; ?>
                             
                             <nav class="blog-pagination justify-content-center d-flex">
 		                        <ul class="pagination">
 		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Previous">
+		                                <!-- <a href="#" class="page-link" aria-label="Previous">
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-left"></span>
 		                                    </span>
@@ -144,7 +170,34 @@
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-right"></span>
 		                                    </span>
-		                                </a>
+                                        </a> -->
+                                        <!--  -->
+                                
+
+                                
+                                        <div id="loadMore" style="">
+                                        <a href="#">Load More</a>
+                                        </div>    
+                                        
+
+                                        <!--  -->
+                                        <!--Load More-->
+                                        <Script>
+                                        $( document ).ready(function () {
+                                        $(".moreBox").slice(0, 3).show();
+                                            if ($(".blogBox:hidden").length != 0) {
+                                            $("#loadMore").show();
+                                            }   
+                                            $("#loadMore").on('click', function (e) {
+                                            e.preventDefault();
+                                            $(".moreBox:hidden").slice(0, 6).slideDown();
+                                            if ($(".moreBox:hidden").length == 0) {
+                                                $("#loadMore").fadeOut('slow');
+                                            }
+                                            });
+                                        });
+                                        </Script> 
+                                        <!--  -->
 		                            </li>
 		                        </ul>
 		                    </nav>
@@ -272,4 +325,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="<?= base_url('assets/js/script.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/ckeditor/ckeditor.js'); ?>"></script>
+
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+        <!-- <link href="load-more-button.css" rel="stylesheet"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- <script src="load-more-button.js"></script> -->
     </body>

@@ -27,9 +27,30 @@
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="ccomment" class="control-label col-lg-2">Deskripsi Kelas</label>
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 1</label>
                     <div class="col-lg-10">
-                      <textarea class="form-control " id="ccomment" name="text" required></textarea>
+                      <input class=" form-control" id="cname" name="deskripsi_1" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 2</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="deskripsi_2" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Deskripsi 3</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="deskripsi_3" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2">Kategori</label>
+                    <div class="col-lg-10">
+                      <?php foreach ($kategori as $val) : ?>
+                        <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" />
+                        <label><?= $val['kategori']; ?></label><br>
+                      <?php endforeach; ?>
                     </div>
                   </div>
                   <div class="form-group">
@@ -40,12 +61,32 @@
                   </div>
                 </form>
               </div>
-            </div>
-            <!-- /form-panel -->
+              <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Nama Kelas</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" id="cname" name="judul" minlength="2" type="text" required />
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="ccomment" class="control-label col-lg-2">Deskripsi Kelas</label>
+                <div class="col-lg-10">
+                  <textarea class="form-control " id="ccomment" name="text" required></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <input type="submit" name="submit" value="Save" class="btn btn-theme">
+                  <a href="<?= base_url() ?>kelas_admin"><button class="btn btn-theme04" type="button">Cancel</button></a>
+                </div>
+              </div>
+            </form>
           </div>
-          <!-- /col-lg-12 -->
         </div>
-        <!-- /row -->
-      </section>
-      <!-- /wrapper -->
-    </section>
+        <!-- /form-panel -->
+      </div>
+      <!-- /col-lg-12 -->
+    </div>
+    <!-- /row -->
+  </section>
+  <!-- /wrapper -->
+</section>

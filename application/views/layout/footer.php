@@ -33,10 +33,10 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>For Business</a></li><a href="#">
+							<li><a href="#"></a>We Are</a></li><a href="#">
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a>How it Works</a></li>
-							<li><a href="#"></a>Farfly Blog</a></li>
+							<li><a href="#"></a>Galerry</a></li>
+							<li><a href="#"></a>Recent Blog</a></li>
 						</ul>
 					</aside>
 				</div>
@@ -46,11 +46,11 @@
 							<h4>Company</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Product Tour</a></li><a href="#">
-								<li><a href="#"></a>Pricing
+							<li><a href="#"></a>Product</a></li><a href="#">
+								<li><a href="#"></a>Layanan Kami
 							</a></li>
-							<li><a href="#"></a>Founding Members</a></li>
-							<li><a href="#"></a>Case Studies</a></li>
+							<li><a href="#"></a>Join Members</a></li>
+							<li><a href="#"></a>Contact</a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
@@ -61,9 +61,8 @@
 							<h4>Support</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Documentation</a></li><a href="#">
-								<li><a href="#"></a>Data Securiry
-							</a></li>
+							<li><a href="#"></a>Hubungi Kami</a></li>
+								<li><a href="#"></a>Bantuan</a></li>
 							
 						</ul>
 					</aside>
@@ -94,8 +93,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<div class="social_widget">
 						<a href="#"><i class="fa fa-facebook"></i></a>
 						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
 					</div>
 				</div>
 			</div>

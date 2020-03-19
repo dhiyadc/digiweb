@@ -65,6 +65,7 @@
 	<section class="about_us_area section_gap_top">
 		<div class="container">
 			<div class="row about_content align-items-center">
+			<?php foreach($tentang as $val) : ?>
 				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
@@ -75,9 +76,10 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="about_us_image_box justify-content-center">
-						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/about_img.jpg" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="">
 					</div>
 				</div>
+			<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
@@ -100,7 +102,7 @@
 						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
 
 						<div class="upcoming_title">
-							<h3><a href="<?php echo base_url(); ?>Page">Kursus Pemograman</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Kursus Pemograman</a></h3>
 						</div>
 					</div>
 				</div>
@@ -108,7 +110,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Aplikasi Mobile</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Aplikasi Mobile</a></h3>
 						</div>
 					</div>
 				</div>
@@ -116,7 +118,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Website</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Website</a></h3>
 						</div>
 					</div>
 				</div>
@@ -125,7 +127,7 @@
 
 						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Konsultasi IT</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Konsultasi IT</a></h3>
 						</div>
 					</div>
 				</div>
@@ -138,80 +140,22 @@
 	<section class="recent_update_area section_gap">
 		<div class="container">
 			<div class="recent_update_inner">
-				<ul class="nav nav-tabs" id="myTab" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-							Layanan Kami
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-						 aria-selected="false">
-							Our Goals
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-						 aria-selected="false">
-							Recent Famous Games
-						</a>
-					</li>
-				</ul>
-				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<div class="row recent_update_text">
+						<div class="row about_content2 align-items-center">		
+						<?php foreach($tentang as $val) : ?>
 							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
-
+								<div class="about_us_image_box">
+									<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
 								</div>
 							</div>
 							<div class="col-lg-6">
-								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>Layanan Kami <br>Adalah Bukti Dedikasi Penuh Kami</h1>
-									<p>Dalam memberikan pelayanan terbaik untuk anda hari ini dan besok</p>
-									<a class="primary_btn" href="#">Learn More</a>
+								<div class="section_content ">
+									<h6><?= $val['nama'] ?></h6>
+									<h1><?= $val['jabatan'] ?></h1>
+									<p style="text-align: justify;"><?= $val['quote'] ?></p>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<div class="row recent_update_text">
-							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>We Mix Your Idea </br>With Our Digital Creativityty Lasts Long</h1>
-									<p>Our mission is mixing your idea with digital creativity to reach your business goal. Our vision is to be recognized as the best software house in Palembang and help the city road to be Palembang Emas.</p>
-									<a class="primary_btn" href="#">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-						<div class="row recent_update_text">
-							<div class="col-lg-6">
-								<div class="chart_img">
-									<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/recent_up.jpg" alt="">
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="section_content">
-									<h6>About Us</h6>
-									<h1>We Believe that <br>Interior beauty Lasts Long</h1>
-									<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-										especially in the workplace. That’s why it’s crucial that as women.</p>
-									<a class="primary_btn" href="#">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+						<?php endforeach; ?>
+						</div>			
 			</div>
 		</div>
 	</section>
@@ -233,22 +177,16 @@
 				<div class="col-lg-12">
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
-						<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="col-lg-4 col-md-6 col-sm-6">
 							<div class="single-gallery">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/img/gallery_img1.png" alt="">
+								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-									<a class="pop-up-image" href="<?php echo base_url(); ?>assets/img/gallery_img2.png">
 										<i><?= substr($val['judul'], 0, 10); ?></i>
 								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
-						
-						
-						
-						
-
 					</div>
 				</div>
 				<!-- <div class="col-lg-4 hidden-md hidden-sm">
@@ -332,7 +270,7 @@
 	<!--================ End Testimonials Area ================-->
 
 <!--================ Start Pricing Plans Area ================-->
-<section class="pricing_area section_gap">
+<!-- <section class="pricing_area section_gap">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -393,7 +331,7 @@
 					</div>
 				</div>
 			</div>
-	</section>
+	</section> -->
     <!--================ End Pricing Plans Area ================-->
 
 	<!--================ Start Frequently Asked Questions Area ================-->
@@ -472,22 +410,27 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="blog_items">
 						<div class="blog_img_box">
-							<img class="img-fluid" src="<?php echo base_url(); ?>assets/img/<?= $val['path_gambar']; ?>" alt="">
+							<img class="img-fluid" src="<?php echo base_url(); ?>images/<?= $val['path_gambar']; ?>" alt="" style="object-fit: cover; height: 220px">
 						</div>
 						
 						<div class="blog_content">
-							<a class="title" href="blog.html"><?= $val['judul'] ?></a>
-							<?= substr($val['text'], 0, 150); ?>...
+							<a class="title" href="blog.html"><?= $val['judul'] ?><br></a>
+							<p>
+							<?php
+							$text = html_entity_decode($val['text']);
+							$text = str_replace("&nbsp;",' ',$text);
+							$text = strip_tags($text);
+							echo substr($text,0,150);?> <a class="title" href="">Read More</a></p> <br>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
-								<?php
-									foreach($rating as $value) :
-										if($value['id_blog'] == $val['id']){
-										echo $count = (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/10;
+								<?php foreach($blog as $vals) : 
+										if($val['id'] == $vals['id']){
+											echo $vals['rate'];
 										}
 									endforeach;
-								?>
+									
+									?>
 								</a>
 								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
 								<?= $val['comment'] ?></a>

@@ -25,7 +25,7 @@
             <h6><?= $staff['jabatan'] ?></h6>
             <p><?= $staff['quote'] ?></p>
             <br>
-            <p><a href="<?= base_url(); ?>tentang/updateTentang/<?= $staff['id'] ?>" class="btn btn-theme"><i class="fa fa-pencil"></i>Edit Profile</a></p>
+            <p><a href="<?= base_url(); ?>tentang/updateTentang/<?= $staff['id'] ?>" class="btn btn-theme"><i class="fa fa-pencil"></i> Edit Profile</a></p>
             <script type="text/javascript" language="JavaScript">
               function konfirmasi() {
                 tanya = confirm("Anda Yakin Akan Menghapus Data ?");
@@ -38,7 +38,7 @@
           <!-- /col-md-4 -->
           <div class="col-md-4 centered">
             <div class="profile-pic">
-              <p><img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" alt="" height="100px"></p>
+              <p><img src="<?= base_url() . 'images/' . $staff['path_gambar'] ?>" style="object-fit: cover" alt="" height="100px"></p>
               <p><a href="<?= base_url(); ?>tentang" class="btn btn-success">Back</a></p>
             </div>
           </div>

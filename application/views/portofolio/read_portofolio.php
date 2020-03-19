@@ -17,12 +17,13 @@
                 </div>
                 <br><br>
                 <p><?= $portofolio['text']; ?></p>
-                <p><a href="<?= 'http://www.'.$portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
+                <p><a href="<?= $portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
                 <center>
                     <small id="tanggal" class="form-text text-muted" ><?= $portofolio['tanggal_publish']; ?></small>
                     <br>
                     <small id="kategori" class="form-text text-muted" ><?= $portofolio['kategori']; ?></small>
                 </center>
+                
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {
                         tanya = confirm("Anda Yakin Akan Menghapus Data ?");
@@ -35,7 +36,6 @@
                 <a href="<?= base_url(); ?>portofolio/UpdatePortofolio/<?= $portofolio['id']; ?>" class="btn btn-primary">Update</a>
                 <a href="<?= base_url(); ?>portofolio" class="btn btn-success">Back</a>
               </div>
-              <!-- end custombox -->
             </div>
             <!-- end col-4 -->
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
