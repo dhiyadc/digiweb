@@ -14,34 +14,46 @@
 			<b>Detail Blog</b>
 		</div>
 		<div class="card-body text-center">
-			<img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="300px">
+			<img src="<?= base_url().'images/'.$path_gambar?>" alt="" height="300px">
 			<hr>
-			<h2 class="card-title"><?= $blog['judul'] ?></h2>
-			<p class="card-text"><?= $blog['author']?></p>
-			<p class="card-text"><?= $blog['kategori']?></p>
-			<p class="card-text"><?= $blog['text']?></p>
-			<p class="card-text"><?= $blog['tanggal_publish']?></p>
+			<h2 class="card-title"><?= $judul ?></h2>
+			<p class="card-text"><?= $author?></p>
+			<p class="card-text"><?= implode(", " ,$kategori) ?></p>
+			<p class="card-text"><?= html_entity_decode($text)?></p>
+			<p class="card-text"><?= $tanggal_publish?></p>
 
 			<center>
 				<table>
 					<tr>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingli/<?= $blog['id']; ?>"><p class="emoticon1">like</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratingli/<?= $id_blog ?>">
+								<p class="emoticon1">like</p>
+							</a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratinglo/<?= $blog['id']; ?>"><p class="emoticon2">love</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratinglo/<?= $id_blog ?>">
+								<p class="emoticon2">love</p>
+							</a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingh/<?= $blog['id']; ?>"><p class="emoticon3">haha</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratingh/<?= $id_blog ?>">
+								<p class="emoticon3">haha</p>
+							</a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratingw/<?= $blog['id']; ?>"><p class="emoticon4">wow</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratingw/<?= $id_blog ?>">
+								<p class="emoticon4">wow</p>
+							</a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratings/<?= $blog['id']; ?>"><p class="emoticon5">sad</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratings/<?= $id_blog ?>">
+								<p class="emoticon5">sad</p>
+							</a>
 						</td>
 						<td>
-								<a href="<?= base_url(''); ?>Blog_user/save_ratinga/<?= $blog['id']; ?>"><p class="emoticon6">angry</p></a>
+							<a href="<?= base_url(''); ?>Blog_user/save_ratinga/<?= $id_blog ?>">
+								<p class="emoticon6">angry</p>
+							</a>
 						</td>
 					</tr>
 				</table>
@@ -50,7 +62,7 @@
 
 			<hr>
 
-			<form action="<?=base_url('')?>Blog_user/createComment/<?= $blog['id']?>" method="POST">
+			<form action="<?=base_url('')?>Blog_user/createComment/<?= $id_blog?>" method="POST">
 				<div class="form-group">
 					<label for="nama_komen" class="float-left">Name : </label>
 					<input type="text" name="nama_komen" class="form-control" id="nama_komen"

@@ -10,11 +10,14 @@
               <div class="project">
                 <div class="photo-wrapper">
                   <div class="photo">
-                    <a class="fancybox" href="<?= base_url(); ?>portofolio/ReadPortofolio/<?= $value['id'] ?>"><img class="img-responsive" src="<?= base_url().'images/'.$value['path_gambar']?>" alt=""></a>
+                    <a class="fancybox" href="<?= base_url(); ?>portofolio/ReadPortofolio/<?= $value['id'] ?>">
+                      <img class="img-responsive" src="<?= base_url().'images/'.$value['path_gambar']?>" style="object-fit: cover;" alt="">
+                    </a>
                   </div>
                   <div class="overlay"></div>
                 </div>
               </div>
+              <br>
             </div>
           </div>
           <!-- col-lg-4 -->
