@@ -25,14 +25,8 @@
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Link</label>
                     <div class="col-lg-10">
-                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
+                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="https://">
                     </div>
-                  </div>
-                  <div class="form-group">
-                        <label for="kategori">Kategori</label><br>
-                            <?php foreach($kategori as $key => $value): ?>
-                                <input type="radio" name="kategori" id="kategori" value="<?= $value['kategori'] ?>"><?= $value['kategori'] ?><br>
-                            <?php endforeach; ?>
                   </div>
                   <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Deskripsi</label>
@@ -41,15 +35,12 @@
                     </div>
                   </div>
                     <div class="form-group">
-                        <label for="link">Link</label>
-                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="kategori">Kategori</label><br>
+                      <label for="ccomment" class="control-label col-lg-2">Kategori</label>
+                      <div class="col-lg-10">
                             <?php foreach($kategori as $key => $value): ?>
                                 <input type="radio" name="kategori" id="kategori" value="<?= $value['kategori'] ?>"><?= $value['kategori'] ?><br>
                             <?php endforeach; ?>
+                      </div>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">

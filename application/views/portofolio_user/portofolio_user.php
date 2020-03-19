@@ -91,7 +91,7 @@
 						console.log(value2)
 						
 						var value3 = $(this).children("div").children("p3").html()
-						$('#linkPorto').attr("href",`http://${value3}`) 
+						$('#linkPorto').attr("href",`${value3}`) 
 						document.getElementById("val3").innerHTML = value3;
 
 						var value4 = $(this).children("div").children("p4").html()

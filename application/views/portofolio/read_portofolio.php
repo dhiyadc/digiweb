@@ -17,7 +17,7 @@
                 </div>
                 <br><br>
                 <p><?= $portofolio['text']; ?></p>
-                <p><a href="<?= 'http://www.'.$portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
+                <p><a href="<?= $portofolio['link']; ?> "> <?= $portofolio['link'];?> </a> </p>
                 <center>
                     <small id="tanggal" class="form-text text-muted" ><?= $portofolio['tanggal_publish']; ?></small>
                     <br>
