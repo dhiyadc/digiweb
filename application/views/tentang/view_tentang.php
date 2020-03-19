@@ -8,7 +8,9 @@
           <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="dmbox">
               <div class="service-icon">
-                <img src="<?= base_url() . 'images/' . $value['path_gambar'] ?>" alt="" height="150px">
+
+                <img src="<?= base_url() . 'images/' . $value['path_gambar'] ?>" style="object-fit: cover" alt="" height="150px">
+
               </div>
               <h4><a href="<?= base_url(); ?>tentang/viewTentangById/<?= $value['id']; ?>"><?= $value['nama'] ?></a></h4>
               <p><?= $value['jabatan'] ?></p>
