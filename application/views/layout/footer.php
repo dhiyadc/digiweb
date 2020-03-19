@@ -33,7 +33,7 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Siapa Kami</a></li><a href="#">
+							<li><a href="#"></a>We Are</a></li><a href="#">
 							<li><a href="#"></a>Reviews</a></li>
 							<li><a href="#"></a>Galerry</a></li>
 							<li><a href="#"></a>Recent Blog</a></li>
@@ -50,7 +50,7 @@
 								<li><a href="#"></a>Layanan Kami
 							</a></li>
 							<li><a href="#"></a>Join Members</a></li>
-							<li><a href="#"></a></a></li>
+							<li><a href="#">Contact</a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
