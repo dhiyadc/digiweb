@@ -109,7 +109,7 @@ img {
 ============================================================================================ */
 .section_content {
   position: relative;
-  padding: 70px 0px 73px 70px; }
+  padding: 70px 50px 73px 0; }
   .section_content h6 {
     color: #fff;
     font-size: 14px;
@@ -3553,6 +3553,9 @@ h6 {
       padding: 25px 0 25px;
       font-size: 30px; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .section_content {
+    padding: 68px 0px 68px 70px; }
+
   .section_gap {
     padding: 80px 0; }
 

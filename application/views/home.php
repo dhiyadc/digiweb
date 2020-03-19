@@ -159,16 +159,14 @@
 								</div>
 							</div>
 							<div class="col-lg-6">
-								<div class="section_content">
+								<div class="section_content ">
 									<h6><?= $val['nama'] ?></h6>
 									<h1><?= $val['jabatan'] ?></h1>
-									<p><?= $val['quote'] ?></p>
+									<p style="text-align: justify;"><?= $val['quote'] ?></p>
 								</div>
 							</div>
 						<?php endforeach; ?>
-						</div>
-					
-				
+						</div>			
 			</div>
 		</div>
 	</section>
@@ -430,24 +428,20 @@
 							<a class="title" href="blog.html"><?= $val['judul'] ?><br></a>
 							<p>
 							<?php
-							$text = str_replace("&nbsp;",' ',$val['text']);
+							$text = html_entity_decode($val['text']);
+							$text = str_replace("&nbsp;",' ',$text);
 							$text = strip_tags($text);
 							echo substr($text,0,150);?> <a class="title" href="">Read More</a></p> <br>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
-								<?php
-									foreach($rating as $value) :
-										if($value['id_blog'] == $val['id']){
-											if(($value['like'] + $value['love'] + $value['haha'] + $value['wow'] + $value['sad']) == 0){
-												echo "0";
-											} else {
-												echo (($value['like'] * 5) + ($value['love'] * 4) + ($value['haha'] * 3) + ($value['wow'] * 2) + ($value['sad'] * 1))/($value['like'] + $value['love'] + $value['haha'] + $value['wow'] + $value['sad']);
-											}
-										
+								<?php foreach($blog as $vals) : 
+										if($val['id'] == $vals['id']){
+											echo $vals['rate'];
 										}
 									endforeach;
-								?>
+									
+									?>
 								</a>
 								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>
 								<?= $val['comment'] ?></a>
