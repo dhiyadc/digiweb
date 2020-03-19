@@ -25,7 +25,7 @@
             <h6><?= $staff['jabatan'] ?></h6>
             <p><?= $staff['quote'] ?></p>
             <br>
-            <p><a href="<?= base_url(); ?>tentang/updateTentang/<?= $staff['id'] ?>" class="btn btn-theme"><i class="fa fa-pencil"></i>Edit Profile</a></p>
+            <p><a href="<?= base_url(); ?>tentang/updateTentang/<?= $staff['id'] ?>" class="btn btn-theme"><i class="fa fa-pencil"></i> Edit Profile</a></p>
             <script type="text/javascript" language="JavaScript">
               function konfirmasi() {
                 tanya = confirm("Anda Yakin Akan Menghapus Data ?");
