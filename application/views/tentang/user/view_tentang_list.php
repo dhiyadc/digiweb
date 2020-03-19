@@ -65,7 +65,7 @@
             <?php endforeach ?>
 </body>
 
-</html> -->
+</html>
 
 <?php $this->load->view('layout/header')?>
 <body class="about_page">
