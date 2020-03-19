@@ -1,5 +1,5 @@
 <section id="main-content">
-  <section class="wrapper site-min-height">
+<section class="wrapper site-min-height">
     <div class="row mt mb">
       <div class="col-lg-12">
         <h3><i class="fa fa-angle-right"></i>Data Tentang</h3>
@@ -16,9 +16,9 @@
               <p><?= $value['jabatan'] ?></p>
             </div>
           </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
       </div>
     </div>
   </section>
   <!-- /wrapper -->
-</section>
+</section> 
