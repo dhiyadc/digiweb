@@ -8,7 +8,8 @@
 	<link rel="icon" href="<?php echo base_url(); ?>assets/img/favicon.png">
 	<title>Digital Creative</title>
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css"> 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/linericon/style.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.css">
@@ -18,15 +19,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/flaticon/flaticon.css">
     <!-- main css -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-
-	<script>
-		document.onreadystatechange = function () {
-			if (document.readyState === "complete") {
-				console.log(document.readyState);
-				document.getElementById("PreLoaderBar").style.display = "none";
-			}
-		}
-	</script>
 </head>
 
 <body>
@@ -58,12 +50,8 @@
 								magna aliqua. Ut enim ad minim.
 							</p>
 							<div class="d-flex align-items-center">
-								<a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=vParh5wE-tM">
-									<span></span>
-								</a>
-								<div class="watch_video text-uppercase">
-									watch the video
-								</div>
+								
+								<a class="primary_btn" href="#">Learn More</a>
 							</div>
 						</div>
 					</div>
@@ -80,9 +68,10 @@
 			<?php foreach($tentang as $val) : ?>
 				<div class="col-lg-6">
 					<div class="section_content">
-						<h1><?= $val['nama'] ?></h6>
-						<h1><?= $val['jabatan'] ?></h1>
-						<p><?= $val['quote'] ?></p>
+						<h6>Tentang Kami</h6>
+						<h1>We Believe <br>On Your Dreams</h1>
+						<p>Headquartered in Palembang, Digital Creative provided IT services for your business needs. We craft software that align with your overall digital strategy. Our goal is to help you achieve your goals in both short and long term. </p>
+						<a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -113,7 +102,7 @@
 						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
 
 						<div class="upcoming_title">
-							<h3><a href="games.html">Kursus Pemograman</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Kursus Pemograman</a></h3>
 						</div>
 					</div>
 				</div>
@@ -121,7 +110,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Aplikasi Mobile</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Aplikasi Mobile</a></h3>
 						</div>
 					</div>
 				</div>
@@ -129,7 +118,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Website</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Website</a></h3>
 						</div>
 					</div>
 				</div>
@@ -138,7 +127,7 @@
 
 						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="games.html">Konsultasi IT</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas">Konsultasi IT</a></h3>
 						</div>
 					</div>
 				</div>
@@ -490,9 +479,8 @@
 	-->
 	<!--================ End Newsletter Area ================-->
 	
-
- <!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+		<!-- JS -->
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
@@ -510,12 +498,3 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 		<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
-
-		<script>
-			$(document).ready(function() {
-				$(".noenter").each(function(){
-				$(this).html($(this).html().replace(/&nbsp;/gi," "));
-				});
-			});
-		</script>
-</body>

@@ -16,8 +16,15 @@
                 <div class="icn-main-container">
                     <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
                 </div>
-                <br><br>
-                <p><?= $val['text']; ?></p>
+                <br>
+                <h5>Harga: <?= $val['harga']; ?></h5>
+                <br>
+                <p><?= $val['deskripsi_1']; ?></p>
+                <p><?= $val['deskripsi_2']; ?></p>
+                <p><?= $val['deskripsi_3']; ?></p>
+                <br>
+                <small><?= $val['kategori']; ?></small>
+                <br>
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {
                         tanya = confirm("Anda Yakin Akan Menghapus Data ?");
