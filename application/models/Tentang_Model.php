@@ -165,4 +165,40 @@ class Tentang_Model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('tentang_deskripsi', $data);
     }
+
+    public function getAllFAQ()
+    {
+        $this->db->order_by("id", "asc");
+        return $this->db->get('tentang_faq')->result_array();
+    }
+
+    public function getFAQbyID($id)
+    {
+        return $this->db->get_where('tentang_faq', ['id' => $id])->row_array();
+    }
+
+    public function insertFAQ()
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+
+        $this->db->insert('tentang_faq', $data);
+    }
+
+    public function updateFAQ($id)
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_faq', $data);
+    }
+
+    public function deleteFAQ($id)
+    {
+        $this->db->delete('tentang_faq', ['id' => $id]);
+    }
 }

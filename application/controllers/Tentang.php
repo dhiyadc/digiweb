@@ -128,8 +128,7 @@ class Tentang extends CI_Controller
             $this->load->view('_partials/header_admin');
             $this->load->view('tentang/view_deskripsi_tentang', $data);
             $this->load->view('_partials/footer_admin');
-        }
-        else{
+        } else {
             redirect('admin');
         }
     }
@@ -149,7 +148,69 @@ class Tentang extends CI_Controller
             }
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('home');
+            redirect('admin');
+        }
+    }
+
+    public function viewFAQ()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['faq'] = $this->tentang->getallFAQ();
+            $this->load->view('_partials/header_admin');
+            $this->load->view('tentang/view_FAQ', $data);
+            $this->load->view('_partials/footer_admin');
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
+        }
+    }
+
+    public function insertFAQ()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('question', 'question', 'required|trim');
+            $this->form_validation->set_rules('answer', 'answer', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/create_FAQ');
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->insertFAQ();
+                redirect('tentang/viewFAQ');
+            }
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function updateFAQ($id)
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('question', 'question', 'required|trim');
+            $this->form_validation->set_rules('answer', 'answer', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $data['faq'] = $this->tentang->getFAQbyID($id);
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/update_FAQ', $data);
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->updateFAQ($id);
+                redirect('tentang/viewFAQ');
+            }
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
+        }
+    }
+
+    public function deleteFAQ($id)
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->tentang->deleteFAQ($id);
+            redirect('tentang/viewFAQ');
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
         }
     }
 }

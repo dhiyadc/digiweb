@@ -30,4 +30,15 @@ class Tentang_user extends CI_Controller
         $data['staff'] = $this->tentang->getStaffByJabatanInti();
         $this->load->view('tentang/view_tentang_inti', $data);
     }
+
+    public function viewDeskripsi()
+    {
+        $data['deskripsi'] = $this->tentang->getdeskripsi();
+    }
+
+    public function viewFAQ()
+    {
+        $data['faq'] = $this->tentang->getallFAQ();
+        $this->load->view('tentang/user/view_FAQ', $data);
+    }
 }
