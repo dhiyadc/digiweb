@@ -69,7 +69,7 @@ class Portofolio_model extends CI_Model{
 
     private function insertImage() 
     {
-        $config['upload_path'] = './assets/images/';
+        $config['upload_path'] = './images/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['remove_space'] = true;
@@ -83,7 +83,7 @@ class Portofolio_model extends CI_Model{
 
     private function updateImage($id) 
     {
-        $config['upload_path'] = './assets/images/';
+        $config['upload_path'] = './images/';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = '3000';
         $config['remove_space'] = true;

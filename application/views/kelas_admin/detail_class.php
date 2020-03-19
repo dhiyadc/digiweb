@@ -1,26 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Kelas</title>
-</head>
-<body>
-    <?php foreach ($kelas as $val) : ?>
-        <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
-        <h3><?= $val['judul']; ?></h3>
-        <p><?= $val['text']; ?></p>
-        <br><br>
-        <script type="text/javascript" language="JavaScript">
+<section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+              
+            </div>
+            <!-- end col-4 -->
+            <?php foreach ($kelas as $val) : ?>
+            <div class="col-lg-8 col-md-4 col-sm-4 col-xs-12">
+              <div class="custom-box">
+                <div class="servicetitle">
+                  <h4><?= $val['judul']; ?></h4>
+                  <hr>
+                </div>
+                <div class="icn-main-container">
+                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
+                </div>
+                <br>
+                <h5>Harga: <?= $val['harga']; ?></h5>
+                <br>
+                <p><?= $val['deskripsi_1']; ?></p>
+                <p><?= $val['deskripsi_2']; ?></p>
+                <p><?= $val['deskripsi_3']; ?></p>
+                <br>
+                <small><?= $val['kategori']; ?></small>
+                <br>
+                <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {
                         tanya = confirm("Anda Yakin Akan Menghapus Data ?");
                         if (tanya == true) return true;
                         else return false;
                     }
                 </script>
-                <td><a onclick="return konfirmasi()" href="<?= base_url(); ?>kelas_admin/delete/<?= $val['id']; ?>"><button type="button"> Delete </button></a>
-        <a href="<?= base_url(); ?>kelas_admin/update_form/<?= $val['id']; ?>">Update</a>
-    <?php endforeach; ?>
-    <a href="<?= base_url(); ?>kelas_admin">Back</a>
-</body>
-</html>
+                <br>
+                <a onclick="return konfirmasi()" href="<?= base_url(); ?>kelas_admin/delete/<?= $val['id']; ?>"><button type="button" class="btn btn-danger"> Delete </button></a>
+                <a href="<?= base_url(); ?>kelas_admin/update_form/<?= $val['id']; ?>" class="btn btn-primary">Update</a>
+                <a href="<?= base_url(); ?>kelas_admin" class="btn btn-success">Back</a>
+              </div>
+              <?php endforeach; ?>
+              <!-- end custombox -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <!-- end custombox -->
+            </div>
+            <!-- end col-4 -->
+          </div>
+          <!--  /col-lg-12 -->
+        </div>
+        <!--  /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
