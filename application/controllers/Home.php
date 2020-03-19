@@ -20,8 +20,9 @@ class Home extends CI_Controller{
         $data['kelas'] = $this->homepage_database->getKelas();
         $data['rating'] = $this->homepage_database->getRating();
         $data['comment'] = $this->homepage_database->getComment();
-        $data['blogcomment'] = $this->homepage_database->getBlogComment();
-
+        $data['blogcomment'] = $this->homepage_database->getBlogComment();        
+        $data['tentang_faq'] = $this->homepage_database->getFAQ();
+        $data['DCDesc'] = $this->homepage_database->getDCDesc();
         $this->load->view('home', $data);
         $this->load->view('layout/footer');
     }

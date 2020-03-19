@@ -65,21 +65,21 @@
 	<section class="about_us_area section_gap_top">
 		<div class="container">
 			<div class="row about_content align-items-center">
-			<?php foreach($tentang as $val) : ?>
+			
 				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
-						<h1>We Believe <br>On Your Dreams</h1>
-						<p>Headquartered in Palembang, Digital Creative provided IT services for your business needs. We craft software that align with your overall digital strategy. Our goal is to help you achieve your goals in both short and long term. </p>
+						<h1>Digital <br>Creative</h1>
+						<p><?php foreach($DCDesc as $val) : echo $val['deskripsi']; endforeach;?></p>
 						<a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="about_us_image_box justify-content-center">
-						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/109317.jpg" alt="">
 					</div>
 				</div>
-			<?php endforeach; ?>
+			
 			</div>
 		</div>
 	</section>
@@ -178,13 +178,15 @@
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
 						<div class="col-lg-4 col-md-6 col-sm-6">
+							<a href="portofolio_user">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-										<i><?= substr($val['judul'], 0, 10); ?></i>
+								<i class="lnr lnr-eye"></i>
 								</div>
 							</div>
+							</a>
 						</div>
 					<?php endforeach; ?>
 					</div>
@@ -207,7 +209,7 @@
 
 
 	<!--========== Start Testimonials Area ==================-->
-	<section class="testimonials_area section_gap">
+	<!-- <section class="testimonials_area section_gap">
 		<div class="container">
 			<div class="testi_slider owl-carousel">
 				<div class="testi_item">
@@ -266,7 +268,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================ End Testimonials Area ================-->
 
 <!--================ Start Pricing Plans Area ================-->
@@ -345,49 +347,24 @@
 					</div>
 				</div>
 			</div>
-			<div class="row frequent_inner">
+			<div class="row frequent_inner"> 
+				<?php 
+				$i=0;
+				foreach($tentang_faq as $val) : ?>
 				<div class="col-lg-5 col-md-5">
 					<div class="frequent_item">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
+						<h3><?= $val['question'] ?></h3>
+						<p><?= $val['answer'] ?></p>
 					</div>
-				</div>
-				<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5">
-					<div class="frequent_item">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
+				</div>	
+				<?php
+				if($i%2 == 0) {?>
+					<div class="offset-lg-2 offset-md-2">	
 					</div>
-				</div>
-				<div class="col-lg-5 col-md-5">
-					<div class="frequent_item">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-					</div>
-				</div>
-				<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5">
-					<div class="frequent_item">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-					</div>
-				</div>
-				<div class="col-lg-5 col-md-5">
-					<div class="frequent_item last-child">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-					</div>
-				</div>
-				<div class="offset-lg-2 col-lg-5 offset-md-2 col-md-5">
-					<div class="frequent_item last-child">
-						<h3>We Believe that Interior beauty Lasts Long</h3>
-						<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-							especially in the workplace. That’s why it’s crucial that as women.</p>
-					</div>
-				</div>
+				<?php 
+				}
+				$i++;
+				endforeach; ?>
 			</div>
 		</div>
 	</section>

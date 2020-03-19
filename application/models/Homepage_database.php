@@ -67,6 +67,17 @@ public function getRatingbyID($id){
     return $this->db->where(['id_blog' => $id])->get('rating')->result_array(); 
 }
 
+public function getFAQ(){
+    $this->db->select('*');
+    $this->db->from('tentang_faq');
+    $this->db->order_by('id', 'DESC');
+    return $this->db->get()->result_array();
+}
+
+public function getDCDesc(){
+    return $this->db->select('*')->get('tentang_deskripsi')->result_array();
+}
+
 
 }
 
