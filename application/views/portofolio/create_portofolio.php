@@ -25,8 +25,14 @@
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Link</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="cname" name="link" minlength="2" type="link" required />
+                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
                     </div>
+                  </div>
+                  <div class="form-group">
+                        <label for="kategori">Kategori</label><br>
+                            <?php foreach($kategori as $key => $value): ?>
+                                <input type="radio" name="kategori" id="kategori" value="<?= $value['kategori'] ?>"><?= $value['kategori'] ?><br>
+                            <?php endforeach; ?>
                   </div>
                   <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Deskripsi</label>
@@ -34,20 +40,17 @@
                       <textarea class="form-control " id="ccomment" name="text" required></textarea>
                     </div>
                   </div>
-                  <div class="form-group">
-                        <label for="kategori" class="control-label col-lg-2">Kategori</label>
-                        <div class="col-lg-10">
-                            <select class="form-control" id="kategori" name="kategori">
-                                <?php foreach($kategori as $kat): ?>
-                                    <?php if($kat == $portofolio['kategori']):?>
-                                        <option value="<?= $kat; ?>" selected><?= $kat; ?></option>
-                                    <?php else: ?>
-                                        <option value="<?= $kat; ?>"><?= $kat; ?></option>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="url" class="form-control" name="link" id="link" value="<?= set_value('link');?>" placeholder="link...">
                     </div>
+
+                    <div class="form-group">
+                        <label for="kategori">Kategori</label><br>
+                            <?php foreach($kategori as $key => $value): ?>
+                                <input type="radio" name="kategori" id="kategori" value="<?= $value['kategori'] ?>"><?= $value['kategori'] ?><br>
+                            <?php endforeach; ?>
+                  </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <input type="submit" name="submit" value="Save" class="btn btn-theme">

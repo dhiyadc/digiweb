@@ -85,7 +85,7 @@
 						var value = $(this).children("div").children("p1").html()
 						$('#detailPorto').attr("h3",`${value}`) 
 						document.getElementById("val1").innerHTML = value;
-
+            
 						var value2 = $(this).children("div").children("p2").html()
 						$('#gambarPorto').attr("src",`<?= base_url("images/")?>${value2}`) 
 						console.log(value2)
