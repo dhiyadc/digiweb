@@ -20,6 +20,7 @@ class Tentang extends CI_Controller
 
     public function createTentang()
     {
+        if ($this->session->userdata('logged_in')) {
             $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
             $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
             $this->form_validation->set_rules('quote', 'Quote', 'required|trim');
@@ -42,6 +43,7 @@ class Tentang extends CI_Controller
 
     public function viewTentang()
     {
+        if ($this->session->userdata('logged_in')) {
             $data['tentang'] = $this->tentang->getAllStaff();
             $this->load->view('_partials/header_admin');
             $this->load->view('tentang/view_tentang', $data);
@@ -54,6 +56,7 @@ class Tentang extends CI_Controller
 
     public function deleteTentang($id)
     {
+        if ($this->session->userdata('logged_in')) {
             $this->tentang->deleteTentang($id);
             redirect('tentang/viewTentang');
         } else {
@@ -64,6 +67,7 @@ class Tentang extends CI_Controller
 
     public function viewTentangByID($id)
     {
+        if ($this->session->userdata('logged_in')) {
             $data['staff'] = $this->tentang->getStaffbyID($id);
             $this->load->view('_partials/header_admin');
             $this->load->view('tentang/view_tentang_detail', $data);
@@ -76,6 +80,7 @@ class Tentang extends CI_Controller
 
     public function updateTentang($id)
     {
+        if ($this->session->userdata('logged_in')) {
             $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
             $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
             $this->form_validation->set_rules('quote', 'Quote', 'required|trim');
@@ -107,6 +112,7 @@ class Tentang extends CI_Controller
 
     public function viewTentangByJabatanInti()
     {
+        if ($this->session->userdata('logged_in')) {
             $data['staff'] = $this->tentang->getStaffByJabatanInti();
             $this->load->view('tentang/view_tentang_inti', $data);
         } else {
