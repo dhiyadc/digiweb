@@ -33,10 +33,10 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>For Business</a></li><a href="#">
+							<li><a href="#"></a>Siapa Kami</a></li><a href="#">
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a>How it Works</a></li>
-							<li><a href="#"></a>Farfly Blog</a></li>
+							<li><a href="#"></a></a></li>
+							<li><a href="#"></a>Recent Blog</a></li>
 						</ul>
 					</aside>
 				</div>
@@ -46,11 +46,11 @@
 							<h4>Company</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Product Tour</a></li><a href="#">
-								<li><a href="#"></a>Pricing
+							<li><a href="#"></a>Product</a></li><a href="#">
+								<li><a href="#"></a>Layanan Kami
 							</a></li>
-							<li><a href="#"></a>Founding Members</a></li>
-							<li><a href="#"></a>Case Studies</a></li>
+							<li><a href="#"></a>Join Members</a></li>
+							<li><a href="#"></a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
@@ -61,8 +61,8 @@
 							<h4>Support</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Documentation</a></li><a href="#">
-								<li><a href="#"></a>Data Securiry
+							<li><a href="#"></a>Hubungi Kami</a></li><a href="#">
+								<li><a href="#">Bantuan</a>
 							</a></li>
 							
 						</ul>
