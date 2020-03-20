@@ -5,17 +5,51 @@ class Blog_model extends CI_Model {
     public function createblog() {
         $data = [
             'id' => null,
-            'id_admin' => 1,
+            'id_admin' => 8,
             // 'id_admin' => $this->session->userdata('id_adm'),
             'path_gambar' => $this->insertImage(),
             'judul' => $this->input->post('judul'),
-            'author' => "Dhiya",
+            'author' => "Cindy",
             // 'author' => $this->session->userdata('user'),
-            'text' => $this->input->post('text'),
+            'text' => htmlspecialchars($this->input->post('text')),
             'tanggal_publish' => date('Y-m-d'),
-            'kategori' => $this->input->post('kategori'),
         ];
+
         $this->db->insert('blog', $data);
+        return $this->db->insert_id();
+    }
+
+    public function createKategori($id_blog, $id_kategori) {
+
+        $dataKategori = [
+            'id' => null,
+            'id_blog' => $id_blog,
+            'id_kategori' => $id_kategori,
+        ];
+        $this->db->insert('kategori_blog', $dataKategori);
+
+    }
+
+    public function getIdKat($kategori) {
+        return $this->db->select('id')->where('kategori', implode($kategori))->get('kategori')->row_array();
+    }
+
+    public function getKategori($id) {
+        return $this->db->select('id_kategori')->where('id_blog', $id)->get('kategori_blog')->result_array();
+    }
+
+    public function getDetailBlog($id) {
+        $this->db->select('judul,path_gambar, author, text, tanggal_publish, kategori');
+        $this->db->from('kategori_blog');
+        $this->db->join('blog', 'blog.id = kategori_blog.id_blog');
+        $this->db->join('kategori', 'kategori.id = kategori_blog.id_kategori');
+        $this->db->where('blog.id', $id);
+        return $this->db->get()->result_array();
+    }
+
+    public function deleteBeforeKategori($id) {
+        $this->db->where('id_blog', $id);
+        $this->db->delete('kategori_blog');
     }
 
     public function getLastId() {
@@ -26,7 +60,12 @@ class Blog_model extends CI_Model {
         return $this->db->get('blog')->result_array();
     }
 
+    public function getAllKategori() {
+        return $this->db->get('kategori')->result_array();
+    }
+
     public function deleteblogg($id) {
+        $this->db->where('id_blog', $id)->delete('kategori_blog');
         $this->db->where('id', $id)->delete('blog');
     }
 
@@ -46,50 +85,34 @@ class Blog_model extends CI_Model {
         return $this->db->where(['id' => $id])->get('blog')->result_array()[0];
     }
 
-    public function getRatingBlogli($id) {
-        return $this->db->select('like')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBloglo($id) {
-        return $this->db->select('love')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBlogh($id) {
-        return $this->db->select('haha')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBlogw($id) {
-        return $this->db->select('wow')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBlogs($id) {
-        return $this->db->select('sad')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBloga($id) {
-        return $this->db->select('angry')->where('id_blog', $id)->get('rating')->row_array();
+    public function getRatingBlog($id) {
+        return $this->db->select('*')->where('id_blog', $id)->get('rating')->row_array();
     }
 
     public function updateeBlog($id) {
         if (!empty($_FILES['path_gambar']['name'])) {
             $data = [
-                'id_admin' => $this->session->userdata('id_adm'),
+                'id_admin' => 8,
+                // 'id_admin' => $this->session->userdata('id_adm'),
                 'path_gambar' => $this->updateImage($id),
                 'judul' => $this->input->post('judul'),
-                'author' => $this->session->userdata('user'),
-                'text' => $this->input->post('text'),
+                'author' => "Cindy",
+                // 'author' => $this->session->userdata('user'),
+                'text' => htmlspecialchars($this->input->post('text')),
                 'tanggal_publish' => date('Y-m-d'),
-                'kategori' => $this->input->post('kategori'),
+                // 'kategori' => $this->input->post('kategori'),
             ];
         } else {
             $data = [
-                'id_admin' => $this->session->userdata('id_adm'),
+                'id_admin' => 8,
+                // 'id_admin' => $this->session->userdata('id_adm'),
                 'path_gambar' => $this->input->post('old_image'),
                 'judul' => $this->input->post('judul'),
-                'author' => $this->session->userdata('user'),
-                'text' => $this->input->post('text'),
+                'author' => "Cindy",
+                // 'author' => $this->session->userdata('user'),
+                'text' => htmlspecialchars($this->input->post('text')),
                 'tanggal_publish' => date('Y-m-d'),
-                'kategori' => $this->input->post('kategori'),
+                // 'kategori' => $this->input->post('kategori'),
             ];
         }
 

@@ -50,12 +50,53 @@
                   </div>
                 </form>
               </div>
-            </div>
-            <!-- /form-panel -->
+              <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Judul</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" id="cname" name="judul" minlength="2" type="text" required />
+                  <small class="form-text text-danger"><?= form_error('judul'); ?></small>
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Link</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" id="cname" name="link" minlength="2" type="link" required />
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="ccomment" class="control-label col-lg-2">Deskripsi</label>
+                <div class="col-lg-10">
+                  <textarea class="form-control " id="ccomment" name="text" required></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="kategori" class="control-label col-lg-2">Kategori</label>
+                <div class="col-lg-10">
+                  <select class="form-control" id="kategori" name="kategori">
+                    <?php foreach ($kategori as $kat) : ?>
+                      <?php if ($kat == $portofolio['kategori']) : ?>
+                        <option value="<?= $kat; ?>" selected><?= $kat; ?></option>
+                      <?php else : ?>
+                        <option value="<?= $kat; ?>"><?= $kat; ?></option>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <input type="submit" name="submit" value="Save" class="btn btn-theme">
+                  <a href="<?= base_url() ?>portofolio"><button class="btn btn-theme04" type="button">Cancel</button>
+                </div>
+              </div>
+            </form>
           </div>
-          <!-- /col-lg-12 -->
         </div>
-        <!-- /row -->
-      </section>
-      <!-- /wrapper -->
-    </section>
+        <!-- /form-panel -->
+      </div>
+      <!-- /col-lg-12 -->
+    </div>
+    <!-- /row -->
+  </section>
+  <!-- /wrapper -->
+</section>
