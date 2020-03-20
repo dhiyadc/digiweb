@@ -72,12 +72,7 @@
             <a href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Layanan Kami</span>
-<<<<<<< HEAD
-              </a>
-
-=======
             </a>
->>>>>>> 1a2b8fc3ebefbbe1396801abd8696e7c4c772f8b
             <ul class="sub">
               <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
               <li><a href="<?= base_url(); ?>kelas_admin">Data Layanan</a></li>
