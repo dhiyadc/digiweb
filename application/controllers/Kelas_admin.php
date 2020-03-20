@@ -56,6 +56,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $data['kelas'] = $this->Kelas_model->getClassById($id);
+            $data['kategori'] = $this->Kelas_model->getKategori();
             $this->load->view('_partials/header_admin');
             $this->load->view('kelas_admin/update_class', $data);
             $this->load->view('_partials/footer_admin');
