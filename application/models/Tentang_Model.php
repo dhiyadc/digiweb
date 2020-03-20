@@ -118,7 +118,7 @@ class Tentang_Model extends CI_Model
     public function updateDeskripsi($id = 0)
     {
         $data = [
-            'deskripsi' => $this->input->post('deskripsi')
+            'deskripsi' => htmlspecialchars($this->input->post('deskripsi'))
         ];
         $this->db->where('id', $id);
         $this->db->update('tentang_deskripsi', $data);
