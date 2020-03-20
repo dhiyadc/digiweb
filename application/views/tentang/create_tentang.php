@@ -50,25 +50,12 @@
                 </div>
               </div>
 
-              <div class="form-group ">
-                <label for="agree" class="control-label col-lg-2 col-sm-3">Tampilkan di Homepage?</label>
-                <div class="col-lg-10 col-sm-9">
-                  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/toggle_switch.css">
-                  <label class="switch">
-                    <input type="checkbox" name="prioritas" id="prioritas">
-                    <span class="slider round"></span>
-                  </label>
-
-                  <!-- <input type="radio" style="width: 20px" class="checkbox form-control" name="prioritas" value="1" />Iya
-                  <input type="radio" style="width: 20px" class="checkbox form-control" name="prioritas" value="0" />Tidak
-                </div> -->
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                  <input type="submit" name="submit" value="Save" class="btn btn-theme">
+                  <a href="<?= base_url(); ?>tentang/viewtentang"><button class="btn btn-theme04" type="button">Cancel</button>
                 </div>
-                <div class="form-group">
-                  <div class="col-lg-offset-2 col-lg-10">
-                    <input type="submit" name="submit" value="Save" class="btn btn-theme">
-                    <a href="<?= base_url(); ?>tentang/viewtentang"><button class="btn btn-theme04" type="button">Cancel</button>
-                  </div>
-                </div>
+              </div>
             </form>
           </div>
         </div>

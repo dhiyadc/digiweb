@@ -11,8 +11,12 @@ class Tentang_user extends CI_Controller
 
     public function index()
     {
-        $this->viewTentang();
+        $data['tentang'] = $this->tentang->getallstaff();
+        $this->load->view('layout/header');
+        $this->load->view('about-us', $data);
+        $this->load->view('layout/footer');
     }
+
     public function viewTentang()
     {
         $data['tentang'] = $this->tentang->getAllStaff();
