@@ -3,12 +3,46 @@
 class Blog_user_model extends CI_model {
 
     public function getAllBlog($keyword = null){
+        
         if($keyword){
             $this->db->like('judul', $keyword);
         }
-        return $this->db->get('blog')->result_array();
+        $this->db->select('blog.id, judul,path_gambar, author, text, tanggal_publish');
+        $this->db->from('blog');
+        $this->db->order_by('blog.id', 'asc');
+        return $this->db->get()->result_array();
+
     }
 
+    public function getBlogByKategori($keyword = null, $kategori){
+        if($keyword){
+            $this->db->like('judul', $keyword);
+        }
+        $this->db->select('blog.id, judul,path_gambar, author, text, tanggal_publish, kategori');
+        $this->db->from('kategori_blog');
+        $this->db->join('blog', 'blog.id = kategori_blog.id_blog');
+        $this->db->join('kategori', 'kategori.id = kategori_blog.id_kategori');
+        $this->db->where('kategori.kategori', $kategori);
+        $this->db->order_by('blog.id', 'asc');
+        return $this->db->get()->result_array();
+    }
+
+    public function getBlogKategori(){
+        return $this->db->query
+        ("SELECT blog.id, kategori.kategori
+        FROM blog, kategori_blog, kategori
+        WHERE blog.id=kategori_blog.id_blog AND kategori.id=kategori_blog.id_kategori")
+        ->result_array();
+    }
+
+    public function getKategori(){
+        return $this->db->select('kategori')->get('kategori')->result_array();
+    }
+
+    public function popularBlog(){
+        return $this->db->order_by('rate', 'DESC')->limit('5')->get('blog')->result_array();
+    }
+    
     public function getDetailBlog($id) {
         $this->db->select('judul,path_gambar, author, text, tanggal_publish, kategori');
         $this->db->from('kategori_blog');
@@ -18,8 +52,8 @@ class Blog_user_model extends CI_model {
         return $this->db->get()->result_array();
     }
 
-    public function getKategori($id) {
-        return $this->db->select('id_kategori')->where('id_blog', $id)->get('kategori_blog')->row_array();
+    public function getCommentbyBlogId($id) {
+        return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
     }
 
     public function create_comment($id, $name) {
@@ -32,47 +66,18 @@ class Blog_user_model extends CI_model {
         $this->db->insert('comment', $data);
     }
 
-    public function createrating($id) {
-        $data = [
-            'id_blog' => implode($id),
-            'like' => 0,
-            'love' => 0,
-            'haha' => 0,
-            'wow' => 0,
-            'sad' => 0,
-            'angry' => 0,
-        ];
-        $this->db->insert('rating', $data);
-    }
-
-    public function getCommentbyBlogId($id) {
-        return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
-    }
-
     public function getRatingBlogli($id) {
         return $this->db->select('like')->where('id_blog', $id)->get('rating')->row_array();
     }
 
-    public function getRatingBloglo($id) {
-        return $this->db->select('love')->where('id_blog', $id)->get('rating')->row_array();
+    public function updateRate($id, $rate){
+        $data = [
+            'rate' => $rate
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('blog', $data);
     }
-
-    public function getRatingBlogh($id) {
-        return $this->db->select('haha')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBlogw($id) {
-        return $this->db->select('wow')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBlogs($id) {
-        return $this->db->select('sad')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
-    public function getRatingBloga($id) {
-        return $this->db->select('angry')->where('id_blog', $id)->get('rating')->row_array();
-    }
-
+    
     public function updateRatingli($id, $total) {
         $dataa = [
             'like' => $total,
@@ -80,6 +85,10 @@ class Blog_user_model extends CI_model {
         $this->db->where('id_blog', $id)->update('rating', $dataa);
     }
 
+    public function getRatingBloglo($id) {
+        return $this->db->select('love')->where('id_blog', $id)->get('rating')->row_array();
+    }
+    
     public function updateRatinglo($id, $total) {
         $dataa = [
             'love' => $total,
@@ -87,11 +96,19 @@ class Blog_user_model extends CI_model {
         $this->db->where('id_blog', $id)->update('rating', $dataa);
     }
 
+    public function getRatingBlogh($id) {
+        return $this->db->select('haha')->where('id_blog', $id)->get('rating')->row_array();
+    }
+    
     public function updateRatingh($id, $total) {
         $dataa = [
             'haha' => $total,
         ];
         $this->db->where('id_blog', $id)->update('rating', $dataa);
+    }
+
+    public function getRatingBlogw($id) {
+        return $this->db->select('wow')->where('id_blog', $id)->get('rating')->row_array();
     }
 
     public function updateRatingw($id, $total) {
@@ -101,11 +118,19 @@ class Blog_user_model extends CI_model {
         $this->db->where('id_blog', $id)->update('rating', $dataa);
     }
 
+    public function getRatingBlogs($id) {
+        return $this->db->select('sad')->where('id_blog', $id)->get('rating')->row_array();
+    }
+
     public function updateRatings($id, $total) {
         $dataa = [
             'sad' => $total,
         ];
         $this->db->where('id_blog', $id)->update('rating', $dataa);
+    }
+
+    public function getRatingBloga($id) {
+        return $this->db->select('angry')->where('id_blog', $id)->get('rating')->row_array();
     }
 
     public function updateRatinga($id, $total) {

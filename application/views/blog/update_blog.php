@@ -25,17 +25,18 @@
 							<div class="form-group">
 								<label for="Kategori" class="control-label col-lg-2">Kategori : </label>
 								<br>
-								<?php foreach ($kategori as $key => $value): ?>
 								<div class="col-lg-10">
+									<?php foreach ($kategori as $key => $value): ?>
 									<input type="checkbox" name="kategori[]" value="<?=$value['id']?>"
 										<?php foreach ($kat_pilih as $valuekp): ?>
 										<?= ($value['id'] == $valuekp['id_kategori']) ? 'checked' : '' ?>
 										<?php endforeach;?>>
-									<?=$value['kategori']?>
+									<?=$value['kategori']?><br>
+									<?php endforeach;?>
 								</div>
-								<?php endforeach;?>
 
 							</div>
+
 
 							<div class="form-group ">
 								<label for="ccomment" class="control-label col-lg-2">Text</label>

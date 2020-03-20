@@ -31,11 +31,11 @@
 				data-background=""></div>
 			<div class="container">
 				<div class="banner_content text-center">
-					<div class="page_link">
-						<a href="index.html">Home</a>
-						<a href="single-blog.html">Blog Details</a>
+				<div class="page_link">
+						<a href="<?= base_url() ?>">Home</a>
+						<a href="<?= base_url() ?>/Blog_user">Blog</a>
 					</div>
-					<h2>BLOG DETAILS</h2>
+					<h2 style="color:crimson; ">BLOG DETAILS</h2>
 				</div>
 			</div>
 		</div>
@@ -50,52 +50,31 @@
 					<div class="single-post row">
 						<div class="col-lg-12">
 							<div class="feature-img">
-							<center><img src="<?= base_url().'images/'.$blog['path_gambar']?>" alt="" height="350px"></center>
+							<center><img src="<?= base_url().'images/'.$path_gambar?>" alt="" height="400px" width="550px" style="object-fit: cover;"></center>
 							</div>
 						</div>
 						<div class="col-lg-3  col-md-3">
 							<div class="blog_info text-right">
 								<div class="post_tag">
-									<a href="#">Food,</a>
-									<a class="active" href="#">Technology,</a>
-									<a href="#">Politics,</a>
-									<a href="#">Lifestyle</a>
+									<?php foreach($kategori as $value) :?>
+									<a href="<?=base_url()?>Blog_user/blogByKategori/<?=$value;?>"><?= $value ?><br></a>
+									<?php endforeach; ?>
 								</div>
 								<ul class="blog_meta list">
-									<li><p><?= $blog['author']?>&nbsp;&nbsp;&nbsp;&nbsp;<i class="lnr lnr-user"></i></p></li>
-									<li><p><?= $blog['tanggal_publish']?>&nbsp;&nbsp;&nbsp;<i
+									<li><p><?= $author ?>&nbsp;&nbsp;&nbsp;&nbsp;<i class="lnr lnr-user"></i></p></li>
+									<li><p><?= $tanggal_publish ?>&nbsp;&nbsp;&nbsp;<i
 												class="lnr lnr-calendar-full"></i></p></li>
-									<li><p>06 Comments&nbsp;&nbsp;&nbsp;<i class="lnr lnr-bubble"></i></a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 blog_details">
-							<h2><?= $blog['judul'] ?></h2>
+							<h2><?= $judul ?></h2>
 							<p class="excert">
-								<?= $blog['text'] ?>
+								<?= html_entity_decode($text) ?>
 							</p>
 						</div>
 					</div>
-					<div class="navigation-area">
-						<div class="row">
-							<div
-								class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-								<div class="thumb">
-									<a href="#"><img class="img-fluid"
-											src="<?php echo base_url(); ?>assets/img/blog/panah.png" alt=""
-											width="50px" height="25px"></a>
-								</div>
-								<div class="arrow">
-									<a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-								</div>
-								<div class="detials">
-									<a href="<?= base_url('')?>/Blog">
-										<h4>Back To All Blog</h4>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<div class="comments-area">
 						
 						<section>
@@ -110,16 +89,16 @@
 											<?= $this->session->flashdata('message') ?>
 										</div>
 										<?php endif; ?>
-										<?php if($this->session->flashdata('Berhasil')) :?>
+										<?php if($this->session->flashdata('berhasil')) :?>
 										<div class="alert alert-success" role="alert">
-											<?= $this->session->flashdata('Berhasil') ?>
+											<?= $this->session->flashdata('berhasil') ?>
 										</div>
 										<?php endif; ?>
 										<hr>
 
 										<!-- LIKE -->
 										<div class="iconBox">
-											<a href="<?= base_url(''); ?>Blog/save_ratingli/<?= $blog['id']; ?>"
+											<a href="<?= base_url(''); ?>Blog_user/save_ratingli/<?= $id_blog ?>"
 												class="ico lovo">&#9996;</a>
 
 											<label>Like</label>
@@ -128,7 +107,7 @@
 										<!-- LOVE -->
 										<div class="iconBox">
 
-											<a href="<?= base_url(''); ?>Blog/save_ratinglo/<?= $blog['id']; ?>"
+											<a href="<?= base_url(''); ?>Blog_user/save_ratinglo/<?= $id_blog ?>"
 												class="ico lovo">&#10084;</a>
 
 											<label>Love</label>
@@ -136,7 +115,7 @@
 
 										<!-- HAHA -->
 										<a class="iconBox"
-											href="<?= base_url(''); ?>Blog/save_ratingh/<?= $blog['id']; ?>">
+											href="<?= base_url(''); ?>Blog_user/save_ratingh/<?= $id_blog ?>">
 											<div class="icon haha">
 												<div class="eyes">
 													<span class="eye lEye"></span>
@@ -152,7 +131,7 @@
 										<!-- WOW -->
 
 										<a class="iconBox"
-											href="<?= base_url(''); ?>Blog/save_ratingw/<?= $blog['id']; ?>">
+											href="<?= base_url(''); ?>Blog_user/save_ratingw/<?= $id_blog ?>">
 											<div class="icon wow">
 												<div class="eyes">
 													<span class="eye lEye"></span>
@@ -167,7 +146,7 @@
 										<!-- SAD -->
 
 										<a class="iconBox"
-											href="<?= base_url(''); ?>Blog/save_ratings/<?= $blog['id']; ?>">
+											href="<?= base_url(''); ?>Blog_user/save_ratings/<?= $id_blog ?>">
 											<div class="icon sad">
 												<div class="eyes">
 													<span class="eye lEye"></span>
@@ -182,7 +161,7 @@
 										<!-- ANGRY -->
 
 										<a class="iconBox"
-											href="<?= base_url(''); ?>Blog/save_ratinga/<?= $blog['id']; ?>">
+											href="<?= base_url(''); ?>Blog_user/save_ratinga/<?= $id_blog ?>">
 											<div class="icon angry">
 												<div class="eyes">
 													<span class="eye lEye"></span>
@@ -201,7 +180,7 @@
 
 						<div class="comment-form">
 							<h4>Leave a Comment</h4>
-							<form action="<?=base_url('')?>Blog/createComment/<?= $blog['id'] ?>" method="POST">
+							<form action="<?=base_url('')?>Blog_user/createComment/<?= $id_blog ?>" method="POST">
 								<div class="form-group form-inline">
 									<div class="form-group col-lg-6 col-md-6 name">
 										<input type="text" name="nama_komen" class="form-control" id="nama_komen"
@@ -238,94 +217,36 @@
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<div class="blog_right_sidebar">
+					<div class="blog_right_sidebar" style=" position: sticky; top: 20px;">
 						
 						<aside class="single_sidebar_widget popular_post_widget">
-							<h3 class="widget_title">Popular Posts</h3>
+							<h3 class="widget_title">Popular Blogs</h3>
+							<?php foreach($popular as $value) :  ?>
 							<div class="media post_item">
-								<img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post1.jpg" alt="post">
-								<div class="media-body">
-									<a href="blog-details.html">
-										<h3>Space The Final Frontier</h3>
+							<img src="<?= base_url().'images/'.$value['path_gambar']?>" alt=""  height="50px" width="75px" style="object-fit: cover;">
+								<div class="media-body ">
+									<a class="d-flex justify-content-between" href="<?= base_url() ?>Blog_user/detailAndComment/<?= $value['id'] ?>">
+										<h3><?= $value['judul'] ?></h3>
 									</a>
-									<p>02 Hours ago</p>
+									<p><?= $value['rate'] ?> <i class="fa fa-star"></i></p>
 								</div>
 							</div>
-							<div class="media post_item">
-								<img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post2.jpg" alt="post">
-								<div class="media-body">
-									<a href="blog-details.html">
-										<h3>The Amazing Hubble</h3>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="media post_item">
-								<img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post3.jpg" alt="post">
-								<div class="media-body">
-									<a href="blog-details.html">
-										<h3>Astronomy Or Astrology</h3>
-									</a>
-									<p>03 Hours ago</p>
-								</div>
-							</div>
-							<div class="media post_item">
-								<img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post4.jpg" alt="post">
-								<div class="media-body">
-									<a href="blog-details.html">
-										<h3>Asteroids telescope</h3>
-									</a>
-									<p>01 Hours ago</p>
-								</div>
-							</div>
+							<?php endforeach; ?>
+							
 							<div class="br"></div>
 						</aside>
 						<aside class="single_sidebar_widget post_category_widget">
-							<h4 class="widget_title">Post Catgories</h4>
+							<h4 class="widget_title">This Blog Categories</h4>
 							<ul class="list cat-list">
+							<?php foreach($kategori as $value) :  ?>
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Technology</p>
-										<p>37</p>
+									<a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value ?>" class="">
+										<center><p><?= $value ?></p></center>
 									</a>
 								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Lifestyle</p>
-										<p>24</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Fashion</p>
-										<p>59</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Art</p>
-										<p>29</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Food</p>
-										<p>15</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Architecture</p>
-										<p>09</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Adventure</p>
-										<p>44</p>
-									</a>
-								</li>
+							<?php endforeach; ?>
 							</ul>
+
 							<div class="br"></div>
 						</aside>
 
