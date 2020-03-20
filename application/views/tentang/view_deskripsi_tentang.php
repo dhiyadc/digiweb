@@ -13,7 +13,7 @@
                             <hr>
                         </div>
                         <br><br>
-                        <p style="font-size: 14PX"><?= $deskripsi['deskripsi'] ?></p>
+                        <p style="font-size: 14PX"><?= html_entity_decode($deskripsi['deskripsi']) ?></p>
                         <br><br>
                         <a href="<?= base_url() ?>tentang/updateDeskripsi"><button class=" btn btn-theme">UPDATE</button></a>
                         <a href="<?= base_url() ?>tentang/viewDeskripsi"><button class="btn btn-theme04" type="button">Cancel</button></a>
