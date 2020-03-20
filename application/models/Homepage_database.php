@@ -70,7 +70,7 @@ public function getRatingbyID($id){
 public function getFAQ(){
     $this->db->select('*');
     $this->db->from('tentang_faq');
-    $this->db->order_by('id', 'DESC');
+    $this->db->order_by('id');
     return $this->db->get()->result_array();
 }
 
