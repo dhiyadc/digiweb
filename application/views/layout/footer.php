@@ -33,10 +33,10 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>We Are</a></li><a href="#">
+							<li><a href="<?php echo base_url(); ?>aboutus"></a>We Are</a></li>
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a>Galerry</a></li>
-							<li><a href="#"></a>Recent Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galerry</a></li>
+							<li><a href="<?php echo base_url(); ?>Blog"></a>Recent Blog</a></li>
 						</ul>
 					</aside>
 				</div>
@@ -47,10 +47,10 @@
 						</div>
 						<ul>
 							<li><a href="#"></a>Product</a></li><a href="#">
-								<li><a href="#"></a>Layanan Kami
+								<li><a href="<?php echo base_url(); ?>kelas"></a>Layanan Kami
 							</a></li>
-							<li><a href="#"></a>Join Members</a></li>
-							<li><a href="#"></a>Contact</a></a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Join Members</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Contact</a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
@@ -61,8 +61,8 @@
 							<h4>Support</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Hubungi Kami</a></li>
-								<li><a href="#"></a>Bantuan</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Hubungi Kami</a></li>
+								<li><a href="<?php echo base_url(); ?>Contact"></a>Bantuan</a></li>
 							
 						</ul>
 					</aside>
