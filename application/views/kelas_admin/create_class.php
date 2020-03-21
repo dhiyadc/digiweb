@@ -15,7 +15,7 @@
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Nama Kelas</label>
+                    <label for="cname" class="control-label col-lg-2">Nama Layanan</label>
                     <div class="col-lg-10">
                       <input class=" form-control" id="cname" name="judul" minlength="2" type="text" required />
                     </div>
