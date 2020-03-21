@@ -1197,7 +1197,7 @@ PANELS CONFIGURATIONS
 }
 .message-p .small {
 	font-size: 11px;
-	color: #aab2bd;
+	color: green;
 	margin-top: -10px;
 }
 .message-p name {
@@ -1205,7 +1205,7 @@ PANELS CONFIGURATIONS
 	font-weight: 700;
 }
 .message-p .message {
-	font-size: 12px;
+	font-size: 14px;
 }
 .message-p .form-inline {
 	margin-left: 10px;

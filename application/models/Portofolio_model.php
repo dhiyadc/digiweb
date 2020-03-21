@@ -9,6 +9,17 @@ class Portofolio_model extends CI_Model{
     {
         return $this->db->get_where('portofolio', ['id'=>$id])->row_array();
     }
+
+    public function getLastID()
+    {
+        return $this->db->select('id')->order_by('id', 'DESC')->get('portofolio')->row_array();
+    }
+
+    public function getAllKategori()
+    {
+        return $this->db->get('kategori_portofolio')->result_array();
+    }
+
     public function createPortofolio()
     {
         $data=[

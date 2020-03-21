@@ -3,6 +3,7 @@ class Tentang_Model extends CI_Model
 {
     public function getAllStaff()
     {
+        $this->db->order_by("id", "asc");
         return $this->db->get('tentang')->result_array();
     }
 
@@ -20,7 +21,6 @@ class Tentang_Model extends CI_Model
             'path_ig' => $this->input->post('ig'),
             'path_fb' => $this->input->post('fb'),
             'path_twit' => $this->input->post('twitter'),
-            'prioritas' => $this->input->post('prioritas'),
             'path_gambar' => $this->insertImage()
         ];
         $this->db->insert('tentang', $data);
@@ -43,7 +43,6 @@ class Tentang_Model extends CI_Model
                 'path_ig' => $this->input->post('ig'),
                 'path_fb' => $this->input->post('fb'),
                 'path_twit' => $this->input->post('twitter'),
-                'prioritas' => $this->input->post('prioritas'),
                 'path_gambar' => $this->updateImage($id)
             ];
         } else {
@@ -54,7 +53,6 @@ class Tentang_Model extends CI_Model
                 'path_ig' => $this->input->post('ig'),
                 'path_fb' => $this->input->post('fb'),
                 'path_twit' => $this->input->post('twitter'),
-                'prioritas' => $this->input->post('prioritas'),
                 'path_gambar' => $this->input->post('old_image')
             ];
         }
@@ -107,6 +105,58 @@ class Tentang_Model extends CI_Model
 
     public function getStaffByJabatanInti()
     {
-        return $this->db->get_where('tentang', ['prioritas' => "1"])->result_array();
+        $this->db->where('prioritas', "1");
+        $this->db->order_by("id", "asc");
+        return $this->db->get('tentang')->result_array();
+    }
+
+    public function getDeskripsi()
+    {
+        return $this->db->get_where('tentang_deskripsi', ['id' => '0'])->row_array();
+    }
+
+    public function updateDeskripsi($id = 0)
+    {
+        $data = [
+            'deskripsi' => htmlspecialchars($this->input->post('deskripsi'))
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_deskripsi', $data);
+    }
+
+    public function getAllFAQ()
+    {
+        $this->db->order_by("id", "asc");
+        return $this->db->get('tentang_faq')->result_array();
+    }
+
+    public function getFAQbyID($id)
+    {
+        return $this->db->get_where('tentang_faq', ['id' => $id])->row_array();
+    }
+
+    public function insertFAQ()
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+
+        $this->db->insert('tentang_faq', $data);
+    }
+
+    public function updateFAQ($id)
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_faq', $data);
+    }
+
+    public function deleteFAQ($id)
+    {
+        $this->db->delete('tentang_faq', ['id' => $id]);
     }
 }

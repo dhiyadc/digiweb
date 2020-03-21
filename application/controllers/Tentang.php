@@ -11,12 +11,11 @@ class Tentang extends CI_Controller
 
     public function index()
     {
-
-         $data = [
-             'logged_in' => 'zora'
-         ];
-         $this->session->set_userdata($data);
-        $this->viewTentang();
+        if ($this->session->userdata('logged_in')) {
+            $this->viewTentang();
+        } else {
+            redirect("admin");
+        }
     }
 
     public function createTentang()
@@ -34,11 +33,12 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->insertTentang();
+                $this->session->set_flashdata('create', "Tentang berhasil ditambahkan");
                 redirect('tentang/viewTentang');
             }
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -51,7 +51,7 @@ class Tentang extends CI_Controller
             $this->load->view('_partials/footer_admin');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -59,10 +59,11 @@ class Tentang extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->tentang->deleteTentang($id);
+            $this->session->set_flashdata('delete', "Tentang berhasil didelete");
             redirect('tentang/viewTentang');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -75,7 +76,7 @@ class Tentang extends CI_Controller
             $this->load->view('_partials/footer_admin');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -96,11 +97,12 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->updateTentang($id);
-                redirect('tentang/viewTentang');
+                $this->session->set_flashdata('flash', "Tentang berhasil diupdate");
+                redirect('tentang/viewTentangByID/' . $id);
             }
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
         }
     }
 
@@ -118,7 +120,104 @@ class Tentang extends CI_Controller
             $this->load->view('tentang/view_tentang_inti', $data);
         } else {
             $this->session->set_flashdata('message', "Access Denied");
-            redirect('tentang_user');
+            redirect('admin');
+        }
+    }
+
+    public function viewDeskripsi()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['deskripsi'] = $this->tentang->getdeskripsi();
+            $this->load->view('_partials/header_admin');
+            $this->load->view('tentang/view_deskripsi_tentang', $data);
+            $this->load->view('_partials/footer_admin');
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function updateDeskripsi()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $data['deskripsi'] = $this->tentang->getdeskripsi();
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/update_deskripsi_tentang', $data);
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->updateDeskripsi();
+                $this->session->set_flashdata('flash', "Deskripsi berhasil diupdate");
+                redirect('tentang/viewDeskripsi');
+            }
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
+        }
+    }
+
+    public function viewFAQ()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['faq'] = $this->tentang->getallFAQ();
+            $this->load->view('_partials/header_admin');
+            $this->load->view('tentang/view_FAQ', $data);
+            $this->load->view('_partials/footer_admin');
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
+        }
+    }
+
+    public function insertFAQ()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('question', 'question', 'required|trim');
+            $this->form_validation->set_rules('answer', 'answer', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/create_FAQ');
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->insertFAQ();
+                $this->session->set_flashdata('create', "FAQ berhasil ditambahkan");
+                redirect('tentang/viewFAQ');
+            }
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function updateFAQ($id)
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('question', 'question', 'required|trim');
+            $this->form_validation->set_rules('answer', 'answer', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $data['faq'] = $this->tentang->getFAQbyID($id);
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/update_FAQ', $data);
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->updateFAQ($id);
+                $this->session->set_flashdata('flash', "FAQ berhasil diupdate");
+                redirect('tentang/viewFAQ');
+            }
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
+        }
+    }
+
+    public function deleteFAQ($id)
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->tentang->deleteFAQ($id);
+            $this->session->set_flashdata('delete', "FAQ berhasil dihapus");
+            redirect('tentang/viewFAQ');
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
+            redirect('admin');
         }
     }
 }
