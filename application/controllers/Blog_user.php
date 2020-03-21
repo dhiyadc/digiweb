@@ -73,7 +73,7 @@ class Blog_user extends CI_Controller {
         $this->Blog_user_model->updateRate($id, $temp);
 
         $data['popular'] = $this->Blog_user_model->popularBlog();
-
+        $this->load->view('layout/header');
         $this->load->view('blog_user/singleblog', $data);
     }
 

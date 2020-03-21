@@ -23,6 +23,7 @@
 
 </head>
 
+
 <body class="blog_page">
 	<!--================Home Banner Area =================-->
 	<section class="banner_area">

@@ -12,9 +12,14 @@
                 <div class="servicetitle">
                   <h4><?= $val['judul']; ?></h4>
                   <hr>
+                  <?php if($this->session->flashdata('flash')) :?>
+                    <div class="alert alert-success" role="alert">
+                      <?= $this->session->flashdata('flash') ?>
+                    </div>
+                 <?php endif; ?>
                 </div>
                 <div class="icn-main-container">
-                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" height="400px">
+                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" width="600px" style="object-fit: cover">
                 </div>
                 <br>
                 <h5>Harga: <?= $val['harga']; ?></h5>

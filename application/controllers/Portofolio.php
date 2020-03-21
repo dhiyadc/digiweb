@@ -33,8 +33,7 @@ class Portofolio extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->Portofolio_model->createPortofolio();
-
-                $this->session->set_flashdata('flash', 'ditambahkan');
+                $this->session->set_flashdata('create', 'Portofolio berhasil ditambahkan');
                 redirect('Portofolio');
             }
         } else {
@@ -45,7 +44,7 @@ class Portofolio extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Portofolio_model->delPortofolio($id);
-            $this->session->set_flashdata('flash', 'dihapus');
+            $this->session->set_flashdata('delete', 'Portofolio berhasil di delete');
             redirect('Portofolio');
         } else {
             redirect('admin');
@@ -79,8 +78,8 @@ class Portofolio extends CI_Controller
             } else {
                 $this->Portofolio_model->updatePortofolio($id);
 
-                $this->session->set_flashdata('flash', 'di update');
-                redirect('Portofolio');
+                $this->session->set_flashdata('flash', 'Portofolio berhasil di update');
+                redirect('Portofolio/ReadPortofolio/'.$id);
             }
         } else {
             redirect('admin');

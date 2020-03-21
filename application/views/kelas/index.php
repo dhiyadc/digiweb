@@ -20,6 +20,9 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
+	<?php if ($this->session->flashdata('flash') ) : ?>
+		<?= $this->session->flashdata('flash'); ?>
+	<?php endif; ?>
 	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
 			<div class="container" id="daftarKelas">

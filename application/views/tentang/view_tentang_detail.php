@@ -3,6 +3,11 @@
     <div class="row mt">
       <div class="col-lg-12">
         <div class="row content-panel">
+        <?php if($this->session->flashdata('flash')) :?>
+            <div class="alert alert-success" role="alert">
+              <?= $this->session->flashdata('flash') ?>
+            </div>
+          <?php endif; ?>
           <div class="col-md-4 profile-text mt mb centered">
             <div class="right-divider hidden-sm hidden-xs">
               <?php if ($staff['path_ig'] != null) : ?>

@@ -36,6 +36,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->createClass();
+            $this->session->set_flashdata('create', 'Kelas berhasil di tambahkan');
             redirect('kelas_admin');
         } else {
             redirect('admin');
@@ -46,6 +47,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->deleteClass($id);
+            $this->session->set_flashdata('delete', 'Kelas berhasil di delete');
             redirect('kelas_admin');
         } else {
             redirect('admin');
@@ -69,6 +71,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->updateClass($id);
+            $this->session->set_flashdata('flash', 'Kelas berhasil di update');
             redirect('kelas_admin/detail_class/' . $id);
         } else {
             redirect('admin');

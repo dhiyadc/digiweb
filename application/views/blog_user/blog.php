@@ -120,8 +120,8 @@
 
                             </article>
                             <?php endforeach; ?>
-                            
 
+                           
                             <div id="loadMore">
                                 <a href="#">Load More</a>
                             </div>

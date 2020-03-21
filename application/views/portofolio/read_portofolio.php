@@ -11,9 +11,14 @@
                 <div class="servicetitle">
                   <h4><?= $portofolio['judul']; ?></h4>
                   <hr>
+                  <?php if($this->session->flashdata('flash')) :?>
+                      <div class="alert alert-success" role="alert">
+                        <?= $this->session->flashdata('flash') ?>
+                      </div>
+                  <?php endif; ?>
                 </div>
                 <div class="icn-main-container">
-                    <img src="<?= base_url().'images/'.$portofolio['path_gambar']?>" alt="" height="350px">
+                    <img src="<?= base_url().'images/'.$portofolio['path_gambar']?>" alt="" width="350px">
                 </div>
                 <br><br>
                 <p><?= $portofolio['text']; ?></p>

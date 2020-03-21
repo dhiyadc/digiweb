@@ -9,9 +9,14 @@
 						<div class="servicetitle">
 							<h2><?= $judul ?></h2>
 							<hr>
+							<?php if($this->session->flashdata('update')) :?>
+								<div class="alert alert-success" role="alert">
+									<?= $this->session->flashdata('update') ?>
+								</div>
+							<?php endif; ?>
 						</div>
 						<div class="icn-main-container">
-							<img src="<?= base_url("images/$path_gambar")?>" alt="" height="350px">
+							<img src="<?= base_url("images/$path_gambar")?>" alt="" width="475px" >
 						</div>
 						<br><br>
 						<h4><b><?= $author?></b></h4>
@@ -39,7 +44,7 @@
 						<a href="<?= base_url(); ?>blog/readblog" class="btn btn-success">Back</a>
 						<hr>
 						<ul class="list-group list-group-flush">
-							<li class="list-group-item list-group-item-dark">Rating</li>
+							<li class="list-group-item list-group-item-dark"><b>Rating</b></li>
 							<li class="list-group-item">Like : <?= $rating['like'] ?></li>
 							<li class="list-group-item">Love : <?= $rating['love']; ?></li>
 							<li class="list-group-item">Haha : <?= $rating['haha']; ?></li>

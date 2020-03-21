@@ -2,7 +2,17 @@
       <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i>Data Blog</h3>
         <!-- page start-->
-        
+        <hr>
+        <?php if($this->session->flashdata('create')) :?>
+								<div class="alert alert-success" role="alert">
+									<?= $this->session->flashdata('create') ?>
+								</div>
+        <?php endif; ?>
+        <?php if($this->session->flashdata('delete')) :?>
+								<div class="alert alert-danger" role="alert">
+									<?= $this->session->flashdata('delete') ?>
+								</div>
+				<?php endif; ?>
         <div class="tab-pane" id="chartjs">
           <div class="row mt">
           <?php foreach ($blog as $key => $value): ?>

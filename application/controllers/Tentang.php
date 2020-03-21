@@ -33,6 +33,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->insertTentang();
+                $this->session->set_flashdata('create', "Tentang berhasil ditambahkan");
                 redirect('tentang/viewTentang');
             }
         } else {
@@ -58,6 +59,7 @@ class Tentang extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->tentang->deleteTentang($id);
+            $this->session->set_flashdata('delete', "Tentang berhasil didelete");
             redirect('tentang/viewTentang');
         } else {
             $this->session->set_flashdata('message', "Access Denied");
@@ -95,6 +97,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->updateTentang($id);
+                $this->session->set_flashdata('flash', "Tentang berhasil diupdate");
                 redirect('tentang/viewTentangByID/' . $id);
             }
         } else {
@@ -144,6 +147,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->updateDeskripsi();
+                $this->session->set_flashdata('flash', "Deskripsi berhasil diupdate");
                 redirect('tentang/viewDeskripsi');
             }
         } else {
@@ -176,6 +180,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->insertFAQ();
+                $this->session->set_flashdata('create', "FAQ berhasil ditambahkan");
                 redirect('tentang/viewFAQ');
             }
         } else {
@@ -195,6 +200,7 @@ class Tentang extends CI_Controller
                 $this->load->view('_partials/footer_admin');
             } else {
                 $this->tentang->updateFAQ($id);
+                $this->session->set_flashdata('flash', "FAQ berhasil diupdate");
                 redirect('tentang/viewFAQ');
             }
         } else {
@@ -207,6 +213,7 @@ class Tentang extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->tentang->deleteFAQ($id);
+            $this->session->set_flashdata('delete', "FAQ berhasil dihapus");
             redirect('tentang/viewFAQ');
         } else {
             $this->session->set_flashdata('message', "Access Denied");

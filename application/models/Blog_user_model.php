@@ -14,6 +14,7 @@ class Blog_user_model extends CI_model {
 
     }
 
+
     public function getBlogByKategori($keyword = null, $kategori){
         if($keyword){
             $this->db->like('judul', $keyword);

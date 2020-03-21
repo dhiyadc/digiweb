@@ -1490,10 +1490,17 @@ body.blog_page {
 
 /* Contact Success and error Area css
 ============================================================================================ */
+.modal-dialog{
+  top: 9%;
+}
+
+@media (max-width: 575px){
+  .modal-dialog{
+    top: 125px;
+  }
+}
 .modal-message .modal-dialog {
   position: absolute;
-  top: 36%;
-  left: 50%;
   transform: translateX(-50%) translateY(-50%) !important;
   margin: 0px;
   max-width: 500px;

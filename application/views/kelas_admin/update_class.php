@@ -1,6 +1,6 @@
 <section id="main-content">
   <section class="wrapper">
-    <h3><i class="fa fa-angle-right"></i>Edit Kelas Les</h3>
+    <h3><i class="fa fa-angle-right"></i>Edit Layanan Kami</h3>
     <!-- FORM VALIDATION -->
     <div class="row mt">
       <div class="col-lg-12">
@@ -49,9 +49,10 @@
                 <div class="form-group ">
                   <label for="ccomment" class="control-label col-lg-2">Kategori</label>
                   <div class="col-lg-10">
-                    <?php foreach ($kategori as $val) : ?>
-                      <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" />
-                      <label><?= $val['kategori']; ?></label><br>
+                    <?php foreach ($kategori as $value) : ?>
+                      <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" 
+                      <?= ($value['kategori'] == $val['kategori']) ? 'checked' : '' ?>/>
+                      <label><?= $value['kategori']; ?></label><br>
                     <?php endforeach; ?>
                   </div>
                 </div>

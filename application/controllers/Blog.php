@@ -41,6 +41,7 @@ class Blog extends CI_Controller {
             foreach ($kategori as $value) {
                 $this->Blog_model->createKategori($id, $value);
             }
+            $this->session->set_flashdata('create', 'Berhasil Membuat Blog!');
             redirect('blog/readblog');
         }
         else{
@@ -145,6 +146,7 @@ class Blog extends CI_Controller {
             foreach ($kategori as $value) {
                 $this->Blog_model->createKategori($id, $value);
             }
+            $this->session->set_flashdata('update', 'Berhasil Mengupdate Blog!');
             redirect(base_url('blog/fullDetail/' . $id));
         }
         else{
@@ -155,7 +157,7 @@ class Blog extends CI_Controller {
     public function deleteblog($id) {
         if(isset($this->session->userdata['logged_in'])){
             $this->Blog_model->deleteblogg($id);
-            $this->session->set_flashdata('message', 'Blog Terhapus !');
+            $this->session->set_flashdata('delete', 'Berhasil Menghapus Blog!');
             redirect(base_url('blog/readblog'));
         }
         else{

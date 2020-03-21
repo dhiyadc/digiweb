@@ -105,27 +105,21 @@ class Blog_model extends CI_Model {
     public function updateeBlog($id) {
         if (!empty($_FILES['path_gambar']['name'])) {
             $data = [
-                'id_admin' => 8,
-                // 'id_admin' => $this->session->userdata('id_adm'),
+                'id_admin' => implode($this->getIdUser()),
                 'path_gambar' => $this->updateImage($id),
                 'judul' => $this->input->post('judul'),
-                'author' => "Cindy",
-                // 'author' => $this->session->userdata('user'),
+                'author' => implode($this->getAdminName()),
                 'text' => htmlspecialchars($this->input->post('text')),
                 'tanggal_publish' => date('Y-m-d'),
-                // 'kategori' => $this->input->post('kategori'),
             ];
         } else {
             $data = [
-                'id_admin' => 8,
-                // 'id_admin' => $this->session->userdata('id_adm'),
+                'id_admin' => implode($this->getIdUser()),
                 'path_gambar' => $this->input->post('old_image'),
                 'judul' => $this->input->post('judul'),
-                'author' => "Cindy",
-                // 'author' => $this->session->userdata('user'),
+                'author' => implode($this->getAdminName()),
                 'text' => htmlspecialchars($this->input->post('text')),
                 'tanggal_publish' => date('Y-m-d'),
-                // 'kategori' => $this->input->post('kategori'),
             ];
         }
 
