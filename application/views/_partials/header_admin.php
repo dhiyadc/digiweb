@@ -43,7 +43,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>DIGITAL<span>CREATIVE</span></b></a>
+      <a href="<?= base_url(); ?>home_admin" class="logo"><b>DIGITAL<span>CREATIVE</span></b></a>
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
