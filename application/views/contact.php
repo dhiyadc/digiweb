@@ -1,49 +1,39 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<?php echo base_url(); ?>assets/img/favicon.png" type="image/png">
-    <title>Digital Creative</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/linericon/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/animate-css/animate.css">
-    <!-- main css -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
-</head>
-
-<body>
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-            <div class="container">
-                <div class="banner_content text-center">
+<?php $this->load->view('layout/header')?>
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
                     <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="contact.html">CONTACT</a>
-                    </div>
-                    <h2>CONTACT US</h2>
+						<a href="<?= base_url() ?>">Home</a>
+						<a href="<?= base_url() ?>/contact">Contact</a>
+					</div>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">CONTACT US</h2>
+						
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Contact Area =================-->
+        <!--
+        <section class="contact_area section_gap">
+            <div class="container">
+                <div>
 
                 </div>
             </div>
         </div>
     </section>
+     -->
     <!--================End Home Banner Area =================-->
 
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
         <div class="container">
-            <div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia." data-mlat="40.701083" data-mlon="-74.1522848">
-            </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.420615359224!2d104.72406721414488!3d-2.9806749406604403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b74774ada4081%3A0xced91e4b000cd6b0!2sDigital%20Creative!5e0!3m2!1sid!2sid!4v1584779627708!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <div class="row">
                 <div class="col-lg-3">
                     <div class="contact_info">
@@ -105,34 +95,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!--================End Contact Success and Error message Area =================-->
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/stellar.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/isotope/isotope-min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/mail-script.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.counterup.min.js"></script>
-    <!-- contact js -->
-    <script src="<?php echo base_url(); ?>assets/js/jquery.form.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/contact.js"></script>
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
-</body>
+        <!--================End Contact Success and Error message Area =================-->
+        
+<?php $this->load->view('layout/footer')?>      
+       

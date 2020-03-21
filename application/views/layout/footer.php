@@ -30,15 +30,13 @@
 				<div class="col-lg-3 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h4>About Farfly</h4>
+							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>For Business</a></li><a href="#">
-								<li><a href="#"></a>Premium Plans
-							</a></li>
+							<li><a href="<?php echo base_url(); ?>aboutus"></a>We Are</a></li>
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="#"></a>How it Works</a></li>
-							<li><a href="#"></a>Farfly Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galerry</a></li>
+							
 						</ul>
 					</aside>
 				</div>
@@ -48,11 +46,11 @@
 							<h4>Company</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Product Tour</a></li><a href="#">
-								<li><a href="#"></a>Pricing
+							<li><a href="#"></a>Product</a></li><a href="#">
+								<li><a href="<?php echo base_url(); ?>kelas"></a>Layanan Kami
 							</a></li>
-							<li><a href="#"></a>Founding Members</a></li>
-							<li><a href="#"></a>Case Studies</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Join Members</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Contact</a></a></li>
 							<li><a href="#"></a>Product Updates</a></li>
 						</ul>
 					</aside>
@@ -63,12 +61,9 @@
 							<h4>Support</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Documentation</a></li><a href="#">
-								<li><a href="#"></a>Data Securiry
-							</a></li>
-							<li><a href="#"></a>Site Performance</a></li>
-							<li><a href="#"></a>Action Plan</a></li>
-							<li><a href="#"></a>Resources</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Hubungi Kami</a></li>
+								<li><a href="<?php echo base_url(); ?>Contact"></a>Bantuan</a></li>
+							
 						</ul>
 					</aside>
 				</div>
@@ -82,7 +77,6 @@
 								<li><a href="#"></a>Privacy Policy
 							</a></li>
 							<li><a href="#"></a>Cookie Information</a></li>
-							<li><a href="#"></a>Opt - Out</a></li>
 						</ul>
 					</aside>
 				</div>
@@ -99,8 +93,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<div class="social_widget">
 						<a href="#"><i class="fa fa-facebook"></i></a>
 						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
 					</div>
 				</div>
 			</div>

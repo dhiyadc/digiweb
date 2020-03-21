@@ -11,8 +11,12 @@ class Tentang_user extends CI_Controller
 
     public function index()
     {
-        $this->viewTentang();
+        $data['tentang'] = $this->tentang->getallstaff();
+        $this->load->view('layout/header');
+        $this->load->view('about-us', $data);
+        $this->load->view('layout/footer');
     }
+
     public function viewTentang()
     {
         $data['tentang'] = $this->tentang->getAllStaff();
@@ -29,5 +33,16 @@ class Tentang_user extends CI_Controller
     {
         $data['staff'] = $this->tentang->getStaffByJabatanInti();
         $this->load->view('tentang/view_tentang_inti', $data);
+    }
+
+    public function viewDeskripsi()
+    {
+        $data['deskripsi'] = $this->tentang->getdeskripsi();
+    }
+
+    public function viewFAQ()
+    {
+        $data['faq'] = $this->tentang->getallFAQ();
+        $this->load->view('tentang/user/view_FAQ', $data);
     }
 }

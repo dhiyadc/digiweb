@@ -12,6 +12,16 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php if($this->session->flashdata('create')) :?>
+                    <div class="alert alert-success" role="alert">
+                      <?= $this->session->flashdata('create') ?>
+                    </div>
+                 <?php endif; ?>
+                <?php if($this->session->flashdata('delete')) :?>
+                    <div class="alert alert-danger" role="alert">
+                      <?= $this->session->flashdata('delete') ?>
+                    </div>
+                 <?php endif; ?>
                     <?php foreach ($kelas as $val) : ?>
                         <tr class="gradeX">
                             <td>

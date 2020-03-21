@@ -14,29 +14,15 @@ class Tentang_Model extends CI_Model
 
     public function insertTentang()
     {
-        if ($this->input->post('prioritas')) {
-            $data = [
-                'nama' => $this->input->post('nama'),
-                'jabatan' => $this->input->post('jabatan'),
-                'quote' => $this->input->post('quote'),
-                'path_ig' => $this->input->post('ig'),
-                'path_fb' => $this->input->post('fb'),
-                'path_twit' => $this->input->post('twitter'),
-                'prioritas' => "1",
-                'path_gambar' => $this->insertImage()
-            ];
-        } else {
-            $data = [
-                'nama' => $this->input->post('nama'),
-                'jabatan' => $this->input->post('jabatan'),
-                'quote' => $this->input->post('quote'),
-                'path_ig' => $this->input->post('ig'),
-                'path_fb' => $this->input->post('fb'),
-                'path_twit' => $this->input->post('twitter'),
-                'prioritas' => "0",
-                'path_gambar' => $this->insertImage()
-            ];
-        }
+        $data = [
+            'nama' => $this->input->post('nama'),
+            'jabatan' => $this->input->post('jabatan'),
+            'quote' => $this->input->post('quote'),
+            'path_ig' => $this->input->post('ig'),
+            'path_fb' => $this->input->post('fb'),
+            'path_twit' => $this->input->post('twitter'),
+            'path_gambar' => $this->insertImage()
+        ];
         $this->db->insert('tentang', $data);
     }
 
@@ -49,54 +35,26 @@ class Tentang_Model extends CI_Model
 
     public function updateTentang($id)
     {
-        if ($this->input->post('prioritas')) {
-            if (!empty($_FILES['path_gambar']['name'])) {
-                $data = [
-                    'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan'),
-                    'quote' => $this->input->post('quote'),
-                    'path_ig' => $this->input->post('ig'),
-                    'path_fb' => $this->input->post('fb'),
-                    'path_twit' => $this->input->post('twitter'),
-                    'prioritas' => "1",
-                    'path_gambar' => $this->updateImage($id)
-                ];
-            } else {
-                $data = [
-                    'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan'),
-                    'quote' => $this->input->post('quote'),
-                    'path_ig' => $this->input->post('ig'),
-                    'path_fb' => $this->input->post('fb'),
-                    'path_twit' => $this->input->post('twitter'),
-                    'prioritas' => "1",
-                    'path_gambar' => $this->input->post('old_image')
-                ];
-            }
+        if (!empty($_FILES['path_gambar']['name'])) {
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'jabatan' => $this->input->post('jabatan'),
+                'quote' => $this->input->post('quote'),
+                'path_ig' => $this->input->post('ig'),
+                'path_fb' => $this->input->post('fb'),
+                'path_twit' => $this->input->post('twitter'),
+                'path_gambar' => $this->updateImage($id)
+            ];
         } else {
-            if (!empty($_FILES['path_gambar']['name'])) {
-                $data = [
-                    'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan'),
-                    'quote' => $this->input->post('quote'),
-                    'path_ig' => $this->input->post('ig'),
-                    'path_fb' => $this->input->post('fb'),
-                    'path_twit' => $this->input->post('twitter'),
-                    'prioritas' => "0",
-                    'path_gambar' => $this->updateImage($id)
-                ];
-            } else {
-                $data = [
-                    'nama' => $this->input->post('nama'),
-                    'jabatan' => $this->input->post('jabatan'),
-                    'quote' => $this->input->post('quote'),
-                    'path_ig' => $this->input->post('ig'),
-                    'path_fb' => $this->input->post('fb'),
-                    'path_twit' => $this->input->post('twitter'),
-                    'prioritas' => "0",
-                    'path_gambar' => $this->input->post('old_image')
-                ];
-            }
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'jabatan' => $this->input->post('jabatan'),
+                'quote' => $this->input->post('quote'),
+                'path_ig' => $this->input->post('ig'),
+                'path_fb' => $this->input->post('fb'),
+                'path_twit' => $this->input->post('twitter'),
+                'path_gambar' => $this->input->post('old_image')
+            ];
         }
         $this->db->where('id', $id);
         $this->db->update('tentang', $data);
@@ -150,5 +108,55 @@ class Tentang_Model extends CI_Model
         $this->db->where('prioritas', "1");
         $this->db->order_by("id", "asc");
         return $this->db->get('tentang')->result_array();
+    }
+
+    public function getDeskripsi()
+    {
+        return $this->db->get_where('tentang_deskripsi', ['id' => '0'])->row_array();
+    }
+
+    public function updateDeskripsi($id = 0)
+    {
+        $data = [
+            'deskripsi' => htmlspecialchars($this->input->post('deskripsi'))
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_deskripsi', $data);
+    }
+
+    public function getAllFAQ()
+    {
+        $this->db->order_by("id", "asc");
+        return $this->db->get('tentang_faq')->result_array();
+    }
+
+    public function getFAQbyID($id)
+    {
+        return $this->db->get_where('tentang_faq', ['id' => $id])->row_array();
+    }
+
+    public function insertFAQ()
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+
+        $this->db->insert('tentang_faq', $data);
+    }
+
+    public function updateFAQ($id)
+    {
+        $data = [
+            'question' => $this->input->post('question'),
+            'answer' => $this->input->post('answer')
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tentang_faq', $data);
+    }
+
+    public function deleteFAQ($id)
+    {
+        $this->db->delete('tentang_faq', ['id' => $id]);
     }
 }
