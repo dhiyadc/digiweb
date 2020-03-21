@@ -48,7 +48,7 @@
             <div class="col-md-16 mb">
               <div class="message-p pn">
                 <div class="message-header">
-                  <h5>Selamat Datang Admin!, Di Halaman Admin!</h5>
+                  <h5>Selamat Datang di Halaman Admin!</h5>
                 </div>
                 <div class="row">
                   <div class="col-md-3 centered hidden-sm hidden-xs">
