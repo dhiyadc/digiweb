@@ -34,8 +34,47 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================Start About Us Area =================-->
-	<?php foreach ($tentang as $value) : ?>
-		<section class="about_us_area section_gap_top">
+		<section class="section_gap">
+		<div class="container">
+			<div class="recent_update_inner">
+						<div class="row about_content2 align-items-center">		
+						<?php foreach($tentang as $val) : ?>
+							<div class="col-lg-6">
+								<div class="about_us_image_box">
+									<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="section_content ">
+									<h6><?= $val['nama'] ?></h6>
+									<h1><?= $val['jabatan'] ?></h1>
+									<p style="font-size: 22px;"><?= $val['quote'] ?></p>
+									<div class="right-divider hidden-sm hidden-xs">
+										<?php if ($val['path_ig'] != null) : ?>
+											<h5 style="color: white; padding-bottom: 2px; padding-top: 2px; font-size: 13px;">INSTAGRAM</h5>
+											<h6><a href="<?= 'http://www.instagram.com/' . $val['path_ig'] ?>" target="_blank" style="text-decoration: none"><?= $val['path_ig'] ?></a></h6>
+											<br>
+										<?php endif; ?>
+										<?php if ($val['path_fb'] != null) : ?>
+											<h5 style="color: white; padding-bottom: 2px; padding-top: 2px; font-size: 13px;">FACEBOOK</h5>
+											<h6><a href=" <?= 'http://www.facebook.com/' . $val['path_fb'] ?>" target="_blank" style="text-decoration: none"><?= $val['path_fb'] ?></a></h6>
+											<br>
+										<?php endif; ?>
+										<?php if ($val['path_twit'] != null) : ?>
+											<h5 style="color: white; padding-bottom: 2px; padding-top: 2px; font-size: 13px;">TWITTER</h5>
+											<h6><a href="<?= 'http://www.twitter.com/' . $val['path_twit'] ?>" target="_blank" style="text-decoration: none"><?= $val['path_twit'] ?></a></h6>
+											<br>
+										<?php endif; ?>
+									</div>
+								</div>
+							</div>
+						<?php endforeach; ?>
+						</div>			
+			</div>
+		</div>
+	</section>
+
+		<!-- <section class="about_us_area section_gap_top">
 			<div class="container">
 				<div class="row about_content align-items-center">
 					<div class="col-lg-6">
@@ -69,24 +108,17 @@
 					</div>
 				</div>
             </div>
-            <?php endforeach ?>
 
-		</section>
+		</section> -->
 		<!--================End About Us Area =================-->
 	
 
-		<!--========== Start Testimonials Area ==================-->
-		<section class="testimonials_area section_gap">
-			<div class="container">
-			</div>
-		</section>
-		<!--================ End Testimonials Area ================-->
 	
 	
 
 
 		<!--================ Start Frequently Asked Questions Area ================-->
-		<br><br><br><br>
+		<!-- <br><br><br><br>
 		
 
 		<section class="frequently_area">
@@ -94,7 +126,7 @@
 				<div class="row">
 				</div>
 			</div>
-		</section>
+		</section> -->
         <!--================ End Frequently Asked Questions Area ================-->
         <!-- Optional JavaScript -->
 		<!--================ End Frequently Asked Questions Area ================-->

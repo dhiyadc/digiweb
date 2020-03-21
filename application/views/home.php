@@ -70,7 +70,7 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="about_us_image_box justify-content-center">
-						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/00.jpg" alt="">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/images/favicon1.png" alt="">
 					</div>
 				</div>
 			
