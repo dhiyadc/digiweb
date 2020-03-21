@@ -45,14 +45,8 @@
 								Untuk Memberikan Pelayan Terbaik <br>
 								Untuk Kamu
 							</h2>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore
-								magna aliqua. Ut enim ad minim.
-							</p>
-							<div class="d-flex align-items-center">
-								
-								<a class="primary_btn" href="#">Learn More</a>
-							</div>
+							
+							
 						</div>
 					</div>
 				</div>

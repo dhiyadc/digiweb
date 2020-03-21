@@ -36,7 +36,7 @@
 							<li><a href="<?php echo base_url(); ?>aboutus"></a>We Are</a></li>
 							<li><a href="#"></a>Reviews</a></li>
 							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galerry</a></li>
-							<li><a href="<?php echo base_url(); ?>Blog"></a>Recent Blog</a></li>
+							
 						</ul>
 					</aside>
 				</div>
