@@ -50,16 +50,6 @@
                 </div>
               </div>
 
-              <div class="form-group ">
-                <label for="agree" class="control-label col-lg-2 col-sm-3">Tampilkan di Homepage?</label>
-                <div class="col-lg-10 col-sm-9">
-                  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/toggle_switch.css">
-                  <label class="switch">
-                    <input type="checkbox" name="prioritas" id="prioritas">
-                    <span class="slider round"></span>
-                  </label>
-                </div>
-              </div>
               <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                   <input type="submit" name="submit" value="Save" class="btn btn-theme">

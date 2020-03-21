@@ -19,7 +19,12 @@
                 <br>
                 <h5>Harga: <?= $val['harga']; ?></h5>
                 <br>
-                <p><?= $val['text']; ?></p>
+                <p><?= $val['deskripsi_1']; ?></p>
+                <p><?= $val['deskripsi_2']; ?></p>
+                <p><?= $val['deskripsi_3']; ?></p>
+                <br>
+                <small><?= $val['kategori']; ?></small>
+                <br>
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {
                         tanya = confirm("Anda Yakin Akan Menghapus Data ?");

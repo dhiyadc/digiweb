@@ -5,11 +5,7 @@
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<div class="page_link">
-							<a href="index.html">Home</a>
-							<a href="contact.html">CONTACT</a>
-						</div>
-						<h2>CONTACT US</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">CONTACT US</h2>
 						
 					</div>
 				</div>
@@ -18,13 +14,16 @@
         <!--================End Home Banner Area =================-->
         
         <!--================Contact Area =================-->
+        <!--
         <section class="contact_area section_gap">
             <div class="container">
                 <div>
+
                 </div>
             </div>
         </div>
     </section>
+     -->
     <!--================End Home Banner Area =================-->
 
     <!--================Contact Area =================-->

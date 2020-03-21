@@ -117,12 +117,40 @@
                                     </div>
                                     </div>
                                 </div>
+                                <!--  -->
+                                <div class="col-md-9 blogBox moreBox " style="display: none;">
+                                    <div class="blog_post">
+                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
+                                        <div class="blogTxt">
+                                        <div class="blogCategory">
+                                            <a href="/">Growth Hacking</a>
+                                        </div>
+                                        <h2>Pro brute causae aliquip ad</h2>
+                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 blogBox moreBox " style="display: none;">
+                                    <div class="blog_post">
+                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
+                                        <div class="blogTxt">
+                                        <div class="blogCategory">
+                                            <a href="/">Growth Hacking</a>
+                                        </div>
+                                        <h2>Pro brute causae aliquip ad</h2>
+                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </article>
                             <?php endforeach; ?>
                             
+
                             <div id="loadMore">
                                 <a href="#">Load More</a>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -195,6 +223,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="<?= base_url('assets/js/script.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/ckeditor/ckeditor.js'); ?>"></script>
+
         <Script>
                 $( document ).ready(function () {
                     $(".moreBox").slice(0, 4).show();
@@ -210,4 +239,5 @@
                     });
                 });
         </Script>
+
     </body>

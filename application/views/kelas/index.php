@@ -1,21 +1,24 @@
 <?php $this->load->view('layout/header')?>
 <body>
     <!--================Home Banner Area =================-->
+	
 	<section class="banner_area">
-		<div class="banner_inner d-flex align-items-center">
-			<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-			<div class="container">
-				<div class="banner_content text-center">
-					<h2>Layanan Kami</h2>
+			<div class="banner_inner d-flex align-items-center">
+				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Layanan Kami</h2>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
+	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
-			<div class="container">
+			<div class="container" id="daftarKelas">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main_title">
@@ -23,8 +26,9 @@
 							<h1>Layanan Kami</h1>
 						</div>
 					</div>
-                </div>
+				</div>
 				<div class="row">
+					<?php $i=0;?>
                     <?php foreach ($kelas as $val) :?>
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item active">
@@ -33,32 +37,37 @@
 							<h1 class="p_price"><?= $val['harga'] ?></h1>
 							<div class="p_list">
 								<ul>
-									<li><?= $val['deskripsi 1'] ?></li>
-									<li><?= $val['deskripsi 2'] ?></li>
-									<li><?= $val['deskripsi 3'] ?></li>
+									<li><h3><small><?= $val['kategori']; ?></small></h3></li>
+									<li><?= $val['deskripsi_1'] ?></li>
+									<li><?= $val['deskripsi_2'] ?></li>
+									<li><?= $val['deskripsi_3'] ?></li>
 								</ul>
 							</div>
-							<div class="p_btn">
-								<button type="button" data-toggle="modal" data-target="#contact-modal"><a class="gradient_btn"><span>Join Us</span></a></button>
+							<div class="p_btn" id="daftarBtn<?=$i?>">
+								<button type="button" data-toggle="modal" data-target="#contact-modal">
+									<a class="gradient_btn kelasBtns">
+										<span>Join Us<p1 hidden><?= $val['id'] ?></p1></span>
+									</a>
+								</button>
 							</div>
 						</div>
-                    </div>
-                    <?php endforeach;?>
+					</div>
+					<?php $i++; ?>
+					<?php endforeach; ?>
                 </div>
 			</div>
+			
 	</section>
 	<section>
 		<!-- Modal Daftar Les -->
-		
-			<div id="contact-modal" class="modal fade bd-example-modal-lg" role="dialog">
+		<div id="contact-modal" class="modal fade bd-example-modal-lg" role="dialog" id="kelasModal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
 							<a class="close" data-dismiss="modal">×</a>
 							<h3>Form Les Android</h3>
-                        </div>
-                        <?php foreach ($kelas as $val) :?>
-						<form action="<?= base_url() ?>kelas/daftar/<?= $val['id'] ?>" id="contactForm" name="contact" role="form" method="post">
+						</div>
+						<form action="" id="kelasForm" name="contact" role="form" method="post">
 							<div class="modal-body">				
 								<div class="form-group">
 									<label for="name">Nama</label>
@@ -74,21 +83,21 @@
 								</div>
 								<div class="form-group">
 									<label for="message">Instansi</label>
-									<input type="instansi" name="email" class="form-control" required>
+									<input type="instansi" name="instansi" class="form-control" required>
 								</div>
 							</div>
 							<div class="modal-footer">					
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-success" id="submit">Confirm</button>
+								<button type="submit" class="btn btn-primary" id="submit">Confirm</button>
 							</div>
 						</form>
-                	<?php endforeach; ?>
 					</div>
                 </div>
 			</div>
-		<!--  -->
 		<script>
-      function konfirmasi(){
+			
+		$('#lesModal').modal('hide')
+      	function konfirmasi(){
 			var tanya = confirm("Apakah Anda  Data Ini Sudah Benar?");
 	
 			if(tanya === true) {
@@ -98,8 +107,16 @@
 			}
 			document.getElementById("pesan").innerHTML = pesan;
 		}
+
+		$(function(){
+			$('.kelasBtns').click(function(){
+				var value = $(this).children("span").children("p1").html()
+				$('#kelasForm').attr("action",`<?= base_url("kelas/daftar/")?>${value}`) 
+				console.log($('#kelasForm').attr("action"))
+			})
+		})
     	</script>
-		<!--  -->
+		
 	</section>
 </body>
 <?php $this->load->view('layout/footer')?>

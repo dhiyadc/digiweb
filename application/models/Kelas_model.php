@@ -1,10 +1,6 @@
 <?php
 
 class Kelas_model extends CI_Model {
-    public function cekLogin($table,$where)
-	{		
-		return $this->db->get_where($table,$where);
-	}
     public function getAllClass()
     {
         return $this->db->get('kelas')->result_array();
@@ -14,6 +10,11 @@ class Kelas_model extends CI_Model {
     {
         $this->db->where('id',$id);
         return $this->db->get('kelas')->result_array();
+    }
+
+    public function getKategori()
+    {
+        return $this->db->get('kategori_kelas')->result_array();
     }
 
     private function insertImage() 
@@ -49,9 +50,12 @@ class Kelas_model extends CI_Model {
     {
         $data = [
             'judul' => $this->input->post('judul'),
-            'text' => $this->input->post('text'),
             'harga' => $this->input->post('harga'),
-            'path_gambar' => $this->insertImage()
+            'path_gambar' => $this->insertImage(),
+            'kategori' => $this->input->post('kategori'),
+            'deskripsi_1' => $this->input->post('deskripsi_1'),
+            'deskripsi_2' => $this->input->post('deskripsi_2'),
+            'deskripsi_3' => $this->input->post('deskripsi_3')
         ];
 
         $this->db->insert('kelas',$data);
@@ -72,16 +76,22 @@ class Kelas_model extends CI_Model {
             $data = [
                 'judul' => $this->input->post('judul'),
                 'harga' => $this->input->post('harga'),
-                'text' => $this->input->post('text'),
-                'path_gambar' => $this->updateImage($id)
+                'path_gambar' => $this->updateImage($id),
+                'kategori' => $this->input->post('kategori'),
+                'deskripsi_1' => $this->input->post('deskripsi_1'),
+                'deskripsi_2' => $this->input->post('deskripsi_2'),
+                'deskripsi_3' => $this->input->post('deskripsi_3')
             ];
         }
         else {
             $data = [
                 'judul' => $this->input->post('judul'),
                 'harga' => $this->input->post('harga'),
-                'text' => $this->input->post('text'),
-                'path_gambar' => $this->input->post('old_image')
+                'path_gambar' => $this->input->post('old_image'),
+                'kategori' => $this->input->post('kategori'),
+                'deskripsi_1' => $this->input->post('deskripsi_1'),
+                'deskripsi_2' => $this->input->post('deskripsi_2'),
+                'deskripsi_3' => $this->input->post('deskripsi_3')
             ];
         }
 
