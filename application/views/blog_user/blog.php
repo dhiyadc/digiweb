@@ -33,7 +33,7 @@
 						<a href="<?= base_url() ?>">Home</a>
 						<a href="<?= base_url() ?>/Blog_user">Blog</a>
 					</div>
-						<h2 style="color: crimson">Blog Page</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Blog Page</h2>
 					</div>
 				</div>
 			</div>
@@ -115,31 +115,6 @@
                                         </div>
                                             </div>
                                     </div>
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="col-md-9 blogBox moreBox " style="display: none;">
-                                    <div class="blog_post">
-                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
-                                        <div class="blogTxt">
-                                        <div class="blogCategory">
-                                            <a href="/">Growth Hacking</a>
-                                        </div>
-                                        <h2>Pro brute causae aliquip ad</h2>
-                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-9 blogBox moreBox " style="display: none;">
-                                    <div class="blog_post">
-                                    <img src="https://www.solodev.com/assets/fancy/travel8.jpg">
-                                        <div class="blogTxt">
-                                        <div class="blogCategory">
-                                            <a href="/">Growth Hacking</a>
-                                        </div>
-                                        <h2>Pro brute causae aliquip ad</h2>
-                                        <p class="post_intro hidden-xs">No ipsum invidunt eos, ei ius dicit platonem perpetua. Mea te feugait ocurreret aliquando, ei i...</p>
-                                        </div>
                                     </div>
                                 </div>
 

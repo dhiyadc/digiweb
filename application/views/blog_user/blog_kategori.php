@@ -35,7 +35,7 @@
 						<a href="<?= base_url() ?>">Home</a>
 						<a href="<?= base_url() ?>/Blog_user">Blog</a>
 					</div>
-					<h2 style="color: crimson">Blog Category</h2>
+					<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Blog Category</h2>
 				</div>
 			</div>
 		</div>

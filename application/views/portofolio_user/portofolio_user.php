@@ -6,6 +6,10 @@
 				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
+                    <div class="page_link">
+						<a href="<?= base_url() ?>">Home</a>
+						<a href="<?= base_url() ?>portofolio_user">Portofolio</a>
+					</div>
 						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Portofolio</h2>
 					</div>
 				</div>
