@@ -130,31 +130,6 @@
 	</section>
 	<!--================End Upcoming Games Area =================-->
 
-	<!--================Start Recent Update Area =================-->
-	<section class="recent_update_area section_gap">
-		<div class="container">
-			<div class="recent_update_inner">
-						<div class="row about_content2 align-items-center">		
-						<?php foreach($tentang as $val) : ?>
-							<div class="col-lg-6">
-								<div class="about_us_image_box">
-									<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover;">
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="section_content ">
-									<h6><?= $val['nama'] ?></h6>
-									<h1><?= $val['jabatan'] ?></h1>
-									<p style="text-align: justify;"><?= $val['quote'] ?></p>
-								</div>
-							</div>
-						<?php endforeach; ?>
-						</div>			
-			</div>
-		</div>
-	</section>
-	<!--================End Recent Update Area =================-->
-
 
 	<!--================ Start Gallery Area =================-->
 	<section class="gallery_area">

@@ -1443,7 +1443,7 @@ body.blog_page {
     color: #3fcaff;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     color: "Roboto", sans-serif;
     font-weight: bold;
@@ -3841,6 +3841,7 @@ h6 {
       .blog_area .blog_items .blog_content .date a {
         margin-right: 20px; }
 
+  
   .footer_area .f_widget ul {
     margin-bottom: 30px !important; }
     .footer_area .f_widget ul li {
@@ -3955,7 +3956,7 @@ h6 {
         /*---------------------------------------------*/
         a {
           font-family: Poppins-Regular;
-          font-size: 14px;
+          font-size: 22px;
           line-height: 1.7;
           color: #666666;
           margin: 0px;
@@ -4796,4 +4797,10 @@ section .section-title {
   background-color: #CC0033;
 }
 
+.foot p{
+  color : #fff;
+} 
 
+.foot b{
+  color :#3fcae5
+}

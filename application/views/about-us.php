@@ -33,6 +33,32 @@
 	</section>
 	<!--================End Home Banner Area =================-->
 
+	
+	<!--================Start About Us Area =================-->
+	<section class="about_us_area section_gap_top">
+		<div class="container">
+			<div class="row about_content align-items-center">
+			
+				<div class="col-lg-6">
+					<div class="section_content">
+						<h6>Tentang Kami</h6>
+						<h1>Digital <br>Creative</h1>
+						<?php foreach($DCDesc as $val) : echo html_entity_decode($val['deskripsi']); endforeach;?>
+						<!-- <a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a> -->
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_us_image_box justify-content-center">
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/00.jpg" alt="">
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</section>
+	<!--================End About Us Area =================-->
+
+
 	<!--================Start About Us Area =================-->
 	<?php foreach ($tentang as $value) : ?>
 		<section class="about_us_area section_gap_top">

@@ -33,10 +33,11 @@
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
         <div class="container">
-            <div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia." data-mlat="40.701083" data-mlon="-74.1522848">
-            </div>
             <div class="row">
-                <div class="col-lg-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.4205959609862!2d104.72406721483576!3d-2.980680297829198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b74774ada4081%3A0xced91e4b000cd6b0!2sDigital%20Creative!5e0!3m2!1sid!2sid!4v1584780570718!5m2!1sid!2sid" width="600" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            
+            
+                <div class="col-lg-5">
                     <div class="contact_info">
                         <div class="info_item">
                             <i class="lnr lnr-home"></i>
@@ -55,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 mt-2">
                     <form class="row contact_form" action=" mailto: warungbelajar@gmail.com?cc=" method="post" id="contactForm" novalidate="novalidate">
                         <div class="col-md-6">
                             <div class="form-group">

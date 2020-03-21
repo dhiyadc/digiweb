@@ -49,36 +49,38 @@
 							<li><a href="#"></a>Product</a></li><a href="#">
 								<li><a href="<?php echo base_url(); ?>kelas"></a>Layanan Kami
 							</a></li>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Join Members</a></li>
 							<li><a href="<?php echo base_url(); ?>Contact"></a>Contact</a></a></li>
-							<li><a href="#"></a>Product Updates</a></li>
+							<li><a href=""></a></li>
 						</ul>
 					</aside>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<aside class="f_widget ab_widget">
 						<div class="f_title">
-							<h4>Support</h4>
+							<h4>Blog</h4>
 						</div>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Hubungi Kami</a></li>
-								<li><a href="<?php echo base_url(); ?>Contact"></a>Bantuan</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Category</a></li>
+								<li><a href="<?php echo base_url(); ?>Contact"></a>Popular Blog</a></li>
+								
+						</ul>
+					</aside>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+				<!-- <div class="col-sm-6 col-md-6 col-xl-3"> -->
+				<aside class="f_widget ab_widget">
+							<div class="f_title">
 							
-						</ul>
-					</aside>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<aside class="f_widget ab_widget">
-						<div class="f_title">
-							<h4>Legal</h4>
-						</div>
-						<ul>
-							<li><a href="#"></a>Terms and conditions</a></li><a href="#">
-								<li><a href="#"></a>Privacy Policy
-							</a></li>
-							<li><a href="#"></a>Cookie Information</a></li>
-						</ul>
-					</aside>
+								<div class="foot">
+								<a href="<?php echo base_url();?>"> <img src="<?php echo base_url(); ?>assets/img/logo.png" alt=""> </a>
+								<p align="justify"><b>Kantor :</b><br></p>
+								<p> Lunjuk Jaya, Lorok Pakjo, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30137</p>
+								
+							</div>
+						</div>	
+					</div>
+				</aside>
+                </div>
 				</div>
 			</div>
 			<div class="row single-footer-widget">
