@@ -39,13 +39,14 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
 							<li class="nav-item active"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
+
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>tentang_user">About</a></li>
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>portofolio_user">Portofolio </a></li>
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>kelas">Layanan Kami</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Blog">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>Blog_user">Blog</a></li>
 									<!--<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>/Blog/blogdetail">Blog Details</a></li> -->
 								</ul>
 							</li>
@@ -60,23 +61,25 @@
 		</div>
 	</header>
 	<!--================Header Menu Area =================-->
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/stellar.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/isotope/isotope-min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery.ajaxchimp.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.waypoints.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.counterup.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/mail-script.js"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
-</body>
+
+	 <!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/stellar.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/isotope/isotope-min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.ajaxchimp.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.waypoints.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendors/counter-up/jquery.counterup.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/mail-script.js"></script>
+		<!--gmaps Js-->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+		<script src="<?php echo base_url(); ?>assets/js/gmaps.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/theme.js"></script>
+	</body>
+

@@ -60,19 +60,21 @@
 				<div class="col-lg-8 col-md-4 col-sm-4 col-xs-12">
 					<div class="custom-box">
 						<div class="servicetitle">
-							<h4><?= $judul ?></h4>
+							<h2><?= $judul ?></h2>
 							<hr>
 						</div>
 						<div class="icn-main-container">
 							<img src="<?= base_url("images/$path_gambar")?>" alt="" height="350px">
 						</div>
 						<br><br>
-						<p><?= $author?></p>
+						<h4><b><?= $author?></b></h4>
+						<hr>
 						<p><?= html_entity_decode( $text) ?></p>
+						<hr>
 						<center>
-							<small id="tanggal" class="form-text text-muted"><?= $tanggal_publish ?></small>
+							<medium id="tanggal" class="form-text text-muted"><b><?= $tanggal_publish ?></b></medium>
 							<br>
-							<small id="kategori" class="form-text text-muted"><?= implode(", " ,$kategori) ?> </small>
+							<medium id="kategori" class="form-text text-muted"><b><?= implode(", " ,$kategori) ?></b> </medium>
 						</center>
 						<script type="text/javascript" language="JavaScript">
 							function konfirmasi() {

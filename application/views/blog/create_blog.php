@@ -28,7 +28,8 @@
 						<input type="checkbox" name="kategori[]" value="<?= $value['id'] ?>"> <?= $value['kategori'] ?> <br>
           <?php endforeach; ?>
           </div>
-				</div>
+        </div>
+        
                   <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Text</label>
                     <div class="col-lg-10">

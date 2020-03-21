@@ -8,28 +8,40 @@ class Blog_user extends CI_Controller {
     }
 
     public function index() {
-        redirect('Blog_user/read_blog');
+
+          $this->load->view('layout/header');
+          if($this->input->post('submit')){
+              $data['keyword'] = $this->input->post('keyword');
+          }
+          else {
+              $data['keyword'] = "";
+          }
+
+          $data['blog'] = $this->Blog_user_model->getAllBlog($data['keyword']);
+          $data['blogKategori'] = $this->Blog_user_model->getBlogKategori();
+          $data['kategori'] = $this->Blog_user_model->getKategori();
+          $data['popular'] = $this->Blog_user_model->popularBlog();
+        
+        $this->load->view('blog_user/blog' , $data );
+        $this->load->view('layout/footer');
     }
 
-    public function read_blog() {
-        $ublog = $this->Blog_user_model->getAllBlog();
-        $this->load->view('blog_user/read_list', ['blog' => $ublog]);
-    }
+    public function blogByKategori($kategori){
 
-    public function back() {
-        $this->load->view('blog/option');
-    }
-
-    public function createComment($id) {
-        $name = $this->input->post('nama_komen');
-        if (($this->input->post('nama_komen')) == null) {
-            $name = "Anonim";
-        } else {
-            $name = $this->input->post('nama_komen');
-        }
-
-        $this->Blog_user_model->create_comment($id, $name);
-        redirect(('Blog_user/detailAndComment/') . $id);
+        $this->load->view('layout/header');
+          if($this->input->post('submit')){
+              $data['keyword'] = $this->input->post('keyword');
+          }
+          else {
+              $data['keyword'] = "";
+          }
+        $data['blog'] = $this->Blog_user_model->getBlogbykategori($data['keyword'], $kategori);
+        $data['blogKategori'] = $this->Blog_user_model->getBlogKategori();
+        $data['kategori'] = $this->Blog_user_model->getKategori();
+        $data['popular'] = $this->Blog_user_model->popularBlog();
+      
+        $this->load->view('blog_user/blog_kategori' , $data );
+        $this->load->view('layout/footer');
     }
 
     public function detailAndComment($id) {
@@ -46,21 +58,49 @@ class Blog_user extends CI_Controller {
             'tanggal_publish' => $data[0]['tanggal_publish'],
             'kategori' => array_map(function ($data) {return $data['kategori'];}, $data),
             'comment' => $comment,
+
         ];
 
-        $this->load->view('blog_user/detail_blog', $data);
+        $like = $this->Blog_user_model->getRatingBlogli($id);
+        $love = $this->Blog_user_model->getRatingBloglo($id);
+        $haha = $this->Blog_user_model->getRatingBlogh($id);
+        $wow = $this->Blog_user_model->getRatingBlogw($id);
+        $sad = $this->Blog_user_model->getRatingBlogs($id);
+        $angry = $this->Blog_user_model->getRatingBloga($id);
+    
+        $temp = ((implode($like) * 5) + (implode($love) * 4) + (implode($haha) * 3) + (implode($wow) * 2) + (implode($sad) * 1) + (implode($angry) * 0))/5;
+      
+        $this->Blog_user_model->updateRate($id, $temp);
+
+        $data['popular'] = $this->Blog_user_model->popularBlog();
+
+        $this->load->view('blog_user/singleblog', $data);
+    }
+
+
+    public function createComment($id) {
+        $name = $this->input->post('nama_komen');
+        if (($this->input->post('nama_komen')) == null) {
+            $name = "Anonim";
+        } else {
+            $name = $this->input->post('nama_komen');
+        }
+
+        $this->Blog_user_model->create_comment($id, $name);
+        redirect(('Blog_user/detailAndComment/') . $id);
     }
 
     public function save_ratingli($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'Sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBlogli($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatingli($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
 
@@ -68,39 +108,42 @@ class Blog_user extends CI_Controller {
     public function save_ratinglo($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBloglo($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatinglo($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
     public function save_ratingh($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBlogh($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatingh($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
     public function save_ratingw($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBlogw($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatingw($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
@@ -108,13 +151,14 @@ class Blog_user extends CI_Controller {
     public function save_ratings($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBlogs($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatings($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }
@@ -122,13 +166,14 @@ class Blog_user extends CI_Controller {
     public function save_ratinga($id) {
 
         if (isset($_COOKIE[$id])) {
-            $this->session->set_flashdata('message', 'sudah di like');
+            $this->session->set_flashdata('message', 'Anda Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         } else {
             set_cookie($id, 'liked', time() + 3153600000);
             $data = $this->Blog_user_model->getRatingBloga($id);
             $plus = implode($data) + 1;
             $this->Blog_user_model->updateRatinga($id, $plus);
+            $this->session->set_flashdata('berhasil', 'Terima Kasih Telah Memberikan Penilaian');
             redirect(('Blog_user/detailAndComment/') . $id);
         }
     }

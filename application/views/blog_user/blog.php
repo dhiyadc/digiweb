@@ -29,11 +29,11 @@
 				<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<div class="page_link">
-							<a href="index.html">Home</a>
-							<a href="about-us.html">Blog</a>
-						</div>
-						<h2>About Us</h2>
+                    <div class="page_link">
+						<a href="<?= base_url() ?>">Home</a>
+						<a href="<?= base_url() ?>/Blog_user">Blog</a>
+					</div>
+						<h2 style="color: crimson">Blog Page</h2>
 					</div>
 				</div>
 			</div>
@@ -45,42 +45,19 @@
         <section class="blog_categorie_area">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                <?php foreach($kategori as $value) : ?>
+                    <div class="col-lg-4 mb-4">
                         <div class="categories_post">
-                            <img src="<?php echo base_url(); ?>assets/img/blog/cat-post/cat-post-3.jpg" alt="post">
+                            <img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a href="<?php echo base_url(); ?>Blog/blogdetail"><h5>Social Life</h5></a>
+                                    <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
                                     <div class="border_line"></div>
-                                    <p>Enjoy your social life together</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="<?php echo base_url(); ?>assets/img/blog/cat-post/cat-post-2.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="<?php echo base_url(); ?>Blog/blogdetail"><h5>Politics</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Be a part of politics</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="categories_post">
-                            <img src="<?php echo base_url(); ?>assets/img/blog/cat-post/cat-post-1.jpg" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="<?php echo base_url(); ?>/Blog/blogdetail"><h5>Food</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Let the food be finished</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -94,32 +71,50 @@
                         <div class="blog_left_sidebar">
 
                         <?php foreach($blog as $key => $value): ?>
-
-                            <article class="row blog_item">
-                               <div class="col-md-3">
+                        
+                            <article class="row blog_item blogBox moreBox" style="display: none">
+                               <div class="col-md-3 ">
                                    <div class="blog_info text-right">
                                         <div class="post_tag">
-                                            <a href="#">Food,</a>
-                                            <a class="active" href="#">Technology,</a>
-                                            <a href="#">Politics,</a>
-                                            <a href="#">Lifestyle</a>
+                                        <?php foreach($blogKategori as $val) : ?>
+                                            <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $val['kategori'] ?>" class="title">
+                                            <?php
+                                                if($value['id'] == $val['id']){
+                                                    echo $val['kategori'] . "<br>";
+                                                }
+                                            ?>
+                                            </a>
+                                            <?php endforeach; ?>
                                         </div>
                                         <ul class="blog_meta list">
                                             <li><p><?= $value['author'] ?>&nbsp;&nbsp;&nbsp;<i class="lnr lnr-user"></i></p></li>
                                             <li><p><?= $value['tanggal_publish'] ?>&nbsp;&nbsp;&nbsp;<i class="lnr lnr-calendar-full"></i></p></li>
-                                            <li><p>06 Comments&nbsp;&nbsp;&nbsp;<i class="lnr lnr-bubble"></i></p></li>
                                         </ul>
                                     </div>
                                </div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 ">
+                                    <div class="blog_box">
                                     <div class="blog_post">
-                                        <!-- <img src="<?php echo base_url(); ?>assets/img/blog/main-blog/m-blog-1.jpg" alt=""> -->
-                                        <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="300px">
+                                    <div class="container mt-3">
+                                        <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="325px" width="475px" style="object-fit: cover;">
+                                            <div class="container">
                                         <div class="blog_details">
-                                            <a href="<?= base_url('')?>Blog/blogdetail/<?= $value['id'] ?>"><h2><?= $value['judul'] ?></h2></a>
-                                            <p><?= $value['tanggal_publish'] ?></p>
-                                            <a href="<?= base_url('')?>Blog/blogdetail/<?= $value['id'] ?>" class="blog_btn">View More</a>
+                                            <a href="<?= base_url('')?>Blog_user/detailAndComment/<?= $value['id'] ?>"><h2><?= $value['judul'] ?></h2></a>
+                                            <div class="content">
+                                                <p>
+                                                <?php
+                                                    $text = html_entity_decode($value['text']);
+                                                    $text = str_replace("&nbsp", ' ', $text);
+                                                    $text = strip_tags($text);
+                                                    echo substr($text, 0, 150); 
+                                                ?> &nbsp;&nbsp;&nbsp;<a class="title" href="<?=base_url('')?>Blog_user/detailAndComment/<?=$value['id']?>">
+                                                    <p align = "right">Read More</p>
+                                                </a></p> <br>
+                                            </div>
+                                            </div>
                                         </div>
+                                            </div>
+                                    </div>
                                     </div>
                                 </div>
                                 <!--  -->
@@ -151,148 +146,51 @@
                             </article>
                             <?php endforeach; ?>
                             
-                            <nav class="blog-pagination justify-content-center d-flex">
-		                        <ul class="pagination">
-		                            <li class="page-item">
-		                                <!-- <a href="#" class="page-link" aria-label="Previous">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-left"></span>
-		                                    </span>
-		                                </a>
-		                            </li>
-		                            <li class="page-item active"><a href="#" class="page-link">01</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">02</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">03</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">04</a></li>
-		                            <li class="page-item"><a href="#" class="page-link">09</a></li>
-		                            <li class="page-item">
-		                                <a href="#" class="page-link" aria-label="Next">
-		                                    <span aria-hidden="true">
-		                                        <span class="lnr lnr-chevron-right"></span>
-		                                    </span>
-                                        </a> -->
-                                        <!--  -->
-                                
 
-                                
-                                        <div id="loadMore" style="">
-                                        <a href="#">Load More</a>
-                                        </div>    
-                                        
+                            <div id="loadMore">
+                                <a href="#">Load More</a>
+                            </div>
 
-                                        <!--  -->
-                                        <!--Load More-->
-                                        <Script>
-                                        $( document ).ready(function () {
-                                        $(".moreBox").slice(0, 3).show();
-                                            if ($(".blogBox:hidden").length != 0) {
-                                            $("#loadMore").show();
-                                            }   
-                                            $("#loadMore").on('click', function (e) {
-                                            e.preventDefault();
-                                            $(".moreBox:hidden").slice(0, 6).slideDown();
-                                            if ($(".moreBox:hidden").length == 0) {
-                                                $("#loadMore").fadeOut('slow');
-                                            }
-                                            });
-                                        });
-                                        </Script> 
-                                        <!--  -->
-		                            </li>
-		                        </ul>
-		                    </nav>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="blog_right_sidebar">
+                        <div class="blog_right_sidebar" style=" position: sticky; top: 75px;">
                             <aside class="single_sidebar_widget search_widget">
-                            <form action="<?= base_url('Blog')?>" method="post">
+                            <form action="<?= base_url('Blog_user')?>" method="post">
                                 <div class="input-group">
 					                    <input type="text" class="form-control" name="keyword" placeholder="Search Blog" autocomplete="off" autofocus>
                                     <!-- <span class="input-group-btn"> -->
-                                        <input class="btn btn-outline-success btn-sm" type="submit" name="submit">
+                                        <input style="visibility: hidden;" type="submit" name="submit">
                                     <!-- </span> -->
                                 </div><!-- /input-group -->
                             </form>
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title">Popular Posts</h3>
+                                <h3 class="widget_title">Popular Blogs</h3>
+                                <?php foreach($popular as $value) :  ?>
                                 <div class="media post_item">
-                                    <img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post1.jpg" alt="post">
+                                <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="50px" width="75px" style="object-fit: cover;">
                                     <div class="media-body">
-                                        <a href="blog-details.html"><h3>Space The Final Frontier</h3></a>
-                                        <p>02 Hours ago</p>
+                                        <a href="<?= base_url() ?>Blog_user/detailAndComment/<?= $value['id'] ?>">
+                                            <h3><?= $value['judul'] ?></h3>
+                                        </a>
+                                        <p><?= $value['rate'] ?> <i class="fa fa-star"></i></p>
                                     </div>
                                 </div>
-                                <div class="media post_item">
-                                    <img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post2.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>The Amazing Hubble</h3></a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post3.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Astronomy Or Astrology</h3></a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="<?php echo base_url(); ?>assets/img/blog/popular-post/post4.jpg" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog-details.html"><h3>Asteroids telescope</h3></a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="br"></div>
+                                <?php endforeach; ?>
+                                    <br>
                             </aside>
                             <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title">Post Catgories</h4>
+                                <h4 class="widget_title">Blog Categories</h4>
                                 <ul class="list cat-list">
+                                <?php foreach($kategori as $value) : ?>
                                     <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Technology</p>
-                                            <p>37</p>
+                                        <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>" class="">
+                                            <center><p><?= $value['kategori']; ?></p></center>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Lifestyle</p>
-                                            <p>24</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Fashion</p>
-                                            <p>59</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Art</p>
-                                            <p>29</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Food</p>
-                                            <p>15</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Architecture</p>
-                                            <p>09</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Adventure</p>
-                                            <p>44</p>
-                                        </a>
-                                    </li>															
+                                    <?php endforeach; ?>													
                                 </ul>
                                 <div class="br"></div>
                             </aside>
@@ -326,9 +224,20 @@
         <script src="<?= base_url('assets/js/script.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/ckeditor/ckeditor.js'); ?>"></script>
 
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-        <!-- <link href="load-more-button.css" rel="stylesheet"> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- <script src="load-more-button.js"></script> -->
+        <Script>
+                $( document ).ready(function () {
+                    $(".moreBox").slice(0, 4).show();
+                    if ($(".blogBox:hidden").length != 0) {
+                        $("#loadMore").show();
+                    }   
+                    $("#loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreBox:hidden").slice(0, 4).slideDown();
+                    if ($(".moreBox:hidden").length == 0) {
+                        $("#loadMore").fadeOut('slow');
+                    }
+                    });
+                });
+        </Script>
+
     </body>
