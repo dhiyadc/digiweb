@@ -61,7 +61,7 @@
 
                     <p class="small">now</p>
                     <p class="message">Selamat Bekerja! Gunakan sistem ini untuk kepentingan dan layanan Perusahaan <br>
-                      
+                      Digital Creative.
                       <br>
                       <br>Tim Support
                     </p>
