@@ -22,7 +22,7 @@ class Kelas extends CI_Controller {
     public function daftar($idclass)
     {
         $this->Kelas_model->daftar($idclass);
-        $this->session->set_flashdata('flash','Data telah dikirimkan. Mohon menunggu kabar selanjutnya dari kami. Terima kasih');
+        $this->session->set_flashdata('create','Data telah dikirimkan. Mohon menunggu kabar selanjutnya dari kami. Terima kasih');
 		redirect('kelas');
     }
 }

@@ -34,6 +34,11 @@
 						</div>
 					</div>
 				</div>
+				<?php if($this->session->flashdata('create')) :?>
+					<div class="alert alert-success" role="alert">
+					<center><?= $this->session->flashdata('create') ?></center>
+					</div>
+				<?php endif; ?>
 				<div class="row">
 					<?php $i=0;?>
                     <?php foreach ($kelas as $val) :?>
