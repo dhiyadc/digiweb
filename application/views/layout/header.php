@@ -45,7 +45,7 @@
 
 							<li class="nav-item <?=($nav=='tentang_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>tentang_user">About</a></li>
 							
-							<li class="nav-item <?=($nav=='Portofolio_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>portofolio_user">Portofolio </a></li>
+							<li class="nav-item <?=($nav=='portofolio_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>portofolio_user">Portofolio </a></li>
 
 							<li class="nav-item <?=($nav=='kelas')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>kelas">Layanan Kami</a></li>
 

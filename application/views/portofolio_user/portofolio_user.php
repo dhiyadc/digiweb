@@ -31,24 +31,44 @@
 				</div>
 				<!--================Portofolio Categorie Area =================-->
 				<section class="blog_categorie_area">
-					<div class="container">
-						<div class="row">
-						<?php foreach($kategori as $value) : ?>
-							<div class="col-lg-4 mb-4">
-								<div class="categories_post">
-									<img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
-									<div class="categories_details">
-										<div class="categories_text">
-											<a href="<?= base_url() ?>portofolio_user/PortobyKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
-											<div class="border_line"></div>
-										</div>
+				<div class="container">
+					<div class="row">
+					<div class="col-lg-2 mb-4 mt-1">
+							<div class="categories_post">
+								<div class="categories_details">
+									<div class="categories_text">
+										<ul class=" nav navbar-nav navbar-right">
+											<li class="nav-item"><a
+													href="<?= base_url() ?>portofolio_user"
+													class="primary_btn">ALL</a>
+											</li>
+										</ul>
+										<div class="border_line"></div>
 									</div>
 								</div>
 							</div>
-						<?php endforeach; ?>
 						</div>
+						<?php foreach($kategori as $value) : ?>
+						<div class="col-lg-2 mb-4 mt-1">
+							<div class="categories_post">
+								<div class="categories_details">
+									<div class="categories_text">
+										<ul class=" nav navbar-nav navbar-right">
+											<li class="nav-item"><a
+													href="<?= base_url() ?>portofolio_user/PortobyKategori/<?= $value['kategori']; ?>"
+													class="primary_btn"><?= $value['kategori']; ?></a>
+											</li>
+										</ul>
+										<div class="border_line"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php endforeach; ?>
 					</div>
-				</section>
+				</div>
+			</section>
+			<!--=========
 				<!--================Portofolio Categorie Area =================-->
 				<div class="row">
 					<div class="col-lg-12">

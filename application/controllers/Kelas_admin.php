@@ -11,6 +11,15 @@ class Kelas_admin extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
+            $this->readKelas();
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function readKelas()
+    {
+        if ($this->session->userdata('logged_in')) {
             $data['kelas'] = $this->Kelas_model->getAllClass();
             $this->load->view('_partials/header_admin');
             $this->load->view('kelas_admin/index', $data);
