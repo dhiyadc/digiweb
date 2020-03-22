@@ -28,7 +28,11 @@
                 <p><?= $val['deskripsi_2']; ?></p>
                 <p><?= $val['deskripsi_3']; ?></p>
                 <br>
-                <small><?= $val['kategori']; ?></small>
+                <?php foreach ($kategori as $val2) : ?>
+                  <?php if ($val['id_kategori'] == $val2['id']) : ?>
+                    <small><?= $val2['kategori']; ?></small>
+                  <?php endif; ?>
+                <?php endforeach; ?>
                 <br>
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {

@@ -94,7 +94,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3>Form Daftar</h3>
+                            <h3>Form Daftar</h3>
 							<a class="close" data-dismiss="modal">×</a>
 						</div>
 						<form action="" id="kelasForm" name="contact" role="form" method="post">
