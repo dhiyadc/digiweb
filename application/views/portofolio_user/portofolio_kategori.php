@@ -24,56 +24,40 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="main_title">
-							<h2>Portofolio</h2>
-							<h1>Portofolio</h1>
+							<h2><?= $port_kategori['kategori'] ?><</h2>
+							<h1><?= $port_kategori['kategori'] ?></h1>
 						</div>	
-					</div>
-				</div>
-				<!--================Portofolio Categorie Area =================-->
-				<section class="blog_categorie_area">
-					<div class="container">
-						<div class="row">
-						<?php foreach($kategori as $value) : ?>
-							<div class="col-lg-4 mb-4">
-								<div class="categories_post">
-									<img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
-									<div class="categories_details">
-										<div class="categories_text">
-											<a href="<?= base_url() ?>portofolio_user/PortobyKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
-											<div class="border_line"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						<?php endforeach; ?>
-						</div>
-					</div>
-				</section>
-				<!--================Portofolio Categorie Area =================-->
+                    </div>
+	<!--================Blog Categorie Area =================-->
+
+	<!--================Blog Categorie Area =================-->
+
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="row">
 							<?php $i=0;?>
-            				<?php foreach ($portofolio as $key => $value): ?>
-							<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
-								<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
-									<div class="single-gallery">
-										<div class="overlay"></div>
-										<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
-										<div class="content">
-											<i class="lnr lnr-eye"></i>	
-										</div>
-										<p1 hidden><?= $value['judul'] ?></p1>
-										<p2 hidden><?= $value['path_gambar'] ?></p2>
-										<p3 hidden><?= $value['link'] ?></p3>
-										<p4 hidden><?= $value['text'] ?></p4>
-										<p5 hidden><?= $value['kategori'] ?></p5>
-										<p6 hidden><?= $value['tanggal_publish'] ?></p6>
+								<?php foreach ($portofolio as $key => $value): ?>
+									<?php if($value['kategori']== $port_kategori['kategori']) :?>
+									<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
+										<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
+											<div class="single-gallery">
+												<div class="overlay"></div>
+												<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
+												<div class="content">
+													<i class="lnr lnr-eye"></i>	
+												</div>
+												<p1 hidden><?= $value['judul'] ?></p1>
+												<p2 hidden><?= $value['path_gambar'] ?></p2>
+												<p3 hidden><?= $value['link'] ?></p3>
+												<p4 hidden><?= $value['text'] ?></p4>
+												<p5 hidden><?= $value['kategori'] ?></p5>
+												<p6 hidden><?= $value['tanggal_publish'] ?></p6>
+											</div>
+										</a>
 									</div>
-								</a>
-							</div>
-							<?php $i++; ?>
-							<?php endforeach;?>
+									<?php $i++; ?>
+									<?php endif; ?>
+								<?php endforeach;?>
 						</div>
 					</div>
 				</div>
