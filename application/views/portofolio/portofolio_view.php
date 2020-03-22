@@ -21,7 +21,7 @@
                 <div class="photo-wrapper">
                   <div class="photo">
                     <a class="fancybox" href="<?= base_url(); ?>portofolio/ReadPortofolio/<?= $value['id'] ?>">
-                      <img class="img-responsive" src="<?= base_url().'images/'.$value['path_gambar']?>" width="400px" height="250px" style="object-fit: cover;" alt="">
+                      <img class="img-responsive" src="<?= base_url().'images/'.$value['path_gambar']?>" width="400px" style="object-fit: cover; height: 250px" alt="">
                     </a>
                   </div>
                   <div class="overlay"></div>

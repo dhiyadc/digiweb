@@ -76,6 +76,7 @@
             <ul class="sub">
               <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
               <li><a href="<?= base_url(); ?>kelas_admin">Data Layanan</a></li>
+              <li><a href="<?= base_url(); ?>kelas_admin/pendaftar">Data Pendaftar</a></li>
             </ul>
           </li>
 

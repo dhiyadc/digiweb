@@ -9,14 +9,9 @@ class Kelas extends CI_Controller {
 
     public function index()
     {
+        $data['kategori'] = $this->Kelas_model->getKategori();
         $data['kelas'] = $this->Kelas_model->getAllClass();
         $this->load->view('kelas/index',$data);
-    }
-
-    public function daftar_form($id)
-    {
-        $idclass['id'] = $id;
-        $this->load->view('kelas/daftar',$idclass);
     }
 
     public function daftar($idclass)
@@ -24,5 +19,12 @@ class Kelas extends CI_Controller {
         $this->Kelas_model->daftar($idclass);
         $this->session->set_flashdata('create','Data telah dikirimkan. Mohon menunggu kabar selanjutnya dari kami. Terima kasih');
 		redirect('kelas');
+    }
+
+    public function kategori($id)
+    {
+        $data['kategori'] = $this->Kelas_model->getKategori();
+        $data['kelas'] = $this->Kelas_model->getKelasByKategori($id);
+        $this->load->view('kelas/kategori',$data);
     }
 }
