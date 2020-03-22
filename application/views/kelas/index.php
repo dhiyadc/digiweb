@@ -20,9 +20,6 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
-	<?php if ($this->session->flashdata('flash') ) : ?>
-		<?= $this->session->flashdata('flash'); ?>
-	<?php endif; ?>
 	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
 			<div class="container" id="daftarKelas">
@@ -43,12 +40,12 @@
 						<?php foreach ($kategori as $val) :?>
 						<div class="col-lg-3 col-md-6 col-sm-6">
 							<div class="new_games_item">
-								<a href="<?php echo base_url(); ?>kelas/kategori/<?= $val['id'] ?>">
-									<img src="<?php echo base_url(); ?>assets/images/white.png" alt="" width="250px" height="200px" >
-									<div class="upcoming_title">
-										<h3 style="color: whitesmoke;"><?= $val['kategori'] ?></h3>
-									</div>
-								</a>
+								<img src="<?php echo base_url(); ?>assets/images/white.png" alt="" width="250px" height="200px" >
+								<div class="upcoming_title">
+									<a href="<?php echo base_url(); ?>kelas/kategori/<?= $val['id'] ?>">
+										<h3 style="color: whitesmoke; font-size: 15px; font-family: 'Times New Roman', Times, serif;"><?= $val['kategori'] ?></h3>
+									</a>
+								</div>
 							</div>
 						</div>
 						<?php endforeach; ?>
@@ -59,7 +56,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item active">
 							<h3 class="p_title"><?= $val['judul'] ?></h3>
-							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="">
+							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
 							<h1 class="p_price"><?= $val['harga'] ?></h1>
 							<div class="p_list">
 								<ul>

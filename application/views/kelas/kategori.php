@@ -43,12 +43,12 @@
 						<?php foreach ($kategori as $val) :?>
 						<div class="col-lg-3 col-md-6 col-sm-6">
 							<div class="new_games_item">
-								<a href="<?php echo base_url(); ?>kelas/kategori/<?= $val['id'] ?>">
-									<img src="<?php echo base_url(); ?>assets/images/white.png" alt="" width="250px" height="200px" >
-									<div class="upcoming_title">
-										<h3 style="color: whitesmoke;"><?= $val['kategori'] ?></h3>
-									</div>
-								</a>
+								<img src="<?php echo base_url(); ?>assets/images/white.png" alt="" width="250px" height="200px" >
+								<div class="upcoming_title">
+									<a href="<?php echo base_url(); ?>kelas/kategori/<?= $val['id'] ?>">
+										<h3 style="color: whitesmoke; font-size: 15px; font-family: 'Times New Roman', Times, serif;"><?= $val['kategori'] ?></h3>
+									</a>
+								</div>
 							</div>
 						</div>
 						<?php endforeach; ?>

@@ -96,7 +96,7 @@
 						<img src="<?php echo base_url(); ?>assets/img/b_map1.jpg" alt="" width="250px" height="200px" >
 
 						<div class="upcoming_title">
-							<h3><a href="<?php echo base_url(); ?>kelas">Kursus Pemograman</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas/kategori/3">Kursus Pemograman</a></h3>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map2.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="<?php echo base_url(); ?>kelas">Aplikasi Mobile</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas/kategori/1">Aplikasi Mobile</a></h3>
 						</div>
 					</div>
 				</div>
@@ -112,7 +112,7 @@
 					<div class="new_games_item">
 						<img src="<?php echo base_url(); ?>assets/img/b_map3.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="<?php echo base_url(); ?>kelas">Website</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas/kategori/4">Website</a></h3>
 						</div>
 					</div>
 				</div>
@@ -121,7 +121,7 @@
 
 						<img src="<?php echo base_url(); ?>assets/img/b_map4.jpg" alt="" width="250px" height="200px" >
 						<div class="upcoming_title">
-							<h3><a href="<?php echo base_url(); ?>kelas">Konsultasi IT</a></h3>
+							<h3><a href="<?php echo base_url(); ?>kelas/kategori/2">Konsultasi IT</a></h3>
 						</div>
 					</div>
 				</div>

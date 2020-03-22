@@ -19,7 +19,7 @@
                  <?php endif; ?>
                 </div>
                 <div class="icn-main-container">
-                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" width="600px" style="object-fit: cover">
+                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
                 </div>
                 <br>
                 <h5>Harga: <?= $val['harga']; ?></h5>

@@ -21,7 +21,7 @@
                     <?php $i = 1; ?>
                     <?php foreach ($pendaftar as $val) : ?>
                         <tr class="gradeX">
-                            <td><center><?= $i ?></center></td>
+                            <td><center><?= $i . "." ?></center></td>
                             <td><center><?= $val['nama'] ?></center></td>
                             <td><center><?= $val['no_hp'] ?></center></td>
                             <td><center><?= $val['email'] ?></center></td>
