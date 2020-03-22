@@ -20,6 +20,9 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
+	<?php if ($this->session->flashdata('flash') ) : ?>
+		<?= $this->session->flashdata('flash'); ?>
+	<?php endif; ?>
 	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
 			<div class="container" id="daftarKelas">
@@ -56,7 +59,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item active">
 							<h3 class="p_title"><?= $val['judul'] ?></h3>
-							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
+							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="">
 							<h1 class="p_price"><?= $val['harga'] ?></h1>
 							<div class="p_list">
 								<ul>
@@ -91,7 +94,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h3>Form Daftar</h3>
+                            <h3>Form Daftar</h3>
 							<a class="close" data-dismiss="modal">×</a>
 						</div>
 						<form action="" id="kelasForm" name="contact" role="form" method="post">

@@ -74,13 +74,14 @@
           </li>
 
           <li class="sub-menu ">
-            <a class="<?=($nav=='create_form' || $nav=='readKelas')?'active':''; ?>" href="javascript:;">
+            <a class="<?=($nav=='create_form' || $nav=='readKelas' || $nav=='pendaftar')?'active':''; ?>" href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Layanan Kami</span>
             </a>
             <ul class="sub">
               <li <?=($nav=='create_form')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
               <li <?= ($nav=='readKelas')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/readKelas">Data Layanan</a></li>
+              <li <?= ($nav=='pendaftar')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/pendaftar">Data Pendaftar</a></li>
             </ul>
           </li>
 
