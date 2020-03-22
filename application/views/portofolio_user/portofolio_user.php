@@ -33,7 +33,7 @@
 				<section class="blog_categorie_area">
 				<div class="container">
 					<div class="row">
-					<div class="col-lg-2 mb-4 mt-1">
+					<div class="col-lg-2 mb-5 mt-3">
 							<div class="categories_post">
 								<div class="categories_details">
 									<div class="categories_text">
@@ -49,7 +49,7 @@
 							</div>
 						</div>
 						<?php foreach($kategori as $value) : ?>
-						<div class="col-lg-2 mb-4 mt-1">
+						<div class="col-lg-2 mb-5 mt-3">
 							<div class="categories_post">
 								<div class="categories_details">
 									<div class="categories_text">

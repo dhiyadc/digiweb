@@ -28,7 +28,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title">
-						<h2><?= $port_kategori['kategori'] ?><</h2> <h1><?= $port_kategori['kategori'] ?></h1>
+						<h2><?= $this->uri->segment('3') ?></h2>
+						 <h1><?= $this->uri->segment('3') ?></h1>
 					</div>
 				</div>
 			</div>
@@ -36,7 +37,7 @@
 			<section class="blog_categorie_area">
 				<div class="container">
 					<div class="row">
-					<div class="col-lg-2 mb-4 mt-1">
+					<div class="col-lg-2 mb-5 mt-3">
 							<div class="categories_post">
 								<div class="categories_details">
 									<div class="categories_text">
@@ -52,7 +53,7 @@
 							</div>
 						</div>
 						<?php foreach($kategori as $value) : ?>
-						<div class="col-lg-2 mb-4 mt-1">
+						<div class="col-lg-2 mb-5 mt-3">
 							<div class="categories_post">
 								<div class="categories_details">
 									<div class="categories_text">
@@ -76,30 +77,38 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="row">
-						<?php $i=0;?>
-						<?php foreach ($portofolio as $key => $value): ?>
-						<?php if($value['kategori']== $port_kategori['kategori']) :?>
-						<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
-							<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
-								<div class="single-gallery">
-									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>"
-										alt="" style="object-fit: cover; height: 350px">
-									<div class="content">
-										<i class="lnr lnr-eye"></i>
-									</div>
-									<p1 hidden><?= $value['judul'] ?></p1>
-									<p2 hidden><?= $value['path_gambar'] ?></p2>
-									<p3 hidden><?= $value['link'] ?></p3>
-									<p4 hidden><?= $value['text'] ?></p4>
-									<p5 hidden><?= $value['kategori'] ?></p5>
-									<p6 hidden><?= $value['tanggal_publish'] ?></p6>
+						<?php if(empty($port_kategori['kategori'])): ?>
+							<div class="col-lg-12">
+								<div class="alert alert-primary" role="alert">
+									<center>Portofolio di kategori <?= $this->uri->segment('3') ?> kosong</center>
 								</div>
-							</a>
-						</div>
-						<?php $i++; ?>
+							</div>
+						<?php else: ?>
+							<?php $i=0;?>
+							<?php foreach ($portofolio as $key => $value): ?>
+							<?php if($value['kategori']== $port_kategori['kategori']) :?>
+							<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
+								<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
+									<div class="single-gallery">
+										<div class="overlay"></div>
+										<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>"
+											alt="" style="object-fit: cover; height: 350px">
+										<div class="content">
+											<i class="lnr lnr-eye"></i>
+										</div>
+										<p1 hidden><?= $value['judul'] ?></p1>
+										<p2 hidden><?= $value['path_gambar'] ?></p2>
+										<p3 hidden><?= $value['link'] ?></p3>
+										<p4 hidden><?= $value['text'] ?></p4>
+										<p5 hidden><?= $value['kategori'] ?></p5>
+										<p6 hidden><?= $value['tanggal_publish'] ?></p6>
+									</div>
+								</a>
+							</div>
+							<?php $i++; ?>
+							<?php endif; ?>
+							<?php endforeach;?>
 						<?php endif; ?>
-						<?php endforeach;?>
 					</div>
 				</div>
 			</div>
