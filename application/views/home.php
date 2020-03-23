@@ -173,6 +173,7 @@
 					<?php foreach($portofolio as $val) : ?>
 						
 						<div class="col-lg-4 col-md-6 col-sm-6">
+						<article class="content_portofolio">
 							<a href="portofolio_user">
 							<div class="single-gallery">
 								<div class="overlay"></div>
@@ -182,6 +183,7 @@
 								</div>
 							</div>
 							</a>
+							</article>
 						</div>
 						
 					<?php endforeach; ?>
