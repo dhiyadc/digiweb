@@ -4796,4 +4796,15 @@ section .section-title {
   background-color: #CC0033;
 }
 
+.scroller {
+  /* height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: white;
+  scrollbar-width: thin;
+  scroll-behavior: smooth; */
+  padding: 1rem;
+  height: 250px;
+  overflow-x: hidden;
+}
+
 
