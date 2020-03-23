@@ -33,24 +33,10 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>aboutus"></a>We Are</a></li>
+							<li><a href="<?php echo base_url(); ?>aboutus"></a>Tentang Kami</a></li>
 							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galerry</a></li>
+							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galeri</a></li>
 							
-						</ul>
-					</aside>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<aside class="f_widget ab_widget">
-						<div class="f_title">
-							<h4>Company</h4>
-						</div>
-						<ul>
-							<li><a href="#"></a>Product</a></li><a href="#">
-								<li><a href="<?php echo base_url(); ?>kelas"></a>Layanan Kami
-							</a></li>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Contact</a></a></li>
-							<li><a href=""></a></li>
 						</ul>
 					</aside>
 				</div>
@@ -60,9 +46,22 @@
 							<h4>Blog</h4>
 						</div>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Category</a></li>
-								<li><a href="<?php echo base_url(); ?>Contact"></a>Popular Blog</a></li>
-								
+							<li><a href="#"></a>Product</a></li><a href="#">
+								<li><a href="<?php echo base_url(); ?>kelas"></a>Recent Blog
+							</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Detail Blog</a></li>
+							
+						</ul>
+					</aside>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<aside class="f_widget ab_widget">
+						<div class="f_title">
+							<h4></h4>
+						</div>
+						<ul>
+							
+							
 						</ul>
 					</aside>
 				</div>
@@ -77,11 +76,9 @@
 								<p> Lunjuk Jaya, Lorok Pakjo, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan 30137</p>
 								
 							</div>
-						</div>	
+						</div>
+						</aside>	
 					</div>
-				</aside>
-                </div>
-				</div>
 			</div>
 			<div class="row single-footer-widget">
 				<div class="col-lg-6 col-md-6 col-sm-12">

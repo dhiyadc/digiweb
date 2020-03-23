@@ -3901,7 +3901,9 @@ h6 {
     color: #fff;
     margin-left: -15px; }
     .single-footer-widget .copy_right_text p a {
-      color: #3fcaff; }
+      color: #3fcaff; 
+      font-size: 15px;
+    }
   .single-footer-widget .social_widget {
     text-align: right;
     position: relative;
