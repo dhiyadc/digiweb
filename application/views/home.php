@@ -131,7 +131,7 @@
 	<!--================End Upcoming Games Area =================-->
 
 	<!--================Start Recent Update Area =================-->
-	<section class="recent_update_area section_gap">
+	<!-- <section class="recent_update_area section_gap">
 		<div class="container">
 			<div class="recent_update_inner">
 						<div class="row about_content2 align-items-center">		
@@ -152,7 +152,7 @@
 						</div>			
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================End Recent Update Area =================-->
 
 
@@ -171,6 +171,7 @@
 				<div class="col-lg-12">
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
+						
 						<div class="col-lg-4 col-md-6 col-sm-6">
 							<a href="portofolio_user">
 							<div class="single-gallery">
@@ -182,6 +183,7 @@
 							</div>
 							</a>
 						</div>
+						
 					<?php endforeach; ?>
 					</div>
 				</div>
@@ -198,7 +200,25 @@
 				</div> -->
 			</div>
 		</div>
+
+		<div class="load_more_flex">
+			<a href="#" id="loadMore">Load More</a>
+		</div>
 	</section>
+
+	<script>
+		$(document).ready(function(){
+		$(".content_portofolio").slice(0, 4).show();
+		$("#loadMore").on("click", function(e){
+			e.preventDefault();
+			$(".content_portofolio:hidden").slice(0, 4).slideDown();
+			if($(".content_portofolio:hidden").length <= 3) {
+			$("#loadMore").text("No Content").addClass("noContent");
+			}
+		});
+		
+		})
+	</script>
 	<!--================ End Gallery Area =================-->
 
 

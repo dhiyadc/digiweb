@@ -227,7 +227,7 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
+  height: 40%;
   width: 100%; }
 
 /* Start Video Play css
@@ -537,7 +537,7 @@ img {
       left: 0px;
       top: 0px;
       width: 100%;
-      z-index: -1; }
+      z-index: 1; }
     .blog_banner .banner_inner .blog_b_text {
       max-width: 700px;
       margin: auto;
@@ -2935,6 +2935,7 @@ h6 {
   .single-gallery:hover {
     cursor: pointer; }
     .single-gallery:hover .overlay, .single-gallery:hover .content {
+      margin-top: 60%;
       background: rgba(73, 63, 157, 0.85); }
     .single-gallery:hover .content {
       background: transparent;
@@ -2946,6 +2947,14 @@ h6 {
     -moz-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s; }
+
+  .load_more_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+  }
 
 /* End Gallery Area css
 ============================================================================================ */
