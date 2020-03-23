@@ -41,7 +41,6 @@
 		</div>
 	</section>
 	<!--================End Home Banner Area =================-->
-	<!--================End Home Banner Area =================-->
 
 	<!--================Blog Categorie Area =================-->
 	<section class="blog_categorie_area">

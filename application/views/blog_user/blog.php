@@ -42,8 +42,41 @@
         <!--================End Home Banner Area =================-->
             
         <!--================Blog Categorie Area =================-->
-        <section class="blog_categorie_area">
-            <div class="container">
+
+        <div class="container my-4">
+
+<p class="font-weight-bold">Bootstrap carousel multiple items is an improved version of the standard bootstrap
+  carousel which allows you to put inside more than one element.</p>
+
+<p><strong>Detailed documentation and more examples of Bootstrap grid you can find in our <a href="https://mdbootstrap.com/docs/jquery/javascript/carousel/"
+      target="_blank">Bootstrap Carousel Docs</a>.</p>
+
+<hr class="my-4">
+
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+  <!--Controls-->
+  <div class="controls-top">
+    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+  </div>
+  <!--/.Controls-->
+
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+    <li data-target="#multi-item-example" data-slide-to="1"></li>
+    <li data-target="#multi-item-example" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+
+    <!--First slide-->
+    <div class="carousel-item active">
+    <div class="container">
                 <div class="row">
                 <?php foreach($kategori as $value) : ?>
                     <div class="col-lg-4 mb-4">
@@ -60,7 +93,89 @@
                 <?php endforeach; ?>
                 </div>
             </div>
-        </section>
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+    <div class="container">
+                <div class="row">
+                <?php foreach($kategori as $value) : ?>
+                    <div class="col-lg-4 mb-4">
+                        <div class="categories_post">
+                            <img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            </div>
+      
+      </div>
+
+    </div>
+    <!--/.Second slide-->
+
+    <!--Third slide-->
+    <div class="carousel-item">
+
+      <div class="row">
+      <div class="container">
+                <div class="row">
+                <?php foreach($kategori as $value) : ?>
+                    <div class="col-lg-4 mb-4">
+                        <div class="categories_post">
+                            <img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            </div>
+      </div>
+
+    </div>
+    <!--/.Third slide-->
+
+  </div>
+  <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+
+
+</div>
+
+
+        <!-- <section class="blog_categorie_area">
+            <div class="container">
+                <div class="row">
+                <?php foreach($kategori as $value) : ?>
+                    <div class="col-lg-3 mb-4">
+                        <div class="categories_post">
+                            <img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
+                                    <div class="border_line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            </div>
+        </section> -->
         <!--================Blog Categorie Area =================-->
         
         <!--================Blog Area =================-->

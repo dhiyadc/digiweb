@@ -46,10 +46,10 @@
 							<h4>Blog</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Product</a></li><a href="#">
+							<li><a href="#"></a>Blog</a></li><a href="#">
 								<li><a href="<?php echo base_url(); ?>kelas"></a>Recent Blog
 							</a></li>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Detail Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact"></a>Populer Blog</a></li>
 							
 						</ul>
 					</aside>
