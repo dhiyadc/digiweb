@@ -33,7 +33,7 @@
 						<a href="<?= base_url() ?>">Home</a>
 						<a href="<?= base_url() ?>/Blog_user">Blog</a>
 					</div>
-						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Blog Page</h2>
+						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Halaman Blog</h2>
 					</div>
 				</div>
 			</div>
@@ -46,13 +46,14 @@
             <div class="container">
                 <div class="row">
                 <?php foreach($kategori as $value) : ?>
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-3 mb-5 mt-5">
                         <div class="categories_post">
-                            <img src="<?php echo base_url(); ?>assets/img/blog/computer.jpg" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>"><h5><?= $value['kategori']; ?></h5></a>
-                                    <div class="border_line"></div>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="nav-item"><a href="<?php echo base_url(); ?>Blog_user/blogByKategori/<?= $value['kategori']; ?>" class="primary_btn"><?= $value['kategori']; ?></a></li>
+                                    </ul>
+                                    <div class="border_line"><hr></div>
                                 </div>
                             </div>
                         </div>
@@ -62,6 +63,8 @@
             </div>
         </section>
         <!--================Blog Categorie Area =================-->
+
+        <hr>
         
         <!--================Blog Area =================-->
         <section class="blog_area">
@@ -69,6 +72,12 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="blog_left_sidebar">
+
+                        <?php if(empty($blog)) :?>
+                            <div class="alert alert-danger" role="alert">
+                              <center>Blog yang Dicari Belum Ada</center>
+                            </div>
+                        <?php endif; ?>
 
                         <?php foreach($blog as $key => $value): ?>
                         
@@ -121,10 +130,18 @@
                             </article>
                             <?php endforeach; ?>
 
-                           
+
+                           <?php if($blogNum > 4 ):  ?>
                             <div id="loadMore">
-                                <a href="#">Load More</a>
+                                <a href="#">Muat Lebih Banyak</a>
                             </div>
+                           <?php endif; ?>
+                            <?php if($blogNum == 0) : ?>
+                                <p></p>
+                            <?php endif; ?>
+                            <?php if(($blogNum < 4 )) : ?>
+                                <?= "" ?>
+                            <?php endif; ?>
 
                         </div>
                     </div>
@@ -134,15 +151,13 @@
                             <form action="<?= base_url('Blog_user')?>" method="post">
                                 <div class="input-group">
 					                    <input type="text" class="form-control" name="keyword" placeholder="Search Blog" autocomplete="off" autofocus>
-                                    <!-- <span class="input-group-btn"> -->
                                         <input style="visibility: hidden;" type="submit" name="submit">
-                                    <!-- </span> -->
-                                </div><!-- /input-group -->
+                                </div>
                             </form>
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title">Popular Blogs</h3>
+                                <h3 class="widget_title">Blog Popular</h3>
                                 <?php foreach($popular as $value) :  ?>
                                 <div class="media post_item">
                                 <img src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" height="50px" width="75px" style="object-fit: cover;">
@@ -157,7 +172,7 @@
                                     <br>
                             </aside>
                             <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title">Blog Categories</h4>
+                                <h4 class="widget_title">Kategori Blog</h4>
                                 <ul class="list cat-list">
                                 <?php foreach($kategori as $value) : ?>
                                     <li>
