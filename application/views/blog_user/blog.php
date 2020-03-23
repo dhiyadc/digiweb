@@ -150,7 +150,7 @@
                             <aside class="single_sidebar_widget search_widget">
                             <form action="<?= base_url('Blog_user')?>" method="post">
                                 <div class="input-group">
-					                    <input type="text" class="form-control" name="keyword" placeholder="Search Blog" autocomplete="off" autofocus>
+					                    <input type="text" class="form-control" name="keyword" placeholder="Cari Blog" autocomplete="off" autofocus>
                                         <input style="visibility: hidden;" type="submit" name="submit">
                                 </div>
                             </form>
