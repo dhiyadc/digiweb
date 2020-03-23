@@ -115,6 +115,20 @@ class Tentang_Model extends CI_Model
         return $this->db->get_where('tentang_deskripsi', ['id' => '0'])->row_array();
     }
 
+    public function countDeskripsi()
+    {
+        return $this->db->get('tentang_deskripsi')->num_rows();
+    }
+
+    public function insertDeskripsi()
+    {
+        $data = [
+            'id' => 0,
+            'deskripsi' => htmlspecialchars($this->input->post('deskripsi'))
+        ];
+        $this->db->insert('tentang_deskripsi', $data);
+    }
+
     public function updateDeskripsi($id = 0)
     {
         $data = [
