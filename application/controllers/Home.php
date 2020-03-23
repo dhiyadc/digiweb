@@ -23,6 +23,7 @@ class Home extends CI_Controller{
         $data['blogcomment'] = $this->homepage_database->getBlogComment();        
         $data['tentang_faq'] = $this->homepage_database->getFAQ();
         $data['DCDesc'] = $this->homepage_database->getDCDesc();
+        $data['porto_count'] = count($this->homepage_database->getPortofolios());
         $this->load->view('home', $data);
         $this->load->view('layout/footer');
     }

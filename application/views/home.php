@@ -172,8 +172,7 @@
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
 						
-						<div class="col-lg-4 col-md-6 col-sm-6">
-						<article class="moreBox">
+						<div class="col-lg-4 col-md-6 col-sm-6 moreBox">
 							<a href="portofolio_user">
 							<div class="single-gallery">
 								<div class="overlay"></div>
@@ -203,9 +202,19 @@
 			</div>
 		</div>
 
-		<div class="load_more_flex">
-			<a href="#" id="loadMore">Load More</a>
-		</div>
+		<?php if($porto_count > 3 ):  ?>
+        <div id="loadMore">
+            <a href="#">Muat Lebih Banyak</a>
+        </div>
+        <?php endif; ?>
+        <?php if($porto_count == 0) : ?>
+            <p></p>
+        <?php endif; ?>
+        <?php if(($porto_count <= 3 )) : ?>
+            <?= "" ?>
+        <?php endif; ?>				
+
+		
 	</section>
 
 	<!-- <script>
