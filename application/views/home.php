@@ -173,7 +173,7 @@
 					<?php foreach($portofolio as $val) : ?>
 						
 						<div class="col-lg-4 col-md-6 col-sm-6">
-						<article class="content_portofolio">
+						<article class="moreBox">
 							<a href="portofolio_user">
 							<div class="single-gallery">
 								<div class="overlay"></div>
@@ -208,7 +208,7 @@
 		</div>
 	</section>
 
-	<script>
+	<!-- <script>
 		$(document).ready(function(){
 		$(".content_portofolio").slice(0, 4).show();
 		$("#loadMore").on("click", function(e){
@@ -220,7 +220,24 @@
 		});
 		
 		})
-	</script>
+	</script> -->
+
+	<Script>
+                $( document ).ready(function () {
+                    $(".moreBox").slice(0, 4).show();
+                    if ($(".blogBox:hidden").length != 0) {
+                        $("#loadMore").show();
+                    }   
+                    $("#loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreBox:hidden").slice(0, 4).slideDown();
+                    if ($(".moreBox:hidden").length == 0) {
+                        $("#loadMore").fadeOut('slow');
+                    }
+                    });
+                });
+        </Script>
+
 	<!--================ End Gallery Area =================-->
 
 
