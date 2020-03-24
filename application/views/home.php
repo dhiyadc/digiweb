@@ -172,7 +172,7 @@
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
 						
-						<div class="col-lg-4 col-md-6 col-sm-6 moreBox">
+						<div class="col-lg-4 col-md-6 col-sm-6 moreBox blogBox" style="display: none">
 							<a href="portofolio_user">
 							<div class="single-gallery">
 								<div class="overlay"></div>
@@ -233,13 +233,13 @@
 
 	<Script>
                 $( document ).ready(function () {
-                    $(".moreBox").slice(0, 4).show();
+                    $(".moreBox").slice(0, 3).show();
                     if ($(".blogBox:hidden").length != 0) {
                         $("#loadMore").show();
                     }   
                     $("#loadMore").on('click', function (e) {
                     e.preventDefault();
-                    $(".moreBox:hidden").slice(0, 4).slideDown();
+                    $(".moreBox:hidden").slice(0, 3).slideDown();
                     if ($(".moreBox:hidden").length == 0) {
                         $("#loadMore").fadeOut('slow');
                     }
