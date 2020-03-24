@@ -72,8 +72,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="row">
+						<?php $i = 0; ?>
 							<?php foreach ($portofolio as $key => $value): ?>
-								<?php $i = 1; ?>
 								<div class="col-lg-6 col-md-6 col-sm-6 blog_item blogBox moreBox" style="display: none">
 									<a href="<?= $value['link'] ?>">
 										<div class="single-gallery_portofolio">
