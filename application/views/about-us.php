@@ -39,28 +39,34 @@
 	<section class="about_us_area section_gap_top">
 		<div class="container">
 			<div class="row about_content align-items-center">
-
-				<div class="col-lg-6">
+				<div class="col-lg-5">
 					<div class="about_us_image_box justify-content-center">
-						<p><?php echo html_entity_decode($DCDesc['deskripsi']); ?></p>
+						<img class="img-fluid w-100" src="<?php echo base_url(); ?>assets/images/favicon.png" alt="">
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
 						<h1>Digital <br>Creative</h1>
+						<?= html_entity_decode($DCDesc['deskripsi']); ?>
+						<!-- <a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a> -->
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
+
 	<!--================End Home Banner Area =================-->
 	<!--================Start About Us Area =================-->
 
 	<!-- Team -->
 	<section id="team" class="pb-5">
 		<div class="container">
-			<h5 class="section-title h1">OUR TEAM</h5>
+			<div class="main_title">
+				<h2>TEAM KAMI</h2>
+				<h1>TEAM KAMI</h1>
+			</div>
 			<div class="row">
 				<!-- Team member -->
 				<?php foreach ($tentang as $val) : ?>
@@ -116,9 +122,11 @@
 					</div>
 					<!-- </span> -->
 				<?php endforeach ?>
-				<div id="loadMore">
-					<center><a href="#"><button>LoadMore</button></a></center>
-				</div>
+				<?php if (count($tentang) > 3) : ?>
+					<div id="loadMore">
+						<center><a href="#"><button style="color: white">Lebih Lanjut</button></a></center>
+					</div>
+				<?php endif ?>
 			</div>
 		</div>
 	</section> <!-- ./Team member -->
