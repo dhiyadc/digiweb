@@ -2914,8 +2914,8 @@ h6 {
   position: relative;
   margin-bottom: 30px; }
   .single-gallery .content {
-    max-height: 36px;
-    max-width: 36px;
+    max-height: 175px;
+    max-width: 350px;
     left: 50%;
     top: 20%;
     -webkit-transform: translate(-50%, -50%);
@@ -2932,16 +2932,47 @@ h6 {
       -moz-transition: all 0.4s ease 0s;
       -o-transition: all 0.4s ease 0s;
       transition: all 0.4s ease 0s; }
+      .single-gallery .content p {
+        opacity: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 50px;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s; }
+      }
+      .single-gallery .content a.title {
+        background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s; }
+        .single-gallery .content a.title {
+          font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        font-family: "Rajdhani", sans-serif; }
+      
   .single-gallery:hover {
     cursor: pointer; }
     .single-gallery:hover .overlay, .single-gallery:hover .content {
-      margin-top: 60%;
-      background: rgba(73, 63, 157, 0.85); }
+      margin-top: 50%;
+      background: rgba(73, 63, 157, 1);
+      height: 50%; }
     .single-gallery:hover .content {
-      background: transparent;
-      top: 50%; }
+      background: transparent; }
       .single-gallery:hover .content i {
         opacity: 1; }
+        .single-gallery:hover .content p {
+          opacity: 1; }
   .single-gallery .overlay, .single-gallery .content {
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -2954,7 +2985,7 @@ h6 {
     justify-content: center;
     align-items: center;
 }
-  }
+  
 
 /* End Gallery Area css
 ============================================================================================ */
@@ -3116,8 +3147,9 @@ h6 {
   padding: 80px 0 120px; }
   .blog_area .blog_items {
     position: relative; }
-    .blog_area .blog_items:hover .blog_content {
-      background: #22195e; }
+    .blog_area .blog_items .blog_content {
+      background: #22195e; 
+      height: 327px;}
       .blog_area .blog_items:hover .blog_content a.title {
         background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
         background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
@@ -3161,6 +3193,10 @@ h6 {
         padding: 20px 0 40px;
         margin: 0;
         font-family: "Roboto", sans-serif; }
+        .blog_area .blog_items .blog_content .date{
+          position: absolute;
+          bottom: 8%;
+        }
       .blog_area .blog_items .blog_content .date a {
         font-size: 13px;
         margin-right: 30px;

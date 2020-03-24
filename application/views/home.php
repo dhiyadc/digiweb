@@ -173,12 +173,13 @@
 					<?php foreach($portofolio as $val) : ?>
 						
 						<div class="col-lg-4 col-md-6 col-sm-6 moreBox blogBox" style="display: none">
-							<a href="portofolio_user">
+							<a href="portofolio_user" class="title">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-								<i class="lnr lnr-eye"></i>
+								<!-- <i class="lnr lnr-eye"></i> -->
+								<p><?= substr($val['text'],0,185); ?>...</p>
 								</div>
 							</div>
 							</a>
@@ -312,7 +313,7 @@
 							$text = html_entity_decode($val['text']);
 							$text = str_replace("&nbsp;",' ',$text);
 							$text = strip_tags($text);
-							echo substr($text,0,150);?> <a class="title" href="<?= base_url() ?>Blog_user/detailAndComment/<?= $val['id'] ?>">Read More</a></p> <br>
+							echo substr($text,0,150);?> <br><a class="title" href="<?= base_url() ?>Blog_user/detailAndComment/<?= $val['id'] ?>">Read More</a></p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
