@@ -81,9 +81,11 @@
 											<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
 											<div class="content_portofolio">
 												<p><?= $value['judul'] ?></p>
-												<p style="font-size: 18px;"><?= substr($value['text'],0 ,170); ?>...</p>
+												<p style="font-size: 18px;"><?= substr($value['text'],0 ,100); ?>...</p>
+											<!-- <center><p style="color: black; position:"><?= $value['kategori'] ?></p></center> -->
+												<p style="font-size: 12px; position: absolute; bottom: 0;"><?= $value['kategori'] ?></p>
 											</div>
-											<center><p style="color: black"><?= $value['kategori'] ?></p></center>
+											
 										</div>
 									</a>
 								</div>
