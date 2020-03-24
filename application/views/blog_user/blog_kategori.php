@@ -132,10 +132,7 @@
                                 <a href="#">Muat Lebih Banyak</a>
                             </div>
                         <?php endif; ?>
-                        <?php if($blogNumm == 0) : ?>
-                                <p></p>
-                        <?php endif; ?>
-                        <?php if($blogNumm< 4) : ?>
+                        <?php if($blogNumm < 4) : ?>
                                 <?= "" ?>
                         <?php endif; ?>
 

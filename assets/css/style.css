@@ -4803,7 +4803,7 @@ section .section-title {
   scrollbar-width: thin;
   scroll-behavior: smooth; */
   padding: 1rem;
-  height: 250px;
+  height: 300px;
   overflow-x: hidden;
 }
 

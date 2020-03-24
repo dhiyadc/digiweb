@@ -136,9 +136,6 @@
                                 <a href="#">Muat Lebih Banyak</a>
                             </div>
                            <?php endif; ?>
-                            <?php if($blogNum == 0) : ?>
-                                <p></p>
-                            <?php endif; ?>
                             <?php if(($blogNum < 4 )) : ?>
                                 <?= "" ?>
                             <?php endif; ?>
