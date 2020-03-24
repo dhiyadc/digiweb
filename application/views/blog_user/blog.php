@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row">
                 <?php foreach($kategori as $value) : ?>
-                    <div class="col-lg-3 mb-5 mt-5">
+                    <div class="col-lg-2 mb-5 mt-5">
                         <div class="categories_post">
                             <div class="categories_details">
                                 <div class="categories_text">
