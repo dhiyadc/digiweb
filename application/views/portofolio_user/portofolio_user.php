@@ -76,14 +76,12 @@
 								<?php $i = 1; ?>
 								<div class="col-lg-6 col-md-6 col-sm-6 blog_item blogBox moreBox" style="display: none">
 									<a href="<?= $value['link'] ?>">
-										<div class="single-gallery">
+										<div class="single-gallery_portofolio">
 											<div class="overlay"></div>
 											<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
-											<div class="content">
-												<i>
-													<h3 style="color: whitesmoke; text-align: left"><?= $value['judul'] ?></h3>
-													<h6 style="color: whitesmoke"><?= $value['text'] ?></h6>
-												</i>	
+											<div class="content_portofolio">
+												<p><?= $value['judul'] ?></p>
+												<p style="font-size: 18px;"><?= substr($value['text'],0 ,170); ?>...</p>
 											</div>
 											<center><p style="color: black"><?= $value['kategori'] ?></p></center>
 										</div>
