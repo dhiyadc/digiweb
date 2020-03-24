@@ -4,13 +4,15 @@ class Portofolio_user extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Portofolio_user_model');
+        $this->load->model('homepage_database');
+
     }
 
     public function index()
     {
         $data['judul']='Portofolio';
         $data['portofolio']=$this->Portofolio_user_model->getAllPortofolio();
-
+        $data['porto_count'] = count($this->homepage_database->getPortofolios());
         $this->load->view('portofolio_user/portofolio_user' , $data);
     }
 

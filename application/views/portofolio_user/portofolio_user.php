@@ -34,13 +34,14 @@
 						<div class="row">
 							<?php $i=0;?>
             				<?php foreach ($portofolio as $key => $value): ?>
-							<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
+							<div class="col-lg-6 col-md-6 col-sm-6 moreBox blogBox" id="detailBtn<?=$i?>" style="display: none;">
 								<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
-									<div class="single-gallery">
+									<div class="single-gallery_portofolio">
 										<div class="overlay"></div>
 										<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
-										<div class="content">
-											<i class="lnr lnr-eye"></i>	
+										<div class="content_portofolio">
+											<p><?= $value['judul'] ?></p>
+											<p style="font-size: 18px;"><?= substr($value['text'],0 ,170); ?>...</p>
 										</div>
 										<p1 hidden><?= $value['judul'] ?></p1>
 										<p2 hidden><?= $value['path_gambar'] ?></p2>
@@ -57,6 +58,19 @@
 					</div>
 				</div>
 			</div>
+
+			
+		<?php if($porto_count > 3 ):  ?>
+        <div id="loadMore">
+            <a href="#">Muat Lebih Banyak</a>
+        </div>
+        <?php endif; ?>
+        <?php if($porto_count == 0) : ?>
+            <p></p>
+        <?php endif; ?>
+        <?php if(($porto_count <= 3 )) : ?>
+            <?= "" ?>
+        <?php endif; ?>	
 		</section>
 		<section>
 			<div class="modal" id="contact-modal" tabindex="-1" role="dialog">
@@ -84,6 +98,20 @@
 				</div>
 			</div>
 			<script>
+                $( document ).ready(function () {
+                    $(".moreBox").slice(0, 4).show();
+                    if ($(".blogBox:hidden").length != 0) {
+                        $("#loadMore").show();
+                    }   
+                    $("#loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreBox:hidden").slice(0, 4).slideDown();
+                    if ($(".moreBox:hidden").length == 0) {
+                        $("#loadMore").fadeOut('slow');
+                    }
+                    });
+                });
+
 				$(function(){
 					$('.detailBtns').click(function(){
 						var value = $(this).children("div").children("p1").html()

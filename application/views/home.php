@@ -179,7 +179,7 @@
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
 								<!-- <i class="lnr lnr-eye"></i> -->
-								<p><?= substr($val['text'],0,185); ?>...</p>
+								<p><?= substr($val['judul'],0,100); ?></p>
 								</div>
 							</div>
 							</a>
