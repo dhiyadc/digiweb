@@ -41,9 +41,9 @@
 					?>
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center ">
-							<li class="nav-item <?=($nav=='')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>">Home</a></li>
+							<li class="nav-item <?=($nav=='')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>">Beranda</a></li>
 
-							<li class="nav-item <?=($nav=='tentang_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>tentang_user">About</a></li>
+							<li class="nav-item <?=($nav=='tentang_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>tentang_user">Tentang</a></li>
 							
 							<li class="nav-item <?=($nav=='portofolio_user')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>portofolio_user">Portofolio </a></li>
 
@@ -51,7 +51,7 @@
 
 							<li class="nav-item <?=($nav=='blog_user')?' nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>blog_user">Blog</a></li>
 
-							<li class="nav-item <?=($nav=='Contact')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>Contact">Contact</a></li>
+							<li class="nav-item <?=($nav=='Contact')?'nav-item active':''; ?>"><a class="nav-link" href="<?php echo base_url(); ?>Contact">Kontak</a></li>
 							
 						</ul>
 					</div>
