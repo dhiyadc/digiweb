@@ -21,6 +21,7 @@ class Blog_user extends CI_Controller {
           $data['blogKategori'] = $this->Blog_user_model->getBlogKategori();
           $data['kategori'] = $this->Blog_user_model->getKategori();
           $data['popular'] = $this->Blog_user_model->popularBlog();
+          $data['blogNum'] = count($this->Blog_user_model->getAllBlog($data['keyword']));
         
         $this->load->view('blog_user/blog' , $data );
         $this->load->view('layout/footer');
@@ -39,6 +40,7 @@ class Blog_user extends CI_Controller {
         $data['blogKategori'] = $this->Blog_user_model->getBlogKategori();
         $data['kategori'] = $this->Blog_user_model->getKategori();
         $data['popular'] = $this->Blog_user_model->popularBlog();
+        $data['blogNumm'] = count($this->Blog_user_model->getBlogbykategori($data['keyword'], $kategori));
       
         $this->load->view('blog_user/blog_kategori' , $data );
         $this->load->view('layout/footer');

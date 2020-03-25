@@ -128,10 +128,30 @@ class Tentang extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $data['deskripsi'] = $this->tentang->getdeskripsi();
+            $data['count'] = $this->tentang->countDeskripsi();
             $this->load->view('_partials/header_admin');
             $this->load->view('tentang/view_deskripsi_tentang', $data);
             $this->load->view('_partials/footer_admin');
         } else {
+            redirect('admin');
+        }
+    }
+
+    public function insertDeskripsi()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
+            if ($this->form_validation->run() == false) {
+                $this->load->view('_partials/header_admin');
+                $this->load->view('tentang/insert_deskripsi_tentang');
+                $this->load->view('_partials/footer_admin');
+            } else {
+                $this->tentang->insertDeskripsi();
+                $this->session->set_flashdata('flash', "Deskripsi berhasil dibuat");
+                redirect('tentang/viewDeskripsi');
+            }
+        } else {
+            $this->session->set_flashdata('message', "Access Denied");
             redirect('admin');
         }
     }

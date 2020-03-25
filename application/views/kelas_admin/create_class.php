@@ -48,7 +48,7 @@
                     <label for="ccomment" class="control-label col-lg-2">Kategori</label>
                     <div class="col-lg-10">
                       <?php foreach ($kategori as $val) : ?>
-                        <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" />
+                        <input type="radio" name="kategori" required value="<?= $val['id']; ?>" />
                         <label><?= $val['kategori']; ?></label><br>
                       <?php endforeach; ?>
                     </div>

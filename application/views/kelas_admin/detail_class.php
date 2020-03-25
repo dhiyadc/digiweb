@@ -19,7 +19,7 @@
                  <?php endif; ?>
                 </div>
                 <div class="icn-main-container">
-                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" width="600px" style="object-fit: cover">
+                    <img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
                 </div>
                 <br>
                 <h5>Harga: <?= $val['harga']; ?></h5>
@@ -28,7 +28,11 @@
                 <p><?= $val['deskripsi_2']; ?></p>
                 <p><?= $val['deskripsi_3']; ?></p>
                 <br>
-                <small><?= $val['kategori']; ?></small>
+                <?php foreach ($kategori as $val2) : ?>
+                  <?php if ($val['id_kategori'] == $val2['id']) : ?>
+                    <small><?= $val2['kategori']; ?></small>
+                  <?php endif; ?>
+                <?php endforeach; ?>
                 <br>
                 <script type="text/javascript" language="JavaScript">
                     function konfirmasi() {

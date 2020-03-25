@@ -9,7 +9,7 @@
 					<div class="banner_content text-center">
                     <div class="page_link">
 						<a href="<?= base_url() ?>">Home</a>
-						<a href="<?= base_url() ?>/kelas">Layanan Kami</a>
+						<a href="<?= base_url() ?>kelas">Layanan Kami</a>
 					</div>
 						<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">Layanan Kami</h2>
 					</div>
@@ -20,9 +20,6 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
-	<?php if ($this->session->flashdata('flash') ) : ?>
-		<?= $this->session->flashdata('flash'); ?>
-	<?php endif; ?>
 	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
 			<div class="container" id="daftarKelas">
@@ -39,17 +36,35 @@
 					<center><?= $this->session->flashdata('create') ?></center>
 					</div>
 				<?php endif; ?>
+					<div class="row text-center">
+						<?php foreach ($kategori as $val) :?>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="new_games_item">
+								<img src="<?php echo base_url(); ?>assets/images/white.png" alt="" width="250px" height="200px" >
+								<div class="upcoming_title">
+									<a href="<?php echo base_url(); ?>kelas/kategori/<?= $val['id'] ?>">
+										<h3 style="color: whitesmoke; font-size: 15px; font-family: 'Times New Roman', Times, serif;"><?= $val['kategori'] ?></h3>
+									</a>
+								</div>
+							</div>
+						</div>
+						<?php endforeach; ?>
+					</div>
 				<div class="row">
 					<?php $i=0;?>
                     <?php foreach ($kelas as $val) :?>
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing_item active">
 							<h3 class="p_title"><?= $val['judul'] ?></h3>
-							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="">
+							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
 							<h1 class="p_price"><?= $val['harga'] ?></h1>
 							<div class="p_list">
 								<ul>
-									<li><h3><small><?= $val['kategori']; ?></small></h3></li>
+									<?php foreach ($kategori as $val2) : ?>
+										<?php if ($val['id_kategori'] == $val2['id']) : ?>
+											<li><h3><small><?= $val2['kategori']; ?></small></h3></li>
+										<?php endif; ?>
+									<?php endforeach; ?>
 									<li><?= $val['deskripsi_1'] ?></li>
 									<li><?= $val['deskripsi_2'] ?></li>
 									<li><?= $val['deskripsi_3'] ?></li>
@@ -76,8 +91,8 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
+							<h3>Form Daftar</h3>
 							<a class="close" data-dismiss="modal">×</a>
-							<h3>Form Les Android</h3>
 						</div>
 						<form action="" id="kelasForm" name="contact" role="form" method="post">
 							<div class="modal-body">				
