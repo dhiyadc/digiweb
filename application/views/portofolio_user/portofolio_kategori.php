@@ -89,13 +89,15 @@
 							<?php if($value['kategori']== $port_kategori['kategori']) :?>
 							<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
 								<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
-									<div class="single-gallery">
+									<div class="single-gallery_portofolio">
 										<div class="overlay"></div>
 										<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>"
 											alt="" style="object-fit: cover; height: 350px">
-										<div class="content">
-											<i class="lnr lnr-eye"></i>
-										</div>
+											<div class="content_portofolio">
+												<p><?= $value['judul'] ?></p>
+												<p style="font-size: 18px;"><?= substr($value['text'],0 ,100); ?>...</p>
+											<!-- <center><p style="color: black; position:"><?= $value['kategori'] ?></p></center> -->
+												<p style="font-size: 12px; position: absolute; bottom: 0;"><?= $value['kategori'] ?></p>
 										<p1 hidden><?= $value['judul'] ?></p1>
 										<p2 hidden><?= $value['path_gambar'] ?></p2>
 										<p3 hidden><?= $value['link'] ?></p3>
@@ -112,43 +114,47 @@
 					</div>
 				</div>
 			</div>
+				<?php if($i > 4) : ?>
+				<div id="loadMore">
+                    <a href="#">Muat Lebih Banyak</a>
+				</div>
+				<?php endif; ?>
+				<?php if($i == 0) : ?>
+					<p></p>
+				<?php endif; ?>
+				<?php if($i < 4) : ?>
+					<?= "" ?>
+				<?php endif; ?>
 		</div>
 	</section>
 	<section>
-		<div class="modal" id="contact-modal" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title"></h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div id="detailPorto" class="modal-body">
-						<h3>
-							<center id="val1"></center>
-						</h3>
-						<br>
-						<img id="gambarPorto" class="img-fluid w-100" src="" alt="">
-						<br>
-						<a id="linkPorto" href="">
-							<center id="val3"></center>
-						</a>
-						<br>
-						<p>
-							<center id="val4"></center>
-						</p>
-						<br>
-						<h4><small>
-								<center id="val5"></center>
-							</small></h4>
-						<small>
-							<center id="val6"></center>
-						</small>
+			<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header" id="detailPorto">
+							<h3 class="modal-title" id="val1"></h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div id="detailPorto" class="modal-body">
+								<img id="gambarPorto"class="img-fluid w-100" src="" alt="">
+								<br>
+								<a id="linkPorto" href=""><center id="val3"></center></a>
+								<br>
+								<p><center id="val4"></center></p>
+								<br>					
+								<h4><small><center id="val5"></center></small></h4>		
+								<small><center id="val6"></center></small>						
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="primary_btn" data-dismiss="modal">Close</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<script>
 			$(function () {
 				$('.detailBtns').click(function () {

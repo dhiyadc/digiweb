@@ -25,6 +25,8 @@ class Kelas extends CI_Controller {
     {
         $data['kategori'] = $this->Kelas_model->getKategori();
         $data['kelas'] = $this->Kelas_model->getKelasByKategori($id);
+        $data['count'] = $this->Kelas_model->countKelasByKategori($id);
+        $this->session->set_flashdata('kategori','Maaf, layanan di kategori ini belum tersedia.');
         $this->load->view('kelas/kategori',$data);
     }
 }
