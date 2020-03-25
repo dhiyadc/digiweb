@@ -226,8 +226,8 @@ img {
 .overlay, .single-gallery .content {
   position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
+  bottom: 0;
+  height: 40%;
   width: 100%; }
 
 /* Start Video Play css
@@ -1443,7 +1443,7 @@ body.blog_page {
     color: #3fcaff;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     color: "Roboto", sans-serif;
     font-weight: bold;
@@ -3841,6 +3841,7 @@ h6 {
       .blog_area .blog_items .blog_content .date a {
         margin-right: 20px; }
 
+  
   .footer_area .f_widget ul {
     margin-bottom: 30px !important; }
     .footer_area .f_widget ul li {
@@ -3900,7 +3901,9 @@ h6 {
     color: #fff;
     margin-left: -15px; }
     .single-footer-widget .copy_right_text p a {
-      color: #3fcaff; }
+      color: #3fcaff; 
+      font-size: 15px;
+    }
   .single-footer-widget .social_widget {
     text-align: right;
     position: relative;
@@ -3955,7 +3958,7 @@ h6 {
         /*---------------------------------------------*/
         a {
           font-family: Poppins-Regular;
-          font-size: 14px;
+          font-size: 22px;
           line-height: 1.7;
           color: #666666;
           margin: 0px;
@@ -4807,4 +4810,6 @@ section .section-title {
   overflow-x: hidden;
 }
 
-
+.foot p{
+  color: #ffff;
+}
