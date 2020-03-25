@@ -50,40 +50,54 @@
 						</div>
 						<?php endforeach; ?>
 					</div>
-				<div class="row">
-					<?php $i=0;?>
-                    <?php foreach ($kelas as $val) :?>
-					<div class="col-lg-4 col-md-6">
-						<div class="pricing_item active">
-							<h3 class="p_title"><?= $val['judul'] ?></h3>
-							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
-							<h1 class="p_price"><?= $val['harga'] ?></h1>
-							<div class="p_list">
-								<ul>
-									<?php foreach ($kategori as $val2) : ?>
-										<?php if ($val['id_kategori'] == $val2['id']) : ?>
-											<li><h3><small><?= $val2['kategori']; ?></small></h3></li>
-										<?php endif; ?>
-									<?php endforeach; ?>
-									<li><?= $val['deskripsi_1'] ?></li>
-									<li><?= $val['deskripsi_2'] ?></li>
-									<li><?= $val['deskripsi_3'] ?></li>
-								</ul>
-							</div>
-							<div class="p_btn" id="daftarBtn<?=$i?>">
-								<button type="button" data-toggle="modal" data-target="#contact-modal">
-									<a class="gradient_btn kelasBtns">
-										<span>Join Us<p1 hidden><?= $val['id'] ?></p1></span>
-									</a>
-								</button>
+					<div class="row">
+						<?php $i=0;?>
+						<?php foreach ($kelas as $val) :?>
+						<div class="col-lg-4 col-md-6 blog_item blogBox moreBox" style="display: none">
+							<div class="pricing_item active">
+								<h3 class="p_title"><?= $val['judul'] ?></h3>
+								<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
+								<h1 class="p_price"><?= $val['harga'] ?></h1>
+								<div class="p_list">
+									<ul>
+										<?php foreach ($kategori as $val2) : ?>
+											<?php if ($val['id_kategori'] == $val2['id']) : ?>
+												<li><h3><small><?= $val2['kategori']; ?></small></h3></li>
+											<?php endif; ?>
+										<?php endforeach; ?>
+										<li><?= $val['deskripsi_1'] ?></li>
+										<li><?= $val['deskripsi_2'] ?></li>
+										<li><?= $val['deskripsi_3'] ?></li>
+									</ul>
+								</div>
+								<div class="p_btn" id="daftarBtn<?=$i?>">
+									<button type="button" data-toggle="modal" data-target="#contact-modal">
+										<a class="gradient_btn kelasBtns">
+											<span>Join Us<p1 hidden><?= $val['id'] ?></p1></span>
+										</a>
+									</button>
+								</div>
 							</div>
 						</div>
+						<?php $i++; ?>
+						<?php endforeach; ?>
 					</div>
-					<?php $i++; ?>
-					<?php endforeach; ?>
-                </div>
-			</div>
-			
+					<?php if($i > 6) : ?>
+					<div id="loadMore">
+						<a href="#">
+							<h3 style="color: whitesmoke;">
+								<small>Muat Lebih Banyak</small>
+							</h3>
+						</a>
+					</div>
+					<?php endif; ?>
+					<?php if($i == 0) : ?>
+						<p></p>
+					<?php endif; ?>
+					<?php if($i < 6) : ?>
+						<?= "" ?>
+					<?php endif; ?>
+				</div>
 	</section>
 	<section>
 		<!-- Modal Daftar Les -->
@@ -142,7 +156,23 @@
 				console.log($('#kelasForm').attr("action"))
 			})
 		})
-    	</script>
+		</script>
+		
+		<script>
+			$( document ).ready(function () {
+				$(".moreBox").slice(0, 6).show();
+					if ($(".blogBox:hidden").length != 0) {
+						$("#loadMore").show();
+					}   
+					$("#loadMore").on('click', function (e) {
+					e.preventDefault();
+					$(".moreBox:hidden").slice(0, 6).slideDown();
+					if ($(".moreBox:hidden").length == 0) {
+						$("#loadMore").fadeOut('slow');
+					}
+				});
+			});
+		</script>
 		
 	</section>
 </body>
