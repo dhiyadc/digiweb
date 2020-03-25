@@ -28,6 +28,12 @@ class Kelas_model extends CI_Model {
         return $this->db->get('kelas')->result_array();
     }
 
+    public function countKelasByKategori($id)
+    {
+        $this->db->where('id_kategori',$id);
+        return $this->db->get('kelas')->num_rows();
+    }
+
     private function insertImage() 
     {
         $config['upload_path'] = './images/';

@@ -20,9 +20,6 @@
 	<!--================End Home Banner Area =================-->
 
 	<!--================ Start Pricing Plans Area ================-->
-	<?php if ($this->session->flashdata('flash') ) : ?>
-		<?= $this->session->flashdata('flash'); ?>
-	<?php endif; ?>
 	<p1 id="banyakKelas"><?= count($kelas) ?></p1>
 	<section class="pricing_area section_gap">
 			<div class="container" id="daftarKelas">
@@ -53,13 +50,18 @@
 						</div>
 						<?php endforeach; ?>
 					</div>
+				<?php if($count == 0) :?>
+					<div class="alert alert-danger" role="alert">
+					<center><?= $this->session->flashdata('kategori') ?></center>
+					</div>
+				<?php endif; ?>
 				<div class="row">
 					<?php $i=0;?>
                     <?php foreach ($kelas as $val) :?>
-					<div class="col-lg-4 col-md-6">
+					<div class="col-lg-4 col-md-6 blog_item blogBox moreBox" style="display: none">
 						<div class="pricing_item active">
 							<h3 class="p_title"><?= $val['judul'] ?></h3>
-							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="">
+							<img src="<?= base_url().'images/'.$val['path_gambar']?>" alt="" style="object-fit: cover; height: 200px">
 							<h1 class="p_price"><?= $val['harga'] ?></h1>
 							<div class="p_list">
 								<ul>
@@ -85,6 +87,21 @@
 					<?php $i++; ?>
 					<?php endforeach; ?>
                 </div>
+					<?php if($i > 6) : ?>
+					<div id="loadMore">
+						<a href="#">
+							<h3 style="color: whitesmoke;">
+								<small>Muat Lebih Banyak</small>
+							</h3>
+						</a>
+					</div>
+					<?php endif; ?>
+					<?php if($i == 0) : ?>
+						<p></p>
+					<?php endif; ?>
+					<?php if($i < 6) : ?>
+						<?= "" ?>
+					<?php endif; ?>
 			</div>
 			
 	</section>
@@ -145,7 +162,23 @@
 				console.log($('#kelasForm').attr("action"))
 			})
 		})
-    	</script>
+		</script>
+		
+		<script>
+			$( document ).ready(function () {
+				$(".moreBox").slice(0, 6).show();
+					if ($(".blogBox:hidden").length != 0) {
+						$("#loadMore").show();
+					}   
+					$("#loadMore").on('click', function (e) {
+					e.preventDefault();
+					$(".moreBox:hidden").slice(0, 6).slideDown();
+					if ($(".moreBox:hidden").length == 0) {
+						$("#loadMore").fadeOut('slow');
+					}
+				});
+			});
+		</script>
 		
 	</section>
 </body>
