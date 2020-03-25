@@ -2729,7 +2729,9 @@ h6 {
   position: relative; }
 
 .about_content {
-  position: relative; }
+  position: relative;
+  left: 42px;
+}
   .about_content:before {
     content: "";
     position: absolute;
@@ -3957,10 +3959,10 @@ h6 {
         
         /*---------------------------------------------*/
         a {
-          font-family: Poppins-Regular;
-          font-size: 22px;
+          /* font-family: Poppins-Regular; */
+          font-size: 17px;
           line-height: 1.7;
-          color: #666666;
+          color: #D3D3D3;
           margin: 0px;
           transition: all 0.4s;
           -webkit-transition: all 0.4s;
@@ -3974,7 +3976,7 @@ h6 {
         
         a:hover {
           text-decoration: none;
-          color: #57b846;
+          color: #e13b33;
         }
         
         /*---------------------------------------------*/

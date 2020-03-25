@@ -131,7 +131,7 @@
 	<!--================End Upcoming Games Area =================-->
 
 	<!--================Start Recent Update Area =================-->
-	<section class="recent_update_area section_gap">
+	<!-- <section class="recent_update_area section_gap">
 		<div class="container">
 			<div class="recent_update_inner">
 						<div class="row about_content2 align-items-center">		
@@ -152,7 +152,7 @@
 						</div>			
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--================End Recent Update Area =================-->
 
 
@@ -177,7 +177,8 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-								<i class="lnr lnr-eye"></i>
+								<!-- <i class="lnr lnr-eye"></i> -->
+								
 								</div>
 							</div>
 							</a>

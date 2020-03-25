@@ -33,9 +33,9 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>aboutus"></a>Tentang Kami</a></li>
-							<li><a href="#"></a>Reviews</a></li>
-							<li><a href="<?php echo base_url(); ?>portofolio_user"></a>Galeri</a></li>
+							<li><a href="<?php echo base_url(); ?>aboutus">Tentang Kami</a></li>
+							<li><a href="#">Reviews</a></li>
+							<li><a href="<?php echo base_url(); ?>portofolio_user">Galeri</a></li>
 							
 						</ul>
 					</aside>
@@ -46,10 +46,10 @@
 							<h4>Blog</h4>
 						</div>
 						<ul>
-							<li><a href="#"></a>Blog</a></li><a href="#">
-								<li><a href="<?php echo base_url(); ?>kelas"></a>Recent Blog
+							<li><a href="#">Blog</a></li>
+								<li><a href="<?php echo base_url(); ?>kelas">Recent Blog
 							</a></li>
-							<li><a href="<?php echo base_url(); ?>Contact"></a>Populer Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>Contact">Populer Blog</a></li>
 							
 						</ul>
 					</aside>
