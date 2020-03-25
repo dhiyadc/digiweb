@@ -3205,8 +3205,11 @@ h6 {
     display: none !important; }
 
 .frequent_inner {
+  background-color: #6f42c1;
   position: relative;
   overflow: hidden; }
+  .frequent_inner h3, .frequent_inner p{
+    color : #ffffff; }
   .frequent_inner:after {
     content: "";
     position: absolute;
