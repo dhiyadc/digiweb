@@ -92,7 +92,6 @@
 												<p5 hidden><?= $value['kategori'] ?></p5>
 												<p6 hidden><?= $value['tanggal_publish'] ?></p6>
 											</div>
-											
 										</div>
 									</a>
 								</div>
@@ -113,6 +112,19 @@
 					<?= "" ?>
 				<?php endif; ?>
 			</div>
+
+			
+		<?php if($porto_count > 3 ):  ?>
+        <div id="loadMore">
+            <a href="#">Muat Lebih Banyak</a>
+        </div>
+        <?php endif; ?>
+        <?php if($porto_count == 0) : ?>
+            <p></p>
+        <?php endif; ?>
+        <?php if(($porto_count <= 3 )) : ?>
+            <?= "" ?>
+        <?php endif; ?>	
 		</section>
 		<section>
 			<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -144,6 +156,20 @@
 			</div>
 		
 			<script>
+                $( document ).ready(function () {
+                    $(".moreBox").slice(0, 4).show();
+                    if ($(".blogBox:hidden").length != 0) {
+                        $("#loadMore").show();
+                    }   
+                    $("#loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreBox:hidden").slice(0, 4).slideDown();
+                    if ($(".moreBox:hidden").length == 0) {
+                        $("#loadMore").fadeOut('slow');
+                    }
+                    });
+                });
+
 				$(function(){
 					$('.detailBtns').click(function(){
 						var value = $(this).children("div").children("div").children("p1").html()

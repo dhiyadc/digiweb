@@ -226,8 +226,8 @@ img {
 .overlay, .single-gallery .content {
   position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
+  bottom: 0;
+  height: 40%;
   width: 100%; }
 
 /* Start Video Play css
@@ -537,7 +537,7 @@ img {
       left: 0px;
       top: 0px;
       width: 100%;
-      z-index: -1; }
+      z-index: 1; }
     .blog_banner .banner_inner .blog_b_text {
       max-width: 700px;
       margin: auto;
@@ -1443,7 +1443,7 @@ body.blog_page {
     color: #3fcaff;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     color: "Roboto", sans-serif;
     font-weight: bold;
@@ -2729,7 +2729,9 @@ h6 {
   position: relative; }
 
 .about_content {
-  position: relative; }
+  position: relative;
+  left: 42px;
+}
   .about_content:before {
     content: "";
     position: absolute;
@@ -2914,8 +2916,8 @@ h6 {
   position: relative;
   margin-bottom: 30px; }
   .single-gallery .content {
-    max-height: 36px;
-    max-width: 36px;
+    max-height: 50%;
+    max-width: 100%;
     left: 50%;
     top: 20%;
     -webkit-transform: translate(-50%, -50%);
@@ -2932,21 +2934,61 @@ h6 {
       -moz-transition: all 0.4s ease 0s;
       -o-transition: all 0.4s ease 0s;
       transition: all 0.4s ease 0s; }
+      .single-gallery .content p {
+        font-size: 25px;
+       font-weight: 200;
+        opacity: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s; }
+      
+      .single-gallery .content a.title {
+        background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s; }
+        .single-gallery .content a.title {
+          font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        font-family: "Rajdhani", sans-serif; }
+      
   .single-gallery:hover {
     cursor: pointer; }
     .single-gallery:hover .overlay, .single-gallery:hover .content {
-      background: rgba(73, 63, 157, 0.85); }
+      margin-top: 60%;
+      background: rgba(73, 63, 157, 0.8);
+      height: 40%; }
     .single-gallery:hover .content {
-      background: transparent;
-      top: 50%; }
+      background: transparent; }
       .single-gallery:hover .content i {
         opacity: 1; }
+        .single-gallery:hover .content p {
+          opacity: 1; }
   .single-gallery .overlay, .single-gallery .content {
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s; }
 
+  .load_more_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 /* ================ CSS Untuk Page Portofolio ================= */
 
 .single-gallery_portofolio {
@@ -3182,8 +3224,9 @@ h6 {
   padding: 80px 0 120px; }
   .blog_area .blog_items {
     position: relative; }
-    .blog_area .blog_items:hover .blog_content {
-      background: #22195e; }
+    .blog_area .blog_items .blog_content {
+      background: #22195e; 
+      height: 327px;}
       .blog_area .blog_items:hover .blog_content a.title {
         background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
         background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
@@ -3227,6 +3270,10 @@ h6 {
         padding: 20px 0 40px;
         margin: 0;
         font-family: "Roboto", sans-serif; }
+        .blog_area .blog_items .blog_content .date{
+          position: absolute;
+          bottom: 8%;
+        }
       .blog_area .blog_items .blog_content .date a {
         font-size: 13px;
         margin-right: 30px;
@@ -3916,6 +3963,7 @@ h6 {
       .blog_area .blog_items .blog_content .date a {
         margin-right: 20px; }
 
+  
   .footer_area .f_widget ul {
     margin-bottom: 30px !important; }
     .footer_area .f_widget ul li {
@@ -3975,7 +4023,9 @@ h6 {
     color: #fff;
     margin-left: -15px; }
     .single-footer-widget .copy_right_text p a {
-      color: #3fcaff; }
+      color: #3fcaff; 
+      font-size: 15px;
+    }
   .single-footer-widget .social_widget {
     text-align: right;
     position: relative;
@@ -4029,10 +4079,10 @@ h6 {
         
         /*---------------------------------------------*/
         a {
-          font-family: Poppins-Regular;
-          font-size: 14px;
+          /* font-family: Poppins-Regular; */
+          font-size: 17px;
           line-height: 1.7;
-          color: #666666;
+          color: #D3D3D3;
           margin: 0px;
           transition: all 0.4s;
           -webkit-transition: all 0.4s;
@@ -4046,7 +4096,7 @@ h6 {
         
         a:hover {
           text-decoration: none;
-          color: #57b846;
+          color: #e13b33;
         }
         
         /*---------------------------------------------*/
@@ -4871,4 +4921,17 @@ section .section-title {
   background-color: #CC0033;
 }
 
+.scroller {
+  /* height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: white;
+  scrollbar-width: thin;
+  scroll-behavior: smooth; */
+  padding: 1rem;
+  height: 300px;
+  overflow-x: hidden;
+}
 
+.foot p{
+  color: #ffff;
+}
