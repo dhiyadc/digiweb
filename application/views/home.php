@@ -171,18 +171,21 @@
 				<div class="col-lg-12">
 					<div class="row">
 					<?php foreach($portofolio as $val) : ?>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<a href="portofolio_user">
+						
+						<div class="col-lg-4 col-md-6 col-sm-6 moreBox blogBox" style="display: none">
+							<a href="portofolio_user" class="title">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
 								<!-- <i class="lnr lnr-eye"></i> -->
-								
+								<p><?= substr($val['judul'],0,100); ?></p>
 								</div>
 							</div>
 							</a>
+							</article>
 						</div>
+						
 					<?php endforeach; ?>
 					</div>
 				</div>
@@ -199,7 +202,52 @@
 				</div> -->
 			</div>
 		</div>
+
+		<?php if($porto_count > 3 ):  ?>
+        <div id="loadMore">
+            <a href="#">Muat Lebih Banyak</a>
+        </div>
+        <?php endif; ?>
+        <?php if($porto_count == 0) : ?>
+            <p></p>
+        <?php endif; ?>
+        <?php if(($porto_count <= 3 )) : ?>
+            <?= "" ?>
+        <?php endif; ?>				
+
+		
 	</section>
+
+	<!-- <script>
+		$(document).ready(function(){
+		$(".content_portofolio").slice(0, 4).show();
+		$("#loadMore").on("click", function(e){
+			e.preventDefault();
+			$(".content_portofolio:hidden").slice(0, 4).slideDown();
+			if($(".content_portofolio:hidden").length <= 3) {
+			$("#loadMore").text("No Content").addClass("noContent");
+			}
+		});
+		
+		})
+	</script> -->
+
+	<Script>
+                $( document ).ready(function () {
+                    $(".moreBox").slice(0, 3).show();
+                    if ($(".blogBox:hidden").length != 0) {
+                        $("#loadMore").show();
+                    }   
+                    $("#loadMore").on('click', function (e) {
+                    e.preventDefault();
+                    $(".moreBox:hidden").slice(0, 3).slideDown();
+                    if ($(".moreBox:hidden").length == 0) {
+                        $("#loadMore").fadeOut('slow');
+                    }
+                    });
+                });
+        </Script>
+
 	<!--================ End Gallery Area =================-->
 
 
@@ -265,7 +313,7 @@
 							$text = html_entity_decode($val['text']);
 							$text = str_replace("&nbsp;",' ',$text);
 							$text = strip_tags($text);
-							echo substr($text,0,150);?> <a class="title" href="<?= base_url() ?>Blog_user/detailAndComment/<?= $val['id'] ?>">Read More</a></p> <br>
+							echo substr($text,0,150);?> <br><a class="title" href="<?= base_url() ?>Blog_user/detailAndComment/<?= $val['id'] ?>">Read More</a></p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= $val['tanggal_publish'] ?></a>
 								<a href="#"><i class="fa fa-star" aria-hidden="true"></i>
