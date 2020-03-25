@@ -63,9 +63,14 @@
 				<div class="col-lg-6">
 					<div class="section_content">
 						<h6>Tentang Kami</h6>
-						<h1>Digital <br>Creative</h1>
-						<?php foreach($DCDesc as $val) : echo html_entity_decode($val['deskripsi']); endforeach;?>
-						<!-- <a class="primary_btn" href="<?php echo base_url(); ?>Contact">Learn More</a> -->
+						<h1>Digital <br>Creative</h1><p>
+						<?php foreach($DCDesc as $val) :
+							$desc = html_entity_decode($val['deskripsi']);
+							$desc = str_replace("&nbsp;",' ',$desc);
+							$desc = strip_tags($desc); 
+							echo substr($desc, 0, 350);
+						endforeach;?>...</p>
+						<a class="primary_btn" href="<?php echo base_url(); ?>tentang_user">Learn More</a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -156,7 +161,7 @@
 	<!--================End Recent Update Area =================-->
 
 
-	<!--================ Start Gallery Area =================-->
+	<!--================ Start Portofolio =================-->
 	<section class="gallery_area">
 		<div class="container">
 			<div class="row">
@@ -173,13 +178,19 @@
 					<?php foreach($portofolio as $val) : ?>
 						
 						<div class="col-lg-4 col-md-6 col-sm-6 moreBox blogBox" style="display: none">
-							<a href="portofolio_user" class="title">
+						<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
 							<div class="single-gallery">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="<?php echo base_url(); ?>images/<?= $val['path_gambar'] ?>" alt="" style="object-fit: cover; height: 350px">
 								<div class="content">
-								<!-- <i class="lnr lnr-eye"></i> -->
-								<p><?= substr($val['judul'],0,100); ?></p>
+									<!-- <i class="lnr lnr-eye"></i> -->
+									<p><?= substr($val['judul'],0,100); ?></p>
+									<p1 hidden><?= $val['judul'] ?></p1>
+									<p2 hidden><?= $val['path_gambar'] ?></p2>
+									<p3 hidden><?= $val['link'] ?></p3>
+									<p4 hidden><?= $val['text'] ?></p4>
+									<p5 hidden><?= $val['kategori'] ?></p5>
+									<p6 hidden><?= $val['tanggal_publish'] ?></p6>
 								</div>
 							</div>
 							</a>
@@ -217,6 +228,67 @@
 
 		
 	</section>
+
+	<section>
+			<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header" id="detailPorto">
+							<h3 class="modal-title" id="val1"></h3>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div id="detailPorto" class="modal-body">
+								<img id="gambarPorto"class="img-fluid w-100" src="" alt="">
+								<br>
+								<a id="linkPorto" href=""><center id="val3"></center></a>
+								<br>
+								<p><center id="val4"></center></p>
+								<br>					
+								<h4><small><center id="val5"></center></small></h4>		
+								<small><center id="val6"></center></small>						
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="primary_btn" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<script>
+				$(function(){
+					$('.detailBtns').click(function(){
+						var value = $(this).children("div").children("div").children("p1").html()
+						$('#detailPorto').attr("h3",`${value}`) 
+						document.getElementById("val1").innerHTML = value;
+            
+						var value2 = $(this).children("div").children("div").children("p2").html()
+						$('#gambarPorto').attr("src",`<?= base_url("images/")?>${value2}`) 
+						console.log(value2)
+						
+						var value3 = $(this).children("div").children("div").children("p3").html()
+						$('#linkPorto').attr("href",`${value3}`) 
+						document.getElementById("val3").innerHTML = value3;
+
+						var value4 = $(this).children("div").children("div").children("p4").html()
+						$('#detailPorto').attr("p",`${value4}`) 
+						document.getElementById("val4").innerHTML = value4;
+
+						var value5 = $(this).children("div").children("div").children("p5").html()
+						$('#detailPorto').attr("h4",`${value5}`) 
+						document.getElementById("val5").innerHTML = value5;
+						
+						var value6 = $(this).children("div").children("div").children("p6").html()
+						$('#detailPorto').attr("small",`${value6}`) 
+						document.getElementById("val6").innerHTML = value6;
+					})
+				})
+			</script>
+			
+		</section>
 
 	<!-- <script>
 		$(document).ready(function(){
