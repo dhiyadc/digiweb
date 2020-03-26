@@ -150,27 +150,27 @@
 		<script>
 			$(function () {
 				$('.detailBtns').click(function () {
-					var value = $(this).children("div").children("p1").html()
+					var value = $(this).children("div").children("div").children("p1").html()
 					$('#detailPorto').attr("h3", `${value}`)
 					document.getElementById("val1").innerHTML = value;
 
-					var value2 = $(this).children("div").children("p2").html()
+					var value2 = $(this).children("div").children("div").children("p2").html()
 					$('#gambarPorto').attr("src", `<?= base_url("images/")?>${value2}`)
 					console.log(value2)
 
-					var value3 = $(this).children("div").children("p3").html()
+					var value3 = $(this).children("div").children("div").children("p3").html()
 					$('#linkPorto').attr("href", `${value3}`)
 					document.getElementById("val3").innerHTML = value3;
 
-					var value4 = $(this).children("div").children("p4").html()
+					var value4 = $(this).children("div").children("div").children("p4").html()
 					$('#detailPorto').attr("p", `${value4}`)
 					document.getElementById("val4").innerHTML = value4;
 
-					var value5 = $(this).children("div").children("p5").html()
+					var value5 = $(this).children("div").children("div").children("p5").html()
 					$('#detailPorto').attr("h4", `${value5}`)
 					document.getElementById("val5").innerHTML = value5;
 
-					var value6 = $(this).children("div").children("p6").html()
+					var value6 = $(this).children("div").children("div").children("p6").html()
 					$('#detailPorto').attr("small", `${value6}`)
 					document.getElementById("val6").innerHTML = value6;
 				})
