@@ -3208,16 +3208,22 @@ h6 {
   background-color: #6f42c1;
   position: relative;
   overflow: hidden; }
-  .frequent_inner h3, .frequent_inner p{
+  .frequent_inner h3{
     color : #ffffff; }
+
+    .frequent_inner p{
+      font-family: "Roboto", sans-serif;
+      color: #fff;
+    }
   .frequent_inner:after {
     content: "";
     position: absolute;
-    height: 86%;
+    height: 88%;
     border: 1px dashed rgba(199, 199, 199, 0.5);
     left: 50%;
     transform: translateX(-50%);
-    top: 40px; }
+    margin-top: 20px;
+     }
 
 /* End Frequently Asked Questions Area css
 ============================================================================================ */
