@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2020 at 11:19 AM
+-- Generation Time: Mar 26, 2020 at 04:46 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -31,18 +31,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(150) NOT NULL
+  `password` varchar(150) NOT NULL,
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin'),
-(2, 'cindy', 'cindy'),
-(4, 'cdyy2400', 'cindy'),
-(6, 'fani', 'cindy');
+INSERT INTO `admin` (`id`, `username`, `password`, `name`) VALUES
+(1, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admins'),
+(2, 'cindy', 'cindy', ''),
+(4, 'cdyy2400', 'cindy', ''),
+(6, 'fani', 'cindy', ''),
+(8, 'cdy', '002340b41aee7da76f4201bf18776291a812f796e20678c563b77b5b6c47c8a1', 'cindy');
 
 -- --------------------------------------------------------
 
@@ -66,12 +68,8 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `id_admin`, `path_gambar`, `judul`, `author`, `text`, `tanggal_publish`, `rate`) VALUES
-(90, 1, 'bubble12.jpg', 'cobaygdebkjb', 'admin', '<p>jeknfck</p>\r\n', '2020-03-14', 0),
-(91, 2, 'algoritma_bubble22.jpg', 'bubble', 'cindy', '<p>jkdnlowejwdn<img alt=\"blush\" src=\"http://localhost/digiweb/assets/js/ckeditor/plugins/smiley/images/embarrassed_smile.png\" style=\"height:23px; width:23px\" title=\"blush\" /></p>\r\n', '2020-03-14', 0),
-(92, 2, 'bubble13.jpg', 'ofmvokr', 'cindy', '<p>oejlfclrmkrm4v</p>\r\n', '2020-03-14', 0),
-(93, 2, 'bubble14.jpg', 'okmk', 'cindy', '<p>ljnljk</p>\r\n', '2020-03-14', 0),
-(94, 2, 'LOGO_UNIVERSITAS_SRIWIJAYA8.png', 'jALODWIE', 'cindy', '<p>LKEWDNKLFEW</p>\r\n', '2020-03-14', 0),
-(95, 2, 'bubble15.jpg', 'S', 'cindy', '<p>S</p>\r\n', '2020-03-14', 0);
+(97, 1, 'g18.png', 'Blog 1', 'admins', '&lt;p&gt;ini adalah blog satu&lt;/p&gt;\r\n', '2020-03-22', 0.6),
+(102, 1, 'f16.png', 'Blog 2', 'admins', '&lt;p&gt;ini adalah blog dua&lt;/p&gt;\r\n', '2020-03-22', 0);
 
 -- --------------------------------------------------------
 
@@ -85,16 +83,6 @@ CREATE TABLE `comment` (
   `name` varchar(100) NOT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`id_comment`, `id_blog`, `name`, `comment`) VALUES
-(10, 90, 'cdyy', 'ya'),
-(11, 95, 'Anonim', 'jnkk'),
-(12, 95, 'cindy', 'jfert'),
-(13, 90, 'Anonim', 'kjnk');
 
 -- --------------------------------------------------------
 
@@ -117,7 +105,8 @@ CREATE TABLE `daftar` (
 --
 
 INSERT INTO `daftar` (`id`, `id_kelas`, `nama`, `no_hp`, `email`, `instansi`, `tanggal_publish`) VALUES
-(2, 3, 'achmad', '172389', 'isan@gmail.com', 'unsray corona ', '2020-03-17');
+(3, 1, 'Dhiya', '0814678', 'dhiya@gmail.com', 'unsri', '2020-03-22'),
+(5, 1, 'Cindy Wijayah', '0987', 'cindy@gmail.com', 'unsri', '2020-03-22');
 
 -- --------------------------------------------------------
 
@@ -129,6 +118,16 @@ CREATE TABLE `kategori` (
   `id` int(2) NOT NULL,
   `kategori` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `kategori`) VALUES
+(1, 'Sport'),
+(2, 'Desain'),
+(3, 'Network'),
+(4, 'Business');
 
 -- --------------------------------------------------------
 
@@ -142,6 +141,18 @@ CREATE TABLE `kategori_blog` (
   `id_kategori` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kategori_blog`
+--
+
+INSERT INTO `kategori_blog` (`id`, `id_blog`, `id_kategori`) VALUES
+(43, 97, 1),
+(44, 97, 2),
+(45, 97, 3),
+(46, 97, 4),
+(51, 102, 1),
+(52, 102, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -149,18 +160,19 @@ CREATE TABLE `kategori_blog` (
 --
 
 CREATE TABLE `kategori_kelas` (
-  `kategori` varchar(64) CHARACTER SET latin1 NOT NULL
+  `id` int(11) NOT NULL,
+  `kategori` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kategori_kelas`
 --
 
-INSERT INTO `kategori_kelas` (`kategori`) VALUES
-('Aplikasi Mobile'),
-('Konsultasi IT'),
-('Kursus Pemrograman'),
-('Website');
+INSERT INTO `kategori_kelas` (`id`, `kategori`) VALUES
+(1, 'Aplikasi Mobile'),
+(2, 'Konsultasi IT'),
+(3, 'Kursus Pemrograman'),
+(4, 'Website');
 
 -- --------------------------------------------------------
 
@@ -192,21 +204,23 @@ CREATE TABLE `kelas` (
   `path_gambar` varchar(150) NOT NULL,
   `judul` varchar(150) NOT NULL,
   `harga` varchar(64) NOT NULL,
-  `kategori` varchar(64) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
   `deskripsi_1` text NOT NULL,
   `deskripsi_2` text NOT NULL,
   `deskripsi_3` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kelas`
 --
 
-INSERT INTO `kelas` (`id`, `path_gambar`, `judul`, `harga`, `kategori`, `deskripsi_1`, `deskripsi_2`, `deskripsi_3`) VALUES
-(1, '109316.jpg', 'kelas 1', 'Rp.150.000,00', 'Aplikasi Mobile', 'ini adalah kelas satu', 'iya kelas 1', 'betul kelas 1 ini'),
-(2, '109317.jpg', 'kelas 2', 'Rp.200.000,00', 'Kursus Pemrograman', 'ini adalah kelas dua', 'kelas 2 kok bener', 'ga percayaan amat sih ini kelas 2'),
-(3, '109336.jpg', 'kelas 3', 'Rp.250.000,00', 'Website', 'ini adalah kelas tiga', 'tapi boong', 'tapi boong lg, ini kelas 3'),
-(4, 'login_adm1.jpeg', 'kelas 4', 'Rp.400.000,00', 'Konsultasi IT', 'kelas 4', 'iya kelas 4', 'ini kelas 4');
+INSERT INTO `kelas` (`id`, `path_gambar`, `judul`, `harga`, `id_kategori`, `deskripsi_1`, `deskripsi_2`, `deskripsi_3`) VALUES
+(1, 'product1.jpg', 'Layanan 1', 'Rp.200.000,00', 4, 'desc 1', 'desc 2', 'desc 3'),
+(3, 'Screenshot_(1).png', 'Layanan 3', 'Rp.400.000,00', 2, 'desc 1', 'desc 2', 'desc 3'),
+(4, 'login_adm3.jpeg', 'Layanan 4', 'Rp.150.000,00', 3, 'desc 1', 'desc 2', 'desc 3'),
+(5, 'Screenshot_(63).png', 'Layanan 5', 'Rp.200.000,00', 4, 'desc 1', 'desc 2', 'desc 3'),
+(6, 'Screenshot_(70).png', 'Layanan 6', 'Rp.800.000,00', 2, 'desc 1', 'desc 2', 'desc 3'),
+(7, 'blog_c.jpeg', 'Layanan 7', 'Rp.100.000,00', 4, 'desc 1', 'desc 2', 'desc 3');
 
 -- --------------------------------------------------------
 
@@ -229,10 +243,10 @@ CREATE TABLE `portofolio` (
 --
 
 INSERT INTO `portofolio` (`id`, `path_gambar`, `judul`, `text`, `tanggal_publish`, `link`, `kategori`) VALUES
-(1, '1093363.jpg', 'Ini judul', 'ini teks\"\"\"', '2020-03-19', 'https://www.facebook.com/', 'Mobile'),
-(2, '1093174.jpg', 'judul 2', 'teks 2', '2020-03-19', 'https://www.facebook.com/', 'Multimedia'),
-(3, '10937411.jpg', 'judul 3', 'deskripsi', '2020-03-19', 'https://www.facebook.com/', 'Website'),
-(4, '10931731.jpg', 'asdf', 'av', '2020-03-19', 'https://www.facebook.com/', 'Mobile');
+(4, '10931731.jpg', 'Portofolio 1', 'ini adalah portofolio satuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', '2020-03-26', 'https://www.facebook.com', 'Mobile'),
+(5, 'login_adm2.jpeg', 'Portofolio 2', 'ini adalah porto dua', '2020-03-24', 'https://www.google.com/', 'Multimedia'),
+(6, 'blog_rl1.jpeg', 'Portofolio 3', 'ini adalah porto tiga', '2020-03-24', 'https://www.twitter.com/', 'Multimedia'),
+(7, 'Screenshot_(10).png', 'Portofolio 4', 'ini adalah portofolio empat', '2020-03-24', 'https://www.instagram.com/', 'Website');
 
 -- --------------------------------------------------------
 
@@ -255,12 +269,8 @@ CREATE TABLE `rating` (
 --
 
 INSERT INTO `rating` (`id_blog`, `like`, `love`, `haha`, `wow`, `sad`, `angry`) VALUES
-(90, 0, 0, 0, 0, 0, 0),
-(91, 0, 1, 0, 0, 0, 0),
-(92, 0, 0, 0, 0, 1, 0),
-(93, 0, 0, 0, 0, 0, 1),
-(94, 0, 0, 0, 0, 1, 0),
-(95, 0, 2, 0, 0, 0, 0);
+(97, 0, 0, 1, 0, 0, 0),
+(102, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -285,7 +295,8 @@ CREATE TABLE `tentang` (
 --
 
 INSERT INTO `tentang` (`id`, `path_gambar`, `nama`, `jabatan`, `quote`, `path_ig`, `path_fb`, `path_twit`, `prioritas`) VALUES
-(1, '71779706_448094602754019_6167635517203967163_n.jpg', 'Achmad Ichsan', 'Leader', 'dih gitu', 'isan_on', 'isan', 'isan_on', '1');
+(1, '71779706_448094602754019_6167635517203967163_n.jpg', 'Achmad Ichsan', 'Leader', 'nama saya Isan', 'isan_on', 'isan', 'isan_on', '1'),
+(2, 'WhatsApp_Image_2020-01-30_at_21_00_322.jpeg', 'Dhiya Calista', 'Staff', 'nama saya Dhiya', 'dhiyadc_', 'dhiyacalista', 'dhiyadc', '0');
 
 -- --------------------------------------------------------
 
@@ -298,6 +309,13 @@ CREATE TABLE `tentang_deskripsi` (
   `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tentang_deskripsi`
+--
+
+INSERT INTO `tentang_deskripsi` (`id`, `deskripsi`) VALUES
+(0, '&lt;p&gt;ini adalah Digital Creative&lt;/p&gt;');
+
 -- --------------------------------------------------------
 
 --
@@ -309,6 +327,13 @@ CREATE TABLE `tentang_faq` (
   `question` text NOT NULL,
   `answer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tentang_faq`
+--
+
+INSERT INTO `tentang_faq` (`id`, `question`, `answer`) VALUES
+(1, 'Kenapa kami?', 'Karena kami keren');
 
 --
 -- Indexes for dumped tables
@@ -359,7 +384,7 @@ ALTER TABLE `kategori_blog`
 -- Indexes for table `kategori_kelas`
 --
 ALTER TABLE `kategori_kelas`
-  ADD PRIMARY KEY (`kategori`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kategori_portofolio`
@@ -372,7 +397,7 @@ ALTER TABLE `kategori_portofolio`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `kategori` (`kategori`);
+  ADD KEY `id_kategori` (`id_kategori`);
 
 --
 -- Indexes for table `portofolio`
@@ -407,61 +432,67 @@ ALTER TABLE `tentang_faq`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `daftar`
 --
 ALTER TABLE `daftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kategori_blog`
 --
 ALTER TABLE `kategori_blog`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
+--
+-- AUTO_INCREMENT for table `kategori_kelas`
+--
+ALTER TABLE `kategori_kelas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `portofolio`
 --
 ALTER TABLE `portofolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tentang`
 --
 ALTER TABLE `tentang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tentang_faq`
 --
 ALTER TABLE `tentang_faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -496,7 +527,7 @@ ALTER TABLE `kategori_blog`
 -- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
-  ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`kategori`) REFERENCES `kategori_kelas` (`kategori`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_kelas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `portofolio`
