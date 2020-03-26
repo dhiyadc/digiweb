@@ -17,6 +17,23 @@ class Kelas_model extends CI_Model {
         return $this->db->get('kategori_kelas')->result_array();
     }
 
+    public function getPendaftar()
+    {
+        return $this->db->get('daftar')->result_array();
+    }
+
+    public function getKelasByKategori($id)
+    {
+        $this->db->where('id_kategori',$id);
+        return $this->db->get('kelas')->result_array();
+    }
+
+    public function countKelasByKategori($id)
+    {
+        $this->db->where('id_kategori',$id);
+        return $this->db->get('kelas')->num_rows();
+    }
+
     private function insertImage() 
     {
         $config['upload_path'] = './images/';
@@ -52,7 +69,7 @@ class Kelas_model extends CI_Model {
             'judul' => $this->input->post('judul'),
             'harga' => $this->input->post('harga'),
             'path_gambar' => $this->insertImage(),
-            'kategori' => $this->input->post('kategori'),
+            'id_kategori' => $this->input->post('kategori'),
             'deskripsi_1' => $this->input->post('deskripsi_1'),
             'deskripsi_2' => $this->input->post('deskripsi_2'),
             'deskripsi_3' => $this->input->post('deskripsi_3')
@@ -77,7 +94,7 @@ class Kelas_model extends CI_Model {
                 'judul' => $this->input->post('judul'),
                 'harga' => $this->input->post('harga'),
                 'path_gambar' => $this->updateImage($id),
-                'kategori' => $this->input->post('kategori'),
+                'id_kategori' => $this->input->post('kategori'),
                 'deskripsi_1' => $this->input->post('deskripsi_1'),
                 'deskripsi_2' => $this->input->post('deskripsi_2'),
                 'deskripsi_3' => $this->input->post('deskripsi_3')
@@ -88,7 +105,7 @@ class Kelas_model extends CI_Model {
                 'judul' => $this->input->post('judul'),
                 'harga' => $this->input->post('harga'),
                 'path_gambar' => $this->input->post('old_image'),
-                'kategori' => $this->input->post('kategori'),
+                'id_kategori' => $this->input->post('kategori'),
                 'deskripsi_1' => $this->input->post('deskripsi_1'),
                 'deskripsi_2' => $this->input->post('deskripsi_2'),
                 'deskripsi_3' => $this->input->post('deskripsi_3')
@@ -111,4 +128,5 @@ class Kelas_model extends CI_Model {
         ];
         $this->db->insert('daftar',$data);
     }
+
 }

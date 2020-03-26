@@ -11,6 +11,15 @@ class Kelas_admin extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
+            $this->readKelas();
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function readKelas()
+    {
+        if ($this->session->userdata('logged_in')) {
             $data['kelas'] = $this->Kelas_model->getAllClass();
             $this->load->view('_partials/header_admin');
             $this->load->view('kelas_admin/index', $data);
@@ -36,7 +45,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->createClass();
-            $this->session->set_flashdata('create', 'Kelas berhasil di tambahkan');
+            $this->session->set_flashdata('create', 'Layanan berhasil ditambahkan');
             redirect('kelas_admin');
         } else {
             redirect('admin');
@@ -47,7 +56,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->deleteClass($id);
-            $this->session->set_flashdata('delete', 'Kelas berhasil di delete');
+            $this->session->set_flashdata('delete', 'Layanan berhasil dihapus');
             redirect('kelas_admin');
         } else {
             redirect('admin');
@@ -71,7 +80,7 @@ class Kelas_admin extends CI_Controller
     {
         if ($this->session->userdata('logged_in')) {
             $this->Kelas_model->updateClass($id);
-            $this->session->set_flashdata('flash', 'Kelas berhasil di update');
+            $this->session->set_flashdata('flash', 'Layanan berhasil di-edit');
             redirect('kelas_admin/detail_class/' . $id);
         } else {
             redirect('admin');
@@ -81,9 +90,23 @@ class Kelas_admin extends CI_Controller
     public function detail_class($id)
     {
         if ($this->session->userdata('logged_in')) {
+            $data['kategori'] = $this->Kelas_model->getKategori();
             $data['kelas'] = $this->Kelas_model->getClassById($id);
             $this->load->view('_partials/header_admin');
             $this->load->view('kelas_admin/detail_class', $data);
+            $this->load->view('_partials/footer_admin');
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function pendaftar()
+    {
+        if ($this->session->userdata('logged_in')) {
+            $data['pendaftar'] = $this->Kelas_model->getPendaftar();
+            $data['kelas'] = $this->Kelas_model->getAllClass();
+            $this->load->view('_partials/header_admin');
+            $this->load->view('kelas_admin/pendaftar', $data);
             $this->load->view('_partials/footer_admin');
         } else {
             redirect('admin');

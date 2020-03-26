@@ -48,7 +48,6 @@ class Blog_model extends CI_Model {
         return $this->db->select('id')->order_by('id', 'DESC')->get('blog')->row_array();
     }
     
-    
     public function createrating($id) {
         $data = [
             'id_blog' => implode($id),

@@ -11,6 +11,17 @@ class Portofolio extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in')) {
+            $this->readPorto();
+           
+        } else {
+            redirect('admin');
+        }
+    }
+
+    public function readPorto()
+    {
+        if($this->session->userdata('logged_in'))
+        {
             $data['portofolio'] = $this->Portofolio_model->getAllPortofolio();
             $this->load->view('_partials/header_admin');
             $this->load->view('portofolio/portofolio_view', $data);

@@ -50,7 +50,7 @@
                   <label for="ccomment" class="control-label col-lg-2">Kategori</label>
                   <div class="col-lg-10">
                     <?php foreach ($kategori as $value) : ?>
-                      <input type="radio" name="kategori" required value="<?= $val['kategori']; ?>" 
+                      <input type="radio" name="kategori" required value="<?= $val['id']; ?>" 
                       <?= ($value['kategori'] == $val['kategori']) ? 'checked' : '' ?>/>
                       <label><?= $value['kategori']; ?></label><br>
                     <?php endforeach; ?>

@@ -3,17 +3,14 @@
 class Blog_user_model extends CI_model {
 
     public function getAllBlog($keyword = null){
-        
         if($keyword){
             $this->db->like('judul', $keyword);
         }
         $this->db->select('blog.id, judul,path_gambar, author, text, tanggal_publish');
         $this->db->from('blog');
         $this->db->order_by('blog.id', 'asc');
-        return $this->db->get()->result_array();
-
+        return $this->db->get()->result_array();    
     }
-
 
     public function getBlogByKategori($keyword = null, $kategori){
         if($keyword){
@@ -43,6 +40,10 @@ class Blog_user_model extends CI_model {
     public function popularBlog(){
         return $this->db->order_by('rate', 'DESC')->limit('5')->get('blog')->result_array();
     }
+
+    public function onePopulerBlog(){
+        return $this->db->select('id')->order_by('rate', 'DESC')->limit('1')->get('blog')->result_array()[0];
+    }
     
     public function getDetailBlog($id) {
         $this->db->select('judul,path_gambar, author, text, tanggal_publish, kategori');
@@ -54,15 +55,15 @@ class Blog_user_model extends CI_model {
     }
 
     public function getCommentbyBlogId($id) {
-        return $this->db->where(['id_blog' => $id])->get('comment')->result_array();
+        return $this->db->order_by('id_comment', 'DESC')->where(['id_blog' => $id])->get('comment')->result_array();
     }
 
     public function create_comment($id, $name) {
         $data = [
             'id_comment' => null,
             'id_blog' => $id,
-            'name' => $name,
-            'comment' => $this->input->post('isi_komen'),
+            'name' => htmlspecialchars($name),
+            'comment' => htmlspecialchars($this->input->post('isi_komen')),
         ];
         $this->db->insert('comment', $data);
     }
