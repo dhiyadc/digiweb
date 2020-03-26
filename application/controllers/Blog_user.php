@@ -77,6 +77,7 @@ class Blog_user extends CI_Controller {
         $data['popular'] = $this->Blog_user_model->popularBlog();
         $this->load->view('layout/header');
         $this->load->view('blog_user/singleblog', $data);
+        $this->load->view('layout/footer');
     }
 
 
