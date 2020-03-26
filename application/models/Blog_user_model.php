@@ -40,6 +40,10 @@ class Blog_user_model extends CI_model {
     public function popularBlog(){
         return $this->db->order_by('rate', 'DESC')->limit('5')->get('blog')->result_array();
     }
+
+    public function onePopulerBlog(){
+        return $this->db->select('id')->order_by('rate', 'DESC')->limit('1')->get('blog')->result_array()[0];
+    }
     
     public function getDetailBlog($id) {
         $this->db->select('judul,path_gambar, author, text, tanggal_publish, kategori');

@@ -180,4 +180,10 @@ class Blog_user extends CI_Controller {
         }
     }
 
+    public function populerBlog()
+    {
+        $id = $this->Blog_user_model->onePopulerBlog();
+        redirect(('Blog_user/detailAndComment/') . $id['id']);
+    }
+
 }

@@ -33,9 +33,9 @@
 							<h4>About Us</h4>
 						</div>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>aboutus">Tentang Kami</a></li>
-							<li><a href="#">Reviews</a></li>
-							<li><a href="<?php echo base_url(); ?>portofolio_user">Galeri</a></li>
+							<li><a href="<?php echo base_url(); ?>tentang_user">Tentang Kami</a></li>
+							<li><a href="<?php echo base_url(); ?>portofolio_user">Portofolio</a></li>
+							<li><a href="<?php echo base_url(); ?>kelas">Layanan Kami</a></li>
 							
 						</ul>
 					</aside>
@@ -46,11 +46,9 @@
 							<h4>Blog</h4>
 						</div>
 						<ul>
-							<li><a href="#">Blog</a></li>
-								<li><a href="<?php echo base_url(); ?>kelas">Recent Blog
-							</a></li>
-							<li><a href="<?php echo base_url(); ?>Contact">Populer Blog</a></li>
-							
+							<li><a href="<?php echo base_url(); ?>blog_user">Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>blog_user">Recent Blog</a></li>
+							<li><a href="<?php echo base_url(); ?>blog_user/populerBlog">Populer Blog</a></li>
 						</ul>
 					</aside>
 				</div>
@@ -84,7 +82,7 @@
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="copy_right_text">
 						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </i> by <a href="#" target="_blank">Digital Creative</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </i> by <a href="<?php base_url() ?>" target="_blank">Digital Creative</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 					</div>
 				</div>

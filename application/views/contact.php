@@ -81,9 +81,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!--================Contact Area =================-->
-    <!-- Modals error -->
+        <!-- Modals error -->
 
     <div id="error" class="modal modal-message fade" role="dialog">
         <div class="modal-dialog">
@@ -98,6 +96,11 @@
             </div>
         </div>
         <!--================End Contact Success and Error message Area =================-->
+    </section>
+    
+    <?php $this->load->view('layout/footer')?>   
+    <!--================Contact Area =================-->
+    
         
-<?php $this->load->view('layout/footer')?>      
+   
        
