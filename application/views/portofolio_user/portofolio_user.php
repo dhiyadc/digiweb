@@ -70,10 +70,10 @@
 			</section>
 			<!--=========================Portofolio Categorie Area =================-->
 			<section>
+				<?php $i = 0; ?>
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="row">
-						<?php $i = 0; ?>
 							<?php foreach ($portofolio as $key => $value): ?>
 								<div class="col-lg-6 col-md-6 col-sm-6 blog_item blogBox moreBox" style="display: none">
 									<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
@@ -105,26 +105,10 @@
                     <a href="#">Muat Lebih Banyak</a>
 				</div>
 				<?php endif; ?>
-				<?php if($i == 0) : ?>
-					<p></p>
-				<?php endif; ?>
 				<?php if($i < 4) : ?>
 					<?= "" ?>
 				<?php endif; ?>
 			</div>
-
-			
-		<?php if($porto_count > 3 ):  ?>
-        <div id="loadMore">
-            <a href="#">Muat Lebih Banyak</a>
-        </div>
-        <?php endif; ?>
-        <?php if($porto_count == 0) : ?>
-            <p></p>
-        <?php endif; ?>
-        <?php if(($porto_count <= 3 )) : ?>
-            <?= "" ?>
-        <?php endif; ?>	
 		</section>
 		<section>
 			<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -156,20 +140,6 @@
 			</div>
 		
 			<script>
-                $( document ).ready(function () {
-                    $(".moreBox").slice(0, 4).show();
-                    if ($(".blogBox:hidden").length != 0) {
-                        $("#loadMore").show();
-                    }   
-                    $("#loadMore").on('click', function (e) {
-                    e.preventDefault();
-                    $(".moreBox:hidden").slice(0, 4).slideDown();
-                    if ($(".moreBox:hidden").length == 0) {
-                        $("#loadMore").fadeOut('slow');
-                    }
-                    });
-                });
-
 				$(function(){
 					$('.detailBtns').click(function(){
 						var value = $(this).children("div").children("div").children("p1").html()

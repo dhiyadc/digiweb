@@ -31,6 +31,8 @@ class Portofolio_user extends CI_Controller{
         $data['portofolio']=$this->Portofolio_user_model->getAllPortofolio();
         $data['kategori']=$this->Portofolio_user_model->getAllKategori();
         $data['port_kategori']=$this->Portofolio_user_model->getPortoKategori($kategori);
+        $data['count'] = count($this->Portofolio_user_model->getPortoKategori($kategori));
+        $this->session->set_flashdata('kategori','Maaf, portofolio di kategori ini belum tersedia.');
 
         $this->load->view('portofolio_user/portofolio_kategori' , $data);
     }

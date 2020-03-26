@@ -18,6 +18,6 @@ class Portofolio_user_model extends CI_Model{
 
     public function getPortoKategori($kategori)
     {
-        return $this->db->get_where('portofolio', ['kategori'=>$kategori])->row_array();
+        return $this->db->get_where('portofolio', ['kategori'=>$kategori])->result_array();
     }
 }

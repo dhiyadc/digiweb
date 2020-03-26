@@ -73,60 +73,52 @@
 				</div>
 			</section>
 			<!--================Blog Categorie Area =================-->
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="row">
-						<?php if(empty($port_kategori['kategori'])): ?>
-							<div class="col-lg-12">
-								<div class="alert alert-primary" role="alert">
-									<center>Portofolio di kategori <?= $this->uri->segment('3') ?> kosong</center>
-								</div>
-							</div>
-						<?php else: ?>
-							<?php $i=0;?>
-							<?php foreach ($portofolio as $key => $value): ?>
-							<?php if($value['kategori']== $port_kategori['kategori']) :?>
-							<div class="col-lg-6 col-md-6 col-sm-6" id="detailBtn<?=$i?>">
-								<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
-									<div class="single-gallery_portofolio">
-										<div class="overlay"></div>
-										<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>"
-											alt="" style="object-fit: cover; height: 350px">
+			<section>
+				<?php $i = 0; ?>
+				<?php if($count == 0) :?>
+					<div class="alert alert-danger" role="alert">
+						<center><?= $this->session->flashdata('kategori') ?></center>
+					</div>
+				<?php endif; ?>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row">
+							<?php foreach ($port_kategori as $key => $value): ?>
+								<div class="col-lg-6 col-md-6 col-sm-6 blog_item blogBox moreBox" style="display: none">
+									<a data-toggle="modal" data-target="#contact-modal" class="detailBtns">
+										<div class="single-gallery_portofolio">
+											<div class="overlay"></div>
+											<img class="img-fluid w-100" src="<?= base_url().'images/'.$value['path_gambar']?>" alt="" style="object-fit: cover; height: 350px">
 											<div class="content_portofolio">
 												<p><?= $value['judul'] ?></p>
 												<p style="font-size: 18px;"><?= substr($value['text'],0 ,50); ?>...</p>
 											<!-- <center><p style="color: black; position:"><?= $value['kategori'] ?></p></center> -->
 												<p style="font-size: 12px; position: absolute; bottom: 0;"><?= $value['kategori'] ?></p>
-										<p1 hidden><?= $value['judul'] ?></p1>
-										<p2 hidden><?= $value['path_gambar'] ?></p2>
-										<p3 hidden><?= $value['link'] ?></p3>
-										<p4 hidden><?= $value['text'] ?></p4>
-										<p5 hidden><?= $value['kategori'] ?></p5>
-										<p6 hidden><?= $value['tanggal_publish'] ?></p6>
-									</div>
-								</a>
-							</div>
-							<?php $i++; ?>
-							<?php endif; ?>
+												<p1 hidden><?= $value['judul'] ?></p1>
+												<p2 hidden><?= $value['path_gambar'] ?></p2>
+												<p3 hidden><?= $value['link'] ?></p3>
+												<p4 hidden><?= $value['text'] ?></p4>
+												<p5 hidden><?= $value['kategori'] ?></p5>
+												<p6 hidden><?= $value['tanggal_publish'] ?></p6>
+											</div>
+										</div>
+									</a>
+								</div>
+								<?php $i++; ?>
 							<?php endforeach;?>
-						<?php endif; ?>
+						</div>
 					</div>
 				</div>
-			</div>
 				<?php if($i > 4) : ?>
 				<div id="loadMore">
                     <a href="#">Muat Lebih Banyak</a>
 				</div>
 				<?php endif; ?>
-				<?php if($i == 0) : ?>
-					<p></p>
-				<?php endif; ?>
 				<?php if($i < 4) : ?>
 					<?= "" ?>
 				<?php endif; ?>
-		</div>
-	</section>
+			</div>
+		</section>
 	<section>
 			<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -185,5 +177,20 @@
 			})
 
 		</script>
+		<script>
+					$( document ).ready(function () {
+						$(".moreBox").slice(0, 4).show();
+						if ($(".blogBox:hidden").length != 0) {
+							$("#loadMore").show();
+						}   
+						$("#loadMore").on('click', function (e) {
+						e.preventDefault();
+						$(".moreBox:hidden").slice(0, 4).slideDown();
+						if ($(".moreBox:hidden").length == 0) {
+							$("#loadMore").fadeOut('slow');
+						}
+						});
+					});
+			</script>
 	</section>
 	<?php $this->load->view('layout/footer')?>
