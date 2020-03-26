@@ -62,55 +62,61 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <!-- <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Malian Rizieq</h5> -->
+          <?php
+            $nav = $this->uri->segment(2);
+            $har = $this->uri->segment(1)
+					?>
           <li class="mt">
-            <a class="active" href="<?= base_url(); ?>home_admin">
+            <a class="<?=($har =='home_admin')?' active':''; ?>" href="<?= base_url(); ?>home_admin">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
             </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
+
+          <li class="sub-menu ">
+            <a class="<?=($nav=='create_form' || $nav=='readKelas' || $nav=='pendaftar')?'active':''; ?>" href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Layanan Kami</span>
             </a>
             <ul class="sub">
-              <li><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
-              <li><a href="<?= base_url(); ?>kelas_admin">Data Layanan</a></li>
+              <li <?=($nav=='create_form')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/create_form">Buat Layanan</a></li>
+              <li <?= ($nav=='readKelas')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/readKelas">Data Layanan</a></li>
+              <li <?= ($nav=='pendaftar')?'class="active"':''; ?>><a href="<?= base_url(); ?>kelas_admin/pendaftar">Data Pendaftar</a></li>
             </ul>
           </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;">
+          <li class="sub-menu ">
+            <a class="<?=($nav=='createPortofolio' || $nav=='readPorto')?' active':''; ?>" href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Portofolio</span>
             </a>
             <ul class="sub">
-              <li><a href="<?= base_url(); ?>portofolio/createPortofolio">Buat Portofolio</a></li>
-              <li><a href="<?= base_url(); ?>portofolio">Data Portofolio</a></li>
+              <li <?=($nav=='createPortofolio')?'class="active"':''; ?>><a href="<?= base_url(); ?>portofolio/createPortofolio">Buat Portofolio</a></li>
+              <li <?=($nav=='readPorto')?'class="active"':''; ?>><a href="<?= base_url(); ?>portofolio/readPorto">Data Portofolio</a></li>
             </ul>
           </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;">
+          <li class="sub-menu ">
+            <a class="<?=($nav=='createview' || $nav=='readblog')?' active':''; ?>" href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Blog</span>
             </a>
             <ul class="sub">
-              <li><a href="<?= base_url(); ?>blog/createview">Buat Blog</a></li>
-              <li><a href="<?= base_url(); ?>blog/readblog">Data Blog</a></li>
+              <li <?=($nav=='createview')?'class="active"':''; ?>><a href="<?= base_url(); ?>blog/createview">Buat Blog</a></li>
+              <li <?=($nav=='readblog')?'class="active"':''; ?>><a href="<?= base_url(); ?>blog/readblog">Data Blog</a></li>
             </ul>
           </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;">
+          <li class="sub-menu ">
+            <a class="<?=($nav=='createTentang' || $nav=='viewTentang' || $nav=='viewdeskripsi' || $nav=='viewFAQ' )?' active':''; ?>" href="javascript:;">
               <i class="fa fa-users"></i>
               <span>Tentang</span>
             </a>
             <ul class="sub">
-              <li><a href="<?= base_url(); ?>tentang/createTentang">Buat Tentang</a></li>
-              <li><a href="<?= base_url(); ?>tentang/viewTentang">Data Tentang</a></li>
-              <li><a href="<?= base_url(); ?>tentang/viewDeskripsi">Deskripsi Perusahaan</a></li>
-              <li><a href="<?= base_url(); ?>tentang/viewFAQ">F.A.Q</a></li>
+              <li <?=($nav=='createTentang')?'class="active"':''; ?>><a href="<?= base_url(); ?>tentang/createTentang">Buat Tentang</a></li>
+              <li <?=($nav=='viewTentang')?'class="active"':''; ?>><a href="<?= base_url(); ?>tentang/viewTentang">Data Tentang</a></li>
+              <li <?=($nav=='viewDeskripsi')?'class="active"':''; ?>><a href="<?= base_url(); ?>tentang/viewDeskripsi">Deskripsi Perusahaan</a></li>
+              <li <?=($nav=='viewFAQ')?'class="active"':''; ?>><a href="<?= base_url(); ?>tentang/viewFAQ">F.A.Q</a></li>
             </ul>
           </li>
         </ul>

@@ -3,9 +3,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-
+                    
                 </div>
-                <!-- end col-4 -->
+                <?php if ($count == 0) : ?>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 20px;">
+                        <a href="<?= base_url() ?>tentang/insertDeskripsi" style="float: right"><button class=" btn btn-theme"><i class="fa fa-pencil"></i> Create</button></a>
+                    </div>
+                <?php endif; ?>
+                <?php if ($count >= 1) : ?>
                 <div class="col-lg-8 col-md-4 col-sm-4 col-xs-12">
                     <div class="custom-box">
                         <div class="servicetitle">
@@ -21,13 +26,11 @@
                         <p style="font-size: 14PX"><?= html_entity_decode($deskripsi['deskripsi']) ?></p>
                         <br><br>
                         <a href="<?= base_url() ?>tentang/updateDeskripsi"><button class=" btn btn-theme">UPDATE</button></a>
+                        </div>
                     </div>
-
                 </div>
-
+                <?php endif; ?>
             </div>
-            <!-- end custombox -->
-        </div>
         <!-- end col-4 -->
         <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> -->
         <!-- end custombox -->

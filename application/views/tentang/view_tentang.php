@@ -1,18 +1,18 @@
 <section id="main-content">
-<section class="wrapper site-min-height">
+  <section class="wrapper site-min-height">
     <div class="row mt mb">
       <div class="col-lg-12">
         <h3><i class="fa fa-angle-right"></i>Data Tentang</h3>
         <br>
-        <?php if($this->session->flashdata('create')) :?>
-            <div class="alert alert-success" role="alert">
-              <?= $this->session->flashdata('create') ?>
-            </div>
+        <?php if ($this->session->flashdata('create')) : ?>
+          <div class="alert alert-success" role="alert">
+            <?= $this->session->flashdata('create') ?>
+          </div>
         <?php endif; ?>
-        <?php if($this->session->flashdata('delete')) :?>
-            <div class="alert alert-danger" role="alert">
-              <?= $this->session->flashdata('delete') ?>
-            </div>
+        <?php if ($this->session->flashdata('delete')) : ?>
+          <div class="alert alert-danger" role="alert">
+            <?= $this->session->flashdata('delete') ?>
+          </div>
         <?php endif; ?>
         <?php foreach ($tentang as $value) : ?>
           <div class="col-lg-4 col-md-4 col-sm-12">
@@ -25,10 +25,11 @@
               <h4><a href="<?= base_url(); ?>tentang/viewTentangById/<?= $value['id']; ?>"><?= $value['nama'] ?></a></h4>
               <p><?= $value['jabatan'] ?></p>
             </div>
+            <br>
           </div>
-          <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
   <!-- /wrapper -->
-</section> 
+</section>

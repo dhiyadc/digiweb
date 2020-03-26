@@ -36,7 +36,7 @@
 						<a href="<?= base_url() ?>">Home</a>
 						<a href="<?= base_url() ?>/Blog_user">Blog</a>
 					</div>
-					<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">BLOG DETAILS</h2>
+					<h2 style="color: white; text-shadow: 2px 2px 4px #000000; letter-spacing: 10px; word-spacing: 10px;">DETAIL BLOG</h2>
 				</div>
 			</div>
 		</div>
@@ -179,49 +179,65 @@
 								<!--- --->
 						</section>
 
+						<h4>Komentar</h4>
+						<div class="scroller">
+							<?php if(empty($comment)) :?>
+								<div class="alert alert-secondary" role="alert">
+								  <center>Jadi lah Orang Pertama Yang Berkomentar!</center>
+								</div>
+							<?php endif; ?>
+						<?php foreach($comment as $key => $value) : ?>
+								<div class="comment-list">
+								<div class="row">
+									<div class="col">
+									<div class="single-comment justify-content-between d-flex">
+										<div class="user justify-content-between d-flex">
+											<div class="thumb mr-2">
+												<img src="<?php echo base_url(); ?>assets/img/orang/orang.png" alt="" width="71" height="49"  style="object-fit: cover;">
+											</div>
+										</div>
+										<div class="col">
+											<div class="desc">
+												<h5><b><p align="left" style="color: black"; ><?= $value['name'] ?></p></b></h5>
+												<p align="left" class="comment">
+													<?= $value['comment'] ?>
+												</p>
+											</div>
+										</div>
+									</div>
+									</div>
+									</div>
+								</div>
+						<?php endforeach;?>
+						</div>
+						
+
 						<div class="comment-form">
-							<h4>Leave a Comment</h4>
+							<h4>Tinggalkan Sebuah Komentar</h4>
 							<form action="<?=base_url('')?>Blog_user/createComment/<?= $id_blog ?>" method="POST">
 								<div class="form-group form-inline">
 									<div class="form-group col-lg-6 col-md-6 name">
 										<input type="text" name="nama_komen" class="form-control" id="nama_komen"
-											placeholder="Enter Your Name" aria-describedby="emailHelp">
+											placeholder="Masukkan Nama Anda" aria-describedby="emailHelp">
 									</div>
 								</div>
 								<div class="form-group">
 									<textarea class="form-control" name="isi_komen" id="isi_komen"
-										placeholder="Comment " rows="3" required></textarea>
+										placeholder="Komentar " rows="3" required></textarea>
 								</div>
 								<button type="submit" name="submit" value="submit" class="primary-btn primary_btn">Post
-									Comment</button>
+									Komentar</button>
 
 							</form>
 						</div>
-						<?php foreach($comment as $key => $value) : ?>
-						<div class="comment-list">
-							<div class="single-comment justify-content-between d-flex">
-								<div class="user justify-content-between d-flex">
-									<div class="thumb">
-										<img src="<?php echo base_url(); ?>assets/img/orang/orang.png" alt="" width="75"
-											height="50">
-									</div>
-									<div class="desc">
-										<h5><a href="#"><?= $value['name'] ?></a></h5>
-										<p class="comment">
-											<?= $value['comment'] ?>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php endforeach;?>
+						
 					</div>
 				</div>
 				<div class="col-lg-4">
-					<div class="blog_right_sidebar" style=" position: sticky; top: 20px;">
+					<div class="blog_right_sidebar" style=" position: sticky; top: 60px;">
 						
 						<aside class="single_sidebar_widget popular_post_widget">
-							<h3 class="widget_title">Popular Blogs</h3>
+							<h3 class="widget_title">Blog Popular</h3>
 							<?php foreach($popular as $value) :  ?>
 							<div class="media post_item">
 							<img src="<?= base_url().'images/'.$value['path_gambar']?>" alt=""  height="50px" width="75px" style="object-fit: cover;">
@@ -237,8 +253,13 @@
 							<div class="br"></div>
 						</aside>
 						<aside class="single_sidebar_widget post_category_widget">
-							<h4 class="widget_title">This Blog Categories</h4>
+							<h4 class="widget_title">Kategori Pada Blog Ini</h4>
 							<ul class="list cat-list">
+							<li>
+								<a href="<?=base_url()?>Blog_user" class="">
+									<center><h6>Semua Kategori</h6></center>
+								</a>
+							</li>
 							<?php foreach($kategori as $value) :  ?>
 								<li>
 									<a href="<?= base_url() ?>Blog_user/blogByKategori/<?= $value ?>" class="">

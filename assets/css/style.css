@@ -226,7 +226,7 @@ img {
 .overlay, .single-gallery .content {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   height: 40%;
   width: 100%; }
 
@@ -1443,7 +1443,7 @@ body.blog_page {
     color: #3fcaff;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     color: "Roboto", sans-serif;
     font-weight: bold;
@@ -2729,7 +2729,9 @@ h6 {
   position: relative; }
 
 .about_content {
-  position: relative; }
+  position: relative;
+  left: 42px;
+}
   .about_content:before {
     content: "";
     position: absolute;
@@ -3972,6 +3974,7 @@ h6 {
       .blog_area .blog_items .blog_content .date a {
         margin-right: 20px; }
 
+  
   .footer_area .f_widget ul {
     margin-bottom: 30px !important; }
     .footer_area .f_widget ul li {
@@ -4031,7 +4034,9 @@ h6 {
     color: #fff;
     margin-left: -15px; }
     .single-footer-widget .copy_right_text p a {
-      color: #3fcaff; }
+      color: #3fcaff; 
+      font-size: 15px;
+    }
   .single-footer-widget .social_widget {
     text-align: right;
     position: relative;
@@ -4085,10 +4090,10 @@ h6 {
         
         /*---------------------------------------------*/
         a {
-          font-family: Poppins-Regular;
-          font-size: 14px;
+          /* font-family: Poppins-Regular; */
+          font-size: 17px;
           line-height: 1.7;
-          color: #666666;
+          color: #D3D3D3;
           margin: 0px;
           transition: all 0.4s;
           -webkit-transition: all 0.4s;
@@ -4102,7 +4107,7 @@ h6 {
         
         a:hover {
           text-decoration: none;
-          color: #57b846;
+          color: #e13b33;
         }
         
         /*---------------------------------------------*/
@@ -4927,4 +4932,17 @@ section .section-title {
   background-color: #CC0033;
 }
 
+.scroller {
+  /* height: 400px;
+  overflow-y: scroll;
+  scrollbar-color: white;
+  scrollbar-width: thin;
+  scroll-behavior: smooth; */
+  padding: 1rem;
+  height: 300px;
+  overflow-x: hidden;
+}
 
+.foot p{
+  color: #ffff;
+}
